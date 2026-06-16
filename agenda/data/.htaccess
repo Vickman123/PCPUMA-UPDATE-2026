@@ -1,0 +1,10 @@
+# Denegar acceso web a todos los archivos de este directorio
+# Protege los datos cifrados contra acceso directo
+
+Order deny,allow
+Deny from all
+
+# Bloquear todos los métodos HTTP
+<LimitExcept>
+    Deny from all
+</LimitExcept>

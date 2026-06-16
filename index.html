@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+       <meta charset="UTF-8"> 
+       <meta name="viewport" content="width=device-width, initial-scale=1" />
+       <title>Inicio | Programa PC Puma UNAM </title>
+       <meta name="description"
+              content="PC Puma - Programa de conectividad móvil, préstamo de dispositivos y formación digital para la comunidad UNAM" />
+       <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-icon-57x57.png">
+       <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-icon-60x60.png">
+       <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-icon-72x72.png">
+       <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-icon-76x76.png">
+       <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-icon-114x114.png">
+       <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-icon-120x120.png">
+       <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-icon-144x144.png">
+       <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-icon-152x152.png">
+       <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-icon-180x180.png">
+       <link rel="icon" type="image/png" sizes="192x192" href="img/favicons/android-icon-192x192.png">
+       <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+       <link rel="icon" type="image/png" sizes="96x96" href="img/favicons/favicon-96x96.png">
+       <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+       <link href="css/eventos.css" rel="stylesheet">
+       <link rel="manifest" href="img/favicons/manifest.json">
+       <meta name="msapplication-TileColor" content="#ffffff">
+       <meta name="msapplication-TileImage" content="img/favicons/ms-icon-144x144.png">
+       <meta name="theme-color" content="#ffffff">
+
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+       <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+       <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet">
+       <link href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" rel="stylesheet">
+       <link href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" rel="stylesheet">
+       <link href="css/global.css?v=6" rel="stylesheet" />
+       <link href="css/index.css?v=8" rel="stylesheet" />
+       <link href="css/style_accessibility.css" rel="stylesheet" />
+       <!-- Google tag (gtag.js) -->
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-VK96VK5GZ5"></script>
+       <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag() { dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'G-VK96VK5GZ5');
+        </script>
+
+        <!-- Estilos modernos Apple 2026 para Convocatorias de Servicio Social -->
+        <style>
+              .card-flip-container {
+                     perspective: 1500px;
+                     height: 480px;
+                     margin-bottom: 2rem;
+              }
+
+              .card-flip-inner {
+                     position: relative;
+                     width: 100%;
+                     height: 100%;
+                     transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+                     transform-style: preserve-3d;
+              }
+
+              .card-flip-container.flipped .card-flip-inner {
+                     transform: rotateY(180deg);
+              }
+ 
+              .ss-card-face {
+                     position: absolute;
+                     width: 100%;
+                     height: 100%;
+                     -webkit-backface-visibility: hidden;
+                     backface-visibility: hidden;
+                     border-radius: 24px !important;
+                     border: 1px solid rgba(0, 0, 0, 0.08) !important;
+                     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
+                     overflow: hidden;
+                     display: flex;
+                     flex-direction: column;
+                     background: #ffffff !important;
+                     padding: 0 !important;
+                     transition: box-shadow 0.4s ease, border-color 0.4s ease;
+              }
+
+              .card-flip-container:hover .ss-card-face {
+                     box-shadow: 0 20px 45px rgba(0, 91, 168, 0.08) !important;
+                     border-color: rgba(0, 91, 168, 0.15) !important;
+              }
+
+              /* Vista Frontal */
+              .ss-card-image-wrapper {
+                     position: relative;
+                     width: 100%;
+                     height: 220px;
+                     overflow: hidden;
+              }
+
+              .ss-card-image {
+                     width: 100%;
+                     height: 100%;
+                     object-fit: cover;
+                     transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+              }
+
+              .card-flip-container:hover .ss-card-image {
+                     transform: scale(1.05);
+              }
+
+              .ss-card-badge {
+                     position: absolute;
+                     top: 15px;
+                     left: 15px;
+                     background: rgba(255, 255, 255, 0.85);
+                     backdrop-filter: blur(10px);
+                     -webkit-backdrop-filter: blur(10px);
+                     color: #005BA8;
+                     padding: 6px 14px;
+                     border-radius: 20px;
+                     font-size: 0.75rem;
+                     font-weight: 700;
+                     border: 1px solid rgba(255, 255, 255, 0.3);
+                     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+              }
+
+              .ss-card-front-content {
+                     padding: 1.5rem;
+                     display: flex;
+                     flex-direction: column;
+                     justify-content: space-between;
+                     flex-grow: 1;
+              }
+
+              .ss-card-title {
+                     font-size: 1.15rem;
+                     font-weight: 700;
+                     color: #1d1d1f;
+                     line-height: 1.4;
+                     margin: 0;
+                     text-align: left;
+                     display: -webkit-box;
+                     -webkit-line-clamp: 4;
+                     line-clamp: 4;
+                     -webkit-box-orient: vertical;
+                     overflow: hidden;
+              }
+ 
+              .ss-card-flip-hint {
+                     display: flex;
+                     align-items: center;
+                     gap: 8px;
+                     font-size: 0.85rem;
+                     color: #005BA8;
+                     font-weight: 600;
+                     margin-top: auto;
+                     align-self: flex-start;
+                     transition: transform 0.3s ease;
+              }
+
+              .card-flip-container:hover .ss-card-flip-hint {
+                     transform: translateX(4px);
+              }
+
+              /* Vista Posterior */
+              .ss-card-face.card-back {
+                     transform: rotateY(180deg);
+                     background: linear-gradient(135deg, #ffffff 0%, #f7f9fc 100%) !important;
+                     padding: 1.75rem !important;
+                     display: flex;
+                     flex-direction: column;
+                     justify-content: space-between;
+              }
+
+              .ss-card-back-header {
+                     text-align: left;
+              }
+
+              .ss-card-back-badge {
+                     font-size: 0.75rem;
+                     font-weight: 700;
+                     text-transform: uppercase;
+                     color: #005BA8;
+                     letter-spacing: 0.05em;
+                     margin-bottom: 6px;
+              }
+
+              .ss-card-back-title {
+                     font-size: 1.1rem;
+                     font-weight: 700;
+                     color: #1d1d1f;
+                     line-height: 1.3;
+                     margin: 0;
+                     display: -webkit-box;
+                     /* Standard property for compatibility */
+                     line-clamp: 2;
+                     -webkit-line-clamp: 2;
+                     -webkit-box-orient: vertical;
+                     overflow: hidden;
+              }
+
+              .ss-card-back-details {
+                     display: flex;
+                     flex-direction: column;
+                     gap: 14px;
+                     margin: 1.25rem 0;
+              }
+
+              .detail-item {
+                     display: flex;
+                     align-items: flex-start;
+                     gap: 12px;
+                     text-align: left;
+              }
+ 
+              .detail-item i {
+                     font-size: 1.15rem;
+                     color: #005BA8;
+                     margin-top: 2px;
+              }
+
+              .detail-label {
+                     display: block;
+                     font-size: 0.75rem;
+                     color: #86868b;
+                     font-weight: 500;
+                     margin-bottom: 1px;
+              }
+
+              .detail-val {
+                     font-size: 0.85rem;
+                     color: #1d1d1f;
+                     font-weight: 600;
+                     line-height: 1.3;
+              }
+
+              .ss-card-back-footer {
+                     display: flex;
+                     flex-direction: column;
+                     gap: 10px;
+              }
+
+              .btn-aplicar {
+                      display: inline-flex;
+                      align-items: center;
+                      justify-content: center;
+                      gap: 0.6rem;
+                      background-color: #ecd448;
+                      color: #131313 !important;
+                      padding: 0.8em 1.8em;
+                      border: 2px solid #000;
+                      border-radius: 50px;
+                      font-weight: bold;
+                      font-size: 0.9rem;
+                      box-shadow: 0 4px 0 0 #000;
+                      text-decoration: none !important;
+                      position: relative;
+                      overflow: hidden;
+                      transition: all 0.3s ease;
+                      cursor: pointer;
+               }
+
+               .btn-aplicar::before {
+                      content: "";
+                      position: absolute;
+                      width: 120px;
+                      height: 140%;
+                      background-color: #ff6700;
+                      top: 50%;
+                      left: -150px;
+                      transform: skewX(30deg) translateY(-50%);
+                      transition: all 0.5s ease;
+                      z-index: 1;
+               }
+
+               .btn-aplicar span,
+               .btn-aplicar i {
+                      position: relative;
+                      z-index: 2;
+               }
+
+               .btn-aplicar:hover {
+                      background-color: #ecd448 !important;
+                      color: #131313 !important;
+                      box-shadow: 0 4px 0 0 #000 !important;
+               }
+
+               .btn-aplicar:hover::before {
+                      left: 120%;
+               }
+
+               .btn-aplicar:active {
+                      transform: scale(0.92);
+               }
+
+               /* --- ESTILOS DE BOTÓN PREMIUM PC PUMA ANIMADO (COMPARTIDO) --- */
+               .btn-pcpuma-animated {
+                      padding: 0.8em 1.8em;
+                      border: 2px solid #000;
+                      font-size: 1rem;
+                      color: #131313 !important;
+                      cursor: pointer;
+                      position: relative;
+                      overflow: hidden;
+                      transition: all 0.3s ease;
+                      border-radius: 50px;
+                      background-color: #ecd448;
+                      /* Amarillo institucional */
+                      font-weight: bold;
+                      box-shadow: 0 4px 0 0 #000;
+                      text-decoration: none !important;
+                      display: inline-flex;
+                      align-items: center;
+                      gap: 0.6rem;
+               }
+
+               .btn-pcpuma-animated span,
+               .btn-pcpuma-animated i {
+                      position: relative;
+                      z-index: 2;
+               }
+
+               /* Efecto animado cruzado */
+               .btn-pcpuma-animated::before {
+                      content: "";
+                      position: absolute;
+                      width: 120px;
+                      height: 140%;
+                      background-color: #ff6700;
+                      top: 50%;
+                      left: -150px;
+                      transform: skewX(30deg) translateY(-50%);
+                      transition: all 0.5s ease;
+                      z-index: 1;
+               }
+
+               .btn-pcpuma-animated:hover {
+                      background-color: #ecd448 !important;
+                      color: #131313 !important;
+                      box-shadow: 0 4px 0 0 #000 !important;
+               }
+
+               .btn-pcpuma-animated:hover::before {
+                      left: 120%;
+               }
+
+               .btn-pcpuma-animated:active {
+                      transform: scale(0.92);
+               }
+
+              .ss-card-flip-back-hint {
+                     font-size: 0.78rem;
+                     color: #86868b;
+                     font-weight: 600;
+                     cursor: pointer;
+                     display: inline-flex;
+                     align-items: center;
+                     justify-content: center;
+                     gap: 4px;
+                     margin: 0 auto;
+                     transition: color 0.3s ease;
+              }
+
+              .ss-card-flip-back-hint:hover {
+                     color: #1d1d1f;
+              }
+
+              /* --- ESTILOS PARA LA INTRO CINEMÁTICA PREMIUM (APPLE-INSPIRED) --- */
+              body.intro-running,
+              body.intro-transitioning {
+                     overflow: hidden !important;
+              }
+
+              /* Ocultar elementos durante la intro */
+              body.intro-running .pcp-navbar,
+              body.intro-running .hero-info-column,
+              body.intro-running .floating-stat-card,
+              body.intro-running .modern-scroll-indicator,
+              body.intro-running main > *:not(.modern-hero),
+              body.intro-running footer,
+              body.intro-running .flotante-equipo {
+                     opacity: 0 !important;
+                     pointer-events: none !important;
+              }
+
+              body.intro-running #heroCanvas {
+                     opacity: 0 !important;
+                     pointer-events: none !important;
+              }
+
+              body.intro-running .modern-hero {
+                     background: #000000 !important;
+                     height: 100vh !important;
+                     z-index: 99998 !important;
+              }
+
+              /* Prevenir colisiones de transforms en los contenedores durante el fullscreen y la transición */
+              body.intro-running .hero-visual-column,
+              body.intro-running .tech-video-frame-container,
+              body.intro-running .tech-video-frame,
+              body.intro-transitioning .hero-visual-column,
+              body.intro-transitioning .tech-video-frame-container,
+              body.intro-transitioning .tech-video-frame {
+                     transform: none !important;
+                     transition: none !important;
+                     perspective: none !important;
+                     will-change: auto !important;
+                     overflow: visible !important;
+              }
+
+              /* El video en estado fullscreen */
+              .tech-video-frame video.video-fullscreen {
+                     position: fixed;
+                     top: 0;
+                     left: 0;
+                     width: 100vw;
+                     height: 100vh;
+                     object-fit: cover;
+                     z-index: 99999;
+                     border-radius: 0;
+                     padding: 0;
+                     margin: 0;
+                     border: none;
+                     box-shadow: none;
+                     transform: none;
+              }
+
+              /* Overlay de frases de la intro */
+              .cinema-intro-overlay {
+                     position: fixed;
+                     top: 0;
+                     left: 0;
+                     width: 100vw;
+                     height: 100vh;
+                     z-index: 100000;
+                     pointer-events: none;
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+                     background: transparent;
+              }
+
+              .intro-phrase {
+                     position: absolute;
+                     color: #ffffff;
+                     font-size: clamp(2.2rem, 7vw, 4.5rem);
+                     font-weight: 800;
+                     text-align: center;
+                     opacity: 0;
+                     filter: blur(20px);
+                     transform: translateY(30px);
+                     text-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+                     font-family: 'Outfit', sans-serif !important;
+                     letter-spacing: -1px;
+                     width: 90%;
+                     max-width: 800px;
+                     will-change: opacity, transform, filter;
+              }
+
+              .construction-message {
+                     position: fixed;
+                     top: 50%;
+                     left: 50%;
+                     transform: translate(-50%, -50%);
+                     color: #00d2ff;
+                     font-family: 'Outfit', sans-serif !important;
+                     font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+                     font-weight: 700;
+                     letter-spacing: 3px;
+                     text-transform: uppercase;
+                     opacity: 0;
+                     z-index: 100001;
+                     text-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
+                     pointer-events: none;
+                     will-change: opacity;
+              }
+
+              /* Ocultar elementos en la fase de transición inicial */
+              body.intro-transitioning .pcp-navbar,
+              body.intro-transitioning .hero-info-column,
+              body.intro-transitioning .floating-stat-card,
+              body.intro-transitioning .modern-scroll-indicator,
+              body.intro-transitioning main > *:not(.modern-hero),
+              body.intro-transitioning footer,
+              body.intro-transitioning .flotante-equipo,
+              body.intro-transitioning #heroCanvas {
+                     opacity: 0;
+              }
+
+              /* Filtro de desenfoque y brillo para el video congelado */
+              .tech-video-frame video.video-fullscreen.video-frozen {
+                     filter: blur(10px) brightness(0.4) contrast(1.2) drop-shadow(0 0 50px rgba(0, 91, 168, 0.5));
+                     transition: filter 1s ease;
+              }
+
+              /* Fondo negro de la intro */
+              .intro-bg-overlay {
+                     position: fixed;
+                     top: 0;
+                     left: 0;
+                     width: 100vw;
+                     height: 100vh;
+                     background: #000000;
+                     z-index: 99998;
+                     pointer-events: none;
+                     opacity: 1;
+              }
+              body:not(.intro-running):not(.intro-transitioning) .intro-bg-overlay {
+                     display: none;
+              }
+
+              /* Botón de omitir intro premium */
+              .skip-intro-btn {
+                     position: fixed;
+                     top: 30px;
+                     right: 30px;
+                     background: rgba(255, 255, 255, 0.1);
+                     border: 1px solid rgba(255, 255, 255, 0.25);
+                     color: #fff;
+                     padding: 10px 22px;
+                     font-size: 0.9rem;
+                     font-weight: 600;
+                     border-radius: 50px;
+                     cursor: pointer;
+                     backdrop-filter: blur(10px);
+                     -webkit-backdrop-filter: blur(10px);
+                     z-index: 100002;
+                     transition: all 0.3s ease;
+                     display: inline-flex;
+                     align-items: center;
+                     gap: 6px;
+              }
+              .skip-intro-btn:hover {
+                     background: rgba(255, 255, 255, 0.25);
+                     border-color: rgba(255, 255, 255, 0.5);
+                     transform: translateX(-3px);
+              }
+
+
+        </style>
+
+        <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+</head>
+
+ <body>
+ 
+        <!-- CINEMATIC INTRO OVERLAY -->
+        <div id="intro-bg-overlay" class="intro-bg-overlay"></div>
+        <div id="cinema-intro-overlay" class="cinema-intro-overlay"></div>
+        <div id="construction-message" class="construction-message">
+               Construyendo el ecosistema digital...
+        </div>
+ 
+        <!--NAVBAR-->
+        <nav role="navigation" class="navbar navbar-expand-lg navbar-dark navbar-apple-glass pcp-navbar sticky-top">
+               <div class="container-fluid">
+                      <div class="p-2 d-flex align-items-center">
+                             <a href="https://www.unam.mx/" target="_blank"><img loading="lazy" alt="Logotipo de la UNAM"
+                                           src="img/logos/unam.webp" class="logo-header me-3" /></a>
+                             <a href="https://sdi.unam.mx/" target="_blank" class="d-none d-md-inline-block"><img loading="lazy"
+                                           alt="Logotipo de la SDI - UNAM" src="img/logos/sdi.webp"
+                                           class="logo-header me-3" /></a>
+                             <a href="index.html"><img loading="lazy" alt="Logotipo del proyecto PC Puma"
+                                           src="img/logos/logo-pcpuma.webp" class="logo-header me-3" /></a>
+                             <a href="#" class="d-none d-md-inline-block">
+                                    <img loading="lazy" alt="Logotipo de UNAM 475 años" src="img/logos/Logo_unam475.png"
+                                           class="logo-header" />
+                             </a>
+                      </div>
+                     <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                            class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse"
+                            type="button">
+                            <span class="navbar-toggler-icon"></span>
+                     </button>
+                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                   <li class="nav-item"><a class="nav-link active" href="index.html"><i
+                                                        class="bi bi-house-fill me-1"></i>Inicio</a></li>
+                                   <li class="nav-item"><a class="nav-link" href="paginas/estudiantes.html"><i
+                                                        class="bi bi-laptop me-1"></i>Estudiantes</a></li>
+                                   <li class="nav-item"><a class="nav-link" href="paginas/docentes.html"><i
+                                                        class="bi bi-person-fill me-1"></i>Docentes</a></li>
+                                   <li class="nav-item"><a class="nav-link" href="paginas/admin.html"><i
+                                                        class="bi bi-gear me-1"></i>TI</a></li>
+                                   <li class="nav-item"><a class="nav-link" href="paginas/eventos.html"><i
+                                                        class="bi bi-calendar-event me-1"></i>Eventos</a></li>
+                                   <li class="nav-item"><a class="nav-link" href="paginas/faq.html"><i
+                                                        class="bi bi-question-circle me-1"></i>FAQ</a></li>
+                                   <li class="nav-item"><a class="nav-link" href="paginas/contacto.html"><i
+                                                        class="bi bi-envelope me-1"></i>Contacto</a></li>
+                                   <li class="nav-item"><a class="nav-link" href="paginas/nosotros.html"><i
+                                                        class="bi bi-info-circle me-1"></i>Nosotros</a></li>
+                            </ul>
+                     </div>
+              </div>
+       </nav>        <!--SECCION HERO (Apple Modern Hero)-->
+        <main id="main-content">
+               <section class="modern-hero">
+                      <!-- Canvas de Red de Partículas -->
+                      <canvas id="heroCanvas"></canvas>
+                      
+                      <div class="modern-hero-container">
+                             <!-- Columna Izquierda: Información -->
+                             <div class="hero-info-column" data-aos="fade-right">
+                                    <span class="modern-hero-eyebrow">PC Puma - UNAM</span>
+                                    <h1 class="modern-hero-title">
+                                           Conectando y transformando
+                                           <div class="hero-rotator-container">
+                                                  <span class="rotator-word active">la educación</span>
+                                                  <span class="rotator-word">la docencia</span>
+                                                  <span class="rotator-word">el aprendizaje</span>
+                                                  <span class="rotator-word">tu futuro</span>
+                                           </div>
+                                    </h1>
+                                    <p class="modern-hero-description">
+                                           Fomentamos una cultura digital a través del acceso equitativo a la conectividad y a las tecnologías de la información en toda la comunidad universitaria.
+                                    </p>
+                                    <div class="modern-hero-buttons">
+                                           <a href="https://modulospcpuma.unam.mx" target="_blank" class="btn-pcpuma-animated">
+                                                  <span>Solicita tu equipo</span>
+                                                  <i class="bi bi-arrow-right"></i>
+                                           </a>
+                                           <a href="#que-es" class="modern-btn-secondary">
+                                                  <span>Conoce más</span>
+                                           </a>
+                                    </div>
+                             </div>
+                             
+                             <!-- Columna Derecha: Hub Visual y Tarjetas Flotantes -->
+                             <div class="hero-visual-column" data-aos="fade-left">
+                                    <div class="tech-video-frame-container">
+                                           <!-- Tarjetas Estadísticas Flotantes -->
+                                           <div class="floating-stat-card floating-card-1">
+                                                  <div class="icon-box">
+                                                         <i class="bi bi-wifi"></i>
+                                                  </div>
+                                                  <div class="card-info">
+                                                         <span class="card-number">12,812</span>
+                                                         <span class="card-label">Antenas WiFi</span>
+                                                  </div>
+                                           </div>
+                                           
+                                           <div class="floating-stat-card floating-card-2 accent">
+                                                  <div class="icon-box">
+                                                         <i class="bi bi-laptop"></i>
+                                                  </div>
+                                                  <div class="card-info">
+                                                         <span class="card-number">13,139</span>
+                                                         <span class="card-label">Equipos de préstamo</span>
+                                                  </div>
+                                           </div>
+                                           
+                                           <div class="floating-stat-card floating-card-3">
+                                                  <div class="icon-box">
+                                                         <i class="bi bi-people-fill"></i>
+                                                  </div>
+                                                  <div class="card-info">
+                                                         <span class="card-number">333,777</span>
+                                                         <span class="card-label">Usuarios beneficiados</span>
+                                                  </div>
+                                           </div>
+                                           
+                                           <!-- Frame de Video -->
+                                           <div class="tech-video-frame">
+                                                  <video autoplay muted loop playsinline poster="img/banners/Banner Estudiantes.webp">
+                                                         <source src="videos/Hero.mp4" type="video/mp4">
+                                                         Tu navegador no soporta la reproducción de video.
+                                                  </video>
+                                           </div>
+                                    </div>
+                             </div>
+                      </div>
+                      
+                      <!-- Indicador de Scroll -->
+                      <a href="#que-es" class="modern-scroll-indicator">
+                             <div class="scroll-mouse">
+                                    <div class="scroll-wheel"></div>
+                             </div>
+                             <span class="scroll-text">Desliza</span>
+                      </a>
+               </section>
+
+<!-- SECCIÓN QUÉ ES PC PUMA (Modernizada Glassmorphism) -->
+<section class="py-5 bg-light" id="que-es">
+    <div class="container" data-aos="fade-up">
+        <div class="glass-panel-light p-5">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h2 class="mb-4 fw-bold text-pcpuma">¿Qué es PC Puma?</h2>
+    
+                    <p class="text-justify text-muted" style="font-size: 1.05rem; line-height: 1.75;">
+                        El Programa PC Puma es una iniciativa estratégica de la Universidad
+                        Nacional Autónoma de México que impulsa la transformación digital en la
+                        comunidad universitaria. Su objetivo es fomentar una cultura digital
+                        que garantice el acceso equitativo a la conectividad y a las
+                        herramientas tecnológicas, como condición esencial para fortalecer el
+                        aprendizaje, la docencia y la innovación.
+                        <br><br>
+                        Este proyecto es promovido por la Secretaría de Desarrollo Institucional
+                        a través de la Coordinación de Proyectos Tecnológicos y de Innovación,
+                        desde donde se impulsa la transformación digital con un profundo sentido
+                        social y humano.
+                    </p>
+    
+                    <a class="btn-pcpuma-animated mt-3" href="paginas/nosotros.html">
+                         <span>Conócenos más</span> <i class="bi bi-arrow-right-short"></i>
+                     </a>
+                </div>
+    
+                <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                    <div class="tech-video-frame">
+                        <video preload="auto" class="w-100 rounded-4" autoplay muted loop
+                            playsinline poster="img/banners/Banner Estudiantes.webp">
+                            <source src="videos/Conectando%20UNAM%20Puma.webm" type="video/webm">
+                            Tu navegador no soporta la reproducción de video.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+              <!--SECCION SERVICIOS-->
+              <section class="container-fluid py-5 text-center text-white"
+                     style="position: relative; overflow: hidden; background: radial-gradient(circle at 70% 30%, #032047 0%, #00132b 100%);">
+                     <div
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.8;">
+                            <canvas id="serviciosCanvas" style="width: 100%; height: 100%;"></canvas>
+                     </div>
+                     <div class="container">
+                            <div class="text-center mb-5">
+                                   <h2 class="mb-3 text-white">Servicios de PC Puma</h2>
+                                   <p class="lead text-white-50 col-lg-8 mx-auto">
+                                          Soluciones tecnológicas de <strong>inclusión digital</strong> y
+                                          <strong>transformación digital</strong> para conectarte, aprender y crecer.
+                                   </p>
+                            </div>
+                            <div class="row g-4 justify-content-center">
+                                   <div class="col-lg-4 d-flex align-items-stretch">
+                                          <div class="card card-servicio-mejorado h-100" data-aos="fade-up">
+                                                 <div class="card-body d-flex flex-column">
+                                                        <h6 class="eje-label eje-label-inclusion">EJE: INCLUSIÓN DIGITAL
+                                                        </h6>
+                                                        <div class="servicio-icon icon-conectividad"><i
+                                                                      class="bi bi-wifi"></i></div>
+                                                        <h5 class="card-title">Conectividad <br> Cobertura Total</h5>
+                                                        <p class="card-text flex-grow-1">Navega, investiga y colabora
+                                                               sin interrupciones con la red WiFi PC Puma de alta
+                                                               velocidad en la universidad.</p>
+                                                        <ul class="list-unstyled feature-list mt-auto">
+                                                               <li><i class="bi bi-check-lg text-success"></i> Más de
+                                                                      11,000 puntos de acceso</li>
+                                                               <li><i class="bi bi-check-lg text-success"></i> Red
+                                                                      segura y de alta velocidad</li>
+                                                        </ul>
+                                                 </div>
+                                          </div>
+                                   </div>
+                                   <div class="col-lg-4 d-flex align-items-stretch">
+                                          <div class="card card-servicio-mejorado h-100" data-aos="fade-up"
+                                                 data-aos-delay="100">
+                                                 <div class="card-body d-flex flex-column">
+                                                        <h6 class="eje-label eje-label-inclusion">EJE: INCLUSIÓN DIGITAL
+                                                        </h6>
+                                                        <div class="servicio-icon icon-prestamo"><i
+                                                                      class="bi bi-laptop"></i></div>
+                                                        <h5 class="card-title">Préstamo de Dispositivos</h5>
+                                                        <p class="card-text flex-grow-1">Accede al equipo que necesitas
+                                                               para cada una de tus tareas académicas y potencia tu
+                                                               rendimiento.</p>
+                                                        <ul class="list-unstyled feature-list mt-auto">
+                                                               <li><i class="bi bi-check-lg text-success"></i> Laptops,
+                                                                      iPads y Chromebooks</li>
+                                                               <li><i class="bi bi-check-lg text-success"></i> Módulos y
+                                                                      Lockers de autopréstamo</li>
+                                                        </ul>
+                                                 </div>
+                                          </div>
+                                   </div>
+                                   <div class="col-lg-4 d-flex align-items-stretch">
+                                          <div class="card card-servicio-mejorado h-100" data-aos="fade-up"
+                                                 data-aos-delay="200">
+                                                 <div class="card-body d-flex flex-column">
+                                                        <h6 class="eje-label eje-label-transformacion">EJE:
+                                                               TRANSFORMACIÓN DIGITAL</h6>
+                                                        <div class="servicio-icon icon-capacitacion"><i
+                                                                      class="bi bi-person-video3"></i></div>
+                                                        <h5 class="card-title">Capacitación</h5>
+                                                        <p class="card-text flex-grow-1">Potencia tus habilidades y el
+                                                               uso de nuevas herramientas para la docencia y el
+                                                               aprendizaje.</p>
+                                                        <ul class="list-unstyled feature-list mt-auto">
+                                                               <li><i class="bi bi-check-lg text-success"></i> Talleres
+                                                                      de herramientas digitales</li>
+                                                               <li><i class="bi bi-check-lg text-success"></i> Asesoría
+                                                                      técnica especializada</li>
+                                                        </ul>
+                                                 </div>
+                                          </div>
+                                   </div>
+                            </div>
+                     </div>
+              </section>
+              <!--SECCION COBERTURA NACIONAL MAPA-->
+              <section id="cobertura" class="py-5 bg-light">
+                     <div class="container">
+                            <div class="text-center mb-5">
+                                   <h2 class="mb-3">Cobertura Nacional de la Red WiFi</h2>
+                                   <p class="lead text-muted col-lg-8 mx-auto">Mapa interactivo con la cobertura actual
+                                          de la red PC Puma en las entidades universitarias de todo el país.</p>
+                            </div>
+                            <div>
+                                   <div class="text-center mb-4">
+                                          <div class="btn-group flex-wrap pcp-map-filters" role="group"
+                                                 aria-label="Filtros de entidades">
+                                                 <button class="btn btn-filtro"
+                                                        onclick="marcarBotonActivo('Facultades'); filtrarCapas('Facultades')"
+                                                        type="button">Facultades</button>
+                                                 <button class="btn btn-filtro"
+                                                        onclick="marcarBotonActivo('FES'); filtrarCapas('FES')"
+                                                        type="button">FES</button>
+                                                 <button class="btn btn-filtro"
+                                                        onclick="marcarBotonActivo('ENES'); filtrarCapas('ENES')"
+                                                        type="button">ENES</button>
+                                                 <button class="btn btn-filtro"
+                                                        onclick="marcarBotonActivo('ENP'); filtrarCapas('ENP')"
+                                                        type="button">ENP</button>
+                                                 <button class="btn btn-filtro"
+                                                        onclick="marcarBotonActivo('CCH'); filtrarCapas('CCH')"
+                                                        type="button">CCH</button>
+                                                 <button class="btn btn-filtro"
+                                                        onclick="marcarBotonActivo('Institutos'); filtrarCapas('Institutos')"
+                                                        type="button">Institutos</button>
+                                                 <button class="btn btn-filtro"
+                                                        onclick="marcarBotonActivo('Otros'); filtrarCapas('Otros')"
+                                                        type="button">Otros</button>
+                                                 <button class="btn btn-filtro activo-filtro"
+                                                        onclick="marcarBotonActivo('Todos'); filtrarCapas('Todos')"
+                                                        type="button">Mostrar Todos</button>
+                                          </div>
+                                   </div>
+                                   <div id="map"></div>
+                                   <div class="alert alert-info mt-4 col-lg-8 mx-auto small" role="alert">
+                                          <i class="bi bi-info-circle-fill me-2"></i>
+                                          Para más detalles, haz clic en los íconos del mapa para ver el medio de
+                                          contacto de cada entidad.
+                                   </div>
+                            </div>
+                     </div>
+              </section>
+
+              <!--SECCION ESTADISTICAS-->
+              <section class="py-5" style="background-color: #F5F9FF;">
+                     <div class="container" data-aos="fade-up">
+                            <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+                                   <div class="row g-0 align-items-center">
+                                          <div class="col-lg-6 p-5 text-center text-lg-start">
+                                                 <div class="mb-4">
+                                                        <div class="d-inline-flex align-items-center justify-content-center rounded-circle shadow"
+                                                               style="width:80px; height:80px; background-color:#005ba8;">
+
+                                                               <i class="bi bi-laptop fs-1 text-white"></i>
+
+                                                        </div>
+                                                 </div>
+                                                 <h2 class="fw-bold text-pcpuma mb-3">¿Necesitas un equipo para tus
+                                                        clases?</h2>
+                                                 <p class="lead text-dark mb-4">
+                                                        Solicita el préstamo de <strong>laptops</strong>,
+                                                        <strong>tabletas</strong> o <strong>Chromebooks</strong>
+                                                        y fortalece tu <span class="fw-semibold" style="color:#005ba8;">
+                                                               aprendizaje y enseñanza digital
+                                                        </span>.
+                                                 </p>
+
+                                                 <a class="btn-pcpuma-animated" href="https://modulospcpuma.unam.mx"
+                                                        target="_blank">
+                                                        <i class="bi bi-box-arrow-up-right"></i>
+                                                        <span>Solicita tu equipo</span>
+                                                 </a>
+                                          </div>
+                                          <div class="col-lg-6 text-center bg-light p-4">
+                                                 <h5 class="fw-bold text-dark mb-3">¿Cómo solicitar tu equipo paso a paso?</h5>
+                                                 <div class="ratio ratio-16x9 rounded shadow-sm">
+                                                        <video class="w-100 rounded" autoplay muted loop playsinline
+                                                               poster="img/banners/Banner Estudiantes.webp">
+                                                               <source src="videos/Pasos%20para%20pr%C3%A9stamo%20general.webm"
+                                                                      type="video/webm">
+                                                               Tu navegador no soporta la reproducción de video.
+                                                        </video>
+                                                 </div>
+                                                 <p class="small text-muted mt-2">Tutorial oficial del proceso de
+                                                        registro y préstamo.</p>
+                                          </div>
+                                   </div>
+                            </div>
+                            <div class="mt-4 text-center">
+                                   <div class="p-4 rounded-3 shadow-sm bg-white border border-2 border-warning d-inline-block"
+                                          style="max-width: 900px;">
+                                          <p class="mb-0 text-dark small">
+                                                 <i class="bi bi-info-circle-fill text-warning me-2"></i>
+                                                 La <strong>disponibilidad de equipos</strong> y los
+                                                 <strong>lineamientos de uso</strong> pueden variar en cada entidad.
+                                                 Consulta directamente en tu módulo PC Puma para conocer los detalles
+                                                 aplicables en tu facultad, escuela, instituto o plantel.
+                                          </p>
+                                   </div>
+                            </div>
+                     </div>
+              </section>
+
+              <!-- EVENTOS RECIENTES -->
+              <section class="py-5 bg-white" id="eventos">
+                     <div class="container">
+                            <div class="text-center mb-5">
+                                   <h2 class="fw-bold text-pcpuma" data-aos="fade-up">
+                                          Convocatorias y eventos recientes
+                                   </h2>
+
+                                   <p class="text-muted col-lg-7 mx-auto" data-aos="fade-up" data-aos-delay="100">
+                                          Descubre los próximos cursos, talleres, webinars y actividades organizadas
+                                          por PC Puma para fortalecer las competencias digitales de la comunidad
+                                          universitaria.
+                                   </p>
+
+                            </div>
+
+                            <div class="row justify-content-center gx-4 gy-4" id="eventos-recientes"></div>
+
+                            <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="300">
+                                   <a class="btn-pcpuma-animated" href="paginas/eventos.html">
+                                          <span>Ver todos los eventos</span>
+                                   </a>
+                            </div>
+
+                     </div>
+              </section>
+
+              <!--PROGRAMA-->
+              <section id="perfiles-comunidad" class="container py-5">
+                     <div class="text-center mb-5" data-aos="fade-up">
+                            <h2 class="mb-3">Un Programa para Toda la Comunidad</h2>
+                            <p class="lead text-muted col-lg-8 mx-auto">Descubre los recursos, herramientas y beneficios
+                                   que PC Puma tiene para ti</p>
+                     </div>
+                     <div class="row g-4">
+                            <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up">
+                                   <div class="card-perfil-unificado shadow">
+                                          <div class="card-perfil-bg"
+                                                 style="background-image: url('img/fotos/estudiantes.webp');"></div>
+                                          <div class="card-perfil-overlay">
+                                                 <div class="card-body text-white text-center">
+                                                        <i class="bi bi-mortarboard fs-1 mb-3"></i>
+                                                        <h4 class="card-title text-white">Estudiantes</h4>
+                                                        <p class="card-text">Acceso a préstamo de laptops, conectividad
+                                                               móvil y espacios de estudio equipados.</p>
+                                                        <a href="paginas/estudiantes.html"
+                                                               class="btn-pcpuma-animated stretched-link"><span>Ver beneficios</span></a>
+                                                 </div>
+                                          </div>
+                                   </div>
+                            </div>
+                            <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                                   <div class="card-perfil-unificado shadow">
+                                          <div class="card-perfil-bg"
+                                                 style="background-image: url('img/fotos/docentes.webp');"></div>
+                                          <div class="card-perfil-overlay">
+                                                 <div class="card-body text-white text-center">
+                                                        <i class="bi bi-easel fs-1 mb-3"></i>
+                                                        <h4 class="card-title text-white">Docentes</h4>
+                                                        <p class="card-text">Recursos digitales, formación docente e
+                                                               innovación para tus clases.</p>
+                                                        <a href="paginas/docentes.html"
+                                                               class="btn-pcpuma-animated stretched-link"><span>Descubrir herramientas</span></a>
+                                                 </div>
+                                          </div>
+                                   </div>
+                            </div>
+                            <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                                   <div class="card-perfil-unificado shadow">
+                                          <div class="card-perfil-bg" style="background-image: url('img/fotos/Admin.webp');">
+                                          </div>
+                                          <div class="card-perfil-overlay">
+                                                 <div class="card-body text-white text-center">
+                                                        <i class="bi bi-gear fs-1 mb-3"></i>
+                                                        <h4 class="card-title text-white">Responsables TI</h4>
+                                                        <p class="card-text">Infraestructura de red, soporte tcnico y
+                                                               guas de acompaamiento.</p>
+                                                        <a href="paginas/admin.html"
+                                                               class="btn-pcpuma-animated stretched-link"><span>Acceder al panel</span></a>
+                                                 </div>
+                                          </div>
+                                   </div>
+                            </div>
+                     </div>
+              </section>
+
+              <!-- SECCIÓN CIFRAS INTERACTIVAS (HEXÁGONO Y CLICK-TO-REVEAL) -->
+               <section class="py-5 cifras-pcpuma-section" style="background-color: #F5F9FF; overflow: hidden; position: relative;">
+                    <div class="container" data-aos="fade-up">
+                           <div class="text-center mb-3">
+                                  <h2 class="fw-bold text-pcpuma">
+                                         Cifras del Programa PC Puma 2025
+                                  </h2>
+                                  <p class="text-muted col-lg-7 mx-auto mb-0">
+                                         Indicadores que reflejan el impacto del programa en la comunidad universitaria, impulsando la conectividad, el acceso a dispositivos y el fortalecimiento de la cultura digital
+                                  </p>
+                           </div>
+
+                            <!-- Contenedor del Hexágono Interactivo (Desktop) / Rejilla Premium (Mobile) -->
+                            <div class="hexagon-wrapper-outer">
+                                   <!-- Arco decorativo de fondo -->
+                                   <svg class="hexagon-lines-svg d-none d-lg-block" viewBox="0 0 1000 480" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2;">
+                                          <path d="M 358 324 Q 500 420 642 324" fill="none" stroke="rgba(0, 91, 168, 0.12)" stroke-width="2" stroke-dasharray="6 4" />
+                                   </svg>
+                
+                                   <div class="hexagon-container d-none d-lg-block">
+                                          <!-- Centro: Nuestro Alcance -->
+                                          <div class="hexagon-node node-center">
+                                                 <svg class="hexagon-svg" viewBox="0 0 200 174">
+                                                        <defs>
+                                                               <linearGradient id="centerHexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                                      <stop offset="0%" stop-color="#005BA8" />
+                                                                      <stop offset="100%" stop-color="#001C38" />
+                                                               </linearGradient>
+                                                        </defs>
+                                                        <polygon points="50,4 150,4 196,87 150,170 50,170 4,87" fill="url(#centerHexGrad)" stroke="#FFD700" stroke-width="3" />
+                                                 </svg>
+                                                 <div class="hexagon-content text-white">
+                                                        <div class="cifra-icon text-warning mb-2" style="font-size: 2rem;"><i class="bi bi-globe"></i></div>
+                                                        <div class="cifra-label text-warning-emphasis fw-bold" style="font-size: 0.95rem; color: #FFD700 !important; letter-spacing: 1px;">Nuestro<br>Alcance</div>
+                                                 </div>
+                                          </div>
+                
+                                          <!-- 6 Nodos de cifras distribuidos en Honeycomb -->
+                                          <!-- Nodo 0: Antenas (Far Left) -->
+                                          <div class="hexagon-node node-0 cifra-card-glass" data-index="0" data-target="12812" data-revealed="false">
+                                                 <svg class="hexagon-svg" viewBox="0 0 200 174">
+                                                        <polygon points="50,4 150,4 196,87 150,170 50,170 4,87" />
+                                                 </svg>
+                                                 <div class="hexagon-content">
+                                                        <div class="cifra-icon"><i class="bi bi-wifi"></i></div>
+                                                        <div class="cifra-number-container" style="display: none;"><span class="cifra-number" id="cifra_antenas">0</span></div>
+                                                        <div class="cifra-label">Antenas WiFi</div>
+                                                        <div class="cifra-reveal-hint"><i class="bi bi-eye"></i> Revelar</div>
+                                                 </div>
+                                          </div>
+                
+                                          <!-- Nodo 1: Dispositivos (Mid-Left Top) -->
+                                          <div class="hexagon-node node-1 cifra-card-glass" data-index="1" data-target="13291" data-revealed="false">
+                                                 <svg class="hexagon-svg" viewBox="0 0 200 174">
+                                                        <polygon points="50,4 150,4 196,87 150,170 50,170 4,87" />
+                                                 </svg>
+                                                 <div class="hexagon-content">
+                                                        <div class="cifra-icon"><i class="bi bi-laptop"></i></div>
+                                                        <div class="cifra-number-container" style="display: none;"><span class="cifra-number" id="cifra_dispositivos">0</span></div>
+                                                        <div class="cifra-label">Dispositivos</div>
+                                                        <div class="cifra-reveal-hint"><i class="bi bi-eye"></i> Revelar</div>
+                                                 </div>
+                                          </div>
+                
+                                          <!-- Nodo 2: Espacios Conectados (Mid-Left Bottom) -->
+                                          <div class="hexagon-node node-2 cifra-card-glass" data-index="2" data-target="6968" data-revealed="false">
+                                                 <svg class="hexagon-svg" viewBox="0 0 200 174">
+                                                        <polygon points="50,4 150,4 196,87 150,170 50,170 4,87" />
+                                                 </svg>
+                                                 <div class="hexagon-content">
+                                                        <div class="cifra-icon"><i class="bi bi-building"></i></div>
+                                                        <div class="cifra-number-container" style="display: none;"><span class="cifra-number" id="cifra_aulas">0</span></div>
+                                                        <div class="cifra-label">Espacios Conectados</div>
+                                                        <div class="cifra-reveal-hint"><i class="bi bi-eye"></i> Revelar</div>
+                                                 </div>
+                                          </div>
+                
+                                          <!-- Nodo 3: Préstamos (Mid-Right Top) -->
+                                          <div class="hexagon-node node-3 cifra-card-glass" data-index="3" data-target="285132" data-revealed="false">
+                                                 <svg class="hexagon-svg" viewBox="0 0 200 174">
+                                                        <polygon points="50,4 150,4 196,87 150,170 50,170 4,87" />
+                                                 </svg>
+                                                 <div class="hexagon-content">
+                                                        <div class="cifra-icon"><i class="bi bi-check-circle"></i></div>
+                                                        <div class="cifra-number-container" style="display: none;"><span class="cifra-number" id="cifra_prestamos">0</span></div>
+                                                        <div class="cifra-label">Préstamos realizados</div>
+                                                        <div class="cifra-reveal-hint"><i class="bi bi-eye"></i> Revelar</div>
+                                                 </div>
+                                          </div>
+                
+                                          <!-- Nodo 4: Usuarios (Mid-Right Bottom) -->
+                                          <div class="hexagon-node node-4 cifra-card-glass" data-index="4" data-target="333777" data-revealed="false">
+                                                 <svg class="hexagon-svg" viewBox="0 0 200 174">
+                                                        <polygon points="50,4 150,4 196,87 150,170 50,170 4,87" />
+                                                 </svg>
+                                                 <div class="hexagon-content">
+                                                        <div class="cifra-icon"><i class="bi bi-people-fill"></i></div>
+                                                        <div class="cifra-number-container" style="display: none;"><span class="cifra-number" id="cifra_usuarios">0</span></div>
+                                                        <div class="cifra-label">Usuarios beneficiados</div>
+                                                        <div class="cifra-reveal-hint"><i class="bi bi-eye"></i> Revelar</div>
+                                                 </div>
+                                          </div>
+                
+                                          <!-- Nodo 5: Entidades (Far Right) -->
+                                          <div class="hexagon-node node-5 cifra-card-glass" data-index="5" data-target="71" data-revealed="false">
+                                                 <svg class="hexagon-svg" viewBox="0 0 200 174">
+                                                        <polygon points="50,4 150,4 196,87 150,170 50,170 4,87" />
+                                                 </svg>
+                                                 <div class="hexagon-content">
+                                                        <div class="cifra-icon"><i class="bi bi-mortarboard-fill"></i></div>
+                                                        <div class="cifra-number-container" style="display: none;"><span class="cifra-number" id="cifra_entidades">0</span></div>
+                                                        <div class="cifra-label">Entidades participantes</div>
+                                                        <div class="cifra-reveal-hint"><i class="bi bi-eye"></i> Revelar</div>
+                                                 </div>
+                                          </div>
+                
+                                          <!-- 10 Años de Trayectoria (Bajo el Centro) -->
+                                          <div class="cifra-experience-container text-center" style="position: absolute; left: 50%; top: 88%; transform: translate(-50%, -50%); z-index: 5;">
+                                                 <img src="img/logos/10-anos.png" alt="10 Años de Trayectoria" style="max-width: 185px; height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.08));">
+                                          </div>
+                                   </div>
+                
+                                   <!-- Versión móvil (Grid simplificado y responsivo) -->
+                                   <div class="mobile-stats-grid d-block d-lg-none">
+                                          <div class="mobile-stats-header-card mb-4 p-3 glass-panel-dark text-center" style="border-radius: 16px;">
+                                                 <i class="bi bi-shield-shaded fs-3 text-warning"></i>
+                                                 <h4 class="text-white mt-2 mb-0">PC Puma: Nuestro Alcance</h4> 
+                                          </div>
+                                          <div class="row g-3">
+                                                 <!-- Card 0: Antenas -->
+                                                 <div class="col-md-6 col-12">
+                                                        <div class="cifra-card-glass mobile-cifra-card p-4 text-center" data-index="0" data-target="12812" data-revealed="false">
+                                                               <div class="cifra-icon mb-2"><i class="bi bi-wifi fs-2 text-primary"></i></div>
+                                                               <div class="cifra-label fw-bold text-dark">Antenas WiFi</div>
+                                                               <div class="cifra-reveal-hint mt-2 text-muted"><i class="bi bi-eye"></i> Revelar</div>
+                                                               <div class="cifra-number-container mt-2" style="display:none;"><span class="cifra-number display-6 fw-bold text-primary" id="cifra_antenas_mob">0</span></div>
+                                                        </div>
+                                                 </div>
+                                                 <!-- Card 1: Dispositivos -->
+                                                 <div class="col-md-6 col-12">
+                                                        <div class="cifra-card-glass mobile-cifra-card p-4 text-center" data-index="1" data-target="13291" data-revealed="false">
+                                                               <div class="cifra-icon mb-2"><i class="bi bi-laptop fs-2 text-primary"></i></div>
+                                                               <div class="cifra-label fw-bold text-dark">Dispositivos</div>
+                                                               <div class="cifra-reveal-hint mt-2 text-muted"><i class="bi bi-eye"></i> Revelar</div>
+                                                               <div class="cifra-number-container mt-2" style="display:none;"><span class="cifra-number display-6 fw-bold text-primary" id="cifra_dispositivos_mob">0</span></div>
+                                                        </div>
+                                                 </div>
+                                                 <!-- Card 2: Préstamos -->
+                                                 <div class="col-md-6 col-12">
+                                                        <div class="cifra-card-glass mobile-cifra-card p-4 text-center" data-index="3" data-target="285132" data-revealed="false">
+                                                               <div class="cifra-icon mb-2"><i class="bi bi-check-circle fs-2 text-primary"></i></div>
+                                                               <div class="cifra-label fw-bold text-dark">Préstamos realizados</div>
+                                                               <div class="cifra-reveal-hint mt-2 text-muted"><i class="bi bi-eye"></i> Revelar</div>
+                                                               <div class="cifra-number-container mt-2" style="display:none;"><span class="cifra-number display-6 fw-bold text-primary" id="cifra_prestamos_mob">0</span></div>
+                                                        </div>
+                                                 </div>
+                                                 <!-- Card 3: Aulas -->
+                                                 <div class="col-md-6 col-12">
+                                                        <div class="cifra-card-glass mobile-cifra-card p-4 text-center" data-index="2" data-target="6968" data-revealed="false">
+                                                               <div class="cifra-icon mb-2"><i class="bi bi-building fs-2 text-primary"></i></div>
+                                                               <div class="cifra-label fw-bold text-dark">Espacios Conectados</div>
+                                                               <div class="cifra-reveal-hint mt-2 text-muted"><i class="bi bi-eye"></i> Revelar</div>
+                                                               <div class="cifra-number-container mt-2" style="display:none;"><span class="cifra-number display-6 fw-bold text-primary" id="cifra_aulas_mob">0</span></div>
+                                                        </div>
+                                                 </div>
+                                                 <!-- Card 4: Usuarios -->
+                                                 <div class="col-md-6 col-12">
+                                                        <div class="cifra-card-glass mobile-cifra-card p-4 text-center" data-index="4" data-target="333777" data-revealed="false">
+                                                               <div class="cifra-icon mb-2"><i class="bi bi-people-fill fs-2 text-primary"></i></div>
+                                                               <div class="cifra-label fw-bold text-dark">Usuarios beneficiados</div>
+                                                               <div class="cifra-reveal-hint mt-2 text-muted"><i class="bi bi-eye"></i> Revelar</div>
+                                                               <div class="cifra-number-container mt-2" style="display:none;"><span class="cifra-number display-6 fw-bold text-primary" id="cifra_usuarios_mob">0</span></div>
+                                                        </div>
+                                                 </div>
+                                                 <!-- Card 5: Entidades -->
+                                                 <div class="col-md-6 col-12">
+                                                        <div class="cifra-card-glass mobile-cifra-card p-4 text-center" data-index="5" data-target="71" data-revealed="false">
+                                                               <div class="cifra-icon mb-2"><i class="bi bi-mortarboard-fill fs-2 text-primary"></i></div>
+                                                               <div class="cifra-label fw-bold text-dark">Entidades participantes</div>
+                                                               <div class="cifra-reveal-hint mt-2 text-muted"><i class="bi bi-eye"></i> Revelar</div>
+                                                               <div class="cifra-number-container mt-2" style="display:none;"><span class="cifra-number display-6 fw-bold text-primary" id="cifra_entidades_mob">0</span></div>
+                                                        </div>
+                                                 </div>
+                                                 <!-- Card 6: Trayectoria -->
+                                                 <div class="col-12 mt-2">
+                                                        <div class="cifra-card-glass mobile-cifra-card p-3 text-center" style="border-radius: 16px; display: flex; justify-content: center; align-items: center; min-height: 110px;">
+                                                               <img src="img/logos/10-anos.png" alt="10 Años de Trayectoria" style="max-width: 170px; height: auto; display: block; margin: 0 auto;">
+                                                        </div>
+                                                 </div>
+                                          </div>
+                                   </div>
+                           </div>
+               
+                           <!-- Datos Consultados / Pie de Cifras -->
+                           <div class="alert alert-info mt-4 col-lg-5 mx-auto small text-center" role="alert" style="border-radius: 12px; border: 1px solid rgba(0, 91, 168, 0.15); background: rgba(245, 249, 255, 0.85);">
+                                  <i class="bi bi-info-circle-fill me-2 text-primary"></i>
+                                  Datos consultados en las Series Estadísticas UNAM 2025.
+                           </div>
+                    </div>
+               </section>
+
+              <!-- Seccin de Servicios Sociales -->
+              <section class="py-5 bg-light" id="servicios-sociales">
+                     <div class="container">
+
+                            <div class="text-center mb-5">
+                                   <h2 class="fw-bold text-pcpuma">Convocatorias de Servicio Social</h2>
+                                   <p class="text-muted col-lg-7 mx-auto">
+                                          Participa en proyectos de innovación tecnológica, análisis de datos y
+                                          transformación digital dentro del programa PC Puma.
+                                   </p>
+                            </div>
+
+                            <div class="row g-4 justify-content-center" id="servicioSocialContainer"></div>
+
+                     </div>
+              </section>
+
+              <section id="directorio-entidades"
+                     class="container-fluid py-5 text-center text-white position-relative overflow-hidden"
+                     style="background-color: #005BA8; min-height: 700px;">
+
+                     <!-- Fondo animado -->
+                     <canvas id="networkCanvas"
+                            style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0; opacity:0.8;">
+                     </canvas>
+
+                     <!-- Contenido -->
+                     <div class="container position-relative" style="z-index:1;">
+
+                            <div class="text-center mb-5">
+
+                                   <h2 class="fw-bold text-white" data-aos="fade-down">
+                                          Entidades que integran el programa
+                                   </h2>
+
+                                   <p class="text-white-50 col-lg-7 mx-auto" data-aos="fade-down" data-aos-delay="100">
+                                          PC Puma se encuentra presente en facultades, escuelas, institutos y centros
+                                          de investigación de la UNAM, fortaleciendo la conectividad y el acceso a
+                                          tecnologías digitales en toda la comunidad universitaria.
+                                   </p>
+
+                            </div>
+
+                            <!-- Grid de entidades vertical con Ver Más -->
+                            <div class="entidades-vertical-container mt-4" data-aos="fade-up">
+                                   <div id="entidades-grid" class="row justify-content-center g-4 px-2"></div>
+                                   <div class="text-center mt-5" id="ver-mas-container">
+                                          <button class="btn btn-warning rounded-pill px-5 py-2 fw-bold shadow-sm" id="btn-ver-mas-entidades" aria-expanded="false" style="border: 2px solid #000; box-shadow: 0 4px 0 0 #000; transition: all 0.2s ease;">
+                                                 Ver más entidades <i class="bi bi-chevron-down ms-1"></i>
+                                          </button>
+                                   </div>
+                            </div>
+
+                     </div>
+              </section>
+
+              <!-- MODAL DINÁMICO ENTIDADES -->
+              <div class="modal fade" id="entidadModal" tabindex="-1">
+                     <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+
+                                   <div class="modal-header bg-pcpuma">
+                                          <h5 class="modal-title text-white" id="modalTitulo"></h5>
+                                          <button type="button" class="btn-close btn-close-white"
+                                                 data-bs-dismiss="modal">
+                                          </button>
+                                   </div>
+
+                                   <div class="modal-body" id="modalContenido">
+                                   </div>
+
+                            </div>
+                     </div>
+              </div>
+
+              <!--SEPARACION-->
+              <div class="modal fade" id="modal1" tabindex="-1">
+              </div>
+              <div class="modal fade" id="modal40" tabindex="-1">
+              </div>
+       </main>
+
+       <!-- PIE DE PÁGINA  -->
+       <footer class="footer bg-pcpuma text-white" role="contentinfo">
+              <div class="container pt-4 pb-3">
+
+                     <div class="row align-items-center">
+
+                            <!-- COLUMNA 1 : LOGO -->
+                            <div class="col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+                                   <img src="img/logos/Logo UNGU.png" alt="Universidad Nacional Autónoma de México"
+                                          class="logo-unam-footer">
+                            </div>
+
+
+                            <!-- COLUMNA 2 : INFORMACIÓN LEGAL -->
+                            <div class="col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+
+                                   <p class="fw-bold mb-3 text-white">© 2026 PC Puma - UNAM</p>
+
+                                   <p class="small mb-3">
+                                          Hecho en México. Universidad Nacional Autónoma de México (UNAM).
+                                          Todos los derechos reservados 2026.
+                                   </p>
+
+                                   <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+
+                                          <a href="https://www.facebook.com/UNAM.PCPuma/" target="_blank">
+                                                 <i class="bi bi-facebook fs-5 text-white"></i>
+                                          </a>
+
+                                          <a href="https://twitter.com/PCPuma_UNAM" target="_blank">
+                                                 <i class="bi bi-twitter-x fs-5 text-white"></i>
+                                          </a>
+
+                                          <a href="https://www.instagram.com/pc_puma/" target="_blank">
+                                                 <i class="bi bi-instagram fs-5 text-white"></i>
+                                          </a>
+
+                                          <a href="https://www.tiktok.com/@contactopcpuma" target="_blank">
+                                                 <i class="bi bi-tiktok fs-5 text-white"></i>
+                                          </a>
+
+                                          <a href="https://www.youtube.com/@ContactoPCPUMA" target="_blank">
+                                                 <i class="bi bi-youtube fs-5 text-white"></i>
+                                          </a>
+
+                                   </div>
+
+                            </div>
+
+
+                            <!-- COLUMNA 3 : DOCUMENTOS -->
+                            <div class="col-lg-3 text-start mb-3 mb-lg-0">
+
+                                   <h6 class="fw-bold mb-3 text-white">LIGAS DE INTERÉS</h6>
+
+                                   <ul class="list-unstyled footer-links">
+
+                                          <li>
+                                                 <a href="archivos/Lineamientos_Generales_PCPUMA.pdf" target="_blank">
+                                                        Lineamientos Generales
+                                                 </a>
+                                          </li>
+
+                                          <li>
+                                                 <a href="archivos/AvisoPrivacidad_Simplificado_ProyectoPCPUMA.pdf"
+                                                        target="_blank">
+                                                        Aviso de Privacidad Simplificado
+                                                 </a>
+                                          </li>
+
+                                          <li>
+                                                 <a href="archivos/AvisoPrivacidad_Integral_ProyectoPCPUMA.pdf"
+                                                        target="_blank">
+                                                        Aviso de Privacidad Integral
+                                                 </a>
+                                          </li>
+
+                                          <li>
+                                                 <a href="paginas/creditos.html">
+                                                        Créditos
+                                                 </a>
+                                          </li>
+
+                                   </ul>
+
+                            </div>
+
+
+                            <!-- COLUMNA 4 : LOGO -->
+                            <div class="col-lg-3 text-center text-lg-end">
+                                   <img src="img/logos/Logo_unam475.png" alt="Universidad Nacional Autónoma de México"
+                                          class="logo-unam-footer">
+                            </div>
+
+                     </div>
+              </div>
+       </footer>
+
+
+
+       <!-- BOTÓN FLOTANTE ANIMADO PC PUMA -->
+       <style>
+              .flotante-equipo {
+                     position: fixed;
+                     bottom: 30px;
+                     right: 30px;
+                     padding: 1.1em 2em;
+                     background-color: #ecd448;
+                     /* Amarillo PC Puma */
+                     color: #131313;
+                     font-weight: bold;
+                     font-size: 1rem;
+                     border: 2px solid #000;
+                     border-radius: 50px;
+                     box-shadow: 0 4px 0 0 #000;
+                     text-decoration: none;
+                     cursor: pointer;
+                     overflow: hidden;
+                     transition: all 0.3s ease;
+                     z-index: 9999;
+                     display: inline-flex;
+                     align-items: center;
+                     justify-content: center;
+              }
+
+              .flotante-equipo::before {
+                     content: "";
+                     position: absolute;
+                     width: 120px;
+                     height: 140%;
+                     background-color: #ff6700;
+                     top: 50%;
+                     left: -150px;
+                     transform: skewX(30deg) translateY(-50%);
+                     transition: all 0.5s ease;
+                     z-index: 1;
+              }
+
+              .flotante-equipo span {
+                     position: relative;
+                     z-index: 2;
+              }
+
+              .flotante-equipo:hover {
+                     background-color: #4cc9f0;
+                     color: #fff;
+                     box-shadow: 0 4px 0 0 #0d3b66;
+              }
+
+              .flotante-equipo:hover::before {
+                     left: 120%;
+              }
+
+              .flotante-equipo:active {
+                     transform: scale(0.92);
+              }
+       </style>
+
+       <a class="flotante-equipo" href="https://modulospcpuma.unam.mx" target="_blank">
+              <span>Solicita tu equipo</span>
+       </a>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+       <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+       <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" defer></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+       <script src="js/hero-animations.js" defer></script>
+       <script src="js/network-bg.js" defer></script>
+       <script src="js/entidades_index.js"></script>
+       <script>
+               window.cbConfig = { chatId: "95e57fa3-a653-4e2d-896b-d8d7d408a649" };
+               window.loadChatbitWidget = function () {
+                      if (document.getElementById("chatbit-script")) return;
+                      const script = document.createElement("script");
+                      script.id = "chatbit-script";
+                      script.src = "https://app.chatbit.co/embed.min.js";
+                      script.defer = true;
+                      document.body.appendChild(script);
+               };
+               
+               window.addEventListener("load", () => {
+                      const isIntroSeen = localStorage.getItem("pcpuma_intro_seen");
+                      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                      
+                      // Si la intro ya se vio o se prefiere reducción de movimiento, cargar chat normalmente
+                      if (isIntroSeen || prefersReducedMotion) {
+                             setTimeout(window.loadChatbitWidget, 3000);
+                      }
+               });
+        </script>
+       <script defer>
+              document.addEventListener("DOMContentLoaded", function () {
+                     AOS.init({ duration: 800, once: true });
+
+                     function animateValue(element, start, end, duration) {
+                            if (!element) return;
+                            let startTimestamp = null;
+                            const step = (timestamp) => {
+                                   if (!startTimestamp) startTimestamp = timestamp;
+                                   const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                                   const value = Math.floor(progress * (end - start) + start);
+                                   element.textContent = value.toLocaleString('es-MX');
+                                   if (progress < 1) { window.requestAnimationFrame(step); }
+                            };
+                            window.requestAnimationFrame(step);
+                     }
+
+                     // Lógica interactiva para revelar cifras al hacer click
+                     document.querySelectorAll('.cifra-card-glass').forEach(card => {
+                            card.addEventListener('click', function () {
+                                   if (this.getAttribute('data-revealed') === 'true') return;
+
+                                   this.setAttribute('data-revealed', 'true');
+                                   this.classList.add('revealed');
+
+                                   // Ocultar hint de revelar
+                                   const hint = this.querySelector('.cifra-reveal-hint');
+                                   if (hint) {
+                                          hint.style.display = 'none';
+                                   }
+
+                                   // Mostrar contenedor del número
+                                   const numContainer = this.querySelector('.cifra-number-container');
+                                   if (numContainer) {
+                                          numContainer.style.display = 'block';
+                                   }
+
+                                   // Obtener el elemento del número y animar
+                                   const numEl = this.querySelector('.cifra-number');
+                                   const targetVal = parseInt(this.getAttribute('data-target'), 10);
+                                   animateValue(numEl, 0, targetVal, 1500);
+
+                                   // Iluminar la línea de conexión en versión Desktop
+                                   const idx = this.getAttribute('data-index');
+                                   const line = document.getElementById(`line-cifra-${idx}`);
+                                   if (line) {
+                                          line.classList.add('active');
+                                   }
+
+                                   // Si existe una versión correspondiente (móvil o desktop), revelarla también de forma síncrona
+                                   const isMobile = this.classList.contains('mobile-cifra-card');
+                                   const suffix = isMobile ? '' : '_mob';
+                                   const siblingId = numEl.id + suffix;
+                                   const siblingEl = document.getElementById(siblingId);
+                                   if (siblingEl) {
+                                          const siblingCard = siblingEl.closest('.cifra-card-glass');
+                                          if (siblingCard && siblingCard.getAttribute('data-revealed') !== 'true') {
+                                                 siblingCard.setAttribute('data-revealed', 'true');
+                                                 siblingCard.classList.add('revealed');
+                                                 const sibHint = siblingCard.querySelector('.cifra-reveal-hint');
+                                                 if (sibHint) sibHint.style.display = 'none';
+                                                 const sibContainer = siblingCard.querySelector('.cifra-number-container');
+                                                 if (sibContainer) sibContainer.style.display = 'block';
+                                                 animateValue(siblingEl, 0, targetVal, 1500);
+                                          }
+                                   }
+                            });
+                     });
+
+                     // --- LGICA PARA EL MAPA DE COBERTURA (CORREGIDA) ---
+                     // --- LGICA PARA EL MAPA DE COBERTURA (CORREGIDA) ---
+                     (function initMap() {
+                            const mapElement = document.getElementById('map');
+                            if (!mapElement) return;
+
+                            const map = L.map('map').setView([23.6345, -102.5528], 5);
+                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map);
+                            setTimeout(() => map.invalidateSize(), 400);
+ 
+                            const entidadesMapa = [
+                                   { 'nombre': 'Instituto de Física', 'coords': [19.325474610603433, -99.17579572194856], 'logo': 'img/logos/IFISICA.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Instituto de Física', 'correo': 'institutodefisica@pcpuma.unam.mx', 'web': 'https://w2.fisica.unam.mx/bif/info/show_pcpuma' },
+                                   { 'nombre': 'Instituto de Biología', 'coords': [19.320983296784707, -99.19356584697681], 'logo': 'img/logos/IBIOLOGIA.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Instituto de Biología', 'correo': 'institutodebiologia@pcpuma.unam.mx', 'web': 'https://www.ib.unam.mx/' },
+                                   { 'nombre': 'Instituto de Geofísica', 'coords': [19.326925198678282, -99.17573781685239], 'logo': 'img/fotos/default.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Instituto de Geofísica', 'correo': 'institutodegeofisica@pcpuma.unam.mx', 'web': 'https://www.geofisica.unam.mx/' },
+                                   { 'nombre': 'Instituto de Investigaciones Jurídicas', 'coords': [19.31637350580925, -99.17960214141897], 'logo': 'img/fotos/default.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Instituto de Investigaciones Jurídicas', 'correo': 'institutodeinvestigacionesjuridicas@pcpuma.unam.mx', 'web': 'https://www.juridicas.unam.mx/' },
+                                   { 'nombre': 'FES Zaragoza', 'coords': [19.38499406249111, -99.03683219671362], 'logo': 'img/logos/FESZARAGOZA.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Zaragoza', 'correo': 'feszaragoza@pcpuma.unam.mx' },
+                                   { 'nombre': 'FES Iztacala', 'coords': [19.525524395165338, -99.1875494382314], 'logo': 'img/logos/FESIZTACALA.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Iztacala', 'correo': 'fesiztacala@pcpuma.unam.mx' },
+                                   { 'nombre': 'FES Cuautitlán', 'coords': [19.637238884322016, -99.20675098531684], 'logo': 'img/logos/FESCUAUTITLAN.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Cuautitlán', 'correo': 'fescuautitlan@pcpuma.unam.mx' },
+                                   { 'nombre': 'FES Aragón', 'coords': [19.474905277041735, -99.04261623162851], 'logo': 'img/logos/FESARAGON.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Aragón', 'correo': 'fesaragon@pcpuma.unam.mx' },
+                                   { 'nombre': 'FES Acatlán', 'coords': [19.483980490981725, -99.24608134459692], 'logo': 'img/logos/FESACATLAN.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Acatlán', 'correo': 'fesacatlan@pcpuma.unam.mx', 'web': 'https://www.acatlan.unam.mx/pcpuma/' },
+                                   { 'nombre': 'Facultad de Psicología', 'coords': [19.335371630096684, -99.18820538616221], 'logo': 'img/logos/FPSICOLOGIA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Psicología', 'correo': 'facultaddepsicologia@pcpuma.unam.mx' },
+                                   { 'nombre': 'Facultad de Odontología', 'coords': [19.33469445030701, -99.1813586418355], 'logo': 'img/logos/FODONTOLOGIA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Odontología', 'correo': 'facultaddeodontologia@pcpuma.unam.mx' },
+                                   { 'nombre': 'Facultad de Másica', 'coords': [19.354114563479538, -99.15338310520872], 'logo': 'img/logos/FMUSICA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Másica', 'correo': 'facultaddemusica@pcpuma.unam.mx' },
+                                   { 'nombre': 'Facultad de Medicina Veterinaria y Zootecnia', 'coords': [19.32966649083588, -99.17697108137068], 'logo': 'img/logos/FMVZ.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Medicina Veterinaria y Zootecnia', 'correo': 'facultaddemedicinaveterinariayzootecnia@pcpuma.unam.mx' },
+                                   { 'nombre': 'Facultad de Medicina', 'coords': [19.33319681263341, -99.18012782835417], 'logo': 'img/logos/FMEDICINA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Medicina', 'correo': 'facultaddemedicina@pcpuma.unam.mx' },
+                                   { 'nombre': 'Facultad de Ingeniería', 'coords': [19.331120077304863, -99.18451144740555], 'logo': 'img/logos/FINGENIERIA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Ingeniería', 'correo': 'facultaddeingenieria@pcpuma.unam.mx' },
+                                   { 'nombre': 'Facultad de Filosofía y Letras', 'coords': [19.33487018621355, -99.18656088986764], 'logo': 'img/logos/FFYL.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Filosofía y Letras', 'correo': 'facultaddefilosofiayletras@pcpuma.unam.mx' },
+                                   { 'nombre': 'Facultad de Economía', 'coords': [19.33585187733933, -99.1810034149215], 'logo': 'img/logos/FECONOMIA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Economía', 'correo': 'facultaddeeconomia@pcpuma.unam.mx' },
+                                   { 'nombre': 'Facultad de Derecho', 'coords': [19.334711486400952, -99.18454048801497], 'logo': 'img/logos/DERECHO.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Derecho', 'correo': 'facultaddederecho@pcpuma.unam.mx' },
+                                   { 'nombre': 'Facultad de Ciencias Políticas y Sociales', 'coords': [19.31893075050844, -99.17760991999347], 'logo': 'img/logos/FCPYS.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Ciencias Políticas y Sociales', 'correo': 'facultaddecienciaspoliticasysociales@pcpuma.unam.mx' },
+                                   { 'nombre': 'Facultad de Ciencias', 'coords': [19.32412945504399, -99.17915652714242], 'logo': 'img/logos/FCIENCIAS.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Ciencias', 'correo': 'facultaddeciencias@pcpuma.unam.mx' },
+                                   { 'nombre': 'Facultad de Artes y Diseño', 'coords': [19.252282599214126, -99.1178333371921], 'logo': 'img/logos/FAD.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Artes y Diseño', 'correo': 'facultaddeartesydiseno@pcpuma.unam.mx' },
+                                   { 'nombre': 'Facultad de Arquitectura', 'coords': [19.330848044161417, -99.188348396485], 'logo': 'img/logos/FARQUITECTURA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Arquitectura', 'correo': 'facultaddearquitectura@pcpuma.unam.mx' },
+                                   { 'nombre': 'Facultad de Contaduría y Administración', 'coords': [19.324312125504214, -99.18538474649544], 'logo': 'img/fotos/default.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Contaduría y Administración', 'correo': 'facultaddecontaduriayadministracion@pcpuma.unam.mx' },
+                                   { 'nombre': 'Facultad de Enfermería y Obstetricia', 'coords': [19.292168756720198, -99.15072043533844], 'logo': 'img/fotos/default.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Enfermería y Obstetricia', 'correo': 'facultaddeenfermeriayobstetricia@pcpuma.unam.mx' },
+                                   { 'nombre': 'ENES Oaxaca', 'coords': [17.070907, -96.695651], 'logo': 'img/logos/ENESO.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES Oaxaca', 'correo': 'enesoaxaca@pcpuma.unam.mx' },
+                                   { 'nombre': 'ENES Morelia', 'coords': [19.649573312650706, -101.22145383976972], 'logo': 'img/logos/ENESMORELIA.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES Morelia', 'correo': 'enesmorelia@pcpuma.unam.mx' },
+                                   { 'nombre': 'ENES Mérida', 'coords': [20.988215670250913, -89.73412033729292], 'logo': 'img/logos/ENESMERIDA.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES Mérida', 'correo': 'enesmerida@pcpuma.unam.mx' },
+                                   { 'nombre': 'ENES León', 'coords': [21.042821809228883, -101.67264500849731], 'logo': 'img/logos/ENESLEON.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES León', 'correo': 'enesleon@pcpuma.unam.mx' },
+                                   { 'nombre': 'ENES Juriquilla', 'coords': [20.705332796348923, -100.44884252957387], 'logo': 'img/logos/ENESJURIQUILLA.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES Juriquilla', 'correo': 'enesjuriquilla@pcpuma.unam.mx' },
+                                   { 'nombre': 'Escuela Nacional de Artes Cinematográficas', 'coords': [19.318869045009976, -99.17444091453791], 'logo': 'img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Escuela Nacional de Artes Cinematográficas', 'correo': 'escuelanacionaldeartescinematograficas@pcpuma.unam.mx' },
+                                   { 'nombre': 'Escuela Nacional de Lenguas, Lingüística y Traducción', 'coords': [19.3318179732864, -99.18220098012718], 'logo': 'img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Escuela Nacional de Lenguas, Lingüística y Traducción', 'correo': 'escuelanacionaldelenguaslinguisticaytraduccion@pcpuma.unam.mx' },
+                                   { 'nombre': 'Escuela Nacional de Trabajo Social', 'coords': [19.324056617197513, -99.18566802988228], 'logo': 'img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Escuela Nacional de Trabajo Social', 'correo': 'escuelanacionaldetrabajosocial@pcpuma.unam.mx' },
+                                   { 'nombre': 'Coordinación Mixta de Posgrado', 'coords': [19.309894953882555, -99.18442937962074], 'logo': 'img/logos/POSGRADO.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Coordinación Mixta de Posgrado', 'correo': 'coordinacionmixtadeposgrado@pcpuma.unam.mx' },
+                                   { 'nombre': 'Unidad de Extensión Universitaria Oaxaca', 'coords': [17.06138413676055, -96.72083523358762], 'logo': 'img/logos/UEUO.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Unidad de Extensión Universitaria Oaxaca', 'correo': 'unidaddeextensionuniversitariaoaxaca@pcpuma.unam.mx' },
+                                   { 'nombre': 'Centro de Nanociencias y Nanotecnología', 'coords': [31.86791106321224, -116.66507268199652], 'logo': 'img/logos/CNYN.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Centro de Nanociencias y Nanotecnología', 'correo': 'cnyn@pcpuma.unam.mx' },
+                                   { 'nombre': 'Pabellón Nacional de la Biodiversidad', 'coords': [19.311832212847605, -99.18375996533628], 'logo': 'img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Pabellón Nacional de la Biodiversidad', 'correo': 'pabellonnacionaldelabiodiversidad@pcpuma.unam.mx' },
+                                   { 'nombre': 'Antiguo Colegio de San Ildefonso', 'coords': [19.436002385912087, -99.12964992423919], 'logo': 'img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Antiguo Colegio de San Ildefonso', 'correo': 'antiguocolegiodesanildefonso@pcpuma.unam.mx' },
+                                   { 'nombre': 'ENP 1 Gabino Barreda', 'coords': [19.272270009505142, -99.12090875207542], 'logo': 'img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 1 Gabino Barreda', 'correo': 'enp1gabinobarreda@pcpuma.unam.mx' },
+                                   { 'nombre': 'ENP 2 Erasmo Castellanos Quinto', 'coords': [19.384414013128122, -99.09930753544026], 'logo': 'img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 2 Erasmo Castellanos Quinto', 'correo': 'enp2erasmocastellanosquinto@pcpuma.unam.mx' },
+                                   { 'nombre': 'ENP 3 Justo Sierra', 'coords': [19.482832698395395, -99.09370977282835], 'logo': 'img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 3 Justo Sierra', 'correo': 'enp3justosierra@pcpuma.unam.mx' },
+                                   { 'nombre': 'ENP 4 Vidal Castañeda y Nájera', 'coords': [19.40420411365316, -99.19386587406278], 'logo': 'img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 4 Vidal Castañeda y Nájera', 'correo': 'enp4vidalcastanedaynajera@pcpuma.unam.mx' },
+                                   { 'nombre': 'ENP 5 José Vasconcelos', 'coords': [19.307831704853378, -99.13328444337402], 'logo': 'img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 5 José Vasconcelos', 'correo': 'enp5josevasconcelos@pcpuma.unam.mx' },
+                                   { 'nombre': 'ENP 6 Antonio Caso', 'coords': [19.352377330266204, -99.15516094707934], 'logo': 'img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 6 Antonio Caso', 'correo': 'enp6antoniocaso@pcpuma.unam.mx' },
+                                   { 'nombre': 'ENP 7 Ezequiel A. Chávez', 'coords': [19.418816914298294, -99.1255695249077], 'logo': 'img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 7 Ezequiel A. Chávez', 'correo': 'enp7ezequielachavez@pcpuma.unam.mx' },
+                                   { 'nombre': 'ENP 8 Miguel E. Schulz', 'coords': [19.36721387098644, -99.19380290573983], 'logo': 'img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 8 Miguel E. Schulz', 'correo': 'enp8migueleschulz@pcpuma.unam.mx' },
+                                   { 'nombre': 'ENP 9 Pedro de Alba', 'coords': [19.483918948897248, -99.1267973696952], 'logo': 'img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 9 Pedro de Alba', 'correo': 'enp9pedrodealba@pcpuma.unam.mx' },
+                                   { 'nombre': 'CCH Vallejo', 'coords': [19.484208569636674, -99.14184532418193], 'logo': 'img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Vallejo', 'correo': 'cchvallejo@pcpuma.unam.mx' },
+                                   { 'nombre': 'CCH Sur', 'coords': [19.310911875632716, -99.1991763396687], 'logo': 'img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Sur', 'correo': 'cchsur@pcpuma.unam.mx' },
+                                   { 'nombre': 'CCH Oriente', 'coords': [19.38550253237042, -99.05944636427637], 'logo': 'img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Oriente', 'correo': 'cchoriente@pcpuma.unam.mx' },
+                                   { 'nombre': 'CCH Naucalpan', 'coords': [19.474576990214963, -99.24291189919353], 'logo': 'img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Naucalpan', 'correo': 'cchnaucalpan@pcpuma.unam.mx' },
+                                   { 'nombre': 'CCH Azcapotzalco', 'coords': [19.500225173254734, -99.20277836486008], 'logo': 'img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Azcapotzalco', 'correo': 'cchazcapotzalco@pcpuma.unam.mx' }
+                            ];
+
+                            const clusters = { "Facultades": L.markerClusterGroup(), "FES": L.markerClusterGroup(), "ENES": L.markerClusterGroup(), "ENP": L.markerClusterGroup(), "CCH": L.markerClusterGroup(), "Institutos": L.markerClusterGroup(), "Otros": L.markerClusterGroup() };
+
+                            entidadesMapa.forEach(function (entidad) {
+                                   const icono = L.divIcon({ html: `<img src="${entidad.logo}" class="logo-entidad" alt="${entidad.nombre}">`, iconSize: [40, 40], iconAnchor: [20, 40], popupAnchor: [0, -40], className: '' });
+                                   const popupContent = `<strong>${entidad.nombre}</strong><br>Responsable: <strong>${entidad.responsable}</strong><br>Correo: <a href='mailto:${entidad.correo}'>${entidad.correo}</a>`;
+                                   const marcador = L.marker(entidad.coords, { icon: icono }).bindPopup(popupContent);
+
+                                   // Lógica de traducción corregida
+                                   let tipo = "Otros";
+                                   const claseLowerCase = entidad.clase.toLowerCase();
+                                   if (claseLowerCase.includes('facultad')) tipo = "Facultades";
+                                   else if (claseLowerCase.includes('fes')) tipo = "FES";
+                                   else if (claseLowerCase.includes('enes')) tipo = "ENES";
+                                   else if (claseLowerCase.includes('enp')) tipo = "ENP";
+                                   else if (claseLowerCase.includes('cch')) tipo = "CCH";
+                                   else if (claseLowerCase.includes('instituto')) tipo = "Institutos";
+
+                                   if (clusters[tipo]) {
+                                          clusters[tipo].addLayer(marcador);
+                                   }
+                            });
+
+                            for (let key in clusters) { map.addLayer(clusters[key]); }
+
+                            // Hacemos las funciones accesibles globalmente para los `onclick`
+                            window.filtrarCapas = function (tipo) {
+                                   for (let key in clusters) { map.removeLayer(clusters[key]); }
+                                   if (tipo === "Todos") { for (let key in clusters) { map.addLayer(clusters[key]); } }
+                                   else { if (clusters[tipo]) map.addLayer(clusters[tipo]); }
+                            }
+
+                            window.marcarBotonActivo = function (nombreFiltro) {
+                                   document.querySelectorAll('.btn-filtro').forEach(boton => {
+                                          boton.classList.remove('activo-filtro');
+                                          if (boton.textContent.trim() === nombreFiltro || (nombreFiltro === 'Todos' && boton.textContent.trim() === 'Mostrar Todos')) {
+                                                 boton.classList.add('activo-filtro');
+                                          }
+                                   });
+                            }
+                     })();
+              });
+       </script>
+
+
+       <script>
+              fetch('data/servicios_sociales.json')
+                     .then(response => response.json())
+                     .then(data => {
+
+                            const container = document.getElementById('servicioSocialContainer');
+                            container.innerHTML = "";
+
+                            data.forEach(item => {
+
+                                   const emailSubject = encodeURIComponent(`Solicitud de Servicio Social - ${item.titulo}`);
+
+                                   const emailBody = encodeURIComponent(
+                                          `Estimados/as,
+
+Mi nombre es [Tu Nombre] y soy estudiante de [Tu Carrera/Licenciatura] en la UNAM. 
+Estoy muy interesado/a en la convocatoria de servicio social para "${item.titulo}" en el área de ${item.area}.
+
+Adjunto mi CV para su consideración.
+
+Saludos cordiales,
+[Tu Nombre Completo]
+`);
+
+                                   const card = document.createElement('div');
+                                   card.className = 'col-lg-4 col-md-6 card-flip-container';
+
+                                   card.innerHTML = `
+<div class="card-flip-inner">
+       <!-- FRENTE -->
+       <div class="ss-card-face card-front">
+              <div class="ss-card-image-wrapper">
+                     <img src="${item.imagen}" alt="${item.titulo}" class="ss-card-image" loading="lazy">
+                     <div class="ss-card-badge">${item.area.split(',')[0]}</div>
+              </div>
+              <div class="ss-card-front-content">
+                     <h5 class="ss-card-title">${item.titulo}</h5>
+                     <div class="ss-card-flip-hint">
+                            <span>Ver detalles</span> <i class="bi bi-arrow-right-circle"></i>
+                     </div>
+              </div>
+       </div>
+       <!-- REVERSO -->
+       <div class="ss-card-face card-back">
+              <div class="ss-card-back-header">
+                     <div class="ss-card-back-badge">Detalles de la vacante</div>
+                     <h5 class="ss-card-back-title">${item.titulo}</h5>
+              </div>
+              <div class="ss-card-back-details">
+                     <div class="detail-item">
+                            <i class="bi bi-diagram-3-fill"></i>
+                            <div>
+                                   <span class="detail-label">Área</span>
+                                   <span class="detail-val">${item.area}</span>
+                            </div>
+                     </div>
+                     <div class="detail-item">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <div>
+                                   <span class="detail-label">Ubicación</span>
+                                   <span class="detail-val">${item.ubicacion}</span>
+                            </div>
+                     </div>
+                     <div class="detail-item">
+                            <i class="bi bi-calendar-event-fill"></i>
+                            <div>
+                                   <span class="detail-label">Periodo</span>
+                                   <span class="detail-val">${item.periodo || "Por definir"}</span>
+                            </div>
+                     </div>
+                     <div class="detail-item">
+                            <i class="bi bi-file-earmark-text-fill"></i>
+                            <div>
+                                   <span class="detail-label">Programa</span>
+                                   <span class="detail-val">${item.programa || "N/A"}</span>
+                            </div>
+                     </div>
+              </div>
+              <div class="ss-card-back-footer">
+                     <a href="mailto:contacto@pcpuma.unam.mx?subject=${emailSubject}&body=${emailBody}" class="btn-aplicar">
+                            <span>Aplicar ahora</span> <i class="bi bi-send-fill"></i>
+                     </a>
+                     <div class="ss-card-flip-back-hint">
+                            <i class="bi bi-arrow-left-short"></i> Volver al frente
+                     </div>
+              </div>
+       </div>
+</div>
+`;
+
+                                   // Listener de clic para voltear la tarjeta
+                                   card.addEventListener('click', (e) => {
+                                          // Evitar voltear la tarjeta si hacen clic en el botón de aplicar
+                                          if (e.target.closest('.btn-aplicar')) {
+                                                 return;
+                                          }
+                                          card.classList.toggle('flipped');
+                                   });
+                                   container.appendChild(card);
+
+                            });
+
+                     })
+                     .catch(error => console.error('Error al cargar JSON de servicios sociales:', error));
+       </script>
+       <!--JS EVENTOS-->
+       <script>
+
+              document.addEventListener('DOMContentLoaded', function () {
+
+                     let eventos = [];
+
+                     // Cargar eventos locales desde localStorage
+                     let localEventos = [];
+                     try {
+                            localEventos = JSON.parse(localStorage.getItem('local_eventos') || '[]');
+                     } catch (e) {
+                            console.error('Error al cargar eventos locales:', e);
+                     }
+
+                     fetch('data/eventos.json')
+                            .then(response => response.json())
+                            .then(data => {
+
+                                   const hoy = new Date();
+                                   hoy.setHours(0, 0, 0, 0);
+
+                                   // Combinar eventos de base de datos con locales
+                                   const todosLosEventos = [...data, ...localEventos];
+
+                                   // ordenar eventos próximos
+                                   eventos = todosLosEventos
+                                          .filter(ev => new Date(ev.fecha + 'T00:00:00') >= hoy)
+                                          .sort((a, b) => new Date(a.fecha + 'T00:00:00') - new Date(b.fecha + 'T00:00:00'))
+                                          .slice(0, 3); // mostrar solo 3
+
+                                   mostrarEventosHome(eventos);
+
+                            });
+
+                     function crearCardHome(ev) {
+
+                            const fechaEvento = new Date(ev.fecha + 'T00:00:00');
+
+                            const dia = fechaEvento.getDate();
+                            const mes = fechaEvento.toLocaleString('es-ES', { month: 'short' }).replace('.', '');
+
+                            return `
+       <div class="col-lg-4 col-md-6">
+
+       <div class="card evento-card-moderno shadow-sm h-100">
+
+       <div class="evento-card-img-container">
+
+       <img src="${ev.imagen}" class="evento-card-img">
+
+       <div class="evento-card-date">
+       <span class="dia">${dia}</span>
+       <span class="mes">${mes}</span>
+       </div>
+
+       <div class="evento-badge-modalidad">
+       ${ev.modalidad}
+       </div>
+
+       </div>
+
+       <div class="evento-card-body">
+
+       <h5 class="evento-card-title">
+       ${ev.titulo}
+       </h5>
+
+       <p class="evento-card-description">
+       ${ev.descripcion.substring(0, 120)}...
+       </p>
+
+       </div>
+
+       <div class="evento-card-footer">
+
+       <a href="paginas/eventos.html" class="btn-pcpuma-animated w-100 justify-content-center">
+       <span>Ver detalles</span>
+       </a> 
+       </div></div></div>
+       `;
+                     }
+
+                     function mostrarEventosHome(lista) {
+
+                            const contenedor = document.getElementById("eventos-recientes");
+
+                            contenedor.innerHTML = '';
+
+                            lista.forEach(ev => {
+                                   contenedor.innerHTML += crearCardHome(ev);
+                            });
+
+                     }
+
+              });
+
+       </script>
+
+        <!-- INTRO CINEMÁTICA CONTROLLER -->
+        <script>
+               document.addEventListener("DOMContentLoaded", function () {
+                      const isIntroSeen = localStorage.getItem("pcpuma_intro_seen");
+                      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+                      const video = document.querySelector(".modern-hero .tech-video-frame video");
+                      if (!video) return;
+
+                      // Forzar id en el video
+                      video.id = "heroVideo";
+                      const originalPoster = video.getAttribute("poster");
+
+                      // Si la intro ya se vio o se prefiere reducción de movimiento, no hacer nada (se maneja abajo en window.loadChatbitWidget)
+                      if (isIntroSeen || prefersReducedMotion) {
+                              return;
+                      }
+
+                      // --- INICIAR INTRO CINEMÁTICA ---
+                      document.body.classList.add("intro-running");
+                      
+                      // Desactivar temporalmente animaciones AOS en el hero para evitar conflictos
+                      document.querySelectorAll(".modern-hero [data-aos]").forEach(el => {
+                              el.setAttribute("data-aos-disabled", el.getAttribute("data-aos") || "true");
+                              el.removeAttribute("data-aos");
+                      });
+
+                      // Configurar el video para reproducirse una sola vez
+                      video.removeAttribute("loop");
+                      video.loop = false;
+                      video.muted = true;
+                      video.playsInline = true;
+
+                      // Crear placeholder para evitar que colapse el frame contenedor
+                      const techVideoFrame = document.querySelector(".modern-hero .tech-video-frame");
+                      if (techVideoFrame) {
+                              const placeholder = document.createElement("div");
+                              placeholder.id = "video-layout-placeholder";
+                              placeholder.style.width = "100%";
+                              placeholder.style.aspectRatio = "16/9";
+                              placeholder.style.display = "block";
+                              techVideoFrame.appendChild(placeholder);
+                      }
+
+                      // Aplicar clase fullscreen al video
+                      video.classList.add("video-fullscreen");
+
+                      // Agregar botón de omitir
+                      const skipBtn = document.createElement("button");
+                      skipBtn.id = "skip-intro-btn";
+                      skipBtn.className = "skip-intro-btn";
+                      skipBtn.innerHTML = '<span>Saltar intro</span> <i class="bi bi-chevron-right"></i>';
+                      document.body.appendChild(skipBtn);
+
+                      let safetyTimeout = null;
+                      window.introTransitionStarted = false;
+
+                      // Función de omitir/terminar
+                      const skipIntro = () => {
+                              if (safetyTimeout) clearTimeout(safetyTimeout);
+                              video.onended = null;
+                              video.onerror = null;
+                              
+                              if (window.introTransitionStarted) return;
+                              window.introTransitionStarted = true;
+
+                              // Quitar botón de omitir
+                              const sBtn = document.getElementById("skip-intro-btn");
+                              if (sBtn) sBtn.remove();
+
+                              const clickOverlay = document.getElementById("intro-click-to-start");
+                              if (clickOverlay) clickOverlay.remove();
+
+                              document.body.classList.remove("intro-running");
+                              document.body.classList.add("intro-transitioning");
+
+                              const placeholder = document.getElementById("video-layout-placeholder");
+                              let rect = { top: 0, left: 0, width: 0, height: 0 };
+                              if (placeholder) {
+                                     rect = placeholder.getBoundingClientRect();
+                              } else {
+                                     const parent = document.querySelector(".modern-hero .tech-video-frame");
+                                     if (parent) rect = parent.getBoundingClientRect();
+                              }
+
+                              const morphVars = {
+                                     top: rect.top,
+                                     left: rect.left,
+                                     width: rect.width,
+                                     height: rect.height,
+                                     borderRadius: "15px",
+                                     duration: 1.2,
+                                     ease: "power3.inOut"
+                              };
+
+                              // Si el video tiene filtros aplicados por congelamiento, animarlos suavemente a lo normal
+                              if (video.classList.contains("video-frozen")) {
+                                     morphVars.filter = "blur(0px) brightness(1) contrast(1) drop-shadow(0px 0px 0px rgba(0, 91, 168, 0))";
+                              }
+
+                              const tlTransition = gsap.timeline({
+                                     onComplete: () => {
+                                            video.classList.remove("video-fullscreen");
+                                            video.classList.remove("video-frozen");
+                                            gsap.set(video, { clearProps: "all" });
+                                            if (placeholder) placeholder.remove();
+
+                                            // Restaurar atributos AOS
+                                            document.querySelectorAll(".modern-hero [data-aos-disabled]").forEach(el => {
+                                                   el.setAttribute("data-aos", el.getAttribute("data-aos-disabled"));
+                                                   el.removeAttribute("data-aos-disabled");
+                                            });
+
+                                            video.loop = true;
+                                            video.play();
+
+                                            document.body.classList.remove("intro-transitioning");
+                                            
+                                            // Limpiar propiedades inline en los elementos animados para volver a su estado CSS limpio
+                                            gsap.set([
+                                                   ".pcp-navbar",
+                                                   ".hero-info-column > *",
+                                                   ".floating-stat-card",
+                                                   ".modern-scroll-indicator",
+                                                   ".flotante-equipo",
+                                                   "#heroCanvas",
+                                                   "main > *:not(.modern-hero)",
+                                                   "footer"
+                                            ], { clearProps: "opacity,y,scale,transform,filter" });
+
+                                            localStorage.setItem("pcpuma_intro_seen", "true");
+                                            AOS.refresh();
+                                            
+                                            // Cargar el widget del chatbot
+                                            window.loadChatbitWidget();
+                                     }
+                              });
+
+                              tlTransition.to(video, morphVars);
+
+                              tlTransition.to("#intro-bg-overlay", { opacity: 0, duration: 1.2, ease: "power2.out" }, "<");
+                              tlTransition.to("#construction-message", { opacity: 0, duration: 0.3 }, "<");
+                              tlTransition.to("#cinema-intro-overlay", { opacity: 0, duration: 0.3 }, "<");
+
+                              tlTransition.fromTo(".pcp-navbar", 
+                                     { y: -80, opacity: 0 }, 
+                                     { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 
+                                     "-=0.5"
+                              );
+
+                              tlTransition.fromTo(".hero-info-column > *", 
+                                     { y: 20, opacity: 0, filter: "blur(10px)" }, 
+                                     { y: 0, opacity: 1, filter: "blur(0px)", stagger: 0.1, duration: 0.6, ease: "power2.out" }, 
+                                     "-=0.5"
+                              );
+
+                              tlTransition.fromTo(".floating-stat-card", 
+                                     { scale: 0.8, opacity: 0, y: 15 }, 
+                                     { scale: 1, opacity: 1, y: 0, stagger: 0.1, duration: 0.5, ease: "back.out(1.7)" }, 
+                                     "-=0.4"
+                              );
+
+                              // Revelar suavemente el resto de elementos ocultos en la página
+                              tlTransition.fromTo([
+                                     ".modern-scroll-indicator",
+                                     ".flotante-equipo",
+                                     "#heroCanvas",
+                                     "main > *:not(.modern-hero)",
+                                     "footer"
+                              ], 
+                                     { opacity: 0 }, 
+                                     { opacity: 1, duration: 0.8, ease: "power2.out" }, 
+                                     "-=0.4"
+                              );
+                      };
+
+                      skipBtn.addEventListener("click", skipIntro);
+
+                      // Temporizador de seguridad: 15 segundos máximo
+                      safetyTimeout = setTimeout(skipIntro, 15000);
+
+                      // Al finalizar la reproducción del video
+                      video.onended = () => {
+                              if (window.introTransitionStarted) return;
+                              
+                              // Congelar el video en el último frame
+                              video.pause();
+                              video.classList.add("video-frozen");
+
+                              // Aplicar desenfoque y brillo de forma suave con GSAP para evitar brincos
+                              gsap.fromTo(video, 
+                                     { filter: "blur(0px) brightness(1) contrast(1) drop-shadow(0px 0px 0px rgba(0,0,0,0))" },
+                                     { filter: "blur(10px) brightness(0.4) contrast(1.2) drop-shadow(0px 0px 50px rgba(0, 91, 168, 0.5))", duration: 1.0, ease: "power2.out" }
+                              );
+
+                              // Quitar botón de omitir
+                              const sBtn = document.getElementById("skip-intro-btn");
+                              if (sBtn) sBtn.remove();
+
+                              // Mostrar mensaje de construcción
+                              gsap.to("#construction-message", {
+                                     opacity: 1,
+                                     duration: 0.6,
+                                     onComplete: () => {
+                                            setTimeout(skipIntro, 1200);
+                                     }
+                              });
+                      };
+
+                      video.onerror = () => {
+                              console.warn("Video failed to load, skipping intro");
+                              skipIntro();
+                      };
+
+                      // Iniciar reproducción y manejar autoplay
+                      video.play().catch(err => {
+                              console.log("Autoplay blocked, skipping intro");
+                              skipIntro();
+                      });
+               });
+        </script>
+ </body>
+
+</html>

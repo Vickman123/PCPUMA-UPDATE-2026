@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PC Puma — Conéctate con nosotros</title>
+
+  <!-- Meta/OG para compartir -->
+  <meta name="description" content="Sigue a PC Puma en Web, Facebook, YouTube, Instagram, X y TikTok. Un solo lugar con todos los enlaces oficiales." />
+  <meta property="og:title" content="PC Puma — Conéctate con nosotros" />
+  <meta property="og:description" content="Todos los enlaces oficiales de PC Puma en un solo lugar." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://pcpuma.unam.mx../img/logos/logo-pcpuma.webp" />
+  <meta property="og:url" content="https://pcpuma.unam.mx/redes.html" />
+
+  <!-- Bootstrap & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Tipografía institucional si existe (opcional) -->
+  <link rel="preload" href="fonts/Gotham-Book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/Gotham-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <style>
+    :root{
+      --pcp-azul:#005BA8;
+      --pcp-azul-osc:#002147;
+      --pcp-dorado:#FFD700;
+      --ink:#0b1b2b;
+      --muted:#5a7b9c;
+      --surface:#ffffff;
+      --ring:#95f7ff80;
+    }
+    html{scroll-behavior:smooth}
+    body{
+      font-family: 'Gotham', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, #0b3b6a20, transparent),
+                  linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
+      color:#0b1b2b;
+    }
+    /* --- Encabezado hero --- */
+    .hero{
+      background: linear-gradient(135deg, var(--pcp-azul), var(--pcp-azul-osc));
+      color:#fff;
+      border-bottom: 4px solid rgba(255,255,255,.08);
+    }
+    .hero .brand{
+      display:flex; gap:12px; align-items:center; justify-content:center;
+    }
+    .hero .brand img{height:44px}
+    .hero h1{font-weight:700; letter-spacing:.2px}
+    .badge-pcp{background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.25)}
+    /* --- Tarjetas de enlaces --- */
+    .link-card{
+      border:1px solid #e3eaf3;
+      border-radius:18px;
+      background:#fff;
+      box-shadow:0 10px 24px rgba(0,47,108,.06);
+      transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .link-card:hover, .link-card:focus-within{
+      transform:translateY(-4px);
+      border-color:#c9d8e8;
+      box-shadow:0 16px 44px rgba(0,47,108,.12);
+    }
+    .link-card .bi{font-size:1.35rem}
+    .btn-follow{
+      border-radius:12px;
+      font-weight:700;
+      padding:.65rem 1rem;
+    }
+    .btn-follow i{font-size:1.05rem}
+    /* Colores por red */
+    .btn-web{background:linear-gradient(90deg, var(--pcp-azul), #008ED2); color:#fff; border:0}
+    .btn-fb{background:#1877f2; color:#fff}
+    .btn-yt{background:#ff0000; color:#fff}
+    .btn-ig{background:linear-gradient(45deg,#f58529,#feda77,#dd2a7b,#8134af,#515bd4); color:#fff; border:0}
+    .btn-x {background:#111; color:#fff}
+    .btn-tt{background:#000; color:#fff}
+    .btn-follow:hover{opacity:.95; transform:translateY(-1px)}
+    /* Footer mini */
+    footer{color:#537aa0}
+    /* Accesibilidad de foco */
+    a:focus-visible, button:focus-visible{
+      outline:3px solid var(--ring);
+      outline-offset: 2px;
+      border-radius:14px;
+    }
+    /* Código QR */
+    .qr-frame{
+      background:#fff;
+      border:1px solid #e3eaf3;
+      border-radius:18px;
+      box-shadow:0 10px 24px rgba(0,47,108,.06);
+    }
+  </style>
+</head>
+<body>
+  <a class="visually-hidden-focusable position-absolute top-0 start-0 p-2" href="#links">Saltar a enlaces</a>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container py-4 text-center">
+      <div class="brand mb-2">
+        <!-- Ajusta rutas si cambian -->
+        <img src="../img/logos/unam.webp" alt="UNAM" loading="lazy">
+        <img src="../img/logos/sdi.webp" alt="SDI" loading="lazy">
+        <img src="../img/logos/logo-pcpuma.webp" alt="PC Puma" loading="lazy">
+      </div>
+      <span class="badge text-bg-light badge-pcp rounded-pill px-3 py-2 mb-2">
+        Programa de Conectividad Móvil — UNAM
+      </span>
+      <h1 class="display-6 mb-1">Conéctate con <span style="color:var(--pcp-dorado)">PC Puma</span></h1>
+      <p class="mb-0" style="opacity:.92">Noticias, eventos y recursos — elige tu red favorita o escanea el QR.</p>
+    </div>
+  </header>
+
+  <main id="links" class="container py-5">
+    <div class="row g-4 justify-content-center">
+      <!-- QR (opcional en la página; útil para pantallas) -->
+      <div class="col-12 col-lg-4">
+        <div class="p-4 text-center qr-frame h-100">
+          <!-- Sustituye esta imagen por el QR final a /redes.html -->
+          <!-- Mejora clave: QR visible y con texto alterno accesible -->
+          <img src="../img/fotos/qr-redes-ejemplo.png" alt="Código QR para abrir esta página de redes de PC Puma" class="img-fluid" style="max-width:260px">
+          <p class="mt-3 text-muted mb-0">Escanéalo desde una pantalla para abrir esta página.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-8">
+        <!-- Web -->
+        <article class="link-card p-3 p-md-4 mb-3">
+          <div class="d-flex align-items-center gap-3">
+            <div class="icon text-primary"><i class="bi bi-globe"></i></div>
+            <div class="flex-grow-1">
+              <h2 class="h5 mb-1">Sitio oficial</h2>
+              <p class="mb-2 text-muted small">Noticias, convocatorias y servicios de PC Puma.</p>
+              <a class="btn btn-follow btn-web" href="https://pcpuma.unam.mx" target="_blank" rel="noopener" aria-label="Abrir sitio oficial de PC Puma">
+                Visitar sitio
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Facebook -->
+        <article class="link-card p-3 p-md-4 mb-3">
+          <div class="d-flex align-items-center gap-3">
+            <div class="icon"><i class="bi bi-facebook" style="color:#1877f2"></i></div>
+            <div class="flex-grow-1">
+              <h2 class="h5 mb-1">Facebook</h2>
+              <p class="mb-2 text-muted small">Comunidad, fotos y avisos importantes.</p>
+              <a class="btn btn-follow btn-fb" href="https://www.facebook.com/UNAM.PCPuma/" target="_blank" rel="noopener" aria-label="Abrir Facebook de PC Puma">
+                <i class="bi bi-box-arrow-up-right me-1"></i> Seguir en Facebook
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- YouTube -->
+        <article class="link-card p-3 p-md-4 mb-3">
+          <div class="d-flex align-items-center gap-3">
+            <div class="icon"><i class="bi bi-youtube" style="color:#ff0000"></i></div>
+            <div class="flex-grow-1">
+              <h2 class="h5 mb-1">YouTube</h2>
+              <p class="mb-2 text-muted small">Videos, conferencias y tutoriales.</p>
+              <a class="btn btn-follow btn-yt" href="https://www.youtube.com/@ContactoPCPUMA" target="_blank" rel="noopener" aria-label="Abrir YouTube de PC Puma">
+                <i class="bi bi-play-fill me-1"></i> Suscribirme
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Instagram -->
+        <article class="link-card p-3 p-md-4 mb-3">
+          <div class="d-flex align-items-center gap-3">
+            <div class="icon"><i class="bi bi-instagram"></i></div>
+            <div class="flex-grow-1">
+              <h2 class="h5 mb-1">Instagram</h2>
+              <p class="mb-2 text-muted small">Historias y momentos de la comunidad.</p>
+              <a class="btn btn-follow btn-ig" href="https://www.instagram.com/pc_puma/" target="_blank" rel="noopener" aria-label="Abrir Instagram de PC Puma">
+                <i class="bi bi-camera-fill me-1"></i> Seguir en Instagram
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- X (Twitter) -->
+        <article class="link-card p-3 p-md-4 mb-3">
+          <div class="d-flex align-items-center gap-3">
+            <div class="icon"><i class="bi bi-twitter-x"></i></div>
+            <div class="flex-grow-1">
+              <h2 class="h5 mb-1">X (Twitter)</h2>
+              <p class="mb-2 text-muted small">Anuncios breves y actualizaciones.</p>
+              <a class="btn btn-follow btn-x" href="https://twitter.com/PCPuma_UNAM" target="_blank" rel="noopener" aria-label="Abrir X (Twitter) de PC Puma">
+                <i class="bi bi-box-arrow-up-right me-1"></i> Seguir en X
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- TikTok -->
+        <article class="link-card p-3 p-md-4">
+          <div class="d-flex align-items-center gap-3">
+            <div class="icon"><i class="bi bi-tiktok"></i></div>
+            <div class="flex-grow-1">
+              <h2 class="h5 mb-1">TikTok</h2>
+              <p class="mb-2 text-muted small">Clips cortos y dinámicos.</p>
+              <a class="btn btn-follow btn-tt" href="https://www.tiktok.com/@contactopcpuma?lang=es-419" target="_blank" rel="noopener" aria-label="Abrir TikTok de PC Puma">
+                <i class="bi bi-box-arrow-up-right me-1"></i> Seguir en TikTok
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="container text-center pb-5">
+    <small>© PC Puma — UNAM · Mantén esta página como hub oficial de redes.</small>
+  </footer>
+
+  <!-- JS Bootstrap (opcional para interacciones futuras) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <!-- Comentarios de mejora:
+    - Accesibilidad: todos los links tienen aria-label y foco visible.
+    - Rendimiento: diseño sin librerías pesadas; solo Bootstrap + Icons vía CDN.
+    - Marca: colores institucionales y acentos dorados para jerarquía visual.
+    - Mantenibilidad: cada red está en su propio bloque para editar rápido.
+  -->
+</body>
+</html>

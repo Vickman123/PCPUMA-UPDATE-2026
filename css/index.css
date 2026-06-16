@@ -1,0 +1,2722 @@
+.hero-banner {
+  position: relative;
+  width: 100%;
+  background-color: #001f3f;
+  overflow: hidden;
+}
+
+.hero-banner .carousel {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-banner .carousel-item {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 90vh;
+  background-color: #ffffff;
+  /* Fondo blanco por si algo tarda en cargar */
+}
+
+.hero-banner .carousel-item img,
+.hero-banner .carousel-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  padding: 0 10%;
+  text-align: center;
+  background: linear-gradient(to right, rgba(0, 21, 41, 0.8) 15%, transparent 60%);
+}
+
+.hero-content-overlay .container {
+  text-align: left;
+  max-width: 600px;
+}
+
+.hero-content-overlay .display-4 {
+  color: #FFD700;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.hero-content-overlay .btn {
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  background-color: #FFD700;
+  color: #002F6C;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content-overlay .btn:hover {
+  background-color: #FFC107;
+  transform: translateY(-2px);
+}
+
+.scroll-down-indicator {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.scroll-down-indicator i {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* --- Forzar Justificación en Sección '¿Qué es PC Puma?' --- */
+#que-es p {
+  text-align: justify !important;
+}
+
+.video-pcpuma-container {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 91, 168, 0.2);
+}
+
+.video-pcpuma-final {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#mision-vision {
+  background: linear-gradient(135deg, #005BA8, #0b2940);
+}
+
+#mision-vision .backdrop-blur {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+#mision-vision .icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.servicios-pcpuma {
+  background: #f4f4f4;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contenedor-servicios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.servicio {
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.servicio-img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.servicio h3 {
+  font-size: 1.5rem;
+  color: #005BA8;
+  margin-top: 1rem;
+}
+
+.servicio p {
+  color: #333;
+  font-size: 1rem;
+}
+
+.perfil-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.perfil-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.perfil-contenido {
+  padding: 1rem;
+}
+
+.entidades-section {
+  position: relative;
+  overflow: hidden;
+  background-color: #005BA8;
+}
+
+#networkCanvas,
+#serviciosCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+  will-change: transform, opacity;
+}
+
+/* Si sección con fondo claro: usar mezcla normal */
+.entidades-section.light-bg #networkCanvas,
+.entidades-section.light-bg #serviciosCanvas {
+  opacity: 0.8;
+}
+
+/* móviles */
+@media (max-width: 768px) {
+  #networkCanvas,
+  #serviciosCanvas {
+    opacity: 0.8;
+  }
+}
+
+/* Estilos base para las tarjetas de entidades */
+.entidad-card-glass {
+  cursor: pointer;
+}
+
+.flotante-equipo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #FFD700;
+  color: #003366;
+  ;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-weight: bold;
+  z-index: 1040;
+  text-decoration: none;
+}
+
+.navbar .nav-link {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #FFD700 !important;
+  /* Amarillo institucional */
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar .nav-link.active {
+  font-weight: bold;
+  border-bottom: 2px solid #FFD700;
+  /* Indicador visual */
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card i {
+  font-size: 3rem;
+  color: #005BA8;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #005BA8;
+  margin-top: 1rem;
+}
+
+.card-text {
+  color: #333;
+  font-size: 1rem;
+}
+
+.display-5 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.display-5[data-aos] {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@media (max-width: 768px) {
+  .hero-content-overlay {
+    padding: 0 5%;
+    text-align: center;
+  }
+
+  .hero-content-overlay .display-4 {
+    font-size: 2rem;
+  }
+
+  .servicio {
+    max-width: 100%;
+  }
+
+}
+
+/* --- Estilos para Tarjetas de Perfil Unificadas --- */
+.card-perfil-unificado {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+  transition: all 0.4s ease;
+}
+
+.card-perfil-unificado:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 28px rgba(0, 91, 168, 0.3) !important;
+}
+
+.card-perfil-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+}
+
+.card-perfil-unificado:hover .card-perfil-bg {
+  transform: scale(1.05);
+}
+
+.card-perfil-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 47, 108, 0.9) 0%, rgba(0, 47, 108, 0.5) 70%, transparent 100%);
+  padding: 1.5rem;
+}
+
+.card-perfil-overlay .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.card-perfil-unificado .btn-warning {
+  background-color: #FFD700;
+  color: #003366;
+  border-color: #FFD700;
+  font-weight: bold;
+}
+
+/* --- Corrección de Contraste para Tarjetas de Perfil --- */
+.card-perfil-overlay .card-text {
+  color: rgba(255, 255, 255, 0.9);
+  /* Texto blanco con ligera transparencia para un look más suave */
+}
+
+.card-perfil-overlay .card-title,
+.card-perfil-overlay .card-text {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+  /* Sombra de texto para máxima legibilidad sobre cualquier imagen */
+}
+
+/* Estilo para los logos en el mapa estilo Liquid Glass */
+.logo-entidad {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 2px solid #005BA8 !important;
+  box-shadow: 0 4px 15px rgba(0, 91, 168, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+  object-fit: contain !important;
+  padding: 4px !important;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  transform-origin: bottom center !important;
+}
+
+.logo-entidad:hover {
+  transform: scale(1.18) translateY(-4px) !important;
+  border-color: #FFD700 !important; /* Brillo de Oro al hover */
+  box-shadow: 0 8px 22px rgba(0, 91, 168, 0.28), 0 0 10px rgba(255, 215, 0, 0.2) !important;
+  z-index: 9999 !important;
+}
+
+/* Tooltip de Leaflet al estilo Apple Liquid Glass */
+.map-tooltip-apple {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(0, 91, 168, 0.15) !important;
+  border-radius: 8px !important;
+  color: #002f6c !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 0.8rem !important;
+  box-shadow: 0 4px 12px rgba(0, 91, 168, 0.08) !important;
+  padding: 4px 8px !important;
+}
+
+.map-tooltip-apple::before {
+  border-top-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* --- Estilos para Sección de Servicios (Diseño de Alto Impacto con Alineación Corregida) --- */
+.servicios-dark-section {
+  background-color: #002a4a;
+  /* Azul oscuro de fondo */
+}
+
+.card-servicio-mejorado {
+  background-color: #003366;
+  /* Azul más claro para la tarjeta */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.card-servicio-mejorado:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* NUEVO: Centra el contenido de la tarjeta */
+.card-servicio-mejorado .card-body {
+  text-align: center;
+}
+
+.servicio-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: transparent;
+  margin-left: auto;
+  /* NUEVO: Centra el contenedor del icono */
+  margin-right: auto;
+}
+
+.servicio-icon i {
+  font-size: 2.5rem;
+}
+
+/* Efecto de resplandor para cada ícono */
+.icon-conectividad i {
+  color: #33aaff;
+  text-shadow: 0 0 15px rgba(51, 170, 255, 0.7);
+}
+
+.icon-prestamo i {
+  color: #9dffad;
+  text-shadow: 0 0 15px rgba(157, 255, 173, 0.7);
+}
+
+.icon-capacitacion i {
+  color: #ffc107;
+  text-shadow: 0 0 15px rgba(255, 193, 7, 0.7);
+}
+
+/* MODIFICADO: Añadido flexbox para alinear verticalmente el texto del título */
+.card-servicio-mejorado .card-title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  min-height: 3.5em;
+  /* Asegura que todos los títulos ocupen el mismo espacio */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-servicio-mejorado .card-text {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.feature-list li {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.feature-list i {
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+}
+
+/* NUEVO: Centra el bloque de la lista, pero mantiene el texto alineado a la izquierda */
+.feature-list {
+  text-align: left;
+  display: inline-block;
+}
+
+/* Estilos para las etiquetas de Ejes */
+.eje-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.eje-label-inclusion {
+  color: #33aaff;
+}
+
+.eje-label-transformacion {
+  color: #fd7e14;
+}
+
+/* --- Estilos Específicos para el Slide del Coloquio (Versión Corregida) --- */
+
+.coloquio-overlay {
+  align-items: flex-end;
+  /* Mueve el contenido hacia la parte inferior */
+  justify-content: center;
+  /* Centra el contenido horizontalmente */
+  background: none;
+  /* Elimina el gradiente oscuro de la izquierda */
+  padding-bottom: 4%;
+  /* <<-- Lo mueve MÁS ABAJO */
+}
+
+/* Asegura que el contenedor interno se centre correctamente */
+.coloquio-overlay .container {
+  text-align: center;
+  max-width: 100%;
+}
+
+/* Ajusta los colores del texto para que contrasten con el fondo blanco de la imagen */
+.coloquio-overlay h1,
+.coloquio-overlay .lead {
+  color: #003366;
+  /* Azul oscuro para el texto */
+  text-shadow: none;
+  /* Quita la sombra de texto que ya no es necesaria */
+}
+
+.coloquio-overlay h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+/* Estilo del botón */
+.coloquio-overlay .btn-primary {
+  border-radius: 50px;
+  padding: 0.8rem 2.5rem;
+  font-weight: bold;
+}
+
+/* ============================================= */
+/* ESTILOS PARA EL MAPA DE COBERTURA (LEAFLET)     */
+/* ============================================= */
+
+/* Estilos para los botones de filtro del mapa */
+#cobertura .pcp-map-filters .btn-filtro {
+  background-color: #e9ecef;
+  color: #495057;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 8px 16px;
+  border: 1px solid #dee2e6;
+  font-size: .95rem;
+  transition: all .3s ease;
+  margin: 4px;
+}
+
+#cobertura .pcp-map-filters .btn-filtro:hover {
+  background-color: #ced4da;
+  border-color: #adb5bd;
+}
+
+#cobertura .pcp-map-filters .btn-filtro.activo-filtro {
+  background-color: #005BA8;
+  color: #fff;
+  border-color: #005BA8;
+  box-shadow: 0 4px 12px rgba(0, 91, 168, .3);
+}
+
+/* Estilos para el contenedor del mapa */
+#map {
+  height: 500px;
+  border-radius: 16px;
+  /* Coincide con var(--radius-xl) */
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 44, 92, 0.08);
+  /* Coincide con var(--shadow-md) */
+  border: 1px solid #dee2e6;
+}
+
+/* --- ESTA ES LA REGLA MÁS IMPORTANTE --- */
+/* Estilos para los logos (marcadores) dentro del mapa */
+#map .logo-entidad {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #005BA8;
+  /* Coincide con var(--pcp-azul) */
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  object-fit: contain;
+  padding: 4px;
+
+}
+
+/* ===== BOTÓN VER MÁS ===== */
+
+button.learn-more {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  width: 12rem;
+}
+
+/* Círculo */
+button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  background: #003366;
+  /* Azul institucional */
+  border-radius: 1.625rem;
+}
+
+/* Flecha */
+button.learn-more .circle .icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+button.learn-more .circle .icon.arrow {
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+  content: "";
+  position: absolute;
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+/* Texto */
+button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  inset: 0;
+  padding: 0.75rem 0;
+  margin-left: 1.85rem;
+  color: #ffffffcc;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Hover */
+button.learn-more:hover .circle {
+  width: 100%;
+}
+
+button.learn-more:hover .button-text {
+  transform: translateX(-1.7rem);
+  color: #fff;
+}
+
+button.learn-more:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translateX(8.7rem);
+}
+
+.logo-unam-footer {
+  max-width: 200px;
+  margin-right: 10px;
+}
+
+/* CARDS DE EVENTOS HOME */
+
+.eventos-recientes .card {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all .3s ease;
+  height: 100%;
+}
+
+.eventos-recientes .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* CONTENEDOR DE IMAGEN */
+
+.eventos-recientes .card-img-top {
+  height: 320px;
+  object-fit: cover;
+}
+
+/* TITULO */
+
+.eventos-recientes .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0b3d91;
+}
+
+/* TEXTO */
+
+.eventos-recientes .card-text {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ICONOS SECCION SERVICIO SOCIAL */
+
+.card-servicio-social i {
+  font-size: 1.1rem;
+  width: 22px;
+  text-align: center;
+  margin-right: 6px;
+  color: #0d6efd;
+}
+
+/* Icono superior del maletín */
+.card-servicio-social .icon-top {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.card-servicio-social:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .15);
+}
+
+.card-servicio-social .card-title {
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.card-servicio-social p {
+  font-size: .92rem;
+}
+
+/* ============================================= */
+/*       ESTILOS DEL NUEVO HERO MODERNO          */
+/* ============================================= */
+
+.modern-hero {
+  position: relative;
+  height: 92vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: white !important;
+  background: radial-gradient(circle at 70% 30%, #032047 0%, #00132b 100%);
+  z-index: 1;
+}
+
+/* Canvas de Red de PartÃ­culas */
+#heroCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.modern-hero-container {
+  position: relative;
+  z-index: 3;
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* Cintillo Dorado */
+.modern-hero-eyebrow {
+  color: #FFD700;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  border-left: 3px solid #FFD700;
+  padding-left: 10px;
+  display: inline-block;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* TÃ­tulo e Instrumento Rotativo */
+.modern-hero-title {
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1.8rem;
+  color: white !important;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.hero-rotator-container {
+  position: relative;
+  display: block;
+  min-height: 2.2em;
+  overflow: visible;
+  margin-top: 5px;
+}
+
+.rotator-word {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(25px) scale(0.98);
+  transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1), transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  color: #FFD700 !important;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(255, 215, 0, 0.2);
+}
+
+.rotator-word.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  position: relative;
+}
+
+/* DescripciÃ³n */
+.modern-hero-description {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  max-width: 540px;
+  margin-bottom: 2.2rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.15);
+  padding-left: 1.5rem;
+  line-height: 1.65;
+}
+
+/* Botones */
+.modern-hero-buttons {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.modern-btn-primary {
+  background: #FFD700;
+  color: #00254d !important;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.35);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modern-btn-primary:hover {
+  background: #ffc107;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+}
+
+.modern-btn-primary i {
+  transition: transform 0.3s ease;
+}
+
+.modern-btn-primary:hover i {
+  transform: translateX(4px);
+}
+
+.modern-btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white !important;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modern-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-3px);
+}
+
+/* Columna Derecha - Hub Visual de Dispositivo */
+.tech-video-frame-container {
+  position: relative;
+  width: 100%;
+}
+
+.tech-video-frame {
+  position: relative;
+  border-radius: 20px;
+  padding: 6px;
+  background: linear-gradient(135deg, #00d2ff, #FFD700);
+  box-shadow: 0 20px 50px rgba(0, 210, 255, 0.2), 0 0 30px rgba(255, 215, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 2;
+}
+
+.tech-video-frame:hover {
+  transform: scale(1.025) rotate(0.5deg);
+}
+
+.tech-video-frame video {
+  display: block;
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Tarjetas EstadÃ­sticas Flotantes */
+.floating-stat-card {
+  position: absolute;
+  background: rgba(3, 32, 71, 0.94) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid rgba(0, 210, 255, 0.35) !important;
+  border-radius: 16px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45) !important;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.floating-stat-card:hover {
+  background: rgba(3, 32, 71, 0.95) !important;
+  transform: scale(1.05) translateY(-3px);
+  border-color: rgba(255, 215, 0, 0.5) !important;
+}
+
+.floating-stat-card .icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(0, 210, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00d2ff;
+  font-size: 1.15rem;
+}
+
+.floating-stat-card.accent .icon-box {
+  background: rgba(255, 215, 0, 0.15);
+  color: #FFD700;
+}
+
+.floating-stat-card .card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-stat-card .card-number {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.floating-stat-card .card-label {
+  font-size: 0.75rem;
+  color: #dddddd;
+  font-weight: 400;
+}
+
+/* Animaciones Parallax de Flote */
+.floating-card-1 {
+  top: -20px;
+  left: -20px;
+  animation: float-1 6s ease-in-out infinite;
+}
+
+.floating-card-2 {
+  bottom: -20px;
+  right: -5px;
+  animation: float-2 7s ease-in-out infinite;
+}
+
+.floating-card-3 {
+  top: 60%;
+  left: -30px;
+  animation: float-3 8s ease-in-out infinite;
+}
+
+@keyframes float-1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px) translateX(2px); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(12px) translateX(-3px); }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px) translateX(-4px); }
+}
+
+/* Indicador de Scroll */
+.modern-scroll-indicator {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.75;
+  animation: scroll-bounce 2s infinite;
+  z-index: 5;
+  text-decoration: none;
+}
+
+.scroll-mouse {
+  width: 24px;
+  height: 38px;
+  border: 2px solid white;
+  border-radius: 20px;
+  position: relative;
+}
+
+.scroll-wheel {
+  width: 4px;
+  height: 8px;
+  background: #FFD700;
+  border-radius: 2px;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll-wheel-slide 1.5s infinite;
+}
+
+.scroll-text {
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: white;
+  text-transform: uppercase;
+}
+
+@keyframes scroll-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-4px);
+  }
+}
+
+@keyframes scroll-wheel-slide {
+  0% {
+    top: 6px;
+    opacity: 1;
+  }
+  100% {
+    top: 18px;
+    opacity: 0;
+  }
+}
+
+/* ============================================= */
+/*             RESPONSIVE Y MÃ“VIL                */
+/* ============================================= */
+
+@media (max-width: 992px) {
+  .modern-hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 110px 0 70px 0;
+  }
+
+  .modern-hero-container {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    text-align: center;
+  }
+
+  .modern-hero-eyebrow {
+    margin-bottom: 1rem;
+  }
+
+  .modern-hero-title {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-rotator-container {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+  }
+
+  .rotator-word {
+    position: relative;
+    display: none;
+  }
+
+  .rotator-word.active {
+    display: block;
+  }
+
+  .modern-hero-description {
+    margin: 0 auto 2rem auto;
+    border-left: none;
+    padding-left: 0;
+    font-size: 1rem;
+  }
+
+  .modern-hero-buttons {
+    justify-content: center;
+  }
+
+  .tech-video-frame {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* Ajuste de tarjetas flotantes en tablets */
+  .floating-card-1 {
+    left: 20px;
+    top: -25px;
+  }
+
+  .floating-card-2 {
+    right: 20px;
+    bottom: -25px;
+  }
+
+  .floating-card-3 {
+    display: none; /* Ocultamos una en pantallas pequeÃ±as */
+  }
+}
+
+@media (max-width: 576px) {
+  .modern-hero {
+    padding: 95px 0 60px 0;
+  }
+
+  .modern-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .modern-hero-description {
+    font-size: 0.95rem;
+  }
+
+  .modern-hero-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .modern-btn-primary, .modern-btn-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1.8rem;
+  }
+
+  .floating-stat-card {
+    padding: 8px 12px;
+    gap: 8px;
+    border-radius: 12px;
+  }
+
+  .floating-stat-card .icon-box {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .floating-stat-card .card-number {
+    font-size: 0.95rem;
+  }
+
+  .floating-stat-card .card-label {
+    font-size: 0.65rem;
+  }
+
+  .floating-card-1 {
+    left: 5px;
+    top: -20px;
+  }
+
+  .floating-card-2 {
+    right: 5px;
+    bottom: -20px;
+  }
+}
+
+/* Optimización de Rendimiento de Pintado en Navegadores */
+#directorio-entidades, #servicios-sociales {
+  content-visibility: auto;
+  contain-intrinsic-size: 700px;
+}
+
+/* ===================================================================
+   REDISÉÑO PREMIUM APPLE 2026 & STARTUP - PC PUMA UNAM
+   =================================================================== */
+
+/* 1. TIPOGRAFÍA PREMIUM */
+body, button, input, select, textarea, .btn, .nav-link {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6, .display-5, .display-6, .modern-hero-title, .card-title {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* 2. NAVBAR GLASSMORPHISM (ESTILO APPLE) */
+.pcp-navbar,
+.navbar.bg-pcpuma,
+.navbar-apple-glass {
+  background: rgba(0, 28, 56, 0.85) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+.pcp-navbar .nav-link,
+.navbar.bg-pcpuma .nav-link,
+.navbar-apple-glass .nav-link {
+  font-weight: 500 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  padding: 0.5rem 1rem !important;
+  border-bottom: 2px solid transparent !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+.pcp-navbar .nav-link:hover,
+.navbar.bg-pcpuma .nav-link:hover,
+.navbar-apple-glass .nav-link:hover {
+  color: #FFD700 !important;
+  background-color: transparent !important;
+}
+.pcp-navbar .nav-link.active,
+.navbar.bg-pcpuma .nav-link.active,
+.navbar-apple-glass .nav-link.active {
+  color: #FFD700 !important;
+  border-bottom: 2px solid #FFD700 !important;
+  font-weight: 700 !important;
+}
+
+/* 3. GRADIENTES DE TEXTO Y EFECTOS DE COLOR */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFF 30%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #00d2ff 0%, #005BA8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 4. SECCIONES Y CABECERAS */
+.section-title-apple {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #002d66;
+}
+.section-title-apple-white {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+/* 5. TARJETAS SERVICIOS GLASSMOPHISM (Efectos de resplandor e interactivos) */
+.card-servicio-mejorado {
+  background: rgba(10, 35, 66, 0.65) !important;
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 20px !important;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  overflow: hidden;
+}
+.card-servicio-mejorado:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  border-color: rgba(0, 210, 255, 0.4) !important;
+  box-shadow: 0 20px 40px rgba(0, 210, 255, 0.12), 0 0 20px rgba(255, 215, 0, 0.06);
+}
+.card-servicio-mejorado .card-body {
+  padding: 2.2rem !important;
+}
+
+/* Eje labels */
+.eje-label-inclusion {
+  color: #00d2ff !important;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+.eje-label-transformacion {
+  color: #FFD700 !important;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+/* 6. BENTO GRID - PERFILES COMUNIDAD */
+.card-perfil-unificado {
+  height: 420px;
+  border-radius: 24px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  background: #000;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+.card-perfil-unificado .card-perfil-bg {
+  transform: scale(1.02);
+  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.card-perfil-unificado:hover .card-perfil-bg {
+  transform: scale(1.1) rotate(0.5deg);
+}
+.card-perfil-overlay {
+  background: linear-gradient(to top, rgba(0, 19, 43, 0.95) 0%, rgba(0, 19, 43, 0.4) 60%, rgba(0,0,0,0.1) 100%) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2.2rem !important;
+}
+.card-perfil-overlay i {
+  font-size: 2.8rem !important;
+  color: #FFD700;
+  margin-bottom: 0.5rem;
+}
+.card-perfil-overlay .card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+.card-perfil-overlay .btn-warning {
+  background: #FFD700 !important;
+  color: #001f3f !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 0.8rem 1.8rem !important;
+  font-weight: 700 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 14px rgba(255, 215, 0, 0.2);
+}
+.card-perfil-overlay .btn-warning:hover {
+  background: #ffc107 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+/* 7. PRESTAMO DE DISPOSITIVOS - LINEA DE TIEMPO INTERACTIVA */
+.prestamo-step-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 43, 91, 0.06);
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 43, 91, 0.02);
+  transition: all 0.4s ease;
+}
+.prestamo-step-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 43, 91, 0.08);
+}
+.step-number-pill {
+  width: 48px;
+  height: 48px;
+  background: #005BA8;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 15px rgba(0, 91, 168, 0.3);
+}
+
+/* Botón animado flotante y primarios estilo Apple */
+.btn-apple-pill {
+  background: linear-gradient(135deg, #FFD700 0%, #ECD448 100%);
+  color: #001f3f !important;
+  font-weight: 700;
+  border-radius: 50px;
+  padding: 1rem 2.5rem;
+  border: none;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.btn-apple-pill:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.45);
+  background: #ffc107;
+  color: #000 !important;
+}
+
+/* 8. SECCIÓN CIFRAS CIFRAS ESTILO GSAP COUNTER */
+.stat-counter-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  padding: 2.2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.stat-counter-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #005BA8, #FFD700);
+}
+.stat-counter-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 91, 168, 0.08);
+}
+.stat-counter-card i {
+  color: #005BA8 !important;
+  font-size: 2.5rem;
+}
+.stat-counter-card .display-6 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #002d66 !important;
+  letter-spacing: -0.02em;
+}
+
+/* 9. SERVICIOS SOCIALES CARDS */
+.card-servicio-social {
+  background: #ffffff;
+  border: 1px solid rgba(0, 43, 91, 0.05) !important;
+  border-radius: 20px !important;
+  padding: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+.card-servicio-social:hover {
+  transform: translateY(-8px) scale(1.01) !important;
+  box-shadow: 0 20px 45px rgba(0, 43, 91, 0.08) !important;
+  border-color: rgba(0, 91, 168, 0.15) !important;
+}
+
+/* 10. ENTIDADES - CANVAS OSCURO Y LAUNCHPAD PAGINADO (Apple Liquid Glass 2026) */
+#directorio-entidades {
+  position: relative;
+  background: radial-gradient(circle at 70% 30%, #032047 0%, #00132b 100%) !important;
+  overflow: hidden;
+}
+
+/* Contenedor del Slider Apple Launchpad */
+.entidades-slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 15px 0;
+  z-index: 2;
+}
+
+.entidades-slider-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+
+.entidades-page {
+  width: 100%;
+  flex-shrink: 0;
+  padding: 0 15px;
+}
+
+/* Dots estilo iOS */
+.entidades-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 35px;
+  z-index: 2;
+  position: relative;
+}
+
+.entidad-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.entidad-dot.active {
+  background-color: #ffffff !important;
+  transform: scale(1.35);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Tarjeta de Vidrio Líquido - Sin fondo cuadrado */
+.entidad-card-glass {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 8px 6px !important;
+  width: 100% !important;
+  max-width: 160px !important;
+  min-height: 140px !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: none !important;
+}
+
+.entidad-card-glass:hover {
+  transform: translateY(-6px) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Iconos Squircles cambiados a Círculos de cristal líquido Apple */
+.entidad-logo-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 76px !important;
+  height: 76px !important;
+  border-radius: 50% !important; /* Círculo en vez de Squircle */
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Efecto de brillo de barrido de cristal líquido */
+.entidad-logo-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 45%, rgba(255, 255, 255, 0.18) 50%, transparent 55%);
+  transition: all 0.6s ease;
+  pointer-events: none;
+  transform: rotate(15deg);
+}
+
+.entidad-card-glass:hover .entidad-logo-wrapper::before {
+  left: 100%;
+  top: 100%;
+}
+
+.entidad-card-glass:hover .entidad-logo-wrapper {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  transform: scale(1.08) !important;
+  border-color: #ffd700 !important;
+  box-shadow: 0 8px 18px rgba(255, 215, 0, 0.3) !important;
+}
+
+.entidad-card-glass .entidad-logo-wrapper img {
+  max-height: 48px !important;
+  max-width: 80% !important;
+  object-fit: contain !important;
+  transition: all 0.4s ease !important;
+}
+
+.entidad-card-glass .entidad-nombre {
+  font-size: 0.72rem !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 600 !important;
+  margin-top: 5px !important;
+  text-align: center !important;
+  transition: all 0.3s ease !important;
+  line-height: 1.25 !important;
+  display: block !important;
+  overflow: visible !important;
+  word-wrap: break-word !important;
+  white-space: normal !important;
+}
+
+.entidad-card-glass:hover .entidad-nombre {
+  color: #ffd700 !important;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.35) !important;
+}
+
+/* MAPA INTERACTIVO PILLS Y ELEMENTOS */
+#map {
+  border-radius: 24px !important;
+  border: 1px solid rgba(0, 43, 91, 0.08) !important;
+  box-shadow: 0 15px 40px rgba(0, 43, 91, 0.06) !important;
+}
+
+/* Botón flotante estilizado */
+.flotante-equipo {
+  background: #FFD700 !important;
+  color: #001f3f !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4) !important;
+  font-family: 'Outfit', sans-serif !important;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+.flotante-equipo:hover {
+  background: #ffc107 !important;
+  transform: translateY(-4px) scale(1.03) !important;
+  box-shadow: 0 15px 35px rgba(255, 215, 0, 0.6) !important;
+}
+
+/* ===================================================================
+   3D FLIP CARDS (CONVOCATORIAS)
+   =================================================================== */
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  height: 420px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-radius: 24px;
+}
+
+/* Efecto Hover en PC y Toggle en Móviles */
+.flip-card:hover .flip-card-inner,
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* CARA FRONTAL */
+.flip-card-front {
+  background-color: #001f3f;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.flip-card-front .front-image {
+  height: 55%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.flip-card-front .front-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 30%, rgba(0, 19, 43, 0.95) 100%);
+}
+
+.flip-card-front .front-content {
+  height: 45%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #00132b;
+  text-align: center;
+}
+
+.flip-card-front .front-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.flip-card-front .flip-hint {
+  font-size: 0.75rem;
+  color: #FFD700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+/* CARA TRASERA */
+.flip-card-back {
+  background: radial-gradient(circle at 50% 50%, #0a254c 0%, #00132b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: white;
+  transform: rotateY(180deg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.flip-card-back .back-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFD700;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.flip-card-back .back-details {
+  flex-grow: 1;
+}
+
+.flip-card-back .back-details p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.45;
+  margin-bottom: 0.7rem;
+}
+
+.flip-card-back .back-details p strong {
+  color: #ffffff;
+}
+
+.flip-card-back .btn-apple-pill {
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+  padding: 0.7rem 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* ===================================================================
+   LÍNEA DE PROCESO HORIZONTAL / VERTICAL RESPONSIVA (GSAP)
+   =================================================================== */
+.process-timeline-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.process-progress-line {
+  position: absolute;
+  top: 24px;
+  left: 15%;
+  right: 15%;
+  height: 4px;
+  background: rgba(0, 43, 91, 0.08);
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.process-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, #005BA8 0%, #FFD700 100%);
+  border-radius: 2px;
+}
+
+.process-steps-row {
+  position: relative;
+  z-index: 2;
+}
+
+.process-step-item {
+  text-align: center;
+}
+
+.step-dot {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid rgba(0, 91, 168, 0.2);
+  color: #005BA8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin: 0 auto 1.2rem auto;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.step-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #002d66;
+  margin-bottom: 0.4rem;
+}
+
+.step-desc {
+  font-size: 0.88rem;
+  color: #666;
+  max-width: 240px;
+  margin: 0 auto;
+  line-height: 1.45;
+}
+
+/* MOBILE VIEW - TIMELINE VERTICAL */
+@media (max-width: 768px) {
+  .process-progress-line {
+    top: 24px;
+    bottom: 24px;
+    left: 24px;
+    right: auto;
+    width: 4px;
+    height: calc(100% - 48px);
+  }
+  
+  .process-progress-fill {
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(to bottom, #005BA8 0%, #FFD700 100%);
+  }
+
+  .process-steps-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+
+  .process-step-item {
+    text-align: left !important;
+    padding-left: 80px;
+    position: relative;
+  }
+
+  .step-dot {
+    position: absolute;
+    left: 2px;
+    top: 0;
+    margin: 0;
+  }
+
+  .step-desc {
+    margin: 0;
+    max-width: 100%;
+  }
+}
+
+/* ===================================================================
+   BANNER DE AVISO DESTACADO PREMIUM
+   =================================================================== */
+.premium-disclaimer-banner {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px !important;
+  padding: 1.5rem 2rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 3.5rem auto 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.premium-disclaimer-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #ffc107;
+}
+
+.disclaimer-icon-wrapper {
+  background: rgba(255, 193, 7, 0.12);
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c69500;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  animation: pulse-warning 2s infinite;
+}
+
+.disclaimer-text {
+  font-size: 0.95rem;
+  color: #333333;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@keyframes pulse-warning {
+  0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 193, 7, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+}
+
+@media (max-width: 576px) {
+  .premium-disclaimer-banner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem !important;
+    gap: 1rem;
+  }
+}
+
+/* Adaptación de textos para sección Préstamo con fondo oscuro radial */
+#prestamo-equipos .step-title {
+  color: #ffffff !important;
+}
+#prestamo-equipos .step-desc {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+#prestamo-equipos .disclaimer-text {
+  color: #ffffff !important;
+}
+
+/* 11. FOOTER GLASSMORPHISM #001C38 (UNIFICADO CON NAVBAR) */
+.footer.bg-pcpuma {
+  background: rgba(0, 28, 56, 0.85) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ===================================================================
+   12. TARJETAS DE ESTADÍSTICAS INTERACTIVAS (CLICK PARA DESPLIZAR ARRIBA)
+   =================================================================== */
+.stat-card-interactive {
+  position: relative;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25) !important;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.stat-card-interactive:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 210, 255, 0.18), 0 0 20px rgba(255, 215, 0, 0.08) !important;
+  border-color: rgba(0, 210, 255, 0.4) !important;
+}
+
+/* Cara Frontal */
+.stat-card-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+/* Panel Desplizable de Detalles (Sube al hacer click) */
+.stat-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, #002D66 0%, #00132B 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat-card-interactive.active .stat-card-overlay {
+  transform: translateY(0);
+}
+
+.stat-card-overlay .stat-number-anim {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #FFD700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.3rem;
+  font-family: 'Outfit', sans-serif !important;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.stat-card-overlay .stat-details-text {
+  font-size: 1rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 92%;
+  margin-bottom: 0.8rem;
+}
+
+.stat-card-overlay .close-action-hint {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.3s ease;
+}
+
+.stat-card-overlay .close-action-hint:hover {
+  color: #ffffff;
+}
+
+.stat-card-overlay .close-action-hint i {
+  color: #FFD700;
+}
+
+/* ===================================================================
+   13. PORTAL MODAL ENTIDADES - APPLE LIQUID GLASS STYLE
+   =================================================================== */
+#entidadModal .modal-content {
+  background: rgba(0, 28, 56, 0.82) !important;
+  backdrop-filter: blur(25px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4) !important;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+#entidadModal .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding: 1.5rem 2rem !important;
+  background: transparent !important;
+}
+
+#entidadModal .modal-header .modal-title {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+  color: #ffffff !important;
+}
+
+#entidadModal .modal-body {
+  padding: 2rem !important;
+}
+
+/* Contenedor del Logo de la Entidad */
+.entity-modal-logo-wrapper {
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02), 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  margin: 0 auto;
+}
+
+.entity-modal-logo-wrapper:hover {
+  transform: scale(1.03);
+  border-color: rgba(255, 215, 0, 0.3);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.04), 0 20px 45px rgba(255, 215, 0, 0.08);
+}
+
+.entity-modal-logo-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.15));
+}
+
+/* Botones Premium Estilo Apple */
+.btn-entity-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.9rem 1.8rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 50px;
+  text-decoration: none !important;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-sizing: border-box;
+}
+
+.btn-entity-action.mail-action {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff !important;
+}
+
+.btn-entity-action.mail-action:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(0, 210, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 210, 255, 0.15);
+}
+
+
+
+.stat-card-interactive:hover .icon-wrapper i {
+  color: #00132B !important;
+}
+
+.stat-card-front .stat-title {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card-front .click-action-hint {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.65) !important;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.stat-card-interactive:hover .click-action-hint {
+  opacity: 1;
+  color: #FFD700 !important;
+}
+
+/* Panel Desplizable de Detalles (Sube al hacer click) */
+.stat-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, #002D66 0%, #00132B 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat-card-interactive.active .stat-card-overlay {
+  transform: translateY(0);
+}
+
+.stat-card-overlay .stat-number-anim {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #FFD700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.3rem;
+  font-family: 'Outfit', sans-serif !important;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.stat-card-overlay .stat-details-text {
+  font-size: 1rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 92%;
+  margin-bottom: 0.8rem;
+}
+
+.stat-card-overlay .close-action-hint {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.3s ease;
+}
+
+.stat-card-overlay .close-action-hint:hover {
+  color: #ffffff;
+}
+
+.stat-card-overlay .close-action-hint i {
+  color: #FFD700;
+}
+
+/* ===================================================================
+   13. PORTAL MODAL ENTIDADES - APPLE LIQUID GLASS STYLE
+   =================================================================== */
+#entidadModal .modal-content {
+  background: rgba(0, 28, 56, 0.82) !important;
+  backdrop-filter: blur(25px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4) !important;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+#entidadModal .modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding: 1.5rem 2rem !important;
+  background: transparent !important;
+}
+
+#entidadModal .modal-header .modal-title {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+  color: #ffffff !important;
+}
+
+#entidadModal .modal-body {
+  padding: 2rem !important;
+}
+
+/* Contenedor del Logo de la Entidad */
+.entity-modal-logo-wrapper {
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02), 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  margin: 0 auto;
+}
+
+.entity-modal-logo-wrapper:hover {
+  transform: scale(1.03);
+  border-color: rgba(255, 215, 0, 0.3);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.04), 0 20px 45px rgba(255, 215, 0, 0.08);
+}
+
+.entity-modal-logo-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.15));
+}
+
+/* Botones Premium Estilo Apple */
+.btn-entity-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.9rem 1.8rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 50px;
+  text-decoration: none !important;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-sizing: border-box;
+}
+
+.btn-entity-action.mail-action {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff !important;
+}
+
+.btn-entity-action.mail-action:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(0, 210, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 210, 255, 0.15);
+}
+
+.btn-entity-action.web-action {
+  background: linear-gradient(135deg, #FFD700 0%, #ECD448 100%);
+  border: none;
+  color: #001f3f !important;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+}
+
+.btn-entity-action.web-action:hover {
+  transform: translateY(-2px);
+  background: #ffc107;
+  color: #000 !important;
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+}
+
+.btn-entity-action.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: none !important;
+}
+
+/* ============================================= */
+/*  APPLE LIQUID GLASS MODERNIZATION (2026)      */
+/* ============================================= */
+
+/* Barra de navegación estilo Apple Glass */
+.navbar-apple-glass {
+  background: rgba(0, 19, 43, 0.72) !important;
+  backdrop-filter: blur(20px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(190%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.3s ease;
+}
+
+/* Panel Glassmorphic Claro */
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 12px 35px rgba(0, 43, 91, 0.05) !important;
+  border-radius: 24px !important;
+}
+
+/* Panel Glassmorphic Oscuro */
+.glass-panel-dark {
+  background: rgba(10, 25, 47, 0.4) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 15px 35px rgba(0, 0, 0, 0.3) !important;
+  border-radius: 24px !important;
+}
+
+/* Brillo de Color Personalizado en hover de Servicios */
+.col-lg-4:nth-child(1) .card-servicio-mejorado:hover {
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.25), 0 20px 40px rgba(0, 210, 255, 0.22) !important;
+  border-color: rgba(0, 210, 255, 0.4) !important;
+}
+
+.col-lg-4:nth-child(2) .card-servicio-mejorado:hover {
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.25), 0 20px 40px rgba(157, 255, 173, 0.22) !important;
+  border-color: rgba(157, 255, 173, 0.4) !important;
+}
+
+.col-lg-4:nth-child(3) .card-servicio-mejorado:hover {
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.25), 0 20px 40px rgba(255, 193, 7, 0.22) !important;
+  border-color: rgba(255, 193, 7, 0.4) !important;
+}
+
+/* ===================================================================
+   SECCIÓN DE CIFRAS: HONEYCOMB (PANAL) INTERACTIVO
+   =================================================================== */
+.hexagon-wrapper-outer {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 1.25rem auto 3rem auto;
+}
+
+/* Contenedor del Panal */
+.hexagon-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2.1 / 1;
+  margin: 0 auto;
+}
+
+/* Nodo de Panal (Hexágono) */
+.hexagon-node {
+  position: absolute;
+  width: 16%; /* Ajustado para hexágonos planos */
+  aspect-ratio: 1.15 / 1;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+}
+
+/* Ubicaciones de los nodos basadas en el panal regular flat-topped */
+.hexagon-node.node-center {
+  left: 50%;
+  top: 50%;
+  width: 18%;
+  z-index: 10;
+  clip-path: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.hexagon-node.node-0 { left: 21.5%; top: 50%; }      /* Antenas (Far Left) */
+.hexagon-node.node-1 { left: 35.75%; top: 32.5%; }  /* Dispositivos (Mid-Left Top) */
+.hexagon-node.node-2 { left: 35.75%; top: 67.5%; }  /* Espacios Conectados (Mid-Left Bottom) */
+.hexagon-node.node-3 { left: 64.25%; top: 32.5%; }  /* Préstamos (Mid-Right Top) */
+.hexagon-node.node-4 { left: 64.25%; top: 67.5%; }  /* Usuarios (Mid-Right Bottom) */
+.hexagon-node.node-5 { left: 78.5%; top: 50%; }      /* Entidades (Far Right) */
+
+/* Estilos SVG de Fondo */
+.hexagon-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Rotación continua del hexágono central */
+.hexagon-node.node-center svg {
+  animation: spin-slow 25s linear infinite;
+  transform-origin: center;
+}
+
+/* Polígono de cifras estándar */
+.cifra-card-glass .hexagon-svg polygon {
+  fill: rgba(255, 255, 255, 0.65) !important;
+  stroke: rgba(0, 91, 168, 0.12) !important;
+  stroke-width: 3;
+  transition: all 0.4s ease;
+}
+
+.cifra-card-glass:hover {
+  transform: translate(-50%, -50%) scale(1.05) !important;
+}
+
+.cifra-card-glass:hover .hexagon-svg polygon {
+  fill: rgba(255, 255, 255, 0.85) !important;
+  stroke: rgba(255, 215, 0, 0.45) !important;
+}
+
+.cifra-card-glass.revealed .hexagon-svg polygon {
+  fill: rgba(255, 255, 255, 0.8) !important;
+  stroke: #FFD700 !important;
+}
+
+/* Contenido interno */
+.hexagon-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 85%;
+  height: 85%;
+  padding: 10px;
+}
+
+/* Ajustes de hover para tarjetas reveladas */
+.cifra-card-glass.revealed:hover {
+  border-color: #FFD700 !important;
+  box-shadow: 0 18px 40px rgba(255, 215, 0, 0.18) !important;
+}
+
+/* Contenido de la tarjeta */
+.cifra-node-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cifra-icon {
+  font-size: 1.6rem;
+  color: #005BA8;
+  margin-bottom: 0.25rem;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cifra-card-glass:hover .cifra-icon {
+  transform: rotate(360deg) scale(1.1);
+}
+
+.cifra-card-glass.revealed .cifra-icon {
+  color: #005BA8; /* Mantener la uniformidad de color del icono en azul o dorado según el diseño */
+  font-size: 1.35rem;
+  margin-bottom: 0.15rem;
+}
+
+.cifra-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #002D66;
+  line-height: 1.25;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.cifra-card-glass.revealed .cifra-label {
+  font-size: 0.68rem;
+  color: rgba(0, 45, 102, 0.75);
+  margin-bottom: 0;
+  margin-top: 0.15rem;
+}
+
+.cifra-reveal-hint {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(0, 91, 168, 0.6);
+  padding: 0.15rem 0.5rem;
+  background: rgba(0, 91, 168, 0.05);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.cifra-card-glass:hover .cifra-reveal-hint {
+  background: #005BA8;
+  color: #ffffff;
+}
+
+.cifra-number-container {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #005BA8;
+  line-height: 1.1;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.cifra-card-glass.revealed .cifra-number-container {
+  color: #003F7A;
+}
+
+.cifra-card-glass.revealed .cifra-number-container .suffix {
+  font-size: 0.95rem;
+  color: #FFD700;
+  margin-left: 1px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos de versión móvil */
+.mobile-stats-grid {
+  width: 100%;
+}
+
+.mobile-cifra-card {
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: none !important; /* Desactivar pos de desktop */
+}
+
+.mobile-cifra-card:hover {
+  transform: translateY(-4px) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+}
+
+.mobile-cifra-card.revealed {
+  border-color: rgba(255, 215, 0, 0.35) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Efecto hover interactivo para el botón Ver Más */
+#btn-ver-mas-entidades:hover {
+  background-color: #ffd700 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 0 0 #000 !important;
+}
+#btn-ver-mas-entidades:active {
+  transform: translateY(2px) !important;
+  box-shadow: 0 2px 0 0 #000 !important;
+}

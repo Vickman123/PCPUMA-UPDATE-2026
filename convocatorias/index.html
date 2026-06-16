@@ -1,0 +1,1288 @@
+<!DOCTYPE <html lang="es">
+
+<head>
+<meta charset="utf-8"/>
+<title>PC Puma</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<style>
+.scroll-down i {
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+#particles-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 5;
+}
+</style>
+<style>
+#entidades-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#entidades {
+  position: relative;
+  z-index: 1;
+}
+
+canvas {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+</style></head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-pcpuma sticky-top">
+<div class="container-fluid">
+<img alt="UNAM" class="logo me-2" src="img/unam.png" style="height: 40px;"/>
+<img alt="SDI" class="logo me-3" src="img/sdi.png" style="height: 40px;"/>
+<a class="navbar-brand" href="index.html">
+<img alt="PC Puma" height="40" src="img/logo-pcpuma.png"/>
+</a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+<li class="nav-item"><a class="nav-link" href="nosotros.html"><i class="bi bi-info-circle"></i> Nosotros</a></li>
+<li class="nav-item"><a class="nav-link" href="estudiantes.html"><i class="bi bi-laptop"></i> Estudiantes</a></li>
+<li class="nav-item"><a class="nav-link" href="docentes.html"><i class="bi bi-person"></i> Docentes</a></li>
+<li class="nav-item"><a class="nav-link" href="admin.html"><i class="bi bi-hammer"></i> Admin</a></li>
+<li class="nav-item"><a class="nav-link" href="eventos.html"><i class="bi bi-calendar"></i> Eventos</a></li>
+<li class="nav-item"><a class="nav-link" href="faq.html"><i class="bi bi-question-circle"></i> FAQ</a></li>
+<li class="nav-item"><a class="nav-link" href="contacto.html"><i class="bi bi-envelope"></i> Contacto</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<header style="height: 70vh; overflow: hidden;">
+<div class="carousel slide" data-bs-ride="carousel" id="carouselExample">
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img alt="Banner 1" class="d-block w-100" src="img/banner.jpg" style="object-fit: cover; height: 100%;"/>
+</div>
+<div class="carousel-item">
+<img alt="Banner 2" class="d-block w-100" src="img/estudiantes.jpg" style="object-fit: cover; height: 100%;"/>
+</div>
+<div class="carousel-item">
+<img alt="Banner 3" class="d-block w-100" src="img/docentes.jpg" style="object-fit: cover; height: 100%;"/>
+</div>
+</div>
+<button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExample" type="button">
+<span class="carousel-control-prev-icon"></span>
+</button>
+<button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExample" type="button">
+<span class="carousel-control-next-icon"></span>
+</button>
+</div>
+<div class="scroll-down" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 10;">
+<a class="text-white text-decoration-none" href="#que-es-pcpuma">
+<i class="bi bi-chevron-down" style="font-size: 2rem;"></i>
+</a>
+</div>
+</header>
+<!-- ¿Qué es PC Puma? -->
+<section class="bg-light py-5" data-aos="fade-up">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-7">
+<h2 class="mb-4">¿Qué es PC Puma?</h2>
+<p>
+          El Programa de Conectividad PC Puma es una iniciativa de la Universidad Nacional Autónoma de México
+          que busca fortalecer el acceso a tecnologí­as de la información y la conectividad para estudiantes,
+          docentes y personal técnico. A través de infraestructura, formación y recursos, PC Puma promueve
+          una comunidad universitaria más digital, equitativa e innovadora.
+        </p>
+<a class="btn btn-primary mt-3" href="nosotros.html">Conócenos más</a>
+</div>
+<div class="col-lg-5 text-center">
+<iframe allowfullscreen="" frameborder="0" height="280" src="https://www.youtube.com/embed/lGoWku2KzNM" style="border-radius: 1rem;" title="Video institucional PC Puma" width="100%"></iframe>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN INTERACTIVA DE LOGOTIPOS -->
+<section class="container-fluid py-5 text-center text-white" style="background-color: #005BA8; background-image: url('img/network-pattern.svg'); background-size: cover;">
+<h2 data-aos="fade-down">Entidades que integran el programa</h2>
+<!-- Sección de convocatorias -->
+<section class="bg-white py-5">
+<div class="container">
+<h2 class="text-center mb-5" data-aos="fade-up">Convocatorias y eventos recientes</h2>
+<div class="row g-4">
+<div class="col-md-4" data-aos="fade-up">
+<div class="card shadow h-100">
+<div class="card-body">
+<h5 class="card-title">Curso: Herramientas TIC para docentes</h5>
+<p class="card-text">22 al 26 de abril · Modalidad virtual</p>
+<a class="btn btn-primary" href="#" target="_blank">Descargar convocatoria</a>
+</div>
+</div>
+</div>
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+<div class="card shadow h-100">
+<div class="card-body">
+<h5 class="card-title">Capacitación: Conectividad y aula híbrida</h5>
+<p class="card-text">15 de mayo · Presencial en CUAED</p>
+<a class="btn btn-primary" href="#" target="_blank">Ver detalles</a>
+</div>
+</div>
+</div>
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+<div class="card shadow h-100">
+<div class="card-body">
+<h5 class="card-title">Jornada de formación en tecnologías emergentes</h5>
+<p class="card-text">5 de junio · Modalidad híbrida</p>
+<a class="btn btn-primary" href="#" target="_blank">Inscribirse</a>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-4" data-aos="fade-up" data-aos-delay="300">
+<a class="btn btn-outline-primary" href="eventos.html">Ver todos los eventos</a>
+</div>
+</div>
+</section>
+<!-- Beneficios por perfil -->
+<section class="container py-5">
+<h2 class="text-center mb-5" data-aos="fade-up">Beneficios por perfil</h2>
+<div class="row g-4">
+<div class="col-md-4" data-aos="flip-left">
+<div class="card h-100 border-0 shadow-sm">
+<div class="card-body text-center">
+<i class="bi bi-person-circle fs-1 text-primary mb-3"></i>
+<h5 class="card-title">Estudiantes</h5>
+<p class="card-text">Acceso a préstamo de laptops, conectividad móvil y espacios de estudio equipados.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+<div class="card h-100 border-0 shadow-sm">
+<div class="card-body text-center">
+<i class="bi bi-person-workspace fs-1 text-primary mb-3"></i>
+<h5 class="card-title">Docentes</h5>
+<p class="card-text">Espacios tecnológicos para clases, herramientas digitales y acompañamiento académico.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+<div class="card h-100 border-0 shadow-sm">
+<div class="card-body text-center">
+<i class="bi bi-hdd-network fs-1 text-primary mb-3"></i>
+<h5 class="card-title">Responsables TI</h5>
+<p class="card-text">Infraestructura de red, soporte técnico y formación en tecnologí­as emergentes.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="container py-5">
+<div class="row g-4" data-aos="fade-up">
+<div class="col-md-4">
+<div class="card h-100">
+<img alt="Estudiantes" class="card-img-top" src="img/estudiantes.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Estudiantes</h5>
+<p class="card-text">Préstamo de equipos, capacitaciones, beneficios y más.</p>
+<a class="btn btn-primary" href="estudiantes.html">Ver más</a>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100">
+<img alt="Docentes" class="card-img-top" src="img/docentes.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Docentes</h5>
+<p class="card-text">Recursos digitales, formación docente e innovación educativa.</p>
+<a class="btn btn-primary" href="docentes.html">Ver más</a>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100">
+<img alt="Admin" class="card-img-top" src="img/admin.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Admin PC Puma</h5>
+<p class="card-text">Infraestructura TI, foros y guíƒÂƒ-as.</p>
+<a class="btn btn-primary" href="admin.html">Ver más</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Cifras destacadas -->
+<!-- Cifras destacadas actualizadas -->
+<section class="bg-light py-5">
+<div class="container text-center">
+<h2 class="mb-5" data-aos="fade-up">Cifras del Programa PC Puma</h2>
+<div class="row g-4 justify-content-center">
+<div class="col-md-4" data-aos="fade-up">
+<div class="display-5 fw-bold text-primary" id="cifra_antenas">0</div>
+<p>Antenas WiFi activas</p>
+</div>
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+<div class="display-5 fw-bold text-primary" id="cifra_aulas">0</div>
+<p>Aulas y laboratorios conectados</p>
+</div>
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+<div class="display-5 fw-bold text-primary" id="cifra_usuarios">0</div>
+<p>Usuarios beneficiados</p>
+</div>
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+<div class="display-5 fw-bold text-primary" id="cifra_dispositivos">0</div>
+<p>Dispositivos prestados</p>
+</div>
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+<div class="display-5 fw-bold text-primary" id="cifra_prestamos">0</div>
+<p>Préstamos realizados</p>
+</div>
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+<div class="display-5 fw-bold text-primary" id="cifra_entidades">0</div>
+<p>Entidades participantes</p>
+</div>
+</div>
+</div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  function animateValue(id, start, end, duration, suffix = "") {
+    let current = start;
+    const range = end - start;
+    const increment = range / (duration / 10);
+    const obj = document.getElementById(id);
+    const timer = setInterval(function () {
+      current += increment;
+      if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+        current = end;
+        clearInterval(timer);
+      }
+      obj.innerText = Math.floor(current).toLocaleString() + suffix;
+    }, 10);
+  }
+
+  animateValue("cifra_antenas", 0, 11009, 1000);
+  animateValue("cifra_aulas", 0, 6583, 1000);
+  animateValue("cifra_usuarios", 0, 377000, 1200);
+  animateValue("cifra_dispositivos", 0, 11318, 1000);
+  animateValue("cifra_prestamos", 0, 425000, 1200);
+  animateValue("cifra_entidades", 0, 47, 800);
+});
+</script>
+<!-- Sección de registro al préstamo -->
+<section class="py-5" style="background-color: #E8F0FA;">
+<div class="container text-center" data-aos="fade-up">
+<div class="mb-4">
+<i class="bi bi-laptop fs-1 text-primary"></i>
+</div>
+<h2 class="fw-bold">¿Necesitas equipo?</h2>
+<p class="lead">Solicita el préstamo de laptops, tabletas o chromebooks para apoyar tus actividades académicas.</p>
+<a class="btn btn-primary btn-lg mt-3" href="https://modulospcpuma.unam.mx" target="_blank">
+      Solicita aquí­ - tu equipo
+    </a>
+</div>
+</section>
+<!-- Script animación cifras -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    function animateValue(id, start, end, duration, suffix = "") {
+      let current = start;
+      const range = end - start;
+      const increment = end > start ? 1 : -1;
+      const stepTime = Math.abs(Math.floor(duration / range));
+      const obj = document.getElementById(id);
+      const timer = setInterval(function () {
+        current += increment;
+        obj.innerText = current + suffix;
+        if (current == end) {
+          clearInterval(timer);
+        }
+      }, stepTime);
+    }
+    animateValue("cifra1", 0, 32, 1200);
+    animateValue("cifra2", 0, 8000, 1500);
+    animateValue("cifra3", 0, 100, 1000, "%");
+  });
+</script>
+<!-- SECCIíƒÂƒâ€œN INTERACTIVA DE LOGOTIPOS -->
+<section class="container-fluid py-5 text-center text-white" style="position: relative; overflow: hidden; background-color: #005BA8;">
+<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+<canvas id="networkCanvas" style="width: 100%; height: 100%;"></canvas>
+</div>
+<h2 data-aos="fade-down" style="color: white;">Entidades que integran el programa</h2>
+<div class="row justify-content-center g-4 mt-4" data-aos="fade-up">
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal1" data-bs-toggle="modal">
+<img alt="FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA" src="img/FMVZ.png"/>
+</div>
+<div class="entidad-nombre">FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal2" data-bs-toggle="modal">
+<img alt="FACULTAD DE ODONTOLOGÍA" src="img/FODONTOLOGÍA.JPG"/>
+</div>
+<div class="entidad-nombre">FACULTAD DE ODONTOLOGÍA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal3" data-bs-toggle="modal">
+<img alt="FES ACATLÁN" src="img/FESACATLAN.png"/>
+</div>
+<div class="entidad-nombre">FES ACATLÁN</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal4" data-bs-toggle="modal">
+<img alt="FES ARAGÓN" src="img/FESARAGON.png"/>
+</div>
+<div class="entidad-nombre">FES ARAGÓN</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal5" data-bs-toggle="modal">
+<img alt="FACULTAD DE ARTES Y DISEÑO" src="img/FAD.png"/>
+</div>
+<div class="entidad-nombre">FACULTAD DE ARTES Y DISEÑO</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal6" data-bs-toggle="modal">
+<img alt="FACULTAD DE ARQUITECTURA" src="img/FARQUITECTURA.png"/>
+</div>
+<div class="entidad-nombre">FACULTAD DE ARQUITECTURA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal7" data-bs-toggle="modal">
+<img alt="ENES MORELIA" src="img/ENESMORELIA.png"/>
+</div>
+<div class="entidad-nombre">ENES MORELIA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal8" data-bs-toggle="modal">
+<img alt="FES ZARAGOZA" src="img/FESZARAGOZA.png"/>
+</div>
+<div class="entidad-nombre">FES ZARAGOZA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal9" data-bs-toggle="modal">
+<img alt="FACULTAD DE MÚSICA" src="img/FMUSICA.png"/>
+</div>
+<div class="entidad-nombre">FACULTAD DE MÚSICA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal10" data-bs-toggle="modal">
+<img alt="ENES MÉRIDA" src="img/ENESMERIDA.png"/>
+</div>
+<div class="entidad-nombre">ENES MÉRIDA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal11" data-bs-toggle="modal">
+<img alt="FACULTAD DE ENFERMERÍA Y OBSTETRICIA" src="img/FENO.png"/>
+</div>
+<div class="entidad-nombre">FACULTAD DE ENFERMERÍA Y OBSTETRICIA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal12" data-bs-toggle="modal">
+<img alt="ESCUELA NACIONAL DE TRABAJO SOCIAL" src="img/ENTS.png"/>
+</div>
+<div class="entidad-nombre">ESCUELA NACIONAL DE TRABAJO SOCIAL</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal13" data-bs-toggle="modal">
+<img alt="ESCUELA NACIONAL DE LENGUAS, LINGÜÍSTICA Y TRADUCCIÓN" src="img/ENALLT.png"/>
+</div>
+<div class="entidad-nombre">ESCUELA NACIONAL DE LENGUAS, LINGÜÍSTICA Y TRADUCCIÓN</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal14" data-bs-toggle="modal">
+<img alt="FES CUAUTITLÁN" src="img/FESCUAUTITLAN.png"/>
+</div>
+<div class="entidad-nombre">FES CUAUTITLÁN</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal15" data-bs-toggle="modal">
+<img alt="FACULTAD DE CONTADURÍA Y ADMINSITRACIÓN" src="img/FCyA.jpg"/>
+</div>
+<div class="entidad-nombre">FACULTAD DE CONTADURÍA Y ADMINSITRACIÓN</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal16" data-bs-toggle="modal">
+<img alt="FACULTAD DE CIENCIAS POLÍTICAS Y SOCIALES" src="img/FCPYS.png"/>
+</div>
+<div class="entidad-nombre">FACULTAD DE CIENCIAS POLÍTICAS Y SOCIALES</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal17" data-bs-toggle="modal">
+<img alt="COORDINACIÓN MIXTA DE POSGRADO" src="img/POSGRADO.png"/>
+</div>
+<div class="entidad-nombre">COORDINACIÓN MIXTA DE POSGRADO</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal18" data-bs-toggle="modal">
+<img alt="FACULTAD DE CIENCIAS" src="img/FCIENCIAS.png"/>
+</div>
+<div class="entidad-nombre">FACULTAD DE CIENCIAS</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal19" data-bs-toggle="modal">
+<img alt="FACULTAD DE ECONOMÍA" src="img/FECONOMIA.png"/>
+</div>
+<div class="entidad-nombre">FACULTAD DE ECONOMÍA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal20" data-bs-toggle="modal">
+<img alt="ENES LEÓN" src="img/ENESLEON.png"/>
+</div>
+<div class="entidad-nombre">ENES LEÓN</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal21" data-bs-toggle="modal">
+<img alt="FES IZTACALA" src="img/FESIZTACALA.png"/>
+</div>
+<div class="entidad-nombre">FES IZTACALA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal22" data-bs-toggle="modal">
+<img alt="COLEGIO DE CIENCIAS Y HUMANIDADES" src="img/CCH.png"/>
+</div>
+<div class="entidad-nombre">COLEGIO DE CIENCIAS Y HUMANIDADES</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal23" data-bs-toggle="modal">
+<img alt="FACULTAD DE PSICOLOGÍA" src="img/FPSICOLOGIA.png"/>
+</div>
+<div class="entidad-nombre">FACULTAD DE PSICOLOGÍA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal24" data-bs-toggle="modal">
+<img alt="INSTITUTO DE FÍSICA" src="img/IFISICA.png"/>
+</div>
+<div class="entidad-nombre">INSTITUTO DE FÍSICA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal25" data-bs-toggle="modal">
+<img alt="ESCUELA NACIONAL PREPARATORIA" src="img/ENP.png"/>
+</div>
+<div class="entidad-nombre">ESCUELA NACIONAL PREPARATORIA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal26" data-bs-toggle="modal">
+<img alt="FACULTAD DE MEDICINA" src="img/FMEDICINA.png"/>
+</div>
+<div class="entidad-nombre">FACULTAD DE MEDICINA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal27" data-bs-toggle="modal">
+<img alt="FACULTAD DE DERECHO" src="img/DERECHO.png"/>
+</div>
+<div class="entidad-nombre">FACULTAD DE DERECHO</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal28" data-bs-toggle="modal">
+<img alt="FACULTAD DE FILOSOFÍA Y LETRAS" src="img/FFYL.png"/>
+</div>
+<div class="entidad-nombre">FACULTAD DE FILOSOFÍA Y LETRAS</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal29" data-bs-toggle="modal">
+<img alt="INSTITUTO DE BIOLOGÍA" src="img/IBIOLOGÍA.png"/>
+</div>
+<div class="entidad-nombre">INSTITUTO DE BIOLOGÍA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal30" data-bs-toggle="modal">
+<img alt="FACULTAD DE INGENIERÍA" src="img/FINGENIERÍA.png"/>
+</div>
+<div class="entidad-nombre">FACULTAD DE INGENIERÍA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal31" data-bs-toggle="modal">
+<img alt="ENES JURIQUILLA" src="img/ENESJURIQUILLA.png"/>
+</div>
+<div class="entidad-nombre">ENES JURIQUILLA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal32" data-bs-toggle="modal">
+<img alt="UNIDAD DE EXTENSIÓN UNIVERSITARIA OAXACA" src="img/UEUO.png"/>
+</div>
+<div class="entidad-nombre">UNIDAD DE EXTENSIÓN UNIVERSITARIA OAXACA</div>
+</div>
+<div class="col-4 col-md-2">
+<div class="entidad-logo" data-bs-target="#modal33" data-bs-toggle="modal">
+<img alt="ENES OAXACA" src="img/ENESO.png"/>
+</div>
+<div class="entidad-nombre">ENES OAXACA</div>
+</div>
+</div>
+</section>
+<!-- Modal FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA -->
+<div class="modal fade" id="modal1" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Medicina Veterinaria y Zootecnia</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 17 de agosto de 2015</p>
+<p><strong>Director(a):</strong> Dra. María Elena Trujillo Ortega</p>
+<p><strong>Secretario(a) General:</strong> MVZ. Juan de Jesús Nava Navarrete</p>
+<p><strong>Responsable de TI:</strong> Ing. Francisco Adolfo López Suárez</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FACULTAD DE ODONTOLOGÍA -->
+<div class="modal fade" id="modal2" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Odontología</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 10 de agosto de 2018</p>
+<p><strong>Director(a):</strong> Mtro. José Arturo Fernández Pedrero</p>
+<p><strong>Secretario(a) General:</strong> Mtra. María Gloria Hirose López</p>
+<p><strong>Responsable de TI:</strong> Alejandro J. Golzarri Moreno</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FES ACATLÁN -->
+<div class="modal fade" id="modal3" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Estudios Superiores Acatlán</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 29 de noviembre de 2018</p>
+<p><strong>Director(a):</strong> Dr. Manuel Martínez Justo</p>
+<p><strong>Secretario(a) General:</strong> Mtro. José Luis Castañón Zurita</p>
+<p><strong>Responsable de TI:</strong> Lic. Fernando Israel González Trejo</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FES ARAGÓN -->
+<div class="modal fade" id="modal4" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Estudios Superiores Aragón</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 29 de marzo de 2019</p>
+<p><strong>Director(a):</strong> M. En I. Fernando Macedo Chagolla</p>
+<p><strong>Secretario(a) General:</strong> Lic. Jose Francisco Salgado Rico</p>
+<p><strong>Responsable de TI:</strong> M. En C. Felipe de Jesús Gutiérrez López</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FACULTAD DE ARTES Y DISEÑO -->
+<div class="modal fade" id="modal5" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Artes y Diseño</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 8 de octubre de 2019</p>
+<p><strong>Director(a):</strong> Dr. Gerardo García Luna Martínez</p>
+<p><strong>Secretario(a) General:</strong> Lic. Porfirio Antonio Díaz Rodríguez</p>
+<p><strong>Responsable de TI:</strong> Mtro. Felipe Orlando Becerra Palma</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FACULTAD DE ARQUITECTURA -->
+<div class="modal fade" id="modal6" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Arquitectura</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 14 de octubre de 2019</p>
+<p><strong>Director(a):</strong> Mtro. Marcos Mazari Hiriarte</p>
+<p><strong>Secretario(a) General:</strong> Mtra. Leda Duarte Lagunes</p>
+<p><strong>Responsable de TI:</strong> Ing. Francisco Javier Castañeda Rojas</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal ENES MORELIA -->
+<div class="modal fade" id="modal7" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Escuela Nacional de Estudios Superiores Morelia</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 17 de octubre de 2019</p>
+<p><strong>Director(a):</strong> Dr. Mario Rodríguez Martínez</p>
+<p><strong>Secretario(a) General:</strong> Lic. Ana Gabriela Vargas Gómez</p>
+<p><strong>Responsable de TI:</strong> Mtro. Froylan Hernandez</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FES ZARAGOZA -->
+<div class="modal fade" id="modal8" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Estudios Superiores Zaragoza</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 01 de febrero de 2020</p>
+<p><strong>Director(a):</strong> Dr. Víctor Manuel Mendoza Nuñez</p>
+<p><strong>Secretario(a) General:</strong> Lic. Sergio Silva Salgado.</p>
+<p><strong>Responsable de TI:</strong> Lic. Aarón Zepeda García.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FACULTAD DE MÚSICA -->
+<div class="modal fade" id="modal9" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Música</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 13 de febrero de 2020</p>
+<p><strong>Director(a):</strong> Mtra. María Teresa Gabriela Frenk Mora</p>
+<p><strong>Secretario(a) General:</strong> Lic. Juana Esquivel Flores</p>
+<p><strong>Responsable de TI:</strong> Ing. Clemente Valdez Cruz</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal ENES MÉRIDA -->
+<div class="modal fade" id="modal10" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">ENES Mérida</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 14 de febrero de 2020</p>
+<p><strong>Director(a):</strong> Dr. Fco. Xavier Chiappa Carrara</p>
+<p><strong>Secretario(a) General:</strong> Mtro. Alberto Frola Ruíz</p>
+<p><strong>Responsable de TI:</strong> Ing. Sandra Sauza</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FACULTAD DE ENFERMERÍA Y OBSTETRICIA -->
+<div class="modal fade" id="modal11" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Enfermería y Obstetricia</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 18 de febrero de 2020</p>
+<p><strong>Director(a):</strong> Mtra. Rosa Amarilis Zárate Grajales</p>
+<p><strong>Secretario(a) General:</strong> Mtro. Luis Alberto Huerta López</p>
+<p><strong>Responsable de TI:</strong> Mtro. David Israel Morales Avila</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal ESCUELA NACIONAL DE TRABAJO SOCIAL -->
+<div class="modal fade" id="modal12" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Escuela Nacional de Trabajo Social</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 26 de febrero de 2020</p>
+<p><strong>Director(a):</strong> Juana Leticia Cano Soriano</p>
+<p><strong>Secretario(a) General:</strong> Jose Armando Hernandez Gutierrez</p>
+<p><strong>Responsable de TI:</strong> Ing. Enrique Niño Mendez</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal ESCUELA NACIONAL DE LENGUAS, LINGÜÍSTICA Y TRADUCCIÓN -->
+<div class="modal fade" id="modal13" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Escuela Nacional de Lenguas, Lingüística y Traducción</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 5 de marzo de 2020</p>
+<p><strong>Director(a):</strong> Dra. María del Carmen Contijoch Escontria</p>
+<p><strong>Secretario(a) General:</strong> Lic. Antonio Mancera Ponce</p>
+<p><strong>Responsable de TI:</strong> Mtro. Juan Manuel Garcia</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FES CUAUTITLÁN -->
+<div class="modal fade" id="modal14" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Estudios Superiores Cuautitlán</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 6 de marzo de 2020</p>
+<p><strong>Director(a):</strong> Mtro. Jorge Alfredo Cuéllar Ordaz</p>
+<p><strong>Secretario(a) General:</strong> Dr. José Francisco Montiel Sosa</p>
+<p><strong>Responsable de TI:</strong> Ing. Jesús Moisés Hernández Duarte</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FACULTAD DE CONTADURÍA Y ADMINSITRACIÓN -->
+<div class="modal fade" id="modal15" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Contaduría y Administración</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 26 de marzo de 2021</p>
+<p><strong>Director(a):</strong> Tomás Humberto Rubio Pérez</p>
+<p><strong>Secretario(a) General:</strong> Amando Tomé González</p>
+<p><strong>Responsable de TI:</strong> Mtro. Balfred Santaella Hinojosa</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FACULTAD DE CIENCIAS POLÍTICAS Y SOCIALES -->
+<div class="modal fade" id="modal16" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Ciencias Políticas y Sociales</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 14 de abril de 2021</p>
+<p><strong>Director(a):</strong> DRA. CAROLA GARCÍA CALDERÓN</p>
+<p><strong>Secretario(a) General:</strong> Lic. Juan Manuel López Ramírez</p>
+<p><strong>Responsable de TI:</strong> Ing. Alberto Axcaná de la Mora Pliego</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal COORDINACIÓN MIXTA DE POSGRADO -->
+<div class="modal fade" id="modal17" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Coordinación Mixta de Posgrado</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 01 de junio de 2021</p>
+<p><strong>Director(a):</strong> Patricia Dolores Dávila Aranda</p>
+<p><strong>Secretario(a) General:</strong> Rafael Avilés Solís</p>
+<p><strong>Responsable de TI:</strong> Verónica Berenice Pérez Estrada</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FACULTAD DE CIENCIAS -->
+<div class="modal fade" id="modal18" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Ciencias</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 01 de agosto de 2021</p>
+<p><strong>Director(a):</strong> DR. VÍCTOR MANUEL VELÁZQUEZ AGUILAR</p>
+<p><strong>Secretario(a) General:</strong> Lic. Laura Verónnica Orozco Rodríguez</p>
+<p><strong>Responsable de TI:</strong> Mat. Martha Rico Diener</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FACULTAD DE ECONOMÍA -->
+<div class="modal fade" id="modal19" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Economía</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 15 de febrero de 2022</p>
+<p><strong>Director(a):</strong> Mtro. Eduardo Vega Lóez</p>
+<p><strong>Secretario(a) General:</strong> Mtra. María del Carmen Aguilar Mendoza</p>
+<p><strong>Responsable de TI:</strong> Ing. Jesús Garrido López</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal ENES LEÓN -->
+<div class="modal fade" id="modal20" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Escuela Nacional de Estudios Superiores León</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 23 de febrero de 2022</p>
+<p><strong>Director(a):</strong> Dra. Laura Susana Acosta Torres</p>
+<p><strong>Secretario(a) General:</strong> Mtra. Maribel Cuevas Sotelo</p>
+<p><strong>Responsable de TI:</strong> Ing. Erika Galicia Espinosa</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FES IZTACALA -->
+<div class="modal fade" id="modal21" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Estudios Superiores Iztacala</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 01 de agosto de 2022</p>
+<p><strong>Director(a):</strong> María del Coro Arizmendi Arriaga</p>
+<p><strong>Secretario(a) General:</strong> Reina Isabel Ferrer Trujillo</p>
+<p><strong>Responsable de TI:</strong> Marco Antonio Pichardo Leyva</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal COLEGIO DE CIENCIAS Y HUMANIDADES -->
+<div class="modal fade" id="modal22" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Colegio de Ciencias y Humanidades</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 04 de agosto de 2022</p>
+<p><strong>Director(a):</strong> Dr.Benjamin Barajas Sánchez</p>
+<p><strong>Secretario(a) General:</strong> Lic. Rocío Carrillo Camargo</p>
+<p><strong>Responsable de TI:</strong> Ing. Armando Rodríguez Arguijo</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FACULTAD DE PSICOLOGÍA -->
+<div class="modal fade" id="modal23" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Psicología</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 25 de agosto de 2022</p>
+<p><strong>Director(a):</strong> Dr. Germán Palafox Palafox</p>
+<p><strong>Secretario(a) General:</strong> Lic. Guillermo Huerta Juárez</p>
+<p><strong>Responsable de TI:</strong> Ing. Jesús Esquivel Martínez</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal INSTITUTO DE FÍSICA -->
+<div class="modal fade" id="modal24" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Instiuto de Física</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 11 de octubre de 2022</p>
+<p><strong>Director(a):</strong> Dra. Ana Cecilia Noguez Garrido</p>
+<p><strong>Secretario(a) General:</strong> Lic. Delia Angélica O´Reilly Haro</p>
+<p><strong>Responsable de TI:</strong> Dr. César Leonardo Ordóñez Romero</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal ESCUELA NACIONAL PREPARATORIA -->
+<div class="modal fade" id="modal25" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Escuela Nacional Preparatoria</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 18 de octubre de 2022</p>
+<p><strong>Director(a):</strong> Biol. Maria Dolores Valle Martínez</p>
+<p><strong>Secretario(a) General:</strong> -</p>
+<p><strong>Responsable de TI:</strong> Ing. Jesús Romero Martínez</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FACULTAD DE MEDICINA -->
+<div class="modal fade" id="modal26" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Medicina</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 1 de noviembre de 2022</p>
+<p><strong>Director(a):</strong> DR. GERMÁN FAJARDO DOLCI</p>
+<p><strong>Secretario(a) General:</strong> Dra. Irene Durante Montiel</p>
+<p><strong>Responsable de TI:</strong> Ing. Javier Calderón Albor</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FACULTAD DE DERECHO -->
+<div class="modal fade" id="modal27" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Derecho</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 15 de diciembre de 2022</p>
+<p><strong>Director(a):</strong> DR. RAÚL CONTRERAS BUSTAMANTE</p>
+<p><strong>Secretario(a) General:</strong> Mtra. Patricia Merodio Bassan</p>
+<p><strong>Responsable de TI:</strong> Mtro. Rodolfo Romero Flores</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FACULTAD DE FILOSOFÍA Y LETRAS -->
+<div class="modal fade" id="modal28" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Filosofía y Letras</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 4 de marzo de 2025</p>
+<p><strong>Director(a):</strong> Dra. Mary Frances Teresa Rodriguez Van Gort</p>
+<p><strong>Secretario(a) General:</strong> Dr. Samuel Hernández López</p>
+<p><strong>Responsable de TI:</strong> Ing. Educardo Cano Méndez</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal INSTITUTO DE BIOLOGÍA -->
+<div class="modal fade" id="modal29" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Instituto de Biología</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 9 de septiembre de 2022</p>
+<p><strong>Director(a):</strong> Dra.Susana Aurora Magallon Puebla</p>
+<p><strong>Secretario(a) General:</strong> Lic. Claudia Alejandrina Canela Galván</p>
+<p><strong>Responsable de TI:</strong> Biól. Jorge Aurelio Saldívar Sandoval</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal FACULTAD DE INGENIERÍA -->
+<div class="modal fade" id="modal30" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Facultad de Ingeniería</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 22 de mayo de 2024</p>
+<p><strong>Director(a):</strong> Dr. José Antonio Hernández Espriú</p>
+<p><strong>Secretario(a) General:</strong> Dr. Leopoldo Adrián González González</p>
+<p><strong>Responsable de TI:</strong> M.C. Alejandro Velázquez Mena</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal ENES JURIQUILLA -->
+<div class="modal fade" id="modal31" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Escuela Nacional de Estudios Superiores Juriquilla</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 18 de mayo de 2023</p>
+<p><strong>Director(a):</strong> Dr. Raul Gerardo Paredes Guerrero</p>
+<p><strong>Secretario(a) General:</strong> Lic. Emmanuel Roberto Orozco García</p>
+<p><strong>Responsable de TI:</strong> Ing. Sandra Hernández García</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal UNIDAD DE EXTENSIÓN UNIVERSITARIA OAXACA -->
+<div class="modal fade" id="modal32" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Unidad de Extensión Universitaria Oaxaca</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 8 de septiembre de 2022</p>
+<p><strong>Director(a):</strong> Mtra. Clariza Toledo Luis</p>
+<p><strong>Secretario(a) General:</strong> Mtro. Alejandro Villalobos Vivas</p>
+<p><strong>Responsable de TI:</strong> L.I. Aracely Ramírez Cruz</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal ENES OAXACA -->
+<div class="modal fade" id="modal33" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-pcpuma text-white">
+<h5 class="modal-title">Escuela Nacional de Estudios Superiores Oaxaca</h5>
+<button class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="color: #000;">
+<p><strong>Fecha de integración:</strong> 31 de marzo de 2025</p>
+<p><strong>Director(a):</strong> -</p>
+<p><strong>Secretario(a) General:</strong> -</p>
+<p><strong>Responsable de TI:</strong> -</p>
+</div>
+</div>
+</div>
+</div>
+<footer class="footer bg-pcpuma text-white mt-0">
+<div class="container text-center pt-3 pb-2">
+<div class="row justify-content-center pt-4">
+<div class="col-md-auto">
+<a class="text-white d-block mb-2" href="archivos/Lineamientos_Generales_PCPUMA.pdf" target="_blank">Lineamientos Generales</a>
+</div>
+<div class="col-md-auto">
+<a class="text-white d-block mb-2" href="archivos/AvisoPrivacidad_Simplificado_ProyectoPCPUMA.pdf" target="_blank">Aviso de Privacidad Simplificado</a>
+</div>
+<div class="col-md-auto">
+<a class="text-white d-block mb-2" href="archivos/AvisoPrivacidad_Integral_ProyectoPCPUMA.pdf" target="_blank">Aviso de Privacidad Integral</a>
+</div>
+<div class="col-md-auto">
+<a class="text-white d-block mb-2" href="creditos.html">Créditos</a>
+</div>
+<div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA">
+<img alt="Facultad de Medicina Veterinaria y Zootecnia" class="img-fluid rounded-circle mb-2" src="img/FMVZ.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Medicina Veterinaria y Zootecnia</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FACULTAD DE ODONTOLOGÍA">
+<img alt="Facultad de Odontología" class="img-fluid rounded-circle mb-2" src="img/FODONTOLOGÍA.JPG" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Odontología</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FES ACATLÁN">
+<img alt="Facultad de Estudios Superiores Acatlán" class="img-fluid rounded-circle mb-2" src="img/FESACATLAN.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Estudios Superiores Acatlán</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FES ARAGÓN">
+<img alt="Facultad de Estudios Superiores Aragón" class="img-fluid rounded-circle mb-2" src="img/FESARAGON.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Estudios Superiores Aragón</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FACULTAD DE ARTES Y DISEÑO">
+<img alt="Facultad de Artes y Diseño" class="img-fluid rounded-circle mb-2" src="img/FAD.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Artes y Diseño</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FACULTAD DE ARQUITECTURA">
+<img alt="Facultad de Arquitectura" class="img-fluid rounded-circle mb-2" src="img/FARQUITECTURA.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Arquitectura</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="ENES MORELIA">
+<img alt="Escuela Nacional de Estudios Superiores Morelia" class="img-fluid rounded-circle mb-2" src="img/ENESMORELIA.png" style="max-width: 100px;"/>
+<p class="small text-white">Escuela Nacional de Estudios Superiores Morelia</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FES ZARAGOZA">
+<img alt="Facultad de Estudios Superiores Zaragoza" class="img-fluid rounded-circle mb-2" src="img/FESZARAGOZA.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Estudios Superiores Zaragoza</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FACULTAD DE MÚSICA">
+<img alt="Facultad de Música" class="img-fluid rounded-circle mb-2" src="img/FMUSICA.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Música</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="ENES MÉRIDA">
+<img alt="ENES Mérida" class="img-fluid rounded-circle mb-2" src="img/ENESMERIDA.png" style="max-width: 100px;"/>
+<p class="small text-white">ENES Mérida</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FACULTAD DE ENFERMERÍA Y OBSTETRICIA">
+<img alt="Facultad de Enfermería y Obstetricia" class="img-fluid rounded-circle mb-2" src="img/FENO.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Enfermería y Obstetricia</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="ESCUELA NACIONAL DE TRABAJO SOCIAL">
+<img alt="Escuela Nacional de Trabajo Social" class="img-fluid rounded-circle mb-2" src="img/ENTS.png" style="max-width: 100px;"/>
+<p class="small text-white">Escuela Nacional de Trabajo Social</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="ESCUELA NACIONAL DE LENGUAS, LINGÜÍSTICA Y TRADUCCIÓN">
+<img alt="Escuela Nacional de Lenguas, Lingüística y Traducción" class="img-fluid rounded-circle mb-2" src="img/ENALLT.png" style="max-width: 100px;"/>
+<p class="small text-white">Escuela Nacional de Lenguas, Lingüística y Traducción</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FES CUAUTITLÁN">
+<img alt="Facultad de Estudios Superiores Cuautitlán" class="img-fluid rounded-circle mb-2" src="img/FESCUAUTITLAN.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Estudios Superiores Cuautitlán</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FACULTAD DE CONTADURÍA Y ADMINSITRACIÓN">
+<img alt="Facultad de Contaduría y Administración" class="img-fluid rounded-circle mb-2" src="img/FCyA.jpg" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Contaduría y Administración</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FACULTAD DE CIENCIAS POLÍTICAS Y SOCIALES">
+<img alt="Facultad de Ciencias Políticas y Sociales" class="img-fluid rounded-circle mb-2" src="img/FCPYS.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Ciencias Políticas y Sociales</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="COORDINACIÓN MIXTA DE POSGRADO">
+<img alt="Coordinación Mixta de Posgrado" class="img-fluid rounded-circle mb-2" src="img/POSGRADO.png" style="max-width: 100px;"/>
+<p class="small text-white">Coordinación Mixta de Posgrado</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FACULTAD DE CIENCIAS">
+<img alt="Facultad de Ciencias" class="img-fluid rounded-circle mb-2" src="img/FCIENCIAS.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Ciencias</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FACULTAD DE ECONOMÍA">
+<img alt="Facultad de Economía" class="img-fluid rounded-circle mb-2" src="img/FECONOMIA.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Economía</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="ENES LEÓN">
+<img alt="Escuela Nacional de Estudios Superiores León" class="img-fluid rounded-circle mb-2" src="img/ENESLEON.png" style="max-width: 100px;"/>
+<p class="small text-white">Escuela Nacional de Estudios Superiores León</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FES IZTACALA">
+<img alt="Facultad de Estudios Superiores Iztacala" class="img-fluid rounded-circle mb-2" src="img/FESIZTACALA.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Estudios Superiores Iztacala</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="COLEGIO DE CIENCIAS Y HUMANIDADES">
+<img alt="Colegio de Ciencias y Humanidades" class="img-fluid rounded-circle mb-2" src="img/CCH.png" style="max-width: 100px;"/>
+<p class="small text-white">Colegio de Ciencias y Humanidades</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FACULTAD DE PSICOLOGÍA">
+<img alt="Facultad de Psicología" class="img-fluid rounded-circle mb-2" src="img/FPSICOLOGIA.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Psicología</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="INSTITUTO DE FÍSICA">
+<img alt="Instiuto de Física" class="img-fluid rounded-circle mb-2" src="img/IFISICA.png" style="max-width: 100px;"/>
+<p class="small text-white">Instiuto de Física</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="ESCUELA NACIONAL PREPARATORIA">
+<img alt="Escuela Nacional Preparatoria" class="img-fluid rounded-circle mb-2" src="img/ENP.png" style="max-width: 100px;"/>
+<p class="small text-white">Escuela Nacional Preparatoria</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FACULTAD DE MEDICINA">
+<img alt="Facultad de Medicina" class="img-fluid rounded-circle mb-2" src="img/FMEDICINA.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Medicina</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FACULTAD DE DERECHO">
+<img alt="Facultad de Derecho" class="img-fluid rounded-circle mb-2" src="img/DERECHO.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Derecho</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FACULTAD DE FILOSOFÍA Y LETRAS">
+<img alt="Facultad de Filosofía y Letras" class="img-fluid rounded-circle mb-2" src="img/FFYL.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Filosofía y Letras</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="INSTITUTO DE BIOLOGÍA">
+<img alt="Instituto de Biología" class="img-fluid rounded-circle mb-2" src="img/IBIOLOGÍA.png" style="max-width: 100px;"/>
+<p class="small text-white">Instituto de Biología</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="FACULTAD DE INGENIERÍA">
+<img alt="Facultad de Ingeniería" class="img-fluid rounded-circle mb-2" src="img/FINGENIERÍA.png" style="max-width: 100px;"/>
+<p class="small text-white">Facultad de Ingeniería</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="ENES JURIQUILLA">
+<img alt="Escuela Nacional de Estudios Superiores Juriquilla" class="img-fluid rounded-circle mb-2" src="img/ENESJURIQUILLA.png" style="max-width: 100px;"/>
+<p class="small text-white">Escuela Nacional de Estudios Superiores Juriquilla</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="UNIDAD DE EXTENSIÓN UNIVERSITARIA OAXACA">
+<img alt="Unidad de Extensión Universitaria Oaxaca" class="img-fluid rounded-circle mb-2" src="img/UEUO.png" style="max-width: 100px;"/>
+<p class="small text-white">Unidad de Extensión Universitaria Oaxaca</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="ENES OAXACA">
+<img alt="Escuela Nacional de Estudios Superiores Oaxaca" class="img-fluid rounded-circle mb-2" src="img/ENESO.png" style="max-width: 100px;"/>
+<p class="small text-white">Escuela Nacional de Estudios Superiores Oaxaca</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="ESCUELA NACIONAL DE CIENCIAS DE LA TIERRA">
+<img alt="Escuela Nacional de Ciencias de la Tierra" class="img-fluid rounded-circle mb-2" src="img/ENCIT.png" style="max-width: 100px;"/>
+<p class="small text-white">Escuela Nacional de Ciencias de la Tierra</p>
+</div><div class="col-6 col-sm-4 col-md-3 col-xl-2 text-center" id="CENTRO DE NANOCIENCIAS Y NANOTECNOLOGÍA">
+<img alt="Centro de Nanociencias y Nanotecnología" class="img-fluid rounded-circle mb-2" src="img/CNYN.jpg" style="max-width: 100px;"/>
+<p class="small text-white">Centro de Nanociencias y Nanotecnología</p>
+</div></div>
+<div class="d-flex justify-content-center gap-3 mt-3">
+<a aria-label="Facebook" href="https://www.facebook.com/UNAM.PCPuma" target="_blank"><i class="bi bi-facebook fs-4 text-white"></i></a>
+<a aria-label="Twitter" href="https://x.com/PCPuma_UNAM" target="_blank"><i class="bi bi-twitter-x fs-4 text-white"></i></a>
+<a aria-label="TikTok" href="https://www.tiktok.com/@contactopcpuma" target="_blank"><i class="bi bi-tiktok fs-4 text-white"></i></a>
+<a aria-label="YouTube" href="https://www.youtube.com/@ContactoPCPUMA" target="_blank"><i class="bi bi-youtube fs-4 text-white"></i></a>
+</div>
+<div class="container mt-4">
+<p class="small text-center text-white">
+        Hecho en México. Universidad Nacional Autónoma de México (UNAM). Todos los derechos reservados 2025. Esta página puede ser reproducida con fines no lucrativos, siempre y cuando se cite la fuente completa y su dirección electrónica, y no se mutile; de otra forma requiere permiso previo por escrito de la institución.
+      </p>
+</div>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+<script src="network-bg.js"></script>
+<!-- Botón flotante -->
+<style>
+.flotante-equipo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #005BA8;
+  color: white;
+  border-radius: 50px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.flotante-equipo:hover {
+  background-color: #003d73;
+  text-decoration: none;
+}
+</style>
+<a class="flotante-equipo" href="https://modulospcpuma.unam.mx" target="_blank">
+Solicita tu equipo
+</a>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  function animateValue(id, start, end, duration, suffix = "") {
+    let current = start;
+    const range = end - start;
+    const increment = range / (duration / 10);
+    const obj = document.getElementById(id);
+    const timer = setInterval(function () {
+      current += increment;
+      if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+        current = end;
+        clearInterval(timer);
+      }
+      obj.innerText = Math.floor(current).toLocaleString() + suffix;
+    }, 10);
+  }
+
+  animateValue("cifra_antenas", 0, 11009, 1000);
+  animateValue("cifra_aulas", 0, 6583, 1000);
+  animateValue("cifra_usuarios", 0, 377000, 1200);
+  animateValue("cifra_dispositivos", 0, 11318, 1000);
+  animateValue("cifra_prestamos", 0, 425000, 1200);
+  animateValue("cifra_entidades", 0, 47, 800);
+});
+</script>
+</section><div aria-hidden="true" aria-labelledby="modal-0Label" class="modal fade" id="modal-0" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA" class="img-fluid mb-3" src="img/FMVZ.png"/><h5>FACULTAD DE MEDICINA VETERINARIA Y ZOOTECNIA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-1Label" class="modal fade" id="modal-1" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FACULTAD DE ODONTOLOGÍA" class="img-fluid mb-3" src="img/FODONTOLOGÍA.JPG"/><h5>FACULTAD DE ODONTOLOGÍA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-2Label" class="modal fade" id="modal-2" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FES ACATLÁN" class="img-fluid mb-3" src="img/FESACATLAN.png"/><h5>FES ACATLÁN</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-3Label" class="modal fade" id="modal-3" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FES ARAGÓN" class="img-fluid mb-3" src="img/FESARAGON.png"/><h5>FES ARAGÓN</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-4Label" class="modal fade" id="modal-4" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FACULTAD DE ARTES Y DISEÑO" class="img-fluid mb-3" src="img/FAD.png"/><h5>FACULTAD DE ARTES Y DISEÑO</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-5Label" class="modal fade" id="modal-5" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FACULTAD DE ARQUITECTURA" class="img-fluid mb-3" src="img/FARQUITECTURA.png"/><h5>FACULTAD DE ARQUITECTURA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-6Label" class="modal fade" id="modal-6" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="ENES MORELIA" class="img-fluid mb-3" src="img/ENESMORELIA.png"/><h5>ENES MORELIA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-7Label" class="modal fade" id="modal-7" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FES ZARAGOZA" class="img-fluid mb-3" src="img/FESZARAGOZA.png"/><h5>FES ZARAGOZA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-8Label" class="modal fade" id="modal-8" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FACULTAD DE MÚSICA" class="img-fluid mb-3" src="img/FMUSICA.png"/><h5>FACULTAD DE MÚSICA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-9Label" class="modal fade" id="modal-9" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="ENES MÉRIDA" class="img-fluid mb-3" src="img/ENESMERIDA.png"/><h5>ENES MÉRIDA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-10Label" class="modal fade" id="modal-10" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FACULTAD DE ENFERMERÍA Y OBSTETRICIA" class="img-fluid mb-3" src="img/FENO.png"/><h5>FACULTAD DE ENFERMERÍA Y OBSTETRICIA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-11Label" class="modal fade" id="modal-11" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="ESCUELA NACIONAL DE TRABAJO SOCIAL" class="img-fluid mb-3" src="img/ENTS.png"/><h5>ESCUELA NACIONAL DE TRABAJO SOCIAL</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-12Label" class="modal fade" id="modal-12" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="ESCUELA NACIONAL DE LENGUAS, LINGÜÍSTICA Y TRADUCCIÓN" class="img-fluid mb-3" src="img/ENALLT.png"/><h5>ESCUELA NACIONAL DE LENGUAS, LINGÜÍSTICA Y TRADUCCIÓN</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-13Label" class="modal fade" id="modal-13" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FES CUAUTITLÁN" class="img-fluid mb-3" src="img/FESCUAUTITLAN.png"/><h5>FES CUAUTITLÁN</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-14Label" class="modal fade" id="modal-14" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FACULTAD DE CONTADURÍA Y ADMINSITRACIÓN" class="img-fluid mb-3" src="img/FCyA.jpg"/><h5>FACULTAD DE CONTADURÍA Y ADMINSITRACIÓN</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-15Label" class="modal fade" id="modal-15" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FACULTAD DE CIENCIAS POLÍTICAS Y SOCIALES" class="img-fluid mb-3" src="img/FCPYS.png"/><h5>FACULTAD DE CIENCIAS POLÍTICAS Y SOCIALES</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-16Label" class="modal fade" id="modal-16" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="COORDINACIÓN MIXTA DE POSGRADO" class="img-fluid mb-3" src="img/POSGRADO.png"/><h5>COORDINACIÓN MIXTA DE POSGRADO</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-17Label" class="modal fade" id="modal-17" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FACULTAD DE CIENCIAS" class="img-fluid mb-3" src="img/FCIENCIAS.png"/><h5>FACULTAD DE CIENCIAS</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-18Label" class="modal fade" id="modal-18" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FACULTAD DE ECONOMÍA" class="img-fluid mb-3" src="img/FECONOMIA.png"/><h5>FACULTAD DE ECONOMÍA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-19Label" class="modal fade" id="modal-19" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="ENES LEÓN" class="img-fluid mb-3" src="img/ENESLEON.png"/><h5>ENES LEÓN</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-20Label" class="modal fade" id="modal-20" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FES IZTACALA" class="img-fluid mb-3" src="img/FESIZTACALA.png"/><h5>FES IZTACALA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-21Label" class="modal fade" id="modal-21" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="COLEGIO DE CIENCIAS Y HUMANIDADES" class="img-fluid mb-3" src="img/CCH.png"/><h5>COLEGIO DE CIENCIAS Y HUMANIDADES</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-22Label" class="modal fade" id="modal-22" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FACULTAD DE PSICOLOGÍA" class="img-fluid mb-3" src="img/FPSICOLOGIA.png"/><h5>FACULTAD DE PSICOLOGÍA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-23Label" class="modal fade" id="modal-23" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="INSTITUTO DE FÍSICA" class="img-fluid mb-3" src="img/IFISICA.png"/><h5>INSTITUTO DE FÍSICA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-24Label" class="modal fade" id="modal-24" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="ESCUELA NACIONAL PREPARATORIA" class="img-fluid mb-3" src="img/ENP.png"/><h5>ESCUELA NACIONAL PREPARATORIA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-25Label" class="modal fade" id="modal-25" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FACULTAD DE MEDICINA" class="img-fluid mb-3" src="img/FMEDICINA.png"/><h5>FACULTAD DE MEDICINA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-26Label" class="modal fade" id="modal-26" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FACULTAD DE DERECHO" class="img-fluid mb-3" src="img/DERECHO.png"/><h5>FACULTAD DE DERECHO</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-27Label" class="modal fade" id="modal-27" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FACULTAD DE FILOSOFÍA Y LETRAS" class="img-fluid mb-3" src="img/FFYL.png"/><h5>FACULTAD DE FILOSOFÍA Y LETRAS</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-28Label" class="modal fade" id="modal-28" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="INSTITUTO DE BIOLOGÍA" class="img-fluid mb-3" src="img/IBIOLOGÍA.png"/><h5>INSTITUTO DE BIOLOGÍA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-29Label" class="modal fade" id="modal-29" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="FACULTAD DE INGENIERÍA" class="img-fluid mb-3" src="img/FINGENIERÍA.png"/><h5>FACULTAD DE INGENIERÍA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-30Label" class="modal fade" id="modal-30" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="ENES JURIQUILLA" class="img-fluid mb-3" src="img/ENESJURIQUILLA.png"/><h5>ENES JURIQUILLA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-31Label" class="modal fade" id="modal-31" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="UNIDAD DE EXTENSIÓN UNIVERSITARIA OAXACA" class="img-fluid mb-3" src="img/UEUO.png"/><h5>UNIDAD DE EXTENSIÓN UNIVERSITARIA OAXACA</h5></div></div></div></div><div aria-hidden="true" aria-labelledby="modal-32Label" class="modal fade" id="modal-32" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center" style="color: #000;"><img alt="ENES OAXACA" class="img-fluid mb-3" src="img/ENESO.png"/><h5>ENES OAXACA</h5></div></div></div></div><script>
+const canvas = document.getElementById('particles-canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = canvas.offsetWidth;
+canvas.height = canvas.offsetHeight;
+
+function drawNode(x, y, radius = 3) {
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, 2 * Math.PI);
+  ctx.fillStyle = "#fff";
+  ctx.fill();
+}
+</script><script src="particles.js"></script><script src="network-bg.js"></script></body>

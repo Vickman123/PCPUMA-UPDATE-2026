@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /php/
+Disallow: /tmp/
+Disallow: /scripts/
+
+Sitemap: https://pcpuma.unam.mx/sitemap.xml

@@ -1,0 +1,247 @@
+/* ===================================================================
+   ARCHIVO: docentes.css
+   CONTIENE: Estilos exclusivos para la página de docentes (docentes.html)
+   ESTILO: Apple 2026 Liquid Glass
+   =================================================================== */
+
+body {
+  background-color: #f4f6f9;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', -apple-system, sans-serif !important;
+}
+
+/* --- 1. Hero Banner Docentes --- */
+.hero-docentes {
+  position: relative;
+  padding: 5.5rem 1rem;
+  background: radial-gradient(circle at center, #001f3f 0%, #000c18 100%) !important;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hero-docentes canvas#networkCanvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+}
+.hero-docentes h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.hero-docentes p.lead {
+  opacity: 0.95;
+  font-size: 1.25rem;
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.hero-docentes .btn {
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.hero-docentes .btn-outline-light {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+}
+.hero-docentes .btn-outline-light:hover {
+  background-color: #ffffff !important;
+  color: #001f3f !important;
+}
+.hero-docentes .btn-warning {
+  color: #001f3f !important;
+  background-color: #FFD700 !important;
+  border-color: #FFD700 !important;
+}
+.hero-docentes .btn-warning:hover {
+  background-color: #ffea70 !important;
+  border-color: #ffea70 !important;
+}
+
+/* --- 2. Sección de Préstamo (Bento Glass Tabs) --- */
+.loan-tabs .nav-pills .nav-link {
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  color: #003366;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+.loan-tabs .nav-pills .nav-link.active {
+  background-color: #005BA8;
+  color: white;
+  box-shadow: 0 6px 20px rgba(0, 91, 168, 0.25);
+  border-color: #005BA8;
+}
+.loan-tabs .tab-content {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(140%) !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: var(--glass-shadow) !important;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+}
+
+/* --- 3. Biblioteca de Recursos Digitales --- */
+#searchInput {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  color: #003366;
+}
+#filterCategory, #filterRating {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  color: #003366;
+}
+
+/* --- 4. Tarjetas de Herramientas (Glass Cards) --- */
+.tool-card {
+  display: flex;
+  align-items: stretch;
+}
+.tool-card .card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(140%) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              border-color 0.3s ease;
+  position: relative;
+  padding: 2rem 1.25rem 1.25rem 1.25rem !important;
+  overflow: hidden;
+}
+.tool-card .card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--glass-shadow-hover) !important;
+  border-color: rgba(0, 91, 168, 0.25) !important;
+}
+.tool-card .card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 35%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, transparent 100%);
+  pointer-events: none;
+}
+.tool-card .category-tag {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #005BA8;
+  color: white;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  text-transform: uppercase;
+}
+.tool-card .rating-display {
+  color: #FFC107;
+  font-weight: 600;
+}
+.tool-card .rating-display .text-muted {
+  font-weight: 400;
+  color: #6c757d !important;
+}
+
+/* --- 5. Testimonios (Glass testimoniales) --- */
+.testimonial-card {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glass-shadow-hover);
+}
+.testimonial-card .card-body::before {
+  content: '“';
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-size: 5rem;
+  color: #005BA8;
+  opacity: 0.1;
+  font-family: Georgia, serif;
+}
+.testimonial-card .card-footer img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 2px solid #005BA8;
+}
+
+/* --- 6. Paginación --- */
+.pagination .page-link {
+  color: #005BA8;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(0, 91, 168, 0.15);
+  backdrop-filter: blur(4px);
+}
+.pagination .active .page-link {
+  background-color: #005BA8;
+  border-color: #005BA8;
+  color: #fff;
+}
+
+/* --- 7. Comunidad --- */
+#comunidad-docentes .btn {
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+#comunidad-docentes .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- 8. Media Queries --- */
+@media (max-width: 992px) {
+  .hero-docentes {
+    padding: 5rem 0;
+  }
+  .hero-docentes h1 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .hero-docentes h1 {
+    font-size: 2rem;
+  }
+  .loan-tabs .nav-pills .nav-link {
+    text-align: center;
+  }
+}

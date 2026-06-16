@@ -1,0 +1,1390 @@
+{
+  "updated": "2025-09-06 13:42:04.662617",
+  "resources": [
+    {
+      "id": "google-docs",
+      "name": "Google Docs/Sheets/Slides",
+      "desc": "Suite ofimática colaborativa en línea. Ofrece historial de versiones, sugerencias de edición y comentarios profundos. Exporta a múltiples formatos (DOCX, PDF) y admite complementos. Incluye colaboración en tiempo real, control de versiones y comentarios. Útil para trabajos escritos, reportes y presentaciones en clase. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Ofimática",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://docs.google.com",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "microsoft-office-online",
+      "name": "Microsoft Office Online",
+      "desc": "Word, Excel y PowerPoint en el navegador. Interfaz familiar de Microsoft 365 en el navegador. Permite coautoría y plantillas educativas. Incluye colaboración en tiempo real, control de versiones y comentarios. Útil para trabajos escritos, reportes y presentaciones en clase. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Ofimática",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.office.com",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "onlyoffice",
+      "name": "OnlyOffice",
+      "desc": "Suite de productividad compatible con formatos MS Office. Buena compatibilidad con formatos MS Office y edición colaborativa. Dispone de servidor comunitario open source. Incluye colaboración en tiempo real, control de versiones y comentarios. Útil para trabajos escritos, reportes y presentaciones en clase. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Ofimática",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.onlyoffice.com",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "libreoffice",
+      "name": "LibreOffice",
+      "desc": "Suite ofimática de escritorio, compatible con múltiples formatos. Suite de escritorio con Writer, Calc e Impress. Funciona sin conexión y soporta extensiones. Incluye colaboración en tiempo real, control de versiones y comentarios. Útil para trabajos escritos, reportes y presentaciones en clase. Compatible con Laptop.",
+      "category": "Ofimática",
+      "devices": [
+        "Laptop"
+      ],
+      "url": "https://www.libreoffice.org",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "offline": true,
+      "recommended": false,
+      "account_required": false
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "desc": "Gestión de conocimiento, notas y wikis. Bases de datos, wikis y páginas enlazables. Excelente para portafolios de estudiantes. Soporta organización por páginas/etiquetas y sincronización multi-dispositivo. Útil para cuadernos de clase, minutas y diarios de aprendizaje. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Notas y Organización",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.notion.so",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "evernote",
+      "name": "Evernote",
+      "desc": "Notas y organización personal con sincronización. Captura web, búsqueda dentro de PDFs e imágenes (OCR). Soporta organización por páginas/etiquetas y sincronización multi-dispositivo. Útil para cuadernos de clase, minutas y diarios de aprendizaje. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Notas y Organización",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.evernote.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "onenote",
+      "name": "OneNote",
+      "desc": "Cuadernos digitales con escritura a mano y OCR. Soporta tinta digital, audio incrustado y secciones por cuaderno. Ideal con stylus. Soporta organización por páginas/etiquetas y sincronización multi-dispositivo. Útil para cuadernos de clase, minutas y diarios de aprendizaje. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Notas y Organización",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.onenote.com",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "obsidian",
+      "name": "Obsidian",
+      "desc": "Notas enlazadas en Markdown y grafo de conocimiento. Notas Markdown con enlaces bidireccionales y grafo de conocimiento. Funciona offline con sincronización opcional. Soporta organización por páginas/etiquetas y sincronización multi-dispositivo. Útil para cuadernos de clase, minutas y diarios de aprendizaje. Compatible con iPad, Laptop, Chromebook.",
+      "category": "Notas y Organización",
+      "devices": [
+        "iPad",
+        "Laptop",
+        "Chromebook"
+      ],
+      "url": "https://obsidian.md",
+      "badges": [
+        "Gratis"
+      ],
+      "offline": true,
+      "recommended": false,
+      "account_required": false
+    },
+    {
+      "id": "simplenote",
+      "name": "Simplenote",
+      "desc": "Notas simples y rápidas con sincronización. Texto limpio con historial y etiquetas. Enfoque sin distracciones. Soporta organización por páginas/etiquetas y sincronización multi-dispositivo. Útil para cuadernos de clase, minutas y diarios de aprendizaje. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Notas y Organización",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://simplenote.com",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": false,
+      "offline": false,
+      "account_required": false
+    },
+    {
+      "id": "trello",
+      "name": "Trello",
+      "desc": "Gestión de proyectos visual con tableros Kanban. Listas, tarjetas, checklists y automatizaciones. Integraciones con Drive/Slack. Usa tableros Kanban, listas y asignaciones con fechas límite. Ideal para proyectos por equipos y seguimiento de tareas. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Gestión de Proyectos",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://trello.com",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "asana",
+      "name": "Asana",
+      "desc": "Planificación y seguimiento de tareas y proyectos. Vistas de cronograma y calendario con dependencias. Ideal para equipos grandes. Usa tableros Kanban, listas y asignaciones con fechas límite. Ideal para proyectos por equipos y seguimiento de tareas. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Gestión de Proyectos",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://asana.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "todoist",
+      "name": "Todoist",
+      "desc": "Gestión de tareas con recordatorios y prioridades. Filtros por prioridad, proyectos y recordatorios. Integración con correo/calendario. Usa tableros Kanban, listas y asignaciones con fechas límite. Ideal para proyectos por equipos y seguimiento de tareas. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Gestión de Proyectos",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://todoist.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "miro",
+      "name": "Miro",
+      "desc": "Pizarras colaborativas online para ideación y enseñanza. Plantillas para mapas mentales, retrospectivas y diagramas. Colaboración en tiempo real con cursores múltiples. Permite mapas conceptuales, diagramas y sesiones de lluvia de ideas. Excelente para clases activas y diseño de procesos. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Pizarras y Diagramas",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://miro.com",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "figjam",
+      "name": "FigJam",
+      "desc": "Pizarra colaborativa de Figma para talleres. Stickers, votaciones y temporizador de actividades. Perfecta para dinámicas en clase. Permite mapas conceptuales, diagramas y sesiones de lluvia de ideas. Excelente para clases activas y diseño de procesos. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Pizarras y Diagramas",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.figma.com/figjam/",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "keep",
+      "name": "Google Keep",
+      "desc": "Notas rápidas con etiquetas y recordatorios. Notas rápidas con etiquetas, colores y recordatorios por ubicación. Soporta organización por páginas/etiquetas y sincronización multi-dispositivo. Útil para cuadernos de clase, minutas y diarios de aprendizaje. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Notas y Organización",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://keep.google.com",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": false,
+      "offline": false,
+      "account_required": false
+    },
+    {
+      "id": "drive",
+      "name": "Google Drive",
+      "desc": "Almacenamiento y colaboración en la nube. Compartición granular, comentarios y control de versiones. Cliente para escritorio opcional. Integra chat, reuniones y compartición de archivos. Favorece la comunicación entre docentes y estudiantes. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Colaboración",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://drive.google.com",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "dropbox",
+      "name": "Dropbox",
+      "desc": "Sincronización y compartición de archivos. Sincronización selectiva y solicitudes de archivos. Paper para notas colaborativas. Integra chat, reuniones y compartición de archivos. Favorece la comunicación entre docentes y estudiantes. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Colaboración",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://dropbox.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "onedrive",
+      "name": "OneDrive",
+      "desc": "Almacenamiento en la nube de Microsoft. Integración con Office y políticas institucionales. Versionado y restauración de archivos. Integra chat, reuniones y compartición de archivos. Favorece la comunicación entre docentes y estudiantes. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Colaboración",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://onedrive.live.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "slack",
+      "name": "Slack",
+      "desc": "Mensajería de equipos y canales temáticos. Canales temáticos, hilos y apps/automatizaciones. Útil para coordinación de cursos. Integra chat, reuniones y compartición de archivos. Favorece la comunicación entre docentes y estudiantes. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Colaboración",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://slack.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "teams",
+      "name": "Microsoft Teams",
+      "desc": "Reuniones, chat y colaboración educativa. Reuniones con grabación y tareas para clase. Integración con OneNote Class Notebook. Integra chat, reuniones y compartición de archivos. Favorece la comunicación entre docentes y estudiantes. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Colaboración",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.microsoft.com/en-ww/microsoft-teams/group-chat-software",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "zoom",
+      "name": "Zoom",
+      "desc": "Videoconferencias y webinars con grabación. Salas de grupos, encuestas y pizarra. Graba en la nube o local. Integra chat, reuniones y compartición de archivos. Favorece la comunicación entre docentes y estudiantes. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Colaboración",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://zoom.us",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "meet",
+      "name": "Google Meet",
+      "desc": "Videollamadas y clases virtuales. Subtítulos automáticos y co-presentación. Integración con Classroom. Integra chat, reuniones y compartición de archivos. Favorece la comunicación entre docentes y estudiantes. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Colaboración",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://meet.google.com",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "zotero",
+      "name": "Zotero",
+      "desc": "Gestor de referencias con sincronización y capturador web. Plugins para Word/LibreOffice y navegadores. Soporte de estilos CSL (APA, MLA, etc.). Facilita la gestión de bibliografía, captura de referencias y anotación de PDFs. Acelera revisiones de literatura y citación. Compatible con Laptop, Chromebook, iPad.",
+      "category": "Investigación",
+      "devices": [
+        "Laptop",
+        "Chromebook",
+        "iPad"
+      ],
+      "url": "https://www.zotero.org",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "mendeley",
+      "name": "Mendeley Reference Manager",
+      "desc": "Gestor de referencias y PDF con anotaciones. Anotación de PDFs, grupos y recomendaciones. Integración con Word para citas. Facilita la gestión de bibliografía, captura de referencias y anotación de PDFs. Acelera revisiones de literatura y citación. Compatible con Chromebook, Laptop, iPad.",
+      "category": "Investigación",
+      "devices": [
+        "Chromebook",
+        "Laptop",
+        "iPad"
+      ],
+      "url": "https://www.mendeley.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "endnote-click",
+      "name": "EndNote Click (Kopernio)",
+      "desc": "Acceso a PDFs académicos con un clic. Localiza el PDF legalmente accesible con un clic. Ahorra tiempo en búsquedas. Facilita la gestión de bibliografía, captura de referencias y anotación de PDFs. Acelera revisiones de literatura y citación. Compatible con Chromebook, Laptop.",
+      "category": "Investigación",
+      "devices": [
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://click.endnote.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "researchrabbit",
+      "name": "ResearchRabbit",
+      "desc": "Explora redes de artículos y autores. Visualiza redes de artículos/autores y descubre literatura relacionada. Facilita la gestión de bibliografía, captura de referencias y anotación de PDFs. Acelera revisiones de literatura y citación. Compatible con Chromebook, Laptop, iPad.",
+      "category": "Investigación",
+      "devices": [
+        "Chromebook",
+        "Laptop",
+        "iPad"
+      ],
+      "url": "https://www.researchrabbitapp.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "perusall",
+      "name": "Perusall",
+      "desc": "Lectura social con comentarios en contexto. Fomenta lectura activa: califica participación y genera analíticas. Facilita la gestión de bibliografía, captura de referencias y anotación de PDFs. Acelera revisiones de literatura y citación. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Investigación",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://perusall.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "hypothesis",
+      "name": "Hypothes.is",
+      "desc": "Anotación colaborativa de la web y PDFs. Anotación pública o privada en la web y PDFs. Ideal para lectura guiada. Facilita la gestión de bibliografía, captura de referencias y anotación de PDFs. Acelera revisiones de literatura y citación. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Investigación",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://web.hypothes.is",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "readcube",
+      "name": "ReadCube Papers",
+      "desc": "Lector y gestor de PDFs científicos. Organización de biblioteca y lector con resaltado/nota adhesiva. Facilita la gestión de bibliografía, captura de referencias y anotación de PDFs. Acelera revisiones de literatura y citación. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Investigación",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.readcube.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "pocket",
+      "name": "Pocket",
+      "desc": "Guarda artículos para leer después, incluso offline. Modo lectura limpia y etiquetas. Sincroniza para lectura offline. Facilita la gestión de bibliografía, captura de referencias y anotación de PDFs. Acelera revisiones de literatura y citación. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Investigación",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://getpocket.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "google-forms",
+      "name": "Google Forms",
+      "desc": "Encuestas y cuestionarios con autocalificación. Sección de respuestas con gráficos; exporta a Sheets para análisis. Permite cuestionarios auto-calificables y actividades interactivas. Ideal para evaluación formativa y sondeos en clase. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Evaluación",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://forms.google.com",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "microsoft-forms",
+      "name": "Microsoft Forms",
+      "desc": "Encuestas y cuestionarios con análisis básico. Ramas lógicas y cuestionarios calificados. Exporta a Excel. Permite cuestionarios auto-calificables y actividades interactivas. Ideal para evaluación formativa y sondeos en clase. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Evaluación",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://forms.office.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "kahoot",
+      "name": "Kahoot!",
+      "desc": "Quiz gamificado en vivo. Juegos en vivo y asignaciones a ritmo propio. Informes por pregunta. Permite cuestionarios auto-calificables y actividades interactivas. Ideal para evaluación formativa y sondeos en clase. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Evaluación",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://kahoot.com",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "quizizz",
+      "name": "Quizizz",
+      "desc": "Cuestionarios auto-ritmo y en vivo con reportes. Banco de preguntas y lecciones interactivas. Reportes detallados. Permite cuestionarios auto-calificables y actividades interactivas. Ideal para evaluación formativa y sondeos en clase. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Evaluación",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://quizizz.com",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "socrative",
+      "name": "Socrative",
+      "desc": "Evaluación formativa rápida. Quizzes, exámenes y salida rápida (exit ticket). Feedback instantáneo. Permite cuestionarios auto-calificables y actividades interactivas. Ideal para evaluación formativa y sondeos en clase. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Evaluación",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.socrative.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "mentimeter",
+      "name": "Mentimeter",
+      "desc": "Presentaciones interactivas con encuestas. Word clouds, ranking y escalas de Likert en presentaciones. Permite cuestionarios auto-calificables y actividades interactivas. Ideal para evaluación formativa y sondeos en clase. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Evaluación",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.mentimeter.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "polleverywhere",
+      "name": "Poll Everywhere",
+      "desc": "Votaciones y preguntas en tiempo real. Encuestas integradas a PowerPoint/Google Slides. Permite cuestionarios auto-calificables y actividades interactivas. Ideal para evaluación formativa y sondeos en clase. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Evaluación",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.polleverywhere.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "plickers",
+      "name": "Plickers",
+      "desc": "Evalúa sin dispositivos estudiantiles, usando tarjetas. El docente escanea tarjetas; ideal cuando estudiantes no usan dispositivos. Permite cuestionarios auto-calificables y actividades interactivas. Ideal para evaluación formativa y sondeos en clase. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Evaluación",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.plickers.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "canva",
+      "name": "Canva",
+      "desc": "Diseño gráfico, presentaciones y video. Plantillas educativas, editor de video y presentaciones. Biblioteca de íconos y fotos. Incluye plantillas, exportación a PDF/PNG y trabajo colaborativo. Útil para posters académicos y presentaciones. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Diseño y Presentación",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.canva.com/education/",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "desc": "Diseño de interfaces colaborativo. Diseño UI colaborativo, auto-layout y componentes. Buena para prototipos. Incluye plantillas, exportación a PDF/PNG y trabajo colaborativo. Útil para posters académicos y presentaciones. Compatible con Chromebook, Laptop, iPad.",
+      "category": "Diseño y Presentación",
+      "devices": [
+        "Chromebook",
+        "Laptop",
+        "iPad"
+      ],
+      "url": "https://www.figma.com",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "gravit",
+      "name": "Gravit Designer",
+      "desc": "Diseño vectorial en el navegador. Vectorial en navegador con exportación SVG/PDF. Incluye plantillas, exportación a PDF/PNG y trabajo colaborativo. Útil para posters académicos y presentaciones. Compatible con Chromebook, Laptop.",
+      "category": "Diseño y Presentación",
+      "devices": [
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.designer.io",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "penpot",
+      "name": "Penpot",
+      "desc": "Diseño UX/UI open source en web. Alternativa open source a Figma; soporta componentes y prototipos. Incluye plantillas, exportación a PDF/PNG y trabajo colaborativo. Útil para posters académicos y presentaciones. Compatible con Chromebook, Laptop, iPad.",
+      "category": "Diseño y Presentación",
+      "devices": [
+        "Chromebook",
+        "Laptop",
+        "iPad"
+      ],
+      "url": "https://penpot.app",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "excalidraw",
+      "name": "Excalidraw",
+      "desc": "Dibujo colaborativo con estilo a mano alzada. Dibujo con apariencia a mano; colaborativo y exportación a PNG/SVG. Permite mapas conceptuales, diagramas y sesiones de lluvia de ideas. Excelente para clases activas y diseño de procesos. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Pizarras y Diagramas",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://excalidraw.com",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "drawio",
+      "name": "draw.io (diagrams.net)",
+      "desc": "Diagramas de flujo, UML y mapas conceptuales. Amplia librería de formas UML, BPMN y mapas conceptuales. Permite mapas conceptuales, diagramas y sesiones de lluvia de ideas. Excelente para clases activas y diseño de procesos. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Pizarras y Diagramas",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://app.diagrams.net",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "lucidchart",
+      "name": "Lucidchart",
+      "desc": "Diagramación colaborativa con plantillas. Plantillas profesionales y colaboración en tiempo real. Permite mapas conceptuales, diagramas y sesiones de lluvia de ideas. Excelente para clases activas y diseño de procesos. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Pizarras y Diagramas",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.lucidchart.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "prezi",
+      "name": "Prezi",
+      "desc": "Presentaciones no lineales con zoom. Narrativas no lineales con zoom; ideal para storytelling. Incluye plantillas, exportación a PDF/PNG y trabajo colaborativo. Útil para posters académicos y presentaciones. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Diseño y Presentación",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://prezi.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "replit",
+      "name": "Replit",
+      "desc": "Entorno de programación colaborativo en la nube. Compila/ejecuta muchos lenguajes en la nube con repos y chat. Entornos y recursos para codificación, matemáticas y simulaciones. Recomendado para clases de ciencias y tecnología. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Programación y STEM",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://replit.com",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "codespaces",
+      "name": "GitHub Codespaces",
+      "desc": "VS Code en la nube para múltiples lenguajes. Entorno VS Code con contenedores dev; integra Git y extensiones. Entornos y recursos para codificación, matemáticas y simulaciones. Recomendado para clases de ciencias y tecnología. Compatible con Chromebook, Laptop, iPad.",
+      "category": "Programación y STEM",
+      "devices": [
+        "Chromebook",
+        "Laptop",
+        "iPad"
+      ],
+      "url": "https://github.com/features/codespaces",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "jupyter",
+      "name": "Jupyter / JupyterLite",
+      "desc": "Cuadernos interactivos de Python en web o local. Cuadernos interactivos; ideal para ciencia de datos y docencia. Entornos y recursos para codificación, matemáticas y simulaciones. Recomendado para clases de ciencias y tecnología. Compatible con Chromebook, Laptop, iPad.",
+      "category": "Programación y STEM",
+      "devices": [
+        "Chromebook",
+        "Laptop",
+        "iPad"
+      ],
+      "url": "https://jupyter.org",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "recommended": true,
+      "offline": true,
+      "account_required": false
+    },
+    {
+      "id": "colab",
+      "name": "Google Colab",
+      "desc": "Cuadernos de Python acelerados en la nube. GPU/TPU opcional y librerías científicas preinstaladas. Entornos y recursos para codificación, matemáticas y simulaciones. Recomendado para clases de ciencias y tecnología. Compatible con Chromebook, Laptop, iPad.",
+      "category": "Programación y STEM",
+      "devices": [
+        "Chromebook",
+        "Laptop",
+        "iPad"
+      ],
+      "url": "https://colab.research.google.com",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "codeorg",
+      "name": "Code.org",
+      "desc": "Programación para educación básica y media. Currículos y actividades guiadas para K-12. Entornos y recursos para codificación, matemáticas y simulaciones. Recomendado para clases de ciencias y tecnología. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Programación y STEM",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://code.org",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "scratch",
+      "name": "Scratch",
+      "desc": "Aprende a programar con bloques. Programación por bloques; comparte proyectos online. Entornos y recursos para codificación, matemáticas y simulaciones. Recomendado para clases de ciencias y tecnología. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Programación y STEM",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://scratch.mit.edu",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "appinventor",
+      "name": "App Inventor",
+      "desc": "Crea apps Android por bloques. Diseña apps Android con bloques; simulador incluido. Entornos y recursos para codificación, matemáticas y simulaciones. Recomendado para clases de ciencias y tecnología. Compatible con Chromebook, Laptop, iPad.",
+      "category": "Programación y STEM",
+      "devices": [
+        "Chromebook",
+        "Laptop",
+        "iPad"
+      ],
+      "url": "https://appinventor.mit.edu",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "geogebra",
+      "name": "GeoGebra",
+      "desc": "Matemáticas dinámicas y geometría. Geometría, álgebra y cálculo con vistas dinámicas. Entornos y recursos para codificación, matemáticas y simulaciones. Recomendado para clases de ciencias y tecnología. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Programación y STEM",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.geogebra.org",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "offline": true,
+      "account_required": true
+    },
+    {
+      "id": "desmos",
+      "name": "Desmos",
+      "desc": "Calculadora y actividades matemáticas. Actividades interactivas y calculadora gráfica. Entornos y recursos para codificación, matemáticas y simulaciones. Recomendado para clases de ciencias y tecnología. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Programación y STEM",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.desmos.com",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "phet",
+      "name": "PhET Simulations",
+      "desc": "Simulaciones interactivas de física y química. Simulaciones validadas pedagógicamente por la Univ. de Colorado. Entornos y recursos para codificación, matemáticas y simulaciones. Recomendado para clases de ciencias y tecnología. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Programación y STEM",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://phet.colorado.edu",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "wolframalpha",
+      "name": "Wolfram Alpha (básico)",
+      "desc": "Motor de conocimiento computacional. Resuelve paso a paso en plan pro; version básica responde consultas breves. Entornos y recursos para codificación, matemáticas y simulaciones. Recomendado para clases de ciencias y tecnología. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Programación y STEM",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.wolframalpha.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "audacity",
+      "name": "Audacity",
+      "desc": "Edición de audio multipista. Grabación multipista, efectos y plugins VST; exporta WAV/MP3/OGG. Herramientas para creación de audio/video y screencasting. Útil para evidencias de aprendizaje y recursos asincrónicos. Compatible con Laptop.",
+      "category": "Multimedia",
+      "devices": [
+        "Laptop"
+      ],
+      "url": "https://www.audacityteam.org",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "offline": true,
+      "recommended": false,
+      "account_required": false
+    },
+    {
+      "id": "davinci",
+      "name": "DaVinci Resolve",
+      "desc": "Edición y color de video profesional. Edición, color y audio Fairlight; ideal para proyectos de media. Herramientas para creación de audio/video y screencasting. Útil para evidencias de aprendizaje y recursos asincrónicos. Compatible con Laptop.",
+      "category": "Multimedia",
+      "devices": [
+        "Laptop"
+      ],
+      "url": "https://www.blackmagicdesign.com/products/davinciresolve",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": false,
+      "offline": false,
+      "account_required": false
+    },
+    {
+      "id": "clipchamp",
+      "name": "Clipchamp",
+      "desc": "Editor de video en navegador. Recortes, subtítulos automáticos y plantillas de video. Herramientas para creación de audio/video y screencasting. Útil para evidencias de aprendizaje y recursos asincrónicos. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Multimedia",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://clipchamp.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "openshot",
+      "name": "OpenShot",
+      "desc": "Editor de video open source. Editor sencillo, multiplataforma con pistas ilimitadas. Herramientas para creación de audio/video y screencasting. Útil para evidencias de aprendizaje y recursos asincrónicos. Compatible con Laptop.",
+      "category": "Multimedia",
+      "devices": [
+        "Laptop"
+      ],
+      "url": "https://www.openshot.org",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "offline": true,
+      "recommended": false,
+      "account_required": false
+    },
+    {
+      "id": "shotcut",
+      "name": "Shotcut",
+      "desc": "Editor de video multiplataforma. Soporta códecs múltiples y filtros; sin marca de agua. Herramientas para creación de audio/video y screencasting. Útil para evidencias de aprendizaje y recursos asincrónicos. Compatible con Laptop.",
+      "category": "Multimedia",
+      "devices": [
+        "Laptop"
+      ],
+      "url": "https://shotcut.org",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "offline": true,
+      "recommended": false,
+      "account_required": false
+    },
+    {
+      "id": "vlc",
+      "name": "VLC",
+      "desc": "Reproductor multimedia universal. Reproduce casi cualquier formato; transmite y convierte. Herramientas para creación de audio/video y screencasting. Útil para evidencias de aprendizaje y recursos asincrónicos. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Multimedia",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.videolan.org",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "recommended": true,
+      "offline": true,
+      "account_required": false
+    },
+    {
+      "id": "obs",
+      "name": "OBS Studio",
+      "desc": "Grabación y transmisión de pantalla. Escenas y fuentes múltiples; streaming y grabación de pantalla. Herramientas para creación de audio/video y screencasting. Útil para evidencias de aprendizaje y recursos asincrónicos. Compatible con Laptop.",
+      "category": "Multimedia",
+      "devices": [
+        "Laptop"
+      ],
+      "url": "https://obsproject.com",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "recommended": true,
+      "offline": false,
+      "account_required": false
+    },
+    {
+      "id": "screencastify",
+      "name": "Screencastify",
+      "desc": "Grabación de pantalla desde Chrome. Captura pestaña/desktop y cámara; exporta a Drive. Herramientas para creación de audio/video y screencasting. Útil para evidencias de aprendizaje y recursos asincrónicos. Compatible con Chromebook, Laptop, iPad.",
+      "category": "Multimedia",
+      "devices": [
+        "Chromebook",
+        "Laptop",
+        "iPad"
+      ],
+      "url": "https://www.screencastify.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "loom",
+      "name": "Loom",
+      "desc": "Grabación rápida de cámara y pantalla. Compartición instantánea con enlace; comentarios en tiempo. Herramientas para creación de audio/video y screencasting. Útil para evidencias de aprendizaje y recursos asincrónicos. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Multimedia",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.loom.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "immersive-reader",
+      "name": "Microsoft Immersive Reader",
+      "desc": "Lectura inmersiva con soporte de accesibilidad. Resalta sílabas, lectura en voz alta y traducción inline. Apoya lectura, escritura y comprensión con TTS, resaltado y herramientas de apoyo. Favorece entornos inclusivos. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Accesibilidad",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.onenote.com/learningtools",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "clarospeak",
+      "name": "ClaroSpeak / ClaroPDF",
+      "desc": "Herramientas de lectura y escritura asistida. Texto a voz y anotación en PDF; apoyo a dislexia (varía por app). Apoya lectura, escritura y comprensión con TTS, resaltado y herramientas de apoyo. Favorece entornos inclusivos. Compatible con iPad.",
+      "category": "Accesibilidad",
+      "devices": [
+        "iPad"
+      ],
+      "url": "https://www.clarosoftware.com",
+      "badges": [
+        "Gratis"
+      ],
+      "recommended": false,
+      "offline": false,
+      "account_required": false
+    },
+    {
+      "id": "naturalreader",
+      "name": "NaturalReader (web)",
+      "desc": "Texto a voz en el navegador. Voces naturales y ajuste de velocidad/puntuación. Apoya lectura, escritura y comprensión con TTS, resaltado y herramientas de apoyo. Favorece entornos inclusivos. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Accesibilidad",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.naturalreaders.com/online/",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "beelinereader",
+      "name": "BeeLine Reader",
+      "desc": "Mejora la lectura con degradado de color. Degradado de color para seguimiento visual; favorece fluidez. Apoya lectura, escritura y comprensión con TTS, resaltado y herramientas de apoyo. Favorece entornos inclusivos. Compatible con Chromebook, Laptop, iPad.",
+      "category": "Accesibilidad",
+      "devices": [
+        "Chromebook",
+        "Laptop",
+        "iPad"
+      ],
+      "url": "https://www.beelinereader.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "languagetool",
+      "name": "LanguageTool",
+      "desc": "Corrector gramatical multilingüe. Corrección gramatical en español/inglés; extensiones para Chrome/Docs. Apoya lectura, escritura y comprensión con TTS, resaltado y herramientas de apoyo. Favorece entornos inclusivos. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Accesibilidad",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://languagetool.org",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "readwrite",
+      "name": "Read&Write for Chrome",
+      "desc": "Soporte de lectura/escritura para estudiantes. Resaltado, diccionario y predicción de palabras para Chrome. Apoya lectura, escritura y comprensión con TTS, resaltado y herramientas de apoyo. Favorece entornos inclusivos. Compatible con Chromebook, Laptop.",
+      "category": "Accesibilidad",
+      "devices": [
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.texthelp.com/products/read-and-write/",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "bitwarden",
+      "name": "Bitwarden",
+      "desc": "Gestor de contraseñas seguro. Vault cifrado de extremo a extremo; autofill y generador de contraseñas. Mejora la seguridad, la concentración y el manejo de documentos. Recomendado como utilitario transversal. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Seguridad y Utilidades",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://bitwarden.com",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "keepassxc",
+      "name": "KeePassXC",
+      "desc": "Gestor de contraseñas offline. Gestor local con base cifrada; sin nube por defecto. Mejora la seguridad, la concentración y el manejo de documentos. Recomendado como utilitario transversal. Compatible con Laptop.",
+      "category": "Seguridad y Utilidades",
+      "devices": [
+        "Laptop"
+      ],
+      "url": "https://keepassxc.org",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "offline": true,
+      "recommended": false,
+      "account_required": false
+    },
+    {
+      "id": "ublock",
+      "name": "uBlock Origin",
+      "desc": "Bloqueador de contenido eficiente. Bloqueo de publicidad y rastreadores; listas personalizables. Mejora la seguridad, la concentración y el manejo de documentos. Recomendado como utilitario transversal. Compatible con Chromebook, Laptop.",
+      "category": "Seguridad y Utilidades",
+      "devices": [
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://ublockorigin.com",
+      "badges": [
+        "Gratis",
+        "Open Source"
+      ],
+      "recommended": true,
+      "account_required": true,
+      "offline": false
+    },
+    {
+      "id": "grammarly",
+      "name": "Grammarly",
+      "desc": "Asistente de escritura en inglés. Sugerencias de estilo y claridad (inglés). Apoya lectura, escritura y comprensión con TTS, resaltado y herramientas de apoyo. Favorece entornos inclusivos. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Accesibilidad",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://grammarly.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    },
+    {
+      "id": "smallpdf",
+      "name": "Smallpdf / PDFescape / iLovePDF",
+      "desc": "Herramientas web para PDFs. Combinar, comprimir, firmar y convertir PDFs desde el navegador. Mejora la seguridad, la concentración y el manejo de documentos. Recomendado como utilitario transversal. Compatible con iPad, Chromebook, Laptop.",
+      "category": "Seguridad y Utilidades",
+      "devices": [
+        "iPad",
+        "Chromebook",
+        "Laptop"
+      ],
+      "url": "https://www.ilovepdf.com",
+      "badges": [
+        "Gratis"
+      ],
+      "account_required": true,
+      "recommended": false,
+      "offline": false
+    }
+  ]
+}

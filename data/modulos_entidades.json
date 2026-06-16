@@ -1,0 +1,235 @@
+[
+  {
+    "nombre": "Facultad de Medicina Veterinaria y Zootecnia",
+    "imagen": "img/modulos/FMVZ.webp",
+    "modulos": [
+      "Velaria principal de la FMVZ"
+    ]
+  },
+  {
+    "nombre": "Facultad de Odontología",
+    "imagen": "img/modulos/FO.webp",
+    "modulos": [
+      "Edificio \"B\"",
+      "Primer piso",
+      "Aula de Cómputo Académico"
+    ]
+  },
+  {
+    "nombre": "Facultad de Estudios Superiores Acatlán",
+    "imagen": "img/modulos/ACATLAN.webp",
+    "modulos": [
+      "Módulo 1 Explanada M@C",
+      "Módulo 2 A11",
+      "Módulo 3 CEDETEC",
+      "Sala de profesores A4"
+    ]
+  },
+  {
+    "nombre": "Facultad de Estudios Superiores Aragón",
+    "imagen": "img/modulos/ARAGON.webp",
+    "modulos": [
+      "Caseta PC Puma en explanada"
+    ]
+  },
+  {
+    "nombre": "Facultad de Artes y Diseño",
+    "imagen": "img/modulos/FAD.webp",
+    "modulos": [
+      "Centro de Tecnologías del Aprendizaje y el Conocimiento"
+    ]
+  },
+  {
+    "nombre": "Facultad de Arquitectura",
+    "imagen": "img/modulos/FA.webp",
+    "modulos": [
+      "Módulo en Centro de Cómputo de la Facultad de Arquitectura"
+    ]
+  },
+  {
+    "nombre": "Escuela Nacional de Estudios Superiores Morelia",
+    "imagen": "img/modulos/MORELIA.webp",
+    "modulos": [
+      "Edificio F",
+      "planta baja"
+    ]
+  },
+  {
+    "nombre": "Facultad de Estudios Superiores Zaragoza",
+    "imagen": "img/modulos/ZARAGOZA.webp",
+    "modulos": [
+      "Módulo A509 Campo II"
+    ]
+  },
+  {
+    "nombre": "Facultad de Música",
+    "imagen": "img/modulos/FM.webp",
+    "modulos": [
+      "Módulo en Departamento Centro de Tecnologías de la Información"
+    ]
+  },
+  {
+    "nombre": "ENES Mérida",
+    "imagen": "img/modulos/ENESMERIDA.webp",
+    "modulos": [
+      "Edificio Multifuncional en planta baja"
+    ]
+  },
+  {
+    "nombre": "Facultad de Enfermería y Obstetricia",
+    "imagen": "img/modulos/FENO.webp",
+    "modulos": [
+      "Módulo de préstamo en blanta baja"
+    ]
+  },
+  {
+    "nombre": "Escuela Nacional de Trabajo Social",
+    "imagen": "img/modulos/ENTS.webp",
+    "modulos": [
+      "Área de Préstamo de Equipo de Cómputo 1er piso del edifico B"
+    ]
+  },
+  {
+    "nombre": "Escuela Nacional de Lenguas, Lingüística y Traducción",
+    "imagen": "img/modulos/ENALLT.webp",
+    "modulos": [
+      "Lockers en edificio A (2do nivel)",
+      "Locker en edificio B (Sala de cómputo)",
+      "Locker en edificio C (1er Nivel)"
+    ]
+  },
+  {
+    "nombre": "Facultad de Estudios Superiores Cuautitlán",
+    "imagen": "img/modulos/FESCUAUTITLAN.webp",
+    "modulos": [
+      "Edificio del Centro de Cómputo",
+      "Planta Baja"
+    ]
+  },
+  {
+    "nombre": "Facultad de Economía",
+    "imagen": "img/modulos/ECONOMIA.webp",
+    "modulos": [
+      "Biblioteca Enrique González Aparicio"
+    ]
+  },
+  {
+    "nombre": "Escuela Nacional de Estudios Superiores León",
+    "imagen": "img/modulos/ENESLEON.webp",
+    "modulos": [
+      "Locker de autopréstamo en Centro de Información"
+    ]
+  },
+  {
+    "nombre": "CCH Naucalpan",
+    "imagen": "img/modulos/CCHN.webp",
+    "modulos": [
+      "Centro de cómputo"
+    ]
+  },
+  {
+    "nombre": "CCH Oriente",
+    "imagen": "img/modulos/CCHO.webp",
+    "modulos": [
+      "Biblioteca"
+    ]
+  },
+  {
+    "nombre": "CCH Sur",
+    "imagen": "img/modulos/CCHS.webp",
+    "modulos": [
+      "Asesorias",
+      "Audiovisual",
+      "Centro de Cómputo",
+      "Coordinación de Cómputo 10",
+      "Coordinación de Cómputo 11"
+    ]
+  },
+  {
+    "nombre": "Facultad de Psicología",
+    "imagen": "img/modulos/FPSI.webp",
+    "modulos": [
+      "Edificio C"
+    ]
+  },
+  {
+    "nombre": "Instiuto de Física",
+    "imagen": "img/modulos/IF.webp",
+    "modulos": [
+      "1er Nivel de la Biblioteca Juan B. de Oyarzabal"
+    ]
+  },
+  {
+    "nombre": "ENP 5",
+    "imagen": "img/modulos/ENP 5.webp",
+    "modulos": [
+      "Módulo en Centro de Cómputo"
+    ]
+  },
+  {
+    "nombre": "Facultad de Medicina",
+    "imagen": "img/modulos/MEDICINA.webp",
+    "modulos": [
+      "Centro de Medios"
+    ]
+  },
+  {
+    "nombre": "Facultad de Derecho",
+    "imagen": "img/modulos/DERECHO.webp",
+    "modulos": [
+      "Módulo Centro de Cómputo"
+    ]
+  },
+  {
+    "nombre": "Facultad de Filosofía y Letras",
+    "imagen": "img/modulos/FFYLETRAS.webp",
+    "modulos": [
+      "Caseta PC Puma"
+    ]
+  },
+  {
+    "nombre": "Facultad de Ingeniería",
+    "imagen": "img/modulos/FI.webp",
+    "modulos": [
+      "Edificio M",
+      "Edificio I",
+      "Edificio E",
+      "Edificio Posgrado"
+    ]
+  },
+  {
+    "nombre": "Escuela Nacional de Estudios Superiores Juriquilla",
+    "imagen": "img/modulos/ENESJ.webp",
+    "modulos": [
+      "Biblioteca BCJ"
+    ]
+  },
+  {
+    "nombre": "Unidad de Extensión Universitaria Oaxaca",
+    "imagen": "img/modulos/UEUO.webp",
+    "modulos": [
+      "Oficina de cómputo"
+    ]
+  },
+  {
+    "nombre": "Escuela Nacional de Estudios Superiores Oaxaca",
+    "imagen": "img/modulos/ENESO.webp",
+    "modulos": [
+      "Módulo PC Puma en Planta baja"
+    ]
+  },
+  {
+    "nombre": "Escuela Nacional de Ciencias de la Tierra",
+    "imagen": "img/modulos/ENCIT.webp",
+    "modulos": [
+      "Primer piso del Edificio “B”"
+    ]
+  },
+  {
+    "nombre": "Centro de Nanociencias y Nanotecnología",
+    "imagen": "img/modulos/CNYN.webp",
+    "modulos": [
+      "Sala de Cómputo"
+    ]
+  }
+]

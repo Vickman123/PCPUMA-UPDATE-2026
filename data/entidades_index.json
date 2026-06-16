@@ -1,0 +1,502 @@
+{
+    "value":  [
+                  {
+                      "id":  1,
+                      "nombre":  "Facultad de Arquitectura",
+                      "logo":  "img/logos/FARQUITECTURA.webp",
+                      "correo":  "fcr@unam.mx",
+                      "sitio":  "https://arquitectura.unam.mx/alumnado/cÃ³mputo"
+                  },
+                  {
+                      "id":  2,
+                      "nombre":  "Facultad de Artes y Diseño",
+                      "logo":  "img/logos/FAD.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  3,
+                      "nombre":  "Facultad de Ciencias",
+                      "logo":  "img/logos/FCIENCIAS.webp",
+                      "correo":  "computo@fciencias.unam.mx",
+                      "sitio":  "https://www.fciencias.unam.mx/computo/nosotros/redes"
+                  },
+                  {
+                      "id":  4,
+                      "nombre":  "Facultad de Ciencias Políticas y Sociales",
+                      "logo":  "img/logos/FCPYS.webp",
+                      "correo":  "facultaddeciencias@pcpuma.unam.mx",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  5,
+                      "nombre":  "Facultad de Contaduría y Administración",
+                      "logo":  "img/logos/FCyA.webp",
+                      "correo":  "algarcia@fca.unam.mx",
+                      "sitio":  "https://www.fca.unam.mx/pcpuma"
+                  },
+                  {
+                      "id":  6,
+                      "nombre":  "Facultad de Derecho",
+                      "logo":  "img/logos/DERECHO.webp",
+                      "correo":  "rodolfo.romero@derecho.unam.mx",
+                      "sitio":  "https://www.derecho.unam.mx/"
+                  },
+                  {
+                      "id":  7,
+                      "nombre":  "Facultad de Economía",
+                      "logo":  "img/logos/FECONOMIA.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  8,
+                      "nombre":  "Facultad de Enfermería y Obstetricia",
+                      "logo":  "img/logos/FENO.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  9,
+                      "nombre":  "Facultad de Filosofía y Letras",
+                      "logo":  "img/logos/FFYL.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  10,
+                      "nombre":  "Facultad de Ingeniería",
+                      "logo":  "img/logos/FINGENIERIA.webp",
+                      "correo":  "pcpuma@fi-b.unam.mx",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  11,
+                      "nombre":  "Facultad de Medicina",
+                      "logo":  "img/logos/FMEDICINA.webp",
+                      "correo":  "albor@unam.mx",
+                      "sitio":  "https://tic.facmed.unam.mx/"
+                  },
+                  {
+                      "id":  12,
+                      "nombre":  "Facultad de Medicina Veterinaria y Zootecnia",
+                      "logo":  "img/logos/FMVZ.webp",
+                      "correo":  "eric.martinez@unam.mx",
+                      "sitio":  "https://pcpuma.fmvz.unam.mx/"
+                  },
+                  {
+                      "id":  13,
+                      "nombre":  "Facultad de Música",
+                      "logo":  "img/logos/FMUSICA.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  14,
+                      "nombre":  "Facultad de Odontología",
+                      "logo":  "img/logos/FODONTOLOGIA.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  15,
+                      "nombre":  "Facultad de Psicología",
+                      "logo":  "img/logos/FPSICOLOGIA.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  16,
+                      "nombre":  "FES Acatlán",
+                      "logo":  "img/logos/FESACATLAN.webp",
+                      "correo":  "helpdesk@pcpuma.acatlan.unam.mx",
+                      "sitio":  "https://www.acatlan.unam.mx/pcpuma"
+                  },
+                  {
+                      "id":  17,
+                      "nombre":  "FES Aragón",
+                      "logo":  "img/logos/FESARAGON.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  18,
+                      "nombre":  "FES Cuautitlán",
+                      "logo":  "img/logos/FESCUAUTITLAN.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  19,
+                      "nombre":  "FES Iztacala",
+                      "logo":  "img/logos/FESIZTACALA.webp",
+                      "correo":  "mapl@unam.mx",
+                      "sitio":  "https://www.iztacala.unam.mx/pcpuma/"
+                  },
+                  {
+                      "id":  20,
+                      "nombre":  "FES Zaragoza",
+                      "logo":  "img/logos/FESZARAGOZA.webp",
+                      "correo":  "c.tecnologias@zaragoza.unam.mx",
+                      "sitio":  "https://www.zaragoza.unam.mx/tecnologias-para-la-educacion/"
+                  },
+                  {
+                      "id":  21,
+                      "nombre":  "ENES León",
+                      "logo":  "img/logos/ENESLEON.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  22,
+                      "nombre":  "ENES Mérida",
+                      "logo":  "img/logos/ENESMERIDA.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  23,
+                      "nombre":  "ENES Morelia",
+                      "logo":  "img/logos/ENESMORELIA.webp",
+                      "correo":  "fhernandez@enesmorelia.unam.mx",
+                      "sitio":  "https://www.enesmorelia.unam.mx/"
+                  },
+                  {
+                      "id":  24,
+                      "nombre":  "ENES Oaxaca",
+                      "logo":  "img/logos/ENESO.webp",
+                      "correo":  "depto.tecnologias@eneso.unam.mx",
+                      "sitio":  "https://www.enesoaxaca.unam.mx/"
+                  },
+                  {
+                      "id":  25,
+                      "nombre":  "ENES Juriquilla",
+                      "logo":  "img/logos/ENESJURIQUILLA.webp",
+                      "correo":  "daniel_moya@unam.mx",
+                      "sitio":  "https://www.enesjuriquilla.unam.mx/"
+                  },
+                  {
+                      "id":  26,
+                      "nombre":  "Escuela Nacional de Artes Cinematográficas",
+                      "logo":  "img/logos/ENAC.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  27,
+                      "nombre":  "Escuela Nacional de Lenguas, Lingüística y Traducción",
+                      "logo":  "img/logos/ENALLT.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  28,
+                      "nombre":  "Escuela Nacional de Trabajo Social",
+                      "logo":  "img/logos/ENTS.webp",
+                      "correo":  "nmendez@unam.mx",
+                      "sitio":  "https://www.trabajosocial.unam.mx/"
+                  },
+                  {
+                      "id":  29,
+                      "nombre":  "Escuela Nacional de Ciencias de la Tierra",
+                      "logo":  "img/logos/ENCIT.webp",
+                      "correo":  "tic@encit.unam.mx",
+                      "sitio":  "https://encit.unam.mx/"
+                  },
+                  {
+                      "id":  30,
+                      "nombre":  "Instituto de Biología",
+                      "logo":  "img/logos/IBIOLOGIA.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  31,
+                      "nombre":  "Instituto de Física",
+                      "logo":  "img/logos/IFISICA.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  32,
+                      "nombre":  "Centro de Nanociencias y Nanotecnología",
+                      "logo":  "img/logos/CNYN.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  33,
+                      "nombre":  "ENP 1 \"Gabino Barreda\"",
+                      "logo":  "img/logos/ENP.webp",
+                      "correo":  "diana.fernandez@enp.unam.mx",
+                      "sitio":  "https://www.prepa1.unam.mx/"
+                  },
+                  {
+                      "id":  34,
+                      "nombre":  "ENP 2 \"Erasmo Castellanos Quinto\"",
+                      "logo":  "img/logos/ENP.webp",
+                      "correo":  "ruben.pineda@enp.unam.mx",
+                      "sitio":  "https://www.prepa2.unam.mx/"
+                  },
+                  {
+                      "id":  35,
+                      "nombre":  "ENP 3 \"Justo Sierra\"",
+                      "logo":  "img/logos/ENP.webp",
+                      "correo":  "daniel.gozalez@enp.unam.mx",
+                      "sitio":  "https://www.prepa3.unam.mx/"
+                  },
+                  {
+                      "id":  36,
+                      "nombre":  "ENP 4 \"Vidal Castañeda y Nájera\"",
+                      "logo":  "img/logos/ENP.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  37,
+                      "nombre":  "ENP 5 \"José Vasconcelos\"",
+                      "logo":  "img/logos/ENP.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  38,
+                      "nombre":  "ENP 6 \"Antonio Caso\"",
+                      "logo":  "img/logos/ENP.webp",
+                      "correo":  "brenda.canlo@enp.unam.mx",
+                      "sitio":  "https://www.prepa6.unam.mx/"
+                  },
+                  {
+                      "id":  39,
+                      "nombre":  "ENP 7 \"Ezequiel A. Chávez\"",
+                      "logo":  "img/logos/ENP.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  40,
+                      "nombre":  "ENP 8 \"Miguel E. Schulz\"",
+                      "logo":  "img/logos/ENP.webp",
+                      "correo":  "jaime.rosas@dgenp.unam.mx",
+                      "sitio":  "https://www.prepa8.unam.mx/"
+                  },
+                  {
+                      "id":  41,
+                      "nombre":  "ENP 9 \"Pedro de Alba\"",
+                      "logo":  "img/logos/ENP.webp",
+                      "correo":  "sergio.gomez@enp.unam.mx",
+                      "sitio":  "https://www.prepa9.unam.mx/"
+                  },
+                  {
+                      "id":  42,
+                      "nombre":  "CCH Plantel Azcapotzalco",
+                      "logo":  "img/logos/CCH.webp",
+                      "correo":  "jlgv@unam.mx",
+                      "sitio":  "https://www.cchazc.unam.mx/"
+                  },
+                  {
+                      "id":  43,
+                      "nombre":  "CCH Plantel Naucalpan",
+                      "logo":  "img/logos/CCH.webp",
+                      "correo":  "miguelangel.zamora@cch.unam.mx",
+                      "sitio":  "https://www.cch-naucalpan.unam.mx/"
+                  },
+                  {
+                      "id":  44,
+                      "nombre":  "CCH Plantel Oriente",
+                      "logo":  "img/logos/CCH.webp",
+                      "correo":  "computo.oriente@cch.unam.mx",
+                      "sitio":  "https://www.cch-oriente.unam.mx/e-computo.html"
+                  },
+                  {
+                      "id":  45,
+                      "nombre":  "CCH Plantel Sur",
+                      "logo":  "img/logos/CCH.webp",
+                      "correo":  "edgar.vega@cch.unam.mx",
+                      "sitio":  "https://www.cch-sur.unam.mx/"
+                  },
+                  {
+                      "id":  46,
+                      "nombre":  "CCH Plantel Vallejo",
+                      "logo":  "img/logos/CCH.webp",
+                      "correo":  "omar.bello@cch.unam.mx",
+                      "sitio":  "https://www.cch-vallejo.unam.mx/"
+                  },
+                  {
+                      "id":  47,
+                      "nombre":  "Centro de Enseñanza para Extranjeros",
+                      "logo":  "img/logos/CEE.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  48,
+                      "nombre":  "Centro de Investigaciones en Geografía Ambiental",
+                      "logo":  "img/logos/CIGA.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  49,
+                      "nombre":  "Coordinación Mixta de Posgrado",
+                      "logo":  "img/logos/POSGRADO.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  50,
+                      "nombre":  "Instituto de Geofísica",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  51,
+                      "nombre":  "Instituto de Investigaciones Jurídicas",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  52,
+                      "nombre":  "Instituto de Química",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  53,
+                      "nombre":  "Instituto de Investigaciones Filológicas",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  54,
+                      "nombre":  "Centro de Exposiciones y Congresos",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "recintoferial@sa.unam.mx",
+                      "sitio":  "https://www.cec.unam.mx/"
+                  },
+                  {
+                      "id":  55,
+                      "nombre":  "Coordinación de Difusión Cultural",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  56,
+                      "nombre":  "Defensoría de los Derechos Universitarios, Igualdad y Atención de la Violencia de Género",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  57,
+                      "nombre":  "Dirección General de Administración Escolar",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  58,
+                      "nombre":  "Dirección General de Cooperación e Internacionalización",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  59,
+                      "nombre":  "Dirección General de Divulgación de la Ciencia",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  60,
+                      "nombre":  "Dirección General de Bibliotecas",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  61,
+                      "nombre":  "Antiguo Colegio de San Ildefonso",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "rdiaz@sanildefonso.org.mx",
+                      "sitio":  "https://www.sanildefonso.org.mx/"
+                  },
+                  {
+                      "id":  62,
+                      "nombre":  "AAPAUNAM",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  63,
+                      "nombre":  "CIPPS",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "lgonzalez@cipps.unam.mx",
+                      "sitio":  "https://cipps.unam.mx/"
+                  },
+                  {
+                      "id":  64,
+                      "nombre":  "SDI",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "linda.rey@unam.mx",
+                      "sitio":  "https://www.sdi.unam.mx/"
+                  },
+                  {
+                      "id":  65,
+                      "nombre":  "CIGU",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  66,
+                      "nombre":  "SPAMSU",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  67,
+                      "nombre":  "Facultad de Química",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  68,
+                      "nombre":  "Casa de las Humanidades",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  69,
+                      "nombre":  "Direccion General de Orientación y Atención Educativa",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  70,
+                      "nombre":  "Dirección General de Presupuesto",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  },
+                  {
+                      "id":  71,
+                      "nombre":  "Dirección General de Servicios Generales y Movilidad",
+                      "logo":  "img/fotos/default.webp",
+                      "correo":  "",
+                      "sitio":  ""
+                  }
+              ],
+    "Count":  71
+}

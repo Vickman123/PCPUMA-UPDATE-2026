@@ -1,0 +1,976 @@
+{
+  "categories": [
+    {
+      "name": "IA Generativa",
+      "id": "IA",
+      "tools": [
+        {
+          "name": "Copilot",
+          "icon_url": "https://copilot.microsoft.com/favicon.ico",
+          "description": "Asistente de IA integrado en apps de Microsoft 365.",
+          "tool_id": "copilot",
+          "tool_url": "https://copilot.microsoft.com",
+          "evaluation_url": "evaluar.php?h=copilot",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Google Gemini",
+          "icon_url": "https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64",
+          "description": "IA generativa de Google integrada con su ecosistema.",
+          "tool_id": "googlegemini",
+          "tool_url": "https://gemini.google.com",
+          "evaluation_url": "evaluar.php?h=googlegemini",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "ChatGPT",
+          "icon_url": "https://www.google.com/s2/favicons?domain=openai.com&sz=64",
+          "description": "Genera texto, ideas, rúbricas y contenido educativo.",
+          "tool_id": "chatgpt",
+          "tool_url": "https://chat.openai.com",
+          "evaluation_url": "evaluar.php?h=chatgpt",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "MetaAI",
+          "icon_url": "https://www.google.com/s2/favicons?domain=meta.ai&sz=64",
+          "description": "Asistente de IA desarrollado por Meta (Facebook).",
+          "tool_id": "metaai",
+          "tool_url": "https://www.meta.ai",
+          "evaluation_url": "evaluar.php?h=metaai",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Grok",
+          "icon_url": "https://x.ai/favicon.ico",
+          "description": "IA conversacional de X (Twitter) centrada en contexto.",
+          "tool_id": "grok",
+          "tool_url": "https://x.ai",
+          "evaluation_url": "evaluar.php?h=grok",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Deepseek",
+          "icon_url": "https://www.google.com/s2/favicons?domain=deepseek.com&sz=64",
+          "description": "Buscador académico y asistente con IA para investigación.",
+          "tool_id": "deepseek",
+          "tool_url": "https://www.deepseek.com",
+          "evaluation_url": "evaluar.php?h=deepseek",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Perplexity AI",
+          "icon_url": "https://www.google.com/s2/favicons?domain=perplexity.ai&sz=64",
+          "description": "Motor de respuestas con búsqueda web + IA.",
+          "tool_id": "perplexityai",
+          "tool_url": "https://perplexity.ai",
+          "evaluation_url": "evaluar.php?h=perplexityai",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Claude AI",
+          "icon_url": "https://www.google.com/s2/favicons?domain=claude.ai&sz=64",
+          "description": "IA para procesar grandes cantidades de texto.",
+          "tool_id": "claudeai",
+          "tool_url": "https://claude.ai",
+          "evaluation_url": "evaluar.php?h=claudeai",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "MagicSchool.ai",
+          "icon_url": "https://www.google.com/s2/favicons?domain=magicschool.ai&sz=64",
+          "description": "IA para docentes: planes, rúbricas y más.",
+          "tool_id": "magicschoolai",
+          "tool_url": "https://magicschool.ai",
+          "evaluation_url": "evaluar.php?h=magicschoolai",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Gamma.app",
+          "icon_url": "https://gamma.app/favicon.ico",
+          "description": "IA que crea presentaciones y documentos.",
+          "tool_id": "gammaapp",
+          "tool_url": "https://gamma.app",
+          "evaluation_url": "evaluar.php?h=gammaapp",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Elicit",
+          "icon_url": "https://www.google.com/s2/favicons?domain=elicit.com&sz=64",
+          "description": "Encuentra papers académicos y extrae datos clave.",
+          "tool_id": "elicit",
+          "tool_url": "https://elicit.org",
+          "evaluation_url": "evaluar.php?h=elicit",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Napkin AI",
+          "icon_url": "https://napkin.ai/favicon.ico",
+          "description": "Captura, conecta y redescubre ideas.",
+          "tool_id": "napkinai",
+          "tool_url": "https://napkin.ai",
+          "evaluation_url": "evaluar.php?h=napkinai",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Evaluación y retroalimentación",
+      "id": "Evaluación",
+      "tools": [
+        {
+          "name": "Google Forms",
+          "icon_url": "https://www.google.com/s2/favicons?domain=forms.google.com&sz=64",
+          "description": "Crea formularios para encuestas, tareas o exámenes.",
+          "tool_id": "googleforms",
+          "tool_url": "https://forms.google.com",
+          "evaluation_url": "evaluar.php?h=googleforms",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Khan Academy",
+          "icon_url": "https://www.google.com/s2/favicons?domain=khanacademy.org&sz=64",
+          "description": "Asigna ejercicios, monitorea el progreso y refuerza temas con miles de recursos gratuitos.",
+          "tool_id": "khanacademy",
+          "tool_url": "https://es.khanacademy.org",
+          "evaluation_url": "evaluar.php?h=khanacademy",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Kahoot",
+          "icon_url": "https://www.google.com/s2/favicons?domain=kahoot.com&sz=64",
+          "description": "Gamifica el aprendizaje con cuestionarios interactivos.",
+          "tool_id": "kahoot",
+          "tool_url": "https://kahoot.com",
+          "evaluation_url": "evaluar.php?h=kahoot",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Socrative",
+          "icon_url": "https://www.google.com/s2/favicons?domain=socrative.com&sz=64",
+          "description": "Realiza evaluaciones formativas en tiempo real.",
+          "tool_id": "socrative",
+          "tool_url": "https://www.socrative.com",
+          "evaluation_url": "evaluar.php?h=socrative",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Edpuzzle",
+          "icon_url": "https://www.google.com/s2/favicons?domain=edpuzzle.com&sz=64",
+          "description": "Agrega preguntas a videos educativos.",
+          "tool_id": "edpuzzle",
+          "tool_url": "https://edpuzzle.com",
+          "evaluation_url": "evaluar.php?h=edpuzzle",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Microsoft Forms",
+          "icon_url": "https://www.google.com/s2/favicons?domain=forms.office.com&sz=64",
+          "description": "Crea y analiza encuestas de forma sencilla.",
+          "tool_id": "microsoftforms",
+          "tool_url": "https://forms.office.com",
+          "evaluation_url": "evaluar.php?h=microsoftforms",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Quizlet",
+          "icon_url": "https://www.google.com/s2/favicons?domain=quizlet.com&sz=64",
+          "description": "Para crear y compartir tarjetas de estudio, juegos y pruebas cortas.",
+          "tool_id": "quizlet",
+          "tool_url": "https://quizlet.com",
+          "evaluation_url": "evaluar.php?h=quizlet",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Mentimeter",
+          "icon_url": "https://www.google.com/s2/favicons?domain=mentimeter.com&sz=64",
+          "description": "Presentaciones interactivas con encuestas y cuestionarios en tiempo real.",
+          "tool_id": "mentimeter",
+          "tool_url": "https://mentimeter.com",
+          "evaluation_url": "evaluar.php?h=mentimeter",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Pear Deck",
+          "icon_url": "https://www.google.com/s2/favicons?domain=peardeck.com&sz=64",
+          "description": "Complemento para Google Slides/PowerPoint que permite preguntas interactivas.",
+          "tool_id": "peardeck",
+          "tool_url": "https://peardeck.com",
+          "evaluation_url": "evaluar.php?h=peardeck",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Formative",
+          "icon_url": "https://www.google.com/s2/favicons?domain=formative.com&sz=64",
+          "description": "Plataforma para crear evaluaciones y ver respuestas en tiempo real.",
+          "tool_id": "formative",
+          "tool_url": "https://formative.com",
+          "evaluation_url": "evaluar.php?h=formative",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Poll Everywhere",
+          "icon_url": "https://www.google.com/s2/favicons?domain=polleverywhere.com&sz=64",
+          "description": "Sondeos y preguntas de la audiencia en vivo.",
+          "tool_id": "polleverywhere",
+          "tool_url": "https://polleverywhere.com",
+          "evaluation_url": "evaluar.php?h=polleverywhere",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Creación de contenido",
+      "id": "Contenido",
+      "tools": [
+        {
+          "name": "Canva",
+          "icon_url": "https://www.google.com/s2/favicons?domain=canva.com&sz=64",
+          "description": "Diseña presentaciones y recursos visuales atractivos.",
+          "tool_id": "canva",
+          "tool_url": "https://canva.com",
+          "evaluation_url": "evaluar.php?h=canva",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Genially",
+          "icon_url": "https://www.google.com/s2/favicons?domain=genial.ly&sz=64",
+          "description": "Crea contenidos interactivos como infografías y juegos.",
+          "tool_id": "genially",
+          "tool_url": "https://genial.ly",
+          "evaluation_url": "evaluar.php?h=genially",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Prezi",
+          "icon_url": "https://www.google.com/s2/favicons?domain=prezi.com&sz=64",
+          "description": "Presentaciones dinámicas con efecto de zoom.",
+          "tool_id": "prezi",
+          "tool_url": "https://prezi.com",
+          "evaluation_url": "evaluar.php?h=prezi",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Lucidchart",
+          "icon_url": "https://www.google.com/s2/favicons?domain=lucidchart.com&sz=64",
+          "description": "Crea diagramas, mapas mentales y procesos.",
+          "tool_id": "lucidchart",
+          "tool_url": "https://lucidchart.com",
+          "evaluation_url": "evaluar.php?h=lucidchart",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Powtoon",
+          "icon_url": "https://www.google.com/s2/favicons?domain=powtoon.com&sz=64",
+          "description": "Crea videos animados para clases.",
+          "tool_id": "powtoon",
+          "tool_url": "https://powtoon.com",
+          "evaluation_url": "evaluar.php?h=powtoon",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Adobe Express",
+          "icon_url": "https://www.google.com/s2/favicons?domain=adobe.com&sz=64",
+          "description": "Potente herramienta de diseño para gráficos, videos cortos y páginas web sencillas.",
+          "tool_id": "adobeexpress",
+          "tool_url": "https://express.adobe.com",
+          "evaluation_url": "evaluar.php?h=adobeexpress",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "H5P",
+          "icon_url": "https://www.google.com/s2/favicons?domain=h5p.org&sz=64",
+          "description": "Conjunto de herramientas de código abierto para crear contenidos interactivos.",
+          "tool_id": "h5p",
+          "tool_url": "https://h5p.org",
+          "evaluation_url": "evaluar.php?h=h5p",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Gestión del aula",
+      "id": "Aula",
+      "tools": [
+        {
+          "name": "Google Classroom",
+          "icon_url": "https://www.google.com/s2/favicons?domain=classroom.google.com&sz=64",
+          "description": "Gestiona tareas y comunicación con tus grupos.",
+          "tool_id": "googleclassroom",
+          "tool_url": "https://classroom.google.com",
+          "evaluation_url": "evaluar.php?h=googleclassroom",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Microsoft Teams",
+          "icon_url": "https://www.google.com/s2/favicons?domain=teams.microsoft.com&sz=64",
+          "description": "Plataforma colaborativa con chat y videollamadas.",
+          "tool_id": "microsoftteams",
+          "tool_url": "https://teams.microsoft.com",
+          "evaluation_url": "evaluar.php?h=microsoftteams",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Moodle",
+          "icon_url": "https://www.google.com/s2/favicons?domain=moodle.org&sz=64",
+          "description": "Sistema de gestión de cursos en línea.",
+          "tool_id": "moodle",
+          "tool_url": "#",
+          "evaluation_url": "evaluar.php?h=moodle",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Edmodo",
+          "icon_url": "https://www.google.com/s2/favicons?domain=edmodo.com&sz=64",
+          "description": "Red educativa para compartir contenidos y tareas.",
+          "tool_id": "edmodo",
+          "tool_url": "https://new.edmodo.com",
+          "evaluation_url": "evaluar.php?h=edmodo",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "ClassDojo",
+          "icon_url": "https://www.google.com/s2/favicons?domain=classdojo.com&sz=64",
+          "description": "Gestión del aula y comunicación con estudiantes.",
+          "tool_id": "classdojo",
+          "tool_url": "https://classdojo.com",
+          "evaluation_url": "evaluar.php?h=classdojo",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Schoology",
+          "icon_url": "https://www.google.com/s2/favicons?domain=schoology.com&sz=64",
+          "description": "Un Sistema de Gestión de Aprendizaje (LMS) completo para organizar cursos y calificar tareas.",
+          "tool_id": "schoology",
+          "tool_url": "https://schoology.com",
+          "evaluation_url": "evaluar.php?h=schoology",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Canvas",
+          "icon_url": "https://www.google.com/s2/favicons?domain=instructure.com&sz=64",
+          "description": "Uno de los LMS más utilizados en la educación superior a nivel mundial.",
+          "tool_id": "canvas",
+          "tool_url": "https://instructure.com/canvas",
+          "evaluation_url": "evaluar.php?h=canvas",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Remind",
+          "icon_url": "https://www.google.com/s2/favicons?domain=remind.com&sz=64",
+          "description": "Aplicación de mensajería segura para enviar recordatorios a estudiantes y padres.",
+          "tool_id": "remind",
+          "tool_url": "https://remind.com",
+          "evaluation_url": "evaluar.php?h=remind",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Blackboard Learn",
+          "icon_url": "https://www.google.com/s2/favicons?domain=blackboard.com&sz=64",
+          "description": "Un LMS tradicional y muy robusto, ampliamente utilizado en el entorno universitario.",
+          "tool_id": "blackboardlearn",
+          "tool_url": "https://www.blackboard.com/learn",
+          "evaluation_url": "evaluar.php?h=blackboardlearn",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Video y Multimedia",
+      "id": "Video",
+      "tools": [
+        {
+          "name": "OBS Studio",
+          "icon_url": "https://obsproject.com/favicon.ico",
+          "description": "Graba o transmite tu pantalla y cámara.",
+          "tool_id": "obsstudio",
+          "tool_url": "https://obsproject.com",
+          "evaluation_url": "evaluar.php?h=obsstudio",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "TED-Ed",
+          "icon_url": "https://www.google.com/s2/favicons?domain=ed.ted.com&sz=64",
+          "description": "Videos educativos con lecciones diseñadas para aprender.",
+          "tool_id": "ted-ed",
+          "tool_url": "https://ed.ted.com",
+          "evaluation_url": "evaluar.php?h=ted-ed",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "YouTube Studio",
+          "icon_url": "https://www.google.com/s2/favicons?domain=studio.youtube.com&sz=64",
+          "description": "Edita y gestiona tus contenidos educativos en YouTube.",
+          "tool_id": "youtubestudio",
+          "tool_url": "https://studio.youtube.com",
+          "evaluation_url": "evaluar.php?h=youtubestudio",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Clipchamp",
+          "icon_url": "https://clipchamp.com/favicon.ico",
+          "description": "Editor de video en línea para crear presentaciones.",
+          "tool_id": "clipchamp",
+          "tool_url": "https://clipchamp.com",
+          "evaluation_url": "evaluar.php?h=clipchamp",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Loom",
+          "icon_url": "https://www.loom.com/favicon.ico",
+          "description": "Para grabar rápidamente la pantalla y la cámara al mismo tiempo, ideal para tutoriales.",
+          "tool_id": "loom",
+          "tool_url": "https://loom.com",
+          "evaluation_url": "evaluar.php?h=loom",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Flip",
+          "icon_url": "https://www.google.com/s2/favicons?domain=flip.com&sz=64",
+          "description": "Plataforma donde los estudiantes responden a temas con videos cortos, fomentando la discusión.",
+          "tool_id": "flip",
+          "tool_url": "https://flip.com",
+          "evaluation_url": "evaluar.php?h=flip",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "ScreenPal",
+          "icon_url": "https://screenpal.com/favicon.ico",
+          "description": "Un grabador de pantalla y editor de video muy popular y fácil de usar.",
+          "tool_id": "screenpal",
+          "tool_url": "https://screenpal.com",
+          "evaluation_url": "evaluar.php?h=screenpal",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Vimeo",
+          "icon_url": "https://vimeo.com/favicon.ico",
+          "description": "Plataforma para alojar y compartir videos, conocida por su alta calidad y sus opciones de privacidad.",
+          "tool_id": "vimeo",
+          "tool_url": "https://vimeo.com",
+          "evaluation_url": "evaluar.php?h=vimeo",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Colaboración y Lluvia de Ideas",
+      "id": "Colaboración",
+      "tools": [
+        {
+          "name": "Notion",
+          "icon_url": "https://www.notion.so/images/favicon.ico",
+          "description": "Organiza notas, tareas y documentos en un solo lugar.",
+          "tool_id": "notion",
+          "tool_url": "https://notion.so",
+          "evaluation_url": "evaluar.php?h=notion",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Google Keep",
+          "icon_url": "https://www.google.com/s2/favicons?domain=keep.google.com&sz=64",
+          "description": "Toma notas rápidas y listas de tareas.",
+          "tool_id": "googlekeep",
+          "tool_url": "https://keep.google.com",
+          "evaluation_url": "evaluar.php?h=googlekeep",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Figma",
+          "icon_url": "https://static.figma.com/app/icon/1/favicon.ico",
+          "description": "Diseña colaborativamente interfaces y diagramas.",
+          "tool_id": "figma",
+          "tool_url": "https://figma.com",
+          "evaluation_url": "evaluar.php?h=figma",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Milanote",
+          "icon_url": "https://milanote.com/favicon.ico",
+          "description": "Organiza ideas visualmente como en un muro creativo.",
+          "tool_id": "milanote",
+          "tool_url": "https://milanote.com",
+          "evaluation_url": "evaluar.php?h=milanote",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Miro",
+          "icon_url": "https://miro.com/favicon.ico",
+          "description": "Tablero colaborativo para lluvia de ideas y organización.",
+          "tool_id": "miro",
+          "tool_url": "https://miro.com",
+          "evaluation_url": "evaluar.php?h=miro",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Trello",
+          "icon_url": "https://trello.com/favicon.ico",
+          "description": "Herramienta de gestión de proyectos basada en tableros Kanban.",
+          "tool_id": "trello",
+          "tool_url": "https://trello.com",
+          "evaluation_url": "evaluar.php?h=trello",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Coggle",
+          "icon_url": "https://www.google.com/s2/favicons?domain=coggle.it&sz=64",
+          "description": "Crea mapas mentales colaborativos en tiempo real.",
+          "tool_id": "coggle",
+          "tool_url": "https://coggle.it",
+          "evaluation_url": "evaluar.php?h=coggle",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Conceptboard",
+          "icon_url": "https://conceptboard.com/favicon.ico",
+          "description": "Pizarrón blanco en línea para centralizar documentos e ideas.",
+          "tool_id": "conceptboard",
+          "tool_url": "https://conceptboard.com",
+          "evaluation_url": "evaluar.php?h=conceptboard",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Almacenamiento y Organización",
+      "id": "Almacenamiento",
+      "tools": [
+        {
+          "name": "Google Drive",
+          "icon_url": "https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png",
+          "description": "Almacena y comparte archivos en la nube.",
+          "tool_id": "googledrive",
+          "tool_url": "https://drive.google.com",
+          "evaluation_url": "evaluar.php?h=googledrive",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "OneDrive",
+          "icon_url": "https://onedrive.live.com/favicon.ico",
+          "description": "Almacenamiento en la nube integrado con Microsoft.",
+          "tool_id": "onedrive",
+          "tool_url": "https://onedrive.live.com",
+          "evaluation_url": "evaluar.php?h=onedrive",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Dropbox",
+          "icon_url": "https://cfl.dropboxstatic.com/static/metaserver/static/images/favicon-vfl8lUR9B.ico",
+          "description": "Sincroniza y comparte archivos entre dispositivos.",
+          "tool_id": "dropbox",
+          "tool_url": "https://dropbox.com",
+          "evaluation_url": "evaluar.php?h=dropbox",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Evernote",
+          "icon_url": "https://evernote.com/favicon.ico",
+          "description": "Toma notas, guarda enlaces y crea listas.",
+          "tool_id": "evernote",
+          "tool_url": "https://evernote.com",
+          "evaluation_url": "evaluar.php?h=evernote",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Box",
+          "icon_url": "https://box.com/favicon.ico",
+          "description": "Plataforma segura para compartir y almacenar archivos.",
+          "tool_id": "box",
+          "tool_url": "https://box.com",
+          "evaluation_url": "evaluar.php?h=box",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "OneNote",
+          "icon_url": "https://www.google.com/s2/favicons?domain=onenote.com&sz=64",
+          "description": "Cuaderno digital de Microsoft para notas y recortes.",
+          "tool_id": "onenote",
+          "tool_url": "https://onenote.com",
+          "evaluation_url": "evaluar.php?h=onenote",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Pocket",
+          "icon_url": "https://getpocket.com/favicon.ico",
+          "description": "Guarda artículos y videos para ver más tarde, incluso sin conexión.",
+          "tool_id": "pocket",
+          "tool_url": "https://getpocket.com",
+          "evaluation_url": "evaluar.php?h=pocket",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Diigo",
+          "icon_url": "https://www.diigo.com/favicon.ico",
+          "description": "Marca, archiva y añade notas a páginas web.",
+          "tool_id": "diigo",
+          "tool_url": "https://diigo.com",
+          "evaluation_url": "evaluar.php?h=diigo",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "iCloud Drive",
+          "icon_url": "https://www.apple.com/favicon.ico",
+          "description": "Almacenamiento en la nube de Apple.",
+          "tool_id": "iclouddrive",
+          "tool_url": "https://icloud.com/iclouddrive",
+          "evaluation_url": "evaluar.php?h=iclouddrive",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "MEGA",
+          "icon_url": "https://mega.nz/favicon.ico",
+          "description": "Servicio de almacenamiento en la nube enfocado en seguridad.",
+          "tool_id": "mega",
+          "tool_url": "https://mega.nz",
+          "evaluation_url": "evaluar.php?h=mega",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Comunicación y Participación",
+      "id": "Comunicación",
+      "tools": [
+        {
+          "name": "Discord",
+          "icon_url": "https://www.google.com/s2/favicons?domain=discord.com&sz=64",
+          "description": "Comunidad virtual con canales de texto y voz.",
+          "tool_id": "discord",
+          "tool_url": "https://discord.com",
+          "evaluation_url": "evaluar.php?h=discord",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Google Chat",
+          "icon_url": "https://www.google.com/s2/favicons?domain=chat.google.com&sz=64",
+          "description": "Mensajería integrada con Google Workspace.",
+          "tool_id": "googlechat",
+          "tool_url": "https://chat.google.com",
+          "evaluation_url": "evaluar.php?h=googlechat",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Telegram",
+          "icon_url": "https://telegram.org/favicon.ico",
+          "description": "Mensajería rápida y segura con canales educativos.",
+          "tool_id": "telegram",
+          "tool_url": "https://telegram.org",
+          "evaluation_url": "evaluar.php?h=telegram",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "WhatsApp",
+          "icon_url": "https://www.google.com/s2/favicons?domain=whatsapp.com&sz=64",
+          "description": "Comunicación rápida por texto, voz o video.",
+          "tool_id": "whatsapp",
+          "tool_url": "https://web.whatsapp.com",
+          "evaluation_url": "evaluar.php?h=whatsapp",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Signal",
+          "icon_url": "https://www.google.com/s2/favicons?domain=signal.org&sz=64",
+          "description": "Mensajería cifrada y centrada en la privacidad.",
+          "tool_id": "signal",
+          "tool_url": "https://signal.org",
+          "evaluation_url": "evaluar.php?h=signal",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Zoom",
+          "icon_url": "https://zoom.us/favicon.ico",
+          "description": "Videollamadas y webinars para clases remotas.",
+          "tool_id": "zoom",
+          "tool_url": "https://zoom.us",
+          "evaluation_url": "evaluar.php?h=zoom",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Google Meet",
+          "icon_url": "https://www.google.com/s2/favicons?domain=meet.google.com&sz=64",
+          "description": "Videoconferencias integradas con Google Workspace.",
+          "tool_id": "googlemeet",
+          "tool_url": "https://meet.google.com",
+          "evaluation_url": "evaluar.php?h=googlemeet",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Slack",
+          "icon_url": "https://a.slack-edge.com/80588/marketing/img/meta/favicon-32.png",
+          "description": "Plataforma de comunicación por canales para organizar conversaciones.",
+          "tool_id": "slack",
+          "tool_url": "https://slack.com",
+          "evaluation_url": "evaluar.php?h=slack",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Webex",
+          "icon_url": "https://www.google.com/s2/favicons?domain=webex.com&sz=64",
+          "description": "Plataforma de videoconferencias y colaboración de Cisco.",
+          "tool_id": "webex",
+          "tool_url": "https://webex.com",
+          "evaluation_url": "evaluar.php?h=webex",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Jitsi Meet",
+          "icon_url": "https://www.google.com/s2/favicons?domain=meet.jit.si&sz=64",
+          "description": "Videoconferencia de código abierto que no requiere cuentas.",
+          "tool_id": "jitsimeet",
+          "tool_url": "https://meet.jit.si",
+          "evaluation_url": "evaluar.php?h=jitsimeet",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Discourse",
+          "icon_url": "https://discourse.org/favicon.ico",
+          "description": "Plataforma moderna para foros y comunidades de aprendizaje.",
+          "tool_id": "discourse",
+          "tool_url": "https://discourse.org",
+          "evaluation_url": "evaluar.php?h=discourse",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        },
+        {
+          "name": "Remind",
+          "icon_url": "https://www.google.com/s2/favicons?domain=remind.com&sz=64",
+          "description": "Herramienta de comunicación directa y segura para anuncios.",
+          "tool_id": "remind_2",
+          "tool_url": "https://remind.com",
+          "evaluation_url": "evaluar.php?h=remind_2",
+          "evaluation": {
+            "average": 0,
+            "count": 0
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,734 @@
+{
+  "generated_at": "2025-09-06T08:57:22.822522",
+  "count": 52,
+  "entities": [
+    {
+      "id": "instituto-de-f-sica",
+      "name": "Instituto de Física",
+      "logo": "img/logos/IFISICA.webp",
+      "logo_alt": "Instituto de Física",
+      "modal_id": "modalEntidad52",
+      "metrics": {
+        "antenas": 106,
+        "chromebooks": 15,
+        "ipads": 0,
+        "laptops": 15
+      },
+      "order": 1
+    },
+    {
+      "id": "instituto-de-biolog-a",
+      "name": "Instituto de Biología",
+      "logo": "img/logos/IBIOLOGIA.webp",
+      "logo_alt": "Instituto de Biología",
+      "modal_id": "modalEntidad53",
+      "metrics": {
+        "antenas": 132,
+        "chromebooks": 0,
+        "ipads": 0,
+        "laptops": 0
+      },
+      "order": 2
+    },
+    {
+      "id": "instituto-de-geof-sica",
+      "name": "Instituto de Geofísica",
+      "logo": "img/fotos/default.webp",
+      "logo_alt": "Instituto de Geofísica",
+      "modal_id": "modalEntidad54",
+      "metrics": {
+        "antenas": 38,
+        "chromebooks": 0,
+        "ipads": 0,
+        "laptops": 0
+      },
+      "order": 3
+    },
+    {
+      "id": "instituto-de-investigaciones-jur-dicas",
+      "name": "Instituto de Investigaciones Jurídicas",
+      "logo": "img/fotos/default.webp",
+      "logo_alt": "Instituto de Investigaciones Jurídicas",
+      "modal_id": "modalEntidad55",
+      "metrics": {
+        "antenas": 64,
+        "chromebooks": 0,
+        "ipads": 0,
+        "laptops": 0
+      },
+      "order": 4
+    },
+    {
+      "id": "fes-zaragoza",
+      "name": "FES Zaragoza",
+      "logo": "img/logos/FESZARAGOZA.webp",
+      "logo_alt": "FES Zaragoza",
+      "modal_id": "modalEntidad56",
+      "metrics": {
+        "antenas": 487,
+        "chromebooks": 234,
+        "ipads": 120,
+        "laptops": 90
+      },
+      "order": 5
+    },
+    {
+      "id": "fes-iztacala",
+      "name": "FES Iztacala",
+      "logo": "img/logos/FESIZTACALA.webp",
+      "logo_alt": "FES Iztacala",
+      "modal_id": "modalEntidad57",
+      "metrics": {
+        "antenas": 676,
+        "chromebooks": 124,
+        "ipads": 0,
+        "laptops": 90
+      },
+      "order": 6
+    },
+    {
+      "id": "fes-cuautitl-n",
+      "name": "FES Cuautitlán",
+      "logo": "img/logos/FESCUAUTITLAN.webp",
+      "logo_alt": "FES Cuautitlán",
+      "modal_id": "modalEntidad58",
+      "metrics": {
+        "antenas": 661,
+        "chromebooks": 120,
+        "ipads": 90,
+        "laptops": 0
+      },
+      "order": 7
+    },
+    {
+      "id": "fes-arag-n",
+      "name": "FES Aragón",
+      "logo": "img/logos/FESARAGON.webp",
+      "logo_alt": "FES Aragón",
+      "modal_id": "modalEntidad59",
+      "metrics": {
+        "antenas": 519,
+        "chromebooks": 769,
+        "ipads": 200,
+        "laptops": 0
+      },
+      "order": 8
+    },
+    {
+      "id": "fes-acatl-n",
+      "name": "FES Acatlán",
+      "logo": "img/logos/FESACATLAN.webp",
+      "logo_alt": "FES Acatlán",
+      "modal_id": "modalEntidad60",
+      "metrics": {
+        "antenas": 541,
+        "chromebooks": 270,
+        "ipads": 60,
+        "laptops": 210
+      },
+      "order": 9
+    },
+    {
+      "id": "facultad-de-psicolog-a",
+      "name": "Facultad de Psicología",
+      "logo": "img/logos/FPSICOLOGIA.webp",
+      "logo_alt": "Facultad de Psicología",
+      "modal_id": "modalEntidad61",
+      "metrics": {
+        "antenas": 102,
+        "chromebooks": 122,
+        "ipads": 30,
+        "laptops": 30
+      },
+      "order": 10
+    },
+    {
+      "id": "facultad-de-odontolog-a",
+      "name": "Facultad de Odontología",
+      "logo": "img/logos/FODONTOLOGIA.webp",
+      "logo_alt": "Facultad de Odontología",
+      "modal_id": "modalEntidad62",
+      "metrics": {
+        "antenas": 158,
+        "chromebooks": 40,
+        "ipads": 40,
+        "laptops": 0
+      },
+      "order": 11
+    },
+    {
+      "id": "facultad-de-m-sica",
+      "name": "Facultad de Música",
+      "logo": "img/logos/FMUSICA.webp",
+      "logo_alt": "Facultad de Música",
+      "modal_id": "modalEntidad63",
+      "metrics": {
+        "antenas": 129,
+        "chromebooks": 30,
+        "ipads": 30,
+        "laptops": 0
+      },
+      "order": 12
+    },
+    {
+      "id": "facultad-de-medicina-veterinaria-y-zootecnia",
+      "name": "Facultad de Medicina Veterinaria y Zootecnia",
+      "logo": "img/logos/FMVZ.webp",
+      "logo_alt": "Facultad de Medicina Veterinaria y Zootecnia",
+      "modal_id": "modalEntidad64",
+      "metrics": {
+        "antenas": 140,
+        "chromebooks": 70,
+        "ipads": 270,
+        "laptops": 193
+      },
+      "order": 13
+    },
+    {
+      "id": "facultad-de-medicina",
+      "name": "Facultad de Medicina",
+      "logo": "img/logos/FMEDICINA.webp",
+      "logo_alt": "Facultad de Medicina",
+      "modal_id": "modalEntidad65",
+      "metrics": {
+        "antenas": 239,
+        "chromebooks": 2195,
+        "ipads": 280,
+        "laptops": 66
+      },
+      "order": 14
+    },
+    {
+      "id": "facultad-de-ingenier-a",
+      "name": "Facultad de Ingeniería",
+      "logo": "img/logos/FINGENIERIA.webp",
+      "logo_alt": "Facultad de Ingeniería",
+      "modal_id": "modalEntidad66",
+      "metrics": {
+        "antenas": 599,
+        "chromebooks": 0,
+        "ipads": 0,
+        "laptops": 120
+      },
+      "order": 15
+    },
+    {
+      "id": "facultad-de-filosof-a-y-letras",
+      "name": "Facultad de Filosofía y Letras",
+      "logo": "img/logos/FFYL.webp",
+      "logo_alt": "Facultad de Filosofía y Letras",
+      "modal_id": "modalEntidad67",
+      "metrics": {
+        "antenas": 257,
+        "chromebooks": 120,
+        "ipads": 0,
+        "laptops": 0
+      },
+      "order": 16
+    },
+    {
+      "id": "facultad-de-econom-a",
+      "name": "Facultad de Economía",
+      "logo": "img/logos/FECONOMIA.webp",
+      "logo_alt": "Facultad de Economía",
+      "modal_id": "modalEntidad68",
+      "metrics": {
+        "antenas": 95,
+        "chromebooks": 60,
+        "ipads": 0,
+        "laptops": 30
+      },
+      "order": 17
+    },
+    {
+      "id": "facultad-de-derecho",
+      "name": "Facultad de Derecho",
+      "logo": "img/logos/DERECHO.webp",
+      "logo_alt": "Facultad de Derecho",
+      "modal_id": "modalEntidad69",
+      "metrics": {
+        "antenas": 244,
+        "chromebooks": 105,
+        "ipads": 0,
+        "laptops": 0
+      },
+      "order": 18
+    },
+    {
+      "id": "facultad-de-ciencias-pol-ticas-y-sociales",
+      "name": "Facultad de Ciencias Políticas y Sociales",
+      "logo": "img/logos/FCPYS.webp",
+      "logo_alt": "Facultad de Ciencias Políticas y Sociales",
+      "modal_id": "modalEntidad70",
+      "metrics": {
+        "antenas": 153,
+        "chromebooks": 60,
+        "ipads": 0,
+        "laptops": 60
+      },
+      "order": 19
+    },
+    {
+      "id": "facultad-de-ciencias",
+      "name": "Facultad de Ciencias",
+      "logo": "img/logos/FCIENCIAS.webp",
+      "logo_alt": "Facultad de Ciencias",
+      "modal_id": "modalEntidad71",
+      "metrics": {
+        "antenas": 559,
+        "chromebooks": 60,
+        "ipads": 30,
+        "laptops": 0
+      },
+      "order": 20
+    },
+    {
+      "id": "facultad-de-artes-y-dise-o",
+      "name": "Facultad de Artes y Diseño",
+      "logo": "img/logos/FAD.webp",
+      "logo_alt": "Facultad de Artes y Diseño",
+      "modal_id": "modalEntidad72",
+      "metrics": {
+        "antenas": 182,
+        "chromebooks": 61,
+        "ipads": 32,
+        "laptops": 25
+      },
+      "order": 21
+    },
+    {
+      "id": "facultad-de-arquitectura",
+      "name": "Facultad de Arquitectura",
+      "logo": "img/logos/FARQUITECTURA.webp",
+      "logo_alt": "Facultad de Arquitectura",
+      "modal_id": "modalEntidad73",
+      "metrics": {
+        "antenas": 283,
+        "chromebooks": 230,
+        "ipads": 100,
+        "laptops": 80
+      },
+      "order": 22
+    },
+    {
+      "id": "facultad-de-contadur-a-y-administraci-n",
+      "name": "Facultad de Contaduría y Administración",
+      "logo": "img/logos/FCyA.webp",
+      "logo_alt": "Facultad de Contaduría y Administración",
+      "modal_id": "modalEntidad74",
+      "metrics": {
+        "antenas": 261,
+        "chromebooks": 90,
+        "ipads": 0,
+        "laptops": 95
+      },
+      "order": 23
+    },
+    {
+      "id": "facultad-de-enfermer-a-y-obstetricia",
+      "name": "Facultad de Enfermería y Obstetricia",
+      "logo": "img/logos/FENO.webp",
+      "logo_alt": "Facultad de Enfermería y Obstetricia",
+      "modal_id": "modalEntidad75",
+      "metrics": {
+        "antenas": 83,
+        "chromebooks": 110,
+        "ipads": 60,
+        "laptops": 100
+      },
+      "order": 24
+    },
+    {
+      "id": "enes-oaxaca",
+      "name": "ENES Oaxaca",
+      "logo": "img/logos/ENESO.webp",
+      "logo_alt": "ENES Oaxaca",
+      "modal_id": "modalEntidad76",
+      "metrics": {
+        "antenas": 0,
+        "chromebooks": 150,
+        "ipads": 0,
+        "laptops": 11
+      },
+      "order": 25
+    },
+    {
+      "id": "enes-morelia",
+      "name": "ENES Morelia",
+      "logo": "img/logos/ENESMORELIA.webp",
+      "logo_alt": "ENES Morelia",
+      "modal_id": "modalEntidad77",
+      "metrics": {
+        "antenas": 246,
+        "chromebooks": 120,
+        "ipads": 110,
+        "laptops": 135
+      },
+      "order": 26
+    },
+    {
+      "id": "enes-m-rida",
+      "name": "ENES Mérida",
+      "logo": "img/logos/ENESMERIDA.webp",
+      "logo_alt": "ENES Mérida",
+      "modal_id": "modalEntidad78",
+      "metrics": {
+        "antenas": 53,
+        "chromebooks": 75,
+        "ipads": 0,
+        "laptops": 0
+      },
+      "order": 27
+    },
+    {
+      "id": "enes-le-n",
+      "name": "ENES León",
+      "logo": "img/logos/ENESLEON.webp",
+      "logo_alt": "ENES León",
+      "modal_id": "modalEntidad79",
+      "metrics": {
+        "antenas": 219,
+        "chromebooks": 30,
+        "ipads": 30,
+        "laptops": 40
+      },
+      "order": 28
+    },
+    {
+      "id": "enes-juriquilla",
+      "name": "ENES Juriquilla",
+      "logo": "img/logos/ENESJURIQUILLA.webp",
+      "logo_alt": "ENES Juriquilla",
+      "modal_id": "modalEntidad80",
+      "metrics": {
+        "antenas": 40,
+        "chromebooks": 53,
+        "ipads": 0,
+        "laptops": 60
+      },
+      "order": 29
+    },
+    {
+      "id": "escuela-nacional-de-artes-cinematogr-ficas",
+      "name": "Escuela Nacional de Artes Cinematográficas",
+      "logo": "img/logos/ENAC.webp",
+      "logo_alt": "Escuela Nacional de Artes Cinematográficas",
+      "modal_id": "modalEntidad81",
+      "metrics": {
+        "antenas": 60,
+        "chromebooks": 0,
+        "ipads": 10,
+        "laptops": 12
+      },
+      "order": 30
+    },
+    {
+      "id": "escuela-nacional-de-ciencias-de-la-tierra",
+      "name": "Escuela Nacional de Ciencias de la Tierra",
+      "logo": "img/logos/ENCIT.webp",
+      "logo_alt": "Escuela Nacional de Ciencias de la Tierra",
+      "modal_id": "modalEntidad104",
+      "metrics": {
+        "antenas": 0,
+        "chromebooks": 45,
+        "ipads": 0,
+        "laptops": 25
+      },
+      "order": 31
+    },
+    {
+      "id": "escuela-nacional-de-lenguas-ling-stica-y-traducci-n",
+      "name": "Escuela Nacional de Lenguas, Lingüística y Traducción",
+      "logo": "img/logos/ENALLT.webp",
+      "logo_alt": "Escuela Nacional de Lenguas, Lingüística y Traducción",
+      "modal_id": "modalEntidad82",
+      "metrics": {
+        "antenas": 119,
+        "chromebooks": 200,
+        "ipads": 70,
+        "laptops": 0
+      },
+      "order": 32
+    },
+    {
+      "id": "escuela-nacional-de-trabajo-social",
+      "name": "Escuela Nacional de Trabajo Social",
+      "logo": "img/logos/ENTS.webp",
+      "logo_alt": "Escuela Nacional de Trabajo Social",
+      "modal_id": "modalEntidad83",
+      "metrics": {
+        "antenas": 66,
+        "chromebooks": 90,
+        "ipads": 30,
+        "laptops": 30
+      },
+      "order": 33
+    },
+    {
+      "id": "coordinaci-n-mixta-de-posgrado",
+      "name": "Coordinación Mixta de Posgrado",
+      "logo": "img/logos/POSGRADO.webp",
+      "logo_alt": "Coordinación Mixta de Posgrado",
+      "modal_id": "modalEntidad84",
+      "metrics": {
+        "antenas": 227,
+        "chromebooks": 0,
+        "ipads": 0,
+        "laptops": 40
+      },
+      "order": 34
+    },
+    {
+      "id": "unidad-de-extensi-n-universitaria-oaxaca",
+      "name": "Unidad de Extensión Universitaria Oaxaca",
+      "logo": "img/logos/UEUO.webp",
+      "logo_alt": "Unidad de Extensión Universitaria Oaxaca",
+      "modal_id": "modalEntidad85",
+      "metrics": {
+        "antenas": 60,
+        "chromebooks": 30,
+        "ipads": 0,
+        "laptops": 30
+      },
+      "order": 35
+    },
+    {
+      "id": "centro-de-nanociencias-y-nanotecnolog-a",
+      "name": "Centro de Nanociencias y Nanotecnología",
+      "logo": "img/logos/CNYN.webp",
+      "logo_alt": "Centro de Nanociencias y Nanotecnología",
+      "modal_id": "modalEntidad86",
+      "metrics": {
+        "antenas": 0,
+        "chromebooks": 30,
+        "ipads": 0,
+        "laptops": 0
+      },
+      "order": 36
+    },
+    {
+      "id": "pabell-n-nacional-de-la-biodiversidad",
+      "name": "Pabellón Nacional de la Biodiversidad",
+      "logo": "img/fotos/default.webp",
+      "logo_alt": "Pabellón Nacional de la Biodiversidad",
+      "modal_id": "modalEntidad87",
+      "metrics": {
+        "antenas": 40,
+        "chromebooks": 0,
+        "ipads": 0,
+        "laptops": 0
+      },
+      "order": 37
+    },
+    {
+      "id": "antiguo-colegio-de-san-ildefonso",
+      "name": "Antiguo Colegio de San Ildefonso",
+      "logo": "img/fotos/default.webp",
+      "logo_alt": "Antiguo Colegio de San Ildefonso",
+      "modal_id": "modalEntidad88",
+      "metrics": {
+        "antenas": 99,
+        "chromebooks": 0,
+        "ipads": 0,
+        "laptops": 0
+      },
+      "order": 38
+    },
+    {
+      "id": "enp-1-gabino-barreda",
+      "name": "ENP 1 \"Gabino Barreda\"",
+      "logo": "img/logos/ENP.webp",
+      "logo_alt": "ENP 1",
+      "modal_id": "modalEntidad89",
+      "metrics": {
+        "antenas": 142,
+        "chromebooks": 150,
+        "ipads": 0,
+        "laptops": 25
+      },
+      "order": 39
+    },
+    {
+      "id": "enp-2-erasmo-castellanos-quinto",
+      "name": "ENP 2 \"Erasmo Castellanos Quinto\"",
+      "logo": "img/logos/ENP.webp",
+      "logo_alt": "ENP 2",
+      "modal_id": "modalEntidad90",
+      "metrics": {
+        "antenas": 213,
+        "chromebooks": 150,
+        "ipads": 0,
+        "laptops": 25
+      },
+      "order": 40
+    },
+    {
+      "id": "enp-3-justo-sierra",
+      "name": "ENP 3 \"Justo Sierra\"",
+      "logo": "img/logos/ENP.webp",
+      "logo_alt": "ENP 3",
+      "modal_id": "modalEntidad91",
+      "metrics": {
+        "antenas": 153,
+        "chromebooks": 120,
+        "ipads": 0,
+        "laptops": 25
+      },
+      "order": 41
+    },
+    {
+      "id": "enp-4-vidal-casta-eda-y-n-jera",
+      "name": "ENP 4 \"Vidal Castañeda y Nájera\"",
+      "logo": "img/logos/ENP.webp",
+      "logo_alt": "ENP 4",
+      "modal_id": "modalEntidad92",
+      "metrics": {
+        "antenas": 147,
+        "chromebooks": 120,
+        "ipads": 0,
+        "laptops": 25
+      },
+      "order": 42
+    },
+    {
+      "id": "enp-5-jos-vasconcelos",
+      "name": "ENP 5 \"José Vasconcelos\"",
+      "logo": "img/logos/ENP.webp",
+      "logo_alt": "ENP 5",
+      "modal_id": "modalEntidad93",
+      "metrics": {
+        "antenas": 242,
+        "chromebooks": 210,
+        "ipads": 0,
+        "laptops": 25
+      },
+      "order": 43
+    },
+    {
+      "id": "enp-6-antonio-caso",
+      "name": "ENP 6 \"Antonio Caso\"",
+      "logo": "img/logos/ENP.webp",
+      "logo_alt": "ENP 6",
+      "modal_id": "modalEntidad94",
+      "metrics": {
+        "antenas": 145,
+        "chromebooks": 150,
+        "ipads": 0,
+        "laptops": 25
+      },
+      "order": 44
+    },
+    {
+      "id": "enp-7-ezequiel-a-ch-vez",
+      "name": "ENP 7 \"Ezequiel A. Chávez\"",
+      "logo": "img/logos/ENP.webp",
+      "logo_alt": "ENP 7",
+      "modal_id": "modalEntidad95",
+      "metrics": {
+        "antenas": 164,
+        "chromebooks": 150,
+        "ipads": 0,
+        "laptops": 25
+      },
+      "order": 45
+    },
+    {
+      "id": "enp-8-miguel-e-schulz",
+      "name": "ENP 8 \"Miguel E. Schulz\"",
+      "logo": "img/logos/ENP.webp",
+      "logo_alt": "ENP 8",
+      "modal_id": "modalEntidad96",
+      "metrics": {
+        "antenas": 176,
+        "chromebooks": 300,
+        "ipads": 0,
+        "laptops": 0
+      },
+      "order": 46
+    },
+    {
+      "id": "enp-9-pedro-de-alba",
+      "name": "ENP 9 \"Pedro de Alba\"",
+      "logo": "img/logos/ENP.webp",
+      "logo_alt": "ENP 9",
+      "modal_id": "modalEntidad97",
+      "metrics": {
+        "antenas": 175,
+        "chromebooks": 300,
+        "ipads": 0,
+        "laptops": 0
+      },
+      "order": 47
+    },
+    {
+      "id": "cch-vallejo",
+      "name": "CCH Vallejo",
+      "logo": "img/logos/CCH.webp",
+      "logo_alt": "CCH Vallejo",
+      "modal_id": "modalEntidad98",
+      "metrics": {
+        "antenas": 331,
+        "chromebooks": 330,
+        "ipads": 0,
+        "laptops": 25
+      },
+      "order": 48
+    },
+    {
+      "id": "cch-sur",
+      "name": "CCH Sur",
+      "logo": "img/logos/CCH.webp",
+      "logo_alt": "CCH Sur",
+      "modal_id": "modalEntidad103",
+      "metrics": {
+        "antenas": 334,
+        "chromebooks": 370,
+        "ipads": 0,
+        "laptops": 25
+      },
+      "order": 49
+    },
+    {
+      "id": "cch-oriente",
+      "name": "CCH Oriente",
+      "logo": "img/logos/CCH.webp",
+      "logo_alt": "CCH Oriente",
+      "modal_id": "modalEntidad49",
+      "metrics": {
+        "antenas": 332,
+        "chromebooks": 330,
+        "ipads": 0,
+        "laptops": 25
+      },
+      "order": 50
+    },
+    {
+      "id": "cch-naucalpan",
+      "name": "CCH Naucalpan",
+      "logo": "img/logos/CCH.webp",
+      "logo_alt": "CCH Naucalpan",
+      "modal_id": "modalEntidad100",
+      "metrics": {
+        "antenas": 343,
+        "chromebooks": 330,
+        "ipads": 0,
+        "laptops": 25
+      },
+      "order": 51
+    },
+    {
+      "id": "cch-azcapotzalco",
+      "name": "CCH Azcapotzalco",
+      "logo": "img/logos/CCH.webp",
+      "logo_alt": "CCH Azcapotzalco",
+      "modal_id": "modalEntidad101",
+      "metrics": {
+        "antenas": 325,
+        "chromebooks": 330,
+        "ipads": 0,
+        "laptops": 25
+      },
+      "order": 52
+    }
+  ]
+}

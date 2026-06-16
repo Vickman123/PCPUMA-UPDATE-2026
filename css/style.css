@@ -1,0 +1,5528 @@
+/* ===================================================================
+   1. CONFIGURACIÓN GLOBAL E IMPORTACIÓN DE FUENTES
+   =================================================================== */
+
+/* -- Configuración Global -- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Gotham', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  font-weight: 400; /* Gotham Book */
+  padding-top: 60px; 
+  caret-color: transparent; /* Oculta el cursor de texto */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* -- Importación de la Familia de Fuentes 'Gotham' -- */
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-BookItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* ===================================================================
+   2. JERARQUÍA TIPOGRÁFICA
+   =================================================================== */
+
+/* Aplicación de Gotham como fuente principal */
+h1, h2, h3, h4, h5, h6, p, a, button, li, small, legend {
+  font-family: 'Gotham', sans-serif !important;
+}
+
+h1, h2 {
+  font-weight: 700; /* Gotham Bold */
+  color: #005BA8;
+}
+
+h3, h4 {
+  font-weight: 500; /* Gotham Medium */
+}
+
+body, p, a, li {
+  font-weight: 400; /* Gotham Book */
+}
+
+footer, small, legend {
+  font-weight: 300; /* Gotham Light */
+}
+
+blockquote footer {
+  font-style: italic; 
+}
+
+
+/* ===================================================================
+   3. ESTILOS DE COMPONENTES REUTILIZABLES (Botones, Tarjetas, etc.)
+   =================================================================== */
+
+/* -- Botones -- */
+.btn:hover, .btn-filtro:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #005BA8, #008ED2);
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* Botones de filtro del mapa y modalidad */
+.btn-filtro {
+  background-color: #005BA8;
+  color: white;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin: 5px;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 0.95rem;
+  box-shadow: 0 3px 6px rgba(0,91,168,0.2);
+}
+.btn-filtro:hover {
+  background-color: #003f7d;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 12px rgba(0,91,168,0.3);
+}
+.btn-filtro:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,91,168,0.4);
+}
+.btn-filtro.activo-filtro {
+  background-color: #003366;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 51, 102, 0.4);
+}
+
+#filtro-modalidad .btn {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+/* -- Tarjetas (Cards) -- */
+.card {
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta-evento {
+  margin-bottom: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.tarjeta-evento:hover {
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+.card img.img-evento {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 12px;
+  padding: 10px;
+  background: white;
+}
+
+/* ===================================================================
+   4. LAYOUT Y SECCIONES PRINCIPALES (Header, Footer, Main)
+   =================================================================== */
+
+/* -- Header / Navbar -- */
+.navbar.sticky-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+}
+.bg-pcpuma {
+  background-color: #005BA8 !important;
+}
+.navbar .nav-link:hover {
+  color: #008ED2 !important;
+}
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+/* -- Main Content -- */
+main {
+  flex: 1; /* Ocupa el espacio restante */
+}
+main.container {
+  background-color: #ffffff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+section.container.py-5 {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+/* -- Footer -- */
+footer {
+  margin-top: auto;
+  background: linear-gradient(to right, #005BA8, #003d73);
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  border-top: none;
+}
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===================================================================
+   5. COMPONENTES Y SECCIONES ESPECÍFICAS
+   =================================================================== */
+
+/* -- Hero Banner (Docentes y otros) -- */
+.hero-docentes {
+  position: relative;
+  height: 280px;
+  background: linear-gradient(to bottom right, #002f6c, #003f8a);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+  padding: 4rem 0 2rem;
+}
+.hero-docentes h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #FFD700;
+}
+.hero-docentes p.lead {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  opacity: 0.95;
+}
+.hero-docentes canvas#networkCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  filter: blur(1px);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-docentes ul#frasesDocentes {
+  margin-top: 1rem;
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.85;
+  animation: fadeFrases 8s infinite ease-in-out;
+}
+.hero-docentes ul#frasesDocentes li {
+  display: none;
+}
+.hero-docentes ul#frasesDocentes li.active {
+  display: block;
+}
+.hero-docentes a.btn-lg {
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background-color: #fff;
+  color: #002f6c;
+  transition: all 0.3s ease;
+}
+.hero-docentes a.btn-lg:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* -- Logos de Entidades -- */
+.entidades-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+.entidades-grid .entidad {
+  width: 120px;
+  text-align: center;
+}
+.entidades-grid .entidad img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: white;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+}
+.entidades-grid .entidad p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+  margin-top: 0.5rem;
+}
+.entidad-logo {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+}
+.entidad-logo:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.entidad-logo img {
+  max-height: 60px;
+}
+.entidad-logo img[src*="default.png"] { /* Estilo para logos faltantes */
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin: auto;
+  display: block;
+  opacity: 0.7;
+}
+.entidad-nombre {
+  margin-top: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+/* ===================================================================
+   6. MEDIA QUERIES (DISEÑO RESPONSIVO)
+   =================================================================== */
+
+@media (max-width: 768px) {
+  /* -- Banners -- */
+  .hero-docentes {
+    height: 380px !important;
+    padding-top: 3.5rem;
+  }
+
+  /* -- Logos de Entidades -- */
+  .entidades-grid .entidad img {
+    width: 80px;
+    height: 80px;
+  }
+  .entidades-grid .entidad p {
+    font-size: 0.7rem;
+    line-height: 1rem;
+    padding: 0 0.2rem;
+    word-break: break-word;
+  }
+
+  /* -- Ocultar costados animados en móvil -- */
+  #left-bg, #right-bg {
+    display: none;
+  }
+  
+  /* -- Textos de tarjetas -- */
+  .card-body h6 {
+    font-size: 0.9rem;
+  }
+  .card-body p {
+    font-size: 0.85rem;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  caret-color: transparent; /* Oculta el cursor */
+	padding-top: 60px; 
+	
+}
+.bg-pcpuma {
+  background-color: #005BA8 !important;
+	
+}
+.navbar .nav-link:hover {
+  color: #008ED2 !important;
+}
+.navbar.sticky-top {
+  position: fixed; /* Changed from sticky to fixed */
+  top: 0;
+  z-index: 1030;
+  width: 100%; /* Ensure it spans the full width */
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Ensures the main content takes up remaining space */
+}
+
+footer {
+  margin-top: auto; /* Ensures the footer stays at the bottom */
+  margin-top: 0 !important; /* Elimina márgenes superiores */
+  padding-top: 0; /* Elimina cualquier padding superior */
+  border-top: none; /* Asegúrate de que no haya bordes superiores */
+  background: linear-gradient(to right, #005BA8, #003d73);
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.footer a {
+  color: #008ED2;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.btn-primary {
+  background: linear-gradient(to right, #005BA8, #008ED2);
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+
+.entidad-logo {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+}
+.entidad-logo img {
+  max-height: 60px;
+}
+.entidad-logo:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.entidad-nombre {
+  margin-top: 10px;
+  font-weight: bold;
+  color: white;
+}
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* Gotham Font Family */
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-BookItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Aplicar Gotham como fuente principal */
+body, h1, h2, h3, h4, h5, h6, p, a, button {
+  font-family: 'Gotham', sans-serif !important;
+}
+
+
+/* Jerarquía tipográfica con Gotham */
+h1, h2 {
+  font-weight: 700; /* Gotham Bold */
+  color: #005BA8;
+}
+h3, h4 {
+  font-weight: 500; /* Gotham Medium */
+}
+body, p, a, li {
+  font-weight: 400; /* Gotham Book */
+}
+footer, small, legend {
+  font-weight: 300; /* Gotham Light */
+}
+blockquote footer {
+  font-style: italic; 
+}
+
+
+
+/* Ajuste responsive para banner en móviles */
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important;
+    padding-top: 3.5rem;
+  }
+}
+
+
+
+/* === Ajuste de altura responsive definitivo para hero-docentes === */
+.hero-docentes {
+  height: 480px; /* Altura en escritorio */
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important; /* Altura para móviles */
+    padding-top: 3.5rem;
+  }
+}
+
+
+
+/* Centrado vertical del contenido dentro del banner hero-docentes */
+.hero-docentes {
+  position: relative;
+  height: 280px; /* MISMO QUE ESTUDIANTES */
+  background: linear-gradient(to bottom right, #002f6c, #003f8a);
+  background-color: #002F6C; /* fallback */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-docentes canvas#networkCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  filter: blur(1px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-docentes h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #FFD700; /* Cambia a un color con buen contraste */
+}
+
+.hero-docentes p.lead {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  opacity: 0.95;
+}
+
+.hero-docentes ul#frasesDocentes {
+  margin-top: 1rem;
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.85;
+  animation: fadeFrases 8s infinite ease-in-out;
+}
+
+.hero-docentes ul#frasesDocentes li {
+  display: none;
+}
+
+.hero-docentes ul#frasesDocentes li.active {
+  display: block;
+}
+
+.hero-docentes a.btn-lg {
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background-color: #fff;
+  color: #002f6c;
+  transition: all 0.3s ease;
+}
+
+.hero-docentes a.btn-lg:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.wave-svg path {
+  filter: drop-shadow(0 -6px 6px rgba(0, 0, 0, 0.06)) blur(0.2px);
+}
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important;
+    padding-top: 3.5rem;
+  }
+}
+
+/* Tarjetas de evento generales */
+.tarjeta-evento {
+  margin-bottom: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.tarjeta-evento:hover {
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+/* Botones de filtros de modalidad */
+#filtro-modalidad .btn {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+/* Contenedor general de eventos */
+main.container {
+  background-color: #ffffff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* --- Fixes applied on 2025-04-20 --- */
+
+/* Fix visibility of cifras del Programa PC Puma */
+.stat-description {
+  color: #000 !important;
+  font-size: 0.9rem;
+}
+
+/* Fix visibility of "¿Necesitas equipo?" section */
+.equipo-section p,
+.equipo-section span,
+.equipo-section {
+  color: #000 !important;
+}
+
+/* Fix layout of entidad logos */
+.entidades-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.entidades-grid .entidad {
+  width: 120px;
+  text-align: center;
+}
+
+.entidades-grid .entidad img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: white;
+  padding: 0.5rem;
+}
+
+.entidades-grid .entidad p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+/* Ajustes específicos para móviles */
+@media (max-width: 768px) {
+  .entidades-grid .entidad img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .entidades-grid .entidad p {
+    font-size: 0.7rem;
+    line-height: 1rem;
+    padding: 0 0.2rem;
+    word-break: break-word;
+  }
+}
+
+/* Mejora visual si los logos tienen fondo blanco */
+.entidades-grid .entidad img {
+  border: 1px solid #ccc;
+}
+
+/* Botones de filtro del mapa (estilo institucional PC Puma) */
+.btn-filtro {
+    background-color: #005BA8;
+    color: white;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 8px 16px;
+    margin: 5px;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 0.95rem;
+    box-shadow: 0 3px 6px rgba(0,91,168,0.2);
+}
+.btn-filtro:hover {
+    background-color: #003f7d;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0,91,168,0.3);
+}
+.btn-filtro:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0,91,168,0.4);
+}
+/* Botón activo */
+.btn-filtro.activo-filtro {
+    background-color: #003366;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 51, 102, 0.4);
+}
+
+
+.btn:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+.icono-animado:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+.btn-filtro.activo-filtro {
+    background-color: #003366;
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 51, 102, 0.3);
+}
+
+.card img.img-evento {
+  width: 100%;
+  height: auto;
+  max-height: 350px; /* Ajusta si quieres mostrar más */
+  object-fit: contain; /* Ajusta: contain para ver todo el banner sin recorte */
+  border-radius: 12px;
+  padding: 10px;
+  background: white;
+}
+
+/* --- Mejoras integradas --- */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  caret-color: transparent; /* Oculta el cursor */
+}
+.bg-pcpuma {
+  background-color: #005BA8 !important;
+}
+.navbar .nav-link:hover {
+  color: #008ED2 !important;
+}
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.footer a {
+  color: #008ED2;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.btn-primary {
+  background: linear-gradient(to right, #005BA8, #008ED2);
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+
+.entidad-logo {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+}
+.entidad-logo img {
+  max-height: 60px;
+}
+.entidad-logo:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.entidad-nombre {
+  margin-top: 10px;
+  font-weight: bold;
+  color: white;
+}
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* Gotham Font Family */
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-BookItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Aplicar Gotham como fuente principal */
+body, h1, h2, h3, h4, h5, h6, p, a, button {
+  font-family: 'Gotham', sans-serif !important;
+}
+
+
+/* Jerarquía tipográfica con Gotham */
+h1, h2 {
+  font-weight: 700; /* Gotham Bold */
+  color: #005BA8;
+}
+h3, h4 {
+  font-weight: 500; /* Gotham Medium */
+}
+body, p, a, li {
+  font-weight: 400; /* Gotham Book */
+}
+footer, small, legend {
+  font-weight: 300; /* Gotham Light */
+}
+blockquote footer {
+  font-style: italic; 
+}
+
+
+
+/* Ajuste responsive para banner en móviles */
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important;
+    padding-top: 3.5rem;
+  }
+}
+
+
+
+/* === Ajuste de altura responsive definitivo para hero-docentes === */
+.hero-docentes {
+  height: 480px; /* Altura en escritorio */
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important; /* Altura para móviles */
+    padding-top: 3.5rem;
+  }
+}
+
+
+
+/* Centrado vertical del contenido dentro del banner hero-docentes */
+.hero-docentes {
+  position: relative;
+  height: 280px; /* MISMO QUE ESTUDIANTES */
+  background: linear-gradient(to bottom right, #002f6c, #003f8a);
+  background-color: #002F6C; /* fallback */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-docentes canvas#networkCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  filter: blur(1px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-docentes h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #FFD700; /* Cambia a un color con buen contraste */
+}
+
+.hero-docentes p.lead {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  opacity: 0.95;
+}
+
+.hero-docentes ul#frasesDocentes {
+  margin-top: 1rem;
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.85;
+  animation: fadeFrases 8s infinite ease-in-out;
+}
+
+.hero-docentes ul#frasesDocentes li {
+  display: none;
+}
+
+.hero-docentes ul#frasesDocentes li.active {
+  display: block;
+}
+
+.hero-docentes a.btn-lg {
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background-color: #fff;
+  color: #002f6c;
+  transition: all 0.3s ease;
+}
+
+.hero-docentes a.btn-lg:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.wave-svg path {
+  filter: drop-shadow(0 -6px 6px rgba(0, 0, 0, 0.06)) blur(0.2px);
+}
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important;
+    padding-top: 3.5rem;
+  }
+}
+
+/* Tarjetas de evento generales */
+.tarjeta-evento {
+  margin-bottom: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.tarjeta-evento:hover {
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+/* Botones de filtros de modalidad */
+#filtro-modalidad .btn {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+/* Contenedor general de eventos */
+main.container {
+  background-color: #ffffff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* --- Fixes applied on 2025-04-20 --- */
+
+/* Fix visibility of cifras del Programa PC Puma */
+.stat-description {
+  color: #000 !important;
+  font-size: 0.9rem;
+}
+
+/* Fix visibility of "¿Necesitas equipo?" section */
+.equipo-section p,
+.equipo-section span,
+.equipo-section {
+  color: #000 !important;
+}
+
+/* Fix layout of entidad logos */
+.entidades-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.entidades-grid .entidad {
+  width: 120px;
+  text-align: center;
+}
+
+.entidades-grid .entidad img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: white;
+  padding: 0.5rem;
+}
+
+.entidades-grid .entidad p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+/* Ajustes específicos para móviles */
+@media (max-width: 768px) {
+  .entidades-grid .entidad img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .entidades-grid .entidad p {
+    font-size: 0.7rem;
+    line-height: 1rem;
+    padding: 0 0.2rem;
+    word-break: break-word;
+  }
+}
+
+/* Mejora visual si los logos tienen fondo blanco */
+.entidades-grid .entidad img {
+  border: 1px solid #ccc;
+}
+
+
+/* Botones de filtro del mapa (estilo institucional PC Puma) */
+.btn-filtro {
+    background-color: #005BA8;
+    color: white;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 8px 16px;
+    margin: 5px;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 0.95rem;
+    box-shadow: 0 3px 6px rgba(0,91,168,0.2);
+}
+.btn-filtro:hover {
+    background-color: #003f7d;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0,91,168,0.3);
+}
+.btn-filtro:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0,91,168,0.4);
+}
+/* Botón activo */
+.btn-filtro.activo-filtro {
+    background-color: #003366;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 51, 102, 0.4);
+}
+
+
+
+
+.btn:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+.icono-animado:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+.btn-filtro.activo-filtro {
+    background-color: #003366;
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 51, 102, 0.3);
+}
+
+.card img.img-evento {
+  width: 100%;
+  height: auto;
+  max-height: 350px; /* Ajusta si quieres mostrar más */
+  object-fit: contain; /* Ajusta: contain para ver todo el banner sin recorte */
+  border-radius: 12px;
+  padding: 10px;
+  background: white;
+}
+
+/* --- Mejoras integradas --- */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  caret-color: transparent; /* Oculta el cursor */
+}
+.bg-pcpuma {
+  background-color: #005BA8 !important;
+}
+.navbar .nav-link:hover {
+  color: #008ED2 !important;
+}
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.footer a {
+  color: #008ED2;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.btn-primary {
+  background: linear-gradient(to right, #005BA8, #008ED2);
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+
+.entidad-logo {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+}
+.entidad-logo img {
+  max-height: 60px;
+}
+.entidad-logo:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.entidad-nombre {
+  margin-top: 10px;
+  font-weight: bold;
+  color: white;
+}
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* Gotham Font Family */
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-BookItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Aplicar Gotham como fuente principal */
+body, h1, h2, h3, h4, h5, h6, p, a, button {
+  font-family: 'Gotham', sans-serif !important;
+}
+
+
+/* Jerarquía tipográfica con Gotham */
+h1, h2 {
+  font-weight: 700; /* Gotham Bold */
+  color: #005BA8;
+}
+h3, h4 {
+  font-weight: 500; /* Gotham Medium */
+}
+body, p, a, li {
+  font-weight: 400; /* Gotham Book */
+}
+footer, small, legend {
+  font-weight: 300; /* Gotham Light */
+}
+blockquote footer {
+  font-style: italic; 
+}
+
+
+
+/* Ajuste responsive para banner en móviles */
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important;
+    padding-top: 3.5rem;
+  }
+}
+
+
+
+/* === Ajuste de altura responsive definitivo para hero-docentes === */
+.hero-docentes {
+  height: 480px; /* Altura en escritorio */
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important; /* Altura para móviles */
+    padding-top: 3.5rem;
+  }
+}
+
+
+
+/* Centrado vertical del contenido dentro del banner hero-docentes */
+.hero-docentes {
+  position: relative;
+  height: 280px; /* MISMO QUE ESTUDIANTES */
+  background: linear-gradient(to bottom right, #002f6c, #003f8a);
+  background-color: #002F6C; /* fallback */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-docentes canvas#networkCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  filter: blur(1px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-docentes h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #FFD700; /* Cambia a un color con buen contraste */
+}
+
+.hero-docentes p.lead {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  opacity: 0.95;
+}
+
+.hero-docentes ul#frasesDocentes {
+  margin-top: 1rem;
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.85;
+  animation: fadeFrases 8s infinite ease-in-out;
+}
+
+.hero-docentes ul#frasesDocentes li {
+  display: none;
+}
+
+.hero-docentes ul#frasesDocentes li.active {
+  display: block;
+}
+
+.hero-docentes a.btn-lg {
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background-color: #fff;
+  color: #002f6c;
+  transition: all 0.3s ease;
+}
+
+.hero-docentes a.btn-lg:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.wave-svg path {
+  filter: drop-shadow(0 -6px 6px rgba(0, 0, 0, 0.06)) blur(0.2px);
+}
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important;
+    padding-top: 3.5rem;
+  }
+}
+
+/* Tarjetas de evento generales */
+.tarjeta-evento {
+  margin-bottom: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.tarjeta-evento:hover {
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+/* Botones de filtros de modalidad */
+#filtro-modalidad .btn {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+/* Contenedor general de eventos */
+main.container {
+  background-color: #ffffff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* --- Fixes applied on 2025-04-20 --- */
+
+/* Fix visibility of cifras del Programa PC Puma */
+.stat-description {
+  color: #000 !important;
+  font-size: 0.9rem;
+}
+
+/* Fix visibility of "¿Necesitas equipo?" section */
+.equipo-section p,
+.equipo-section span,
+.equipo-section {
+  color: #000 !important;
+}
+
+/* Fix layout of entidad logos */
+.entidades-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.entidades-grid .entidad {
+  width: 120px;
+  text-align: center;
+}
+
+.entidades-grid .entidad img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: white;
+  padding: 0.5rem;
+}
+
+.entidades-grid .entidad p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+/* Ajustes específicos para móviles */
+@media (max-width: 768px) {
+  .entidades-grid .entidad img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .entidades-grid .entidad p {
+    font-size: 0.7rem;
+    line-height: 1rem;
+    padding: 0 0.2rem;
+    word-break: break-word;
+  }
+}
+
+/* Mejora visual si los logos tienen fondo blanco */
+.entidades-grid .entidad img {
+  border: 1px solid #ccc;
+}
+
+
+/* Botones de filtro del mapa (estilo institucional PC Puma) */
+.btn-filtro {
+    background-color: #005BA8;
+    color: white;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 8px 16px;
+    margin: 5px;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 0.95rem;
+    box-shadow: 0 3px 6px rgba(0,91,168,0.2);
+}
+.btn-filtro:hover {
+    background-color: #003f7d;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0,91,168,0.3);
+}
+.btn-filtro:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0,91,168,0.4);
+}
+/* Botón activo */
+.btn-filtro.activo-filtro {
+    background-color: #003366;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 51, 102, 0.4);
+}
+
+
+
+.btn:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+.icono-animado:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+.btn-filtro.activo-filtro {
+    background-color: #003366;
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 51, 102, 0.3);
+}
+
+.card img.img-evento {
+  width: 100%;
+  height: auto;
+  max-height: 350px; /* Ajusta si quieres mostrar más */
+  object-fit: contain; /* Ajusta: contain para ver todo el banner sin recorte */
+  border-radius: 12px;
+  padding: 10px;
+  background: white;
+}
+
+/* --- Mejoras integradas --- */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  caret-color: transparent; /* Oculta el cursor */
+}
+.bg-pcpuma {
+  background-color: #005BA8 !important;
+}
+.navbar .nav-link:hover {
+  color: #008ED2 !important;
+}
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.footer a {
+  color: #008ED2;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.btn-primary {
+  background: linear-gradient(to right, #005BA8, #008ED2);
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+
+.entidad-logo {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+}
+.entidad-logo img {
+  max-height: 60px;
+}
+.entidad-logo:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.entidad-nombre {
+  margin-top: 10px;
+  font-weight: bold;
+  color: white;
+}
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* Gotham Font Family */
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-BookItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Aplicar Gotham como fuente principal */
+body, h1, h2, h3, h4, h5, h6, p, a, button {
+  font-family: 'Gotham', sans-serif !important;
+}
+
+
+/* Jerarquía tipográfica con Gotham */
+h1, h2 {
+  font-weight: 700; /* Gotham Bold */
+  color: #005BA8;
+}
+h3, h4 {
+  font-weight: 500; /* Gotham Medium */
+}
+body, p, a, li {
+  font-weight: 400; /* Gotham Book */
+}
+footer, small, legend {
+  font-weight: 300; /* Gotham Light */
+}
+blockquote footer {
+  font-style: italic; 
+}
+
+
+
+/* Ajuste responsive para banner en móviles */
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important;
+    padding-top: 3.5rem;
+  }
+}
+
+
+
+/* === Ajuste de altura responsive definitivo para hero-docentes === */
+.hero-docentes {
+  height: 480px; /* Altura en escritorio */
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important; /* Altura para móviles */
+    padding-top: 3.5rem;
+  }
+}
+
+
+
+/* Centrado vertical del contenido dentro del banner hero-docentes */
+.hero-docentes {
+  position: relative;
+  height: 280px; /* MISMO QUE ESTUDIANTES */
+  background: linear-gradient(to bottom right, #002f6c, #003f8a);
+  background-color: #002F6C; /* fallback */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-docentes canvas#networkCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  filter: blur(1px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-docentes h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #FFD700; /* Cambia a un color con buen contraste */
+}
+
+.hero-docentes p.lead {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  opacity: 0.95;
+}
+
+.hero-docentes ul#frasesDocentes {
+  margin-top: 1rem;
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.85;
+  animation: fadeFrases 8s infinite ease-in-out;
+}
+
+.hero-docentes ul#frasesDocentes li {
+  display: none;
+}
+
+.hero-docentes ul#frasesDocentes li.active {
+  display: block;
+}
+
+.hero-docentes a.btn-lg {
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background-color: #fff;
+  color: #002f6c;
+  transition: all 0.3s ease;
+}
+
+.hero-docentes a.btn-lg:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.wave-svg path {
+  filter: drop-shadow(0 -6px 6px rgba(0, 0, 0, 0.06)) blur(0.2px);
+}
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important;
+    padding-top: 3.5rem;
+  }
+}
+
+/* Tarjetas de evento generales */
+.tarjeta-evento {
+  margin-bottom: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.tarjeta-evento:hover {
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+/* Botones de filtros de modalidad */
+#filtro-modalidad .btn {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+/* Contenedor general de eventos */
+main.container {
+  background-color: #ffffff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* --- Fixes applied on 2025-04-20 --- */
+
+/* Fix visibility of cifras del Programa PC Puma */
+.stat-description {
+  color: #000 !important;
+  font-size: 0.9rem;
+}
+
+/* Fix visibility of "¿Necesitas equipo?" section */
+.equipo-section p,
+.equipo-section span,
+.equipo-section {
+  color: #000 !important;
+}
+
+/* Fix layout of entidad logos */
+.entidades-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.entidades-grid .entidad {
+  width: 120px;
+  text-align: center;
+}
+
+.entidades-grid .entidad img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: white;
+  padding: 0.5rem;
+}
+
+.entidades-grid .entidad p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+/* Ajustes específicos para móviles */
+@media (max-width: 768px) {
+  .entidades-grid .entidad img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .entidades-grid .entidad p {
+    font-size: 0.7rem;
+    line-height: 1rem;
+    padding: 0 0.2rem;
+    word-break: break-word;
+  }
+}
+
+/* Mejora visual si los logos tienen fondo blanco */
+.entidades-grid .entidad img {
+  border: 1px solid #ccc;
+}
+
+
+/* Botones de filtro del mapa (estilo institucional PC Puma) */
+.btn-filtro {
+    background-color: #005BA8;
+    color: white;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 8px 16px;
+    margin: 5px;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 0.95rem;
+    box-shadow: 0 3px 6px rgba(0,91,168,0.2);
+}
+.btn-filtro:hover {
+    background-color: #003f7d;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0,91,168,0.3);
+}
+.btn-filtro:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0,91,168,0.4);
+}
+/* Botón activo */
+.btn-filtro.activo-filtro {
+    background-color: #003366;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 51, 102, 0.4);
+}
+
+
+
+
+.btn:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+.icono-animado:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+.btn-filtro.activo-filtro {
+    background-color: #003366;
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 51, 102, 0.3);
+}
+
+.card img.img-evento {
+  width: 100%;
+  height: auto;
+  max-height: 350px; /* Ajusta si quieres mostrar más */
+  object-fit: contain; /* Ajusta: contain para ver todo el banner sin recorte */
+  border-radius: 12px;
+  padding: 10px;
+  background: white;
+}
+
+/* --- Mejoras integradas --- */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  caret-color: transparent; /* Oculta el cursor */
+}
+.bg-pcpuma {
+  background-color: #005BA8 !important;
+}
+.navbar .nav-link:hover {
+  color: #008ED2 !important;
+}
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.footer a {
+  color: #008ED2;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.btn-primary {
+  background: linear-gradient(to right, #005BA8, #008ED2);
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+
+.entidad-logo {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+}
+.entidad-logo img {
+  max-height: 60px;
+}
+.entidad-logo:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.entidad-nombre {
+  margin-top: 10px;
+  font-weight: bold;
+  color: white;
+}
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* Gotham Font Family */
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-BookItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Aplicar Gotham como fuente principal */
+body, h1, h2, h3, h4, h5, h6, p, a, button {
+  font-family: 'Gotham', sans-serif !important;
+}
+
+
+/* Jerarquía tipográfica con Gotham */
+h1, h2 {
+  font-weight: 700; /* Gotham Bold */
+  color: #005BA8;
+}
+h3, h4 {
+  font-weight: 500; /* Gotham Medium */
+}
+body, p, a, li {
+  font-weight: 400; /* Gotham Book */
+}
+footer, small, legend {
+  font-weight: 300; /* Gotham Light */
+}
+blockquote footer {
+  font-style: italic; 
+}
+
+
+
+/* Ajuste responsive para banner en móviles */
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important;
+    padding-top: 3.5rem;
+  }
+}
+
+
+
+/* === Ajuste de altura responsive definitivo para hero-docentes === */
+.hero-docentes {
+  height: 480px; /* Altura en escritorio */
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important; /* Altura para móviles */
+    padding-top: 3.5rem;
+  }
+}
+
+
+
+/* Centrado vertical del contenido dentro del banner hero-docentes */
+.hero-docentes {
+  position: relative;
+  height: 280px; /* MISMO QUE ESTUDIANTES */
+  background: linear-gradient(to bottom right, #002f6c, #003f8a);
+  background-color: #002F6C; /* fallback */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-docentes canvas#networkCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  filter: blur(1px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-docentes h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #FFD700; /* Cambia a un color con buen contraste */
+}
+
+.hero-docentes p.lead {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  opacity: 0.95;
+}
+
+.hero-docentes ul#frasesDocentes {
+  margin-top: 1rem;
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.85;
+  animation: fadeFrases 8s infinite ease-in-out;
+}
+
+.hero-docentes ul#frasesDocentes li {
+  display: none;
+}
+
+.hero-docentes ul#frasesDocentes li.active {
+  display: block;
+}
+
+.hero-docentes a.btn-lg {
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background-color: #fff;
+  color: #002f6c;
+  transition: all 0.3s ease;
+}
+
+.hero-docentes a.btn-lg:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.wave-svg path {
+  filter: drop-shadow(0 -6px 6px rgba(0, 0, 0, 0.06)) blur(0.2px);
+}
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important;
+    padding-top: 3.5rem;
+  }
+}
+
+/* Tarjetas de evento generales */
+.tarjeta-evento {
+  margin-bottom: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.tarjeta-evento:hover {
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+/* Botones de filtros de modalidad */
+#filtro-modalidad .btn {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+/* Contenedor general de eventos */
+main.container {
+  background-color: #ffffff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* --- Fixes applied on 2025-04-20 --- */
+
+/* Fix visibility of cifras del Programa PC Puma */
+.stat-description {
+  color: #000 !important;
+  font-size: 0.9rem;
+}
+
+/* Fix visibility of "¿Necesitas equipo?" section */
+.equipo-section p,
+.equipo-section span,
+.equipo-section {
+  color: #000 !important;
+}
+
+/* Fix layout of entidad logos */
+.entidades-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.entidades-grid .entidad {
+  width: 120px;
+  text-align: center;
+}
+
+.entidades-grid .entidad img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: white;
+  padding: 0.5rem;
+}
+
+.entidades-grid .entidad p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+/* Ajustes específicos para móviles */
+@media (max-width: 768px) {
+  .entidades-grid .entidad img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .entidades-grid .entidad p {
+    font-size: 0.7rem;
+    line-height: 1rem;
+    padding: 0 0.2rem;
+    word-break: break-word;
+  }
+}
+
+/* Mejora visual si los logos tienen fondo blanco */
+.entidades-grid .entidad img {
+  border: 1px solid #ccc;
+}
+
+
+/* Botones de filtro del mapa (estilo institucional PC Puma) */
+.btn-filtro {
+    background-color: #005BA8;
+    color: white;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 8px 16px;
+    margin: 5px;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 0.95rem;
+    box-shadow: 0 3px 6px rgba(0,91,168,0.2);
+}
+.btn-filtro:hover {
+    background-color: #003f7d;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0,91,168,0.3);
+}
+.btn-filtro:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0,91,168,0.4);
+}
+/* Botón activo */
+.btn-filtro.activo-filtro {
+    background-color: #003366;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 51, 102, 0.4);
+}
+
+
+
+.btn:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+.icono-animado:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+.btn-filtro.activo-filtro {
+    background-color: #003366;
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 51, 102, 0.3);
+}
+
+.card img.img-evento {
+  width: 100%;
+  height: auto;
+  max-height: 350px; /* Ajusta si quieres mostrar más */
+  object-fit: contain; /* Ajusta: contain para ver todo el banner sin recorte */
+  border-radius: 12px;
+  padding: 10px;
+  background: white;
+}
+
+/* --- Mejoras integradas --- */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  caret-color: transparent; /* Oculta el cursor */
+}
+.bg-pcpuma {
+  background-color: #005BA8 !important;
+}
+.navbar .nav-link:hover {
+  color: #008ED2 !important;
+}
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.footer a {
+  color: #008ED2;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.btn-primary {
+  background: linear-gradient(to right, #005BA8, #008ED2);
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+
+.entidad-logo {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+}
+.entidad-logo img {
+  max-height: 60px;
+}
+.entidad-logo:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.entidad-nombre {
+  margin-top: 10px;
+  font-weight: bold;
+  color: white;
+}
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* Gotham Font Family */
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-BookItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Aplicar Gotham como fuente principal */
+body, h1, h2, h3, h4, h5, h6, p, a, button {
+  font-family: 'Gotham', sans-serif !important;
+}
+
+
+/* Jerarquía tipográfica con Gotham */
+h1, h2 {
+  font-weight: 700; /* Gotham Bold */
+  color: #005BA8;
+}
+h3, h4 {
+  font-weight: 500; /* Gotham Medium */
+}
+body, p, a, li {
+  font-weight: 400; /* Gotham Book */
+}
+footer, small, legend {
+  font-weight: 300; /* Gotham Light */
+}
+blockquote footer {
+  font-style: italic; 
+}
+
+
+
+/* Ajuste responsive para banner en móviles */
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important;
+    padding-top: 3.5rem;
+  }
+}
+
+
+
+/* === Ajuste de altura responsive definitivo para hero-docentes === */
+.hero-docentes {
+  height: 480px; /* Altura en escritorio */
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important; /* Altura para móviles */
+    padding-top: 3.5rem;
+  }
+}
+
+
+
+/* Centrado vertical del contenido dentro del banner hero-docentes */
+.hero-docentes {
+  position: relative;
+  height: 280px; /* MISMO QUE ESTUDIANTES */
+  background: linear-gradient(to bottom right, #002f6c, #003f8a);
+  background-color: #002F6C; /* fallback */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-docentes canvas#networkCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  filter: blur(1px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-docentes h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #FFD700; /* Cambia a un color con buen contraste */
+}
+
+.hero-docentes p.lead {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  opacity: 0.95;
+}
+
+.hero-docentes ul#frasesDocentes {
+  margin-top: 1rem;
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.85;
+  animation: fadeFrases 8s infinite ease-in-out;
+}
+
+.hero-docentes ul#frasesDocentes li {
+  display: none;
+}
+
+.hero-docentes ul#frasesDocentes li.active {
+  display: block;
+}
+
+.hero-docentes a.btn-lg {
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background-color: #fff;
+  color: #002f6c;
+  transition: all 0.3s ease;
+}
+
+.hero-docentes a.btn-lg:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.wave-svg path {
+  filter: drop-shadow(0 -6px 6px rgba(0, 0, 0, 0.06)) blur(0.2px);
+}
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important;
+    padding-top: 3.5rem;
+  }
+}
+
+/* Tarjetas de evento generales */
+.tarjeta-evento {
+  margin-bottom: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.tarjeta-evento:hover {
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+/* Botones de filtros de modalidad */
+#filtro-modalidad .btn {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+/* Contenedor general de eventos */
+main.container {
+  background-color: #ffffff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* --- Fixes applied on 2025-04-20 --- */
+
+/* Fix visibility of cifras del Programa PC Puma */
+.stat-description {
+  color: #000 !important;
+  font-size: 0.9rem;
+}
+
+/* Fix visibility of "¿Necesitas equipo?" section */
+.equipo-section p,
+.equipo-section span,
+.equipo-section {
+  color: #000 !important;
+}
+
+/* Fix layout of entidad logos */
+.entidades-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.entidades-grid .entidad {
+  width: 120px;
+  text-align: center;
+}
+
+.entidades-grid .entidad img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: white;
+  padding: 0.5rem;
+}
+
+.entidades-grid .entidad p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+/* Ajustes específicos para móviles */
+@media (max-width: 768px) {
+  .entidades-grid .entidad img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .entidades-grid .entidad p {
+    font-size: 0.7rem;
+    line-height: 1rem;
+    padding: 0 0.2rem;
+    word-break: break-word;
+  }
+}
+
+/* Mejora visual si los logos tienen fondo blanco */
+.entidades-grid .entidad img {
+  border: 1px solid #ccc;
+}
+
+
+/* Botones de filtro del mapa (estilo institucional PC Puma) */
+.btn-filtro {
+    background-color: #005BA8;
+    color: white;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 8px 16px;
+    margin: 5px;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 0.95rem;
+    box-shadow: 0 3px 6px rgba(0,91,168,0.2);
+}
+.btn-filtro:hover {
+    background-color: #003f7d;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0,91,168,0.3);
+}
+.btn-filtro:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0,91,168,0.4);
+}
+/* Botón activo */
+.btn-filtro.activo-filtro {
+    background-color: #003366;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 51, 102, 0.4);
+}
+
+
+.btn:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+.icono-animado:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+.btn-filtro.activo-filtro {
+    background-color: #003366;
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 51, 102, 0.3);
+}
+
+.card img.img-evento {
+  width: 100%;
+  height: auto;
+  max-height: 350px; /* Ajusta si quieres mostrar más */
+  object-fit: contain; /* Ajusta: contain para ver todo el banner sin recorte */
+  border-radius: 12px;
+  padding: 10px;
+  background: white;
+}
+
+/* --- Mejoras integradas --- */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  caret-color: transparent; /* Oculta el cursor */
+}
+.bg-pcpuma {
+  background-color: #005BA8 !important;
+}
+.navbar .nav-link:hover {
+  color: #008ED2 !important;
+}
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.footer a {
+  color: #008ED2;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.btn-primary {
+  background: linear-gradient(to right, #005BA8, #008ED2);
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+
+.entidad-logo {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+}
+.entidad-logo img {
+  max-height: 60px;
+}
+.entidad-logo:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.entidad-nombre {
+  margin-top: 10px;
+  font-weight: bold;
+  color: white;
+}
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* Gotham Font Family */
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-BookItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Aplicar Gotham como fuente principal */
+body, h1, h2, h3, h4, h5, h6, p, a, button {
+  font-family: 'Gotham', sans-serif !important;
+}
+
+
+/* Jerarquía tipográfica con Gotham */
+h1, h2 {
+  font-weight: 700; /* Gotham Bold */
+  color: #005BA8;
+}
+h3, h4 {
+  font-weight: 500; /* Gotham Medium */
+}
+body, p, a, li {
+  font-weight: 400; /* Gotham Book */
+}
+footer, small, legend {
+  font-weight: 300; /* Gotham Light */
+}
+blockquote footer {
+  font-style: italic; 
+}
+
+
+
+/* Ajuste responsive para banner en móviles */
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important;
+    padding-top: 3.5rem;
+  }
+}
+
+
+
+/* === Ajuste de altura responsive definitivo para hero-docentes === */
+.hero-docentes {
+  height: 480px; /* Altura en escritorio */
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important; /* Altura para móviles */
+    padding-top: 3.5rem;
+  }
+}
+
+
+
+/* Centrado vertical del contenido dentro del banner hero-docentes */
+.hero-docentes {
+  position: relative;
+  height: 280px; /* MISMO QUE ESTUDIANTES */
+  background: linear-gradient(to bottom right, #002f6c, #003f8a);
+  background-color: #002F6C; /* fallback */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-docentes canvas#networkCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  filter: blur(1px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-docentes h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #FFD700; /* Cambia a un color con buen contraste */
+}
+
+.hero-docentes p.lead {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  opacity: 0.95;
+}
+
+.hero-docentes ul#frasesDocentes {
+  margin-top: 1rem;
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.85;
+  animation: fadeFrases 8s infinite ease-in-out;
+}
+
+.hero-docentes ul#frasesDocentes li {
+  display: none;
+}
+
+.hero-docentes ul#frasesDocentes li.active {
+  display: block;
+}
+
+.hero-docentes a.btn-lg {
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background-color: #fff;
+  color: #002f6c;
+  transition: all 0.3s ease;
+}
+
+.hero-docentes a.btn-lg:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.wave-svg path {
+  filter: drop-shadow(0 -6px 6px rgba(0, 0, 0, 0.06)) blur(0.2px);
+}
+@media (max-width: 768px) {
+  .hero-docentes {
+    height: 380px !important;
+    padding-top: 3.5rem;
+  }
+}
+
+/* Tarjetas de evento generales */
+.tarjeta-evento {
+  margin-bottom: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.tarjeta-evento:hover {
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+/* Botones de filtros de modalidad */
+#filtro-modalidad .btn {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+/* Contenedor general de eventos */
+main.container {
+  background-color: #ffffff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* --- Fixes applied on 2025-04-20 --- */
+
+/* Fix visibility of cifras del Programa PC Puma */
+.stat-description {
+  color: #000 !important;
+  font-size: 0.9rem;
+}
+
+/* Fix visibility of "¿Necesitas equipo?" section */
+.equipo-section p,
+.equipo-section span,
+.equipo-section {
+  color: #000 !important;
+}
+
+/* Fix layout of entidad logos */
+.entidades-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.entidades-grid .entidad {
+  width: 120px;
+  text-align: center;
+}
+
+.entidades-grid .entidad img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: white;
+  padding: 0.5rem;
+}
+
+.entidades-grid .entidad p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+/* Ajustes específicos para móviles */
+@media (max-width: 768px) {
+  .entidades-grid .entidad img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .entidades-grid .entidad p {
+    font-size: 0.7rem;
+    line-height: 1rem;
+    padding: 0 0.2rem;
+    word-break: break-word;
+  }
+}
+
+/* Mejora visual si los logos tienen fondo blanco */
+.entidades-grid .entidad img {
+  border: 1px solid #ccc;
+}
+
+
+/* Botones de filtro del mapa (estilo institucional PC Puma) */
+.btn-filtro {
+  background-color: #005BA8; /* Azul institucional */
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 10px 20px;
+  margin: 5px;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 0.95rem;
+  box-shadow: 0 3px 6px rgba(0,91,168,0.2);
+}
+.btn-filtro:hover {
+  background-color: #004080; /* Azul más oscuro en hover */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,91,168,0.3);
+}
+.btn-filtro:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,91,168,0.5);
+}
+
+/* Scroll suave en toda la página */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Botones con hover más elegante */
+.btn, .btn-filtro {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+.btn:hover, .btn-filtro:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajuste de tarjetas */
+.card {
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Espaciado más amplio en secciones */
+section.container.py-5 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* Animación ligera en iconos de redes */
+.icono-red-social:hover {
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+/* Corrección de banners de eventos */
+.img-evento {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Estilo visual para el contador de visitas */
+#contador-visitas {
+  margin-top: 2rem;
+  padding: 0.8rem 1.2rem;
+  background-color: #001f3f;
+  color: white;
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+#contador-visitas:hover {
+  transform: scale(1.05);
+}
+#contador-visitas .contador-label {
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+#btn-chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #0033a0;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+}
+
+#chatbox {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border: 2px solid #0033a0;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.chatbox-hidden { display: none; }
+
+.chatbox-header {
+  background: #0033a0;
+  color: white;
+  padding: 8px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.chatbox-body {
+  padding: 10px;
+  height: 200px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.chatbox-footer {
+  padding: 8px;
+  display: flex;
+  gap: 4px;
+}
+
+.chatbox-footer input {
+  flex: 1;
+  padding: 5px;
+}
+/* Estilo para default.png (logos faltantes) centrado bien */
+.entidad-logo img[src*="default.png"] {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin: auto;
+  display: block;
+  opacity: 0.7;
+}
+
+
+.servicios-pcpuma {
+  background: #f4f4f4;
+  padding: 60px 20px;
+  text-align: center;
+}
+.contenedor-servicios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.servicio {
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.servicio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.servicio img {
+  width: 80px;
+  margin-bottom: 20px;
+}
+.servicio-img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.logo-entidad {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #005BA8;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  object-fit: contain;
+  padding: 4px; /* Aquí el margen óptico */
+}
+
+.logo-entidad[src*="default.png"] {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #005BA8;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  object-fit: contain !important;
+  padding: 4px;
+  display: block;
+}
+
+/* Accesibilidad: marcar botones de filtro de mapa con aria-label */
+.filtro-mapa[aria-label] {
+  outline: none;
+}
+
+/* Botones con filtro específico */
+button.btn-filtro[onclick*="filtrarCapas"] {
+  outline: none;
+}
+
+/* Accesibilidad: marcar botones de filtro de mapa con aria-label */
+.filtro-mapa[aria-label] {
+  outline: none;
+}
+
+/* Botones con filtro específico */
+button.btn-filtro[onclick*="filtrarCapas"] {
+  outline: none;
+}
+
+/* Mejora de responsividad para etiquetas largas */
+.card-body h6,
+.card-body p {
+  word-break: break-word;
+  hyphens: auto;
+  text-align: center;
+}
+
+/* Previene que textos largos desborden en móviles */
+@media (max-width: 576px) {
+  .card-body h6 {
+    font-size: 0.9rem;
+  }
+  .card-body p {
+    font-size: 0.85rem;
+  }
+}
+/*
+header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+*/
+header::after {
+  content: none;
+}
+
+.scroll-down i {
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+.scroll-down-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  animation: bounce 1.6s infinite;
+}
+
+.video-responsive {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Relación 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.hero-banner .carousel,
+.hero-banner .carousel-inner,
+.hero-banner .carousel-item,
+.hero-banner .carousel-item img {
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    height: auto;
+  }
+
+  .hero-banner .carousel-item img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    height: auto;
+  }
+}
+
+h2 {
+  color: #005BA8; /* Default color for titles */
+}
+/* Specific fix for "Convocatorias y eventos recientes" */
+#eventos-recientes + h2 {
+  color: #000; /* Ensure better contrast */
+}
+/* ===== ESTILOS PARA HOMOGENEIZAR TARJETAS DE ENTIDADES ACTIVAS ===== */
+
+/* Contenedor de la galería */
+#modulos-entidades-grid .col-md-4 {
+  display: flex; /* Permite que las tarjetas dentro de las columnas se estiren */
+}
+
+/* Estilo para cada tarjeta */
+#modulos-entidades-grid .card {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Organiza el contenido de la tarjeta en una columna */
+}
+
+/* Estilo para las imágenes de las tarjetas */
+#modulos-entidades-grid .card-img-top {
+  height: 180px;           /* Se establece una altura fija para todas las imágenes. */
+  object-fit: cover;       /* Rellena el espacio sin deformar la imagen (la recorta si es necesario). */
+  border-bottom: 1px solid #eee; /* Línea sutil de separación */
+}
+
+/* Estilo para el cuerpo de la tarjeta */
+#modulos-entidades-grid .card-body {
+  flex-grow: 1; /* Permite que esta sección crezca y ocupe el espacio disponible. */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribuye el espacio para alinear el contenido. */
+}
+/* ===== ESTILOS PARA BÚSQUEDA Y ACORDEÓN DE FAQ ===== */
+
+/* Estilo para la barra de búsqueda */
+#faq-search-input {
+  border-radius: 50px;
+  padding: 12px 25px;
+  border: 1px solid #ced4da;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+#faq-search-input:focus {
+  border-color: #005BA8;
+  box-shadow: 0 0 0 4px rgba(0, 91, 168, 0.2);
+}
+
+/* Estilo para cada elemento del acordeón */
+.faq-item {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.faq-item[open] {
+  background-color: #f1f9ff;
+  border-color: #005BA8;
+}
+
+/* Estilo para la pregunta (el texto que se clickea) */
+.faq-item summary {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #004c97;
+  cursor: pointer;
+  list-style: none; /* Oculta la flecha por defecto */
+  position: relative;
+  padding-right: 25px; /* Espacio para el nuevo ícono */
+}
+
+/* Ícono de flecha personalizado */
+.faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #005BA8;
+  transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: translateY(-50%) rotate(45deg); /* Cambia a una 'x' */
+}
+
+
+/* Estilo para la respuesta */
+.faq-item p {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+/* Estilo para la tarjeta de categoría de FAQ cuando está activa */
+.category-card.active {
+  border-color: #005BA8;
+  background-color: #e6f2ff;
+  transform: translateY(0); /* Evita que se quede "levantada" */
+  box-shadow: 0 4px 12px rgba(0, 91, 168, 0.2);
+}
+/* ================================================================ */
+/* === ESTILOS DEFINITIVOS PARA HERO BANNER Y VIDEO (SIN BORDES) === */
+/* ================================================================ */
+
+/* 1. Definimos la altura del contenedor principal del banner */
+.hero-banner {
+  height: 90vh; /* Ocupará el 90% de la altura de la ventana */
+  max-height: 850px; /* Un tope para pantallas muy altas */
+  position: relative;
+  background-color: #ffffff; /* Fondo blanco por si algo tarda en cargar */
+}
+
+/* 2. Hacemos que el carrusel y sus slides internos ocupen toda esa altura */
+.hero-banner .carousel,
+.hero-banner .carousel-inner,
+.hero-banner .carousel-item {
+  height: 100%;
+}
+
+/* 3. Estilos para el contenedor del video */
+.hero-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* ESTO ES CLAVE: Oculta lo que se salga del contenedor */
+}
+
+/* 4. Estilos para el iframe del video (la magia está aquí) */
+.hero-video-container iframe {
+  /* Centramos el iframe en su contenedor */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Hacemos el video mucho más grande que el contenedor para que lo llene verticalmente */
+  /* La proporción 177.77vh (100 * 16/9) asegura que el video 16:9 cubra la altura de la pantalla */
+  width: 177.77vh; 
+  min-width: 100%;
+  height: 100vh;
+  min-height: 100%;
+}
+
+/* 5. Aseguramos que las IMÁGENES también llenen el slide */
+.hero-banner .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recorta la imagen para llenar el espacio sin deformarla */
+}
+/* ========================================== */
+/* === AJUSTES RESPONSIVE PARA HERO MÓVIL === */
+/* ========================================== */
+
+@media (max-width: 768px) {
+
+  /* 1. Hacemos que la altura del banner sea automática en lugar de fija */
+  .hero-banner {
+    height: auto !important;
+  }
+
+  /* 2. Forzamos una proporción de 16:9 a cada slide del carrusel.
+     Esta es la técnica "padding-bottom" para aspect ratio. */
+  .hero-banner .carousel-item {
+    position: relative;
+    padding-bottom: 56.25%; /* 9 / 16 = 0.5625 -> Proporción 16:9 */
+    height: 0;
+  }
+
+  /* 3. Hacemos que la imagen o el contenedor del video llenen ese nuevo espacio 16:9 */
+  .hero-banner .carousel-item img,
+  .hero-banner .carousel-item .hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* 4. Reseteamos los estilos de escalado del video que eran para escritorio */
+  .hero-video-container iframe {
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    transform: none !important; /* Quitamos la transformación de centrado */
+    position: static !important; /* Volvemos a la posición normal dentro de su contenedor */
+  }
+}
+.card h5 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.card i {
+  line-height: 1;
+}
+
+section.container.py-5 {
+  background: linear-gradient(to bottom right, #f7f9fc, #ffffff);
+  border-radius: 24px;
+}
+
+@media (max-width: 768px) {
+  .card p {
+    font-size: 0.95rem;
+  }
+}
+.card-impact {
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 91, 168, 0.08);
+  transition: all 0.3s ease;
+}
+.card-impact:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 28px rgba(0, 91, 168, 0.12);
+}
+.icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #fff;
+}
+.icon-purple { background-color: #6f42c1; }
+.icon-green { background-color: #198754; }
+.icon-blue { background-color: #0dcaf0; }
+.icon-orange { background-color: #fd7e14; }
+.hero-video-local {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #001f3f;
+}
+
+.video-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.contenido-banner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding-top: 30vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero-video-local {
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+
+  .video-banner {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .contenido-banner {
+    padding-top: 1rem;
+  }
+}
+.perfil-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.perfil-card:hover {
+  transform: translateY(-5px);
+}
+
+.perfil-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.perfil-contenido {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.perfil-contenido h5 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.perfil-contenido p {
+  flex-grow: 1;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+.perfil-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.perfil-card:hover {
+  transform: translateY(-5px);
+}
+
+.perfil-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.perfil-contenido {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.perfil-contenido h5 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.perfil-contenido p {
+  flex-grow: 1;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+.mision-vision-section {
+  padding: 40px 20px 60px;
+  background: linear-gradient(to bottom, #003366, #012A53);
+}
+
+.card-mision-vision {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 24px;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.6;
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card-mision-vision h5 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-mision-vision h5 i {
+  font-size: 1.2rem;
+}
+
+/* Responsive fix */
+@media (min-width: 992px) {
+  .row-mision-vision {
+    display: flex;
+    gap: 24px;
+  }
+
+  .card-mision-vision {
+    font-size: 0.95rem;
+    padding: 20px;
+  }
+}
+.video-pcpuma-container {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 91, 168, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-pcpuma-final {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+  .video-pcpuma-container {
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}
+.video-wrap {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 91, 168, 0.1);
+}
+
+.video-pcpuma {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 768px) {
+  .video-wrap {
+    max-width: 100%;
+  }
+}
+.btn-circular {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-circular:hover {
+  background-color: #f0f6fb;
+  transform: scale(1.05);
+  border-color: #005ba8;
+}
+
+.btn-circular .label {
+  font-size: 0.75rem;
+  margin-top: 6px;
+  font-weight: 600;
+  color: #333;
+}
+.btn-circular.activo {
+  border: 3px solid #005ba8;
+  background-color: #e6f0fa;
+}
+/* Estilos para las tarjetas de miembros del equipo */
+.team-member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido horizontalmente */
+  text-align: center;
+  margin-bottom: 20px; /* Espaciado entre filas de miembros */
+}
+
+.team-member-card .member-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinea el texto al inicio del contenedor */
+  flex-grow: 1; /* Permite que este contenedor se estire para ocupar el espacio disponible */
+  /* Ajusta esta altura mínima si el texto de los puestos es muy variable en líneas */
+  min-height: 60px; /* Ej. 60px para 2 líneas, ajusta según necesidad */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible en la columna */
+}
+
+.team-member-card .member-info h6 {
+  flex-grow: 0; /* No permite que el nombre se estire */
+  margin-bottom: 0.25rem; /* Ajuste de espaciado si es necesario */
+  line-height: 1.2; /* Para controlar el espaciado de línea en nombres largos */
+}
+
+.team-member-card .member-info p {
+  flex-grow: 1; /* Permite que el párrafo del puesto se estire, manteniendo la alineación */
+  margin-top: 0;
+  line-height: 1.2; /* Para controlar el espaciado de línea en puestos largos */
+}
+
+/* Ajuste para que las tarjetas de Bootstrap en el grid tengan la misma altura */
+.row.g-4 {
+    align-items: stretch; /* Asegura que todas las columnas en la fila se estiren a la misma altura */
+}
+
+/* Asegurar que el contenido interno se alinee si la columna se estira */
+.col-md-4 .team-member-card, .col-md-3 .team-member-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye el espacio verticalmente */
+}
+/* Estilos para los íconos del mapa (del archivo style.css y nosotros.html) */
+.logo-entidad {
+  width: 40px; /* Asegura un tamaño consistente */
+  height: 40px; /* Asegura un tamaño consistente */
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #005BA8; /* Color principal de PC Puma */
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  object-fit: contain; /* Para que el logo no se deforme */
+  padding: 4px; /* Margen interno para el logo */
+}
+
+/* Estilo para default.webp (logos faltantes) centrado bien (de nosotros.html) */
+.logo-entidad[src*="default.webp"] {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #005BA8;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  object-fit: contain !important;
+  padding: 4px;
+  display: block; /* Asegura que se comporte como bloque para centrado si es necesario */
+}
+
+/* Estilos para los botones de filtro (del archivo style.css) */
+.btn-filtro {
+  background-color: #005BA8; /* Azul institucional */
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 10px 20px;
+  margin: 5px;
+  transition: all 0.3s ease;
+  border: none;
+}
+.btn-filtro:hover {
+  background-color: #004080; /* Azul más oscuro en hover */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.btn-filtro:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,91,168,0.5);
+}
+.btn-filtro.activo-filtro {
+  background-color: #003366; /* Azul aún más oscuro para activo */
+  transform: scale(1.05); /* Ligeramente más grande al estar activo */
+  box-shadow: 0px 8px 16px rgba(0, 51, 102, 0.3);
+}
+
+/* Estilo para el tooltip del mapa (Bootstrap) */
+.badge { /* Asegura que el badge del tooltip tenga el estilo correcto */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5em 0.75em;
+    font-size: 0.875em;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--bs-body-color);
+    background-color: var(--bs-light);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.375rem;
+}
+.badge .bi {
+    font-size: 1em; /* Ajusta el tamaño del icono dentro del badge */
+}
+/* Estilos para los botones circulares */
+.btn-circular {
+  width: 120px; /* Aumenta un poco el tamaño para más impacto */
+  height: 120px; /* Aumenta un poco el tamaño */
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0; /* Un borde más suave inicialmente */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Sombra más pronunciada */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out; /* Transición más suave para hover y activo */
+  cursor: pointer;
+  text-decoration: none; /* Asegura que no tenga subrayado por ser botón */
+  position: relative; /* Para posibles efectos internos */
+}
+
+.btn-circular:hover {
+  background-color: #f0f6fb; /* Fondo ligeramente azulado en hover */
+  transform: translateY(-5px); /* Efecto "levantar" más notorio */
+  border-color: #005ba8; /* Borde de color principal en hover */
+  box-shadow: 0 8px 25px rgba(0,91,168,0.2); /* Sombra más intensa en hover */
+}
+
+.btn-circular .label {
+  font-size: 0.85rem; /* Letra un poco más grande para la etiqueta */
+  margin-top: 8px; /* Más espacio entre icono y etiqueta */
+  font-weight: 600; /* Negrita media */
+  color: #333;
+  transition: color 0.3s ease; /* Transición de color */
+}
+
+.btn-circular.activo {
+  border: 4px solid #005ba8; /* Borde más grueso y azul cuando está activo */
+  background-color: #e6f0fa; /* Fondo azul claro cuando está activo */
+  box-shadow: 0 6px 20px rgba(0, 91, 168, 0.3); /* Sombra activa */
+  transform: translateY(-2px); /* Se mantiene ligeramente levantado */
+}
+
+.btn-circular.activo .label {
+  color: #005ba8; /* Color del texto a azul principal cuando está activo */
+}
+
+/* Ajustes a los iconos dentro de los botones circulares */
+.btn-circular i {
+  font-size: 2.2rem; /* Íconos un poco más grandes */
+  line-height: 1; /* Asegura que no haya espacio extra */
+}
+
+/* Estilos para las tarjetas de contenido (las que se despliegan) */
+.card-impact {
+  border-radius: 16px; /* Bordes más suaves para la tarjeta */
+  background-color: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 91, 168, 0.1); /* Sombra más suave y moderna */
+  transition: all 0.5s ease; /* Transición más lenta para la aparición/desaparición */
+  min-height: 150px; /* Asegura una altura mínima para todas */
+  display: flex;
+  align-items: center; /* Centra el texto verticalmente */
+}
+
+/* Asegura que el texto dentro de la tarjeta se vea bien */
+.card-impact p {
+  font-size: 1.05rem; /* Un poco más grande para mayor legibilidad */
+  line-height: 1.7; /* Mayor espacio entre líneas */
+  color: #333; /* Color de texto más estándar */
+}
+
+/* Colores de borde para cada tarjeta */
+.border-primary { border-color: #005BA8 !important; }
+.border-success { border-color: #198754 !important; }
+.border-info { border-color: #0dcaf0 !important; }
+.border-warning { border-color: #fd7e14 !important; }
+/* Estilos específicos para los logos del encabezado (navbar) */
+.navbar .logo-header {
+  height: 40px; /* Tamaño fijo para todos los logos en el encabezado */
+  width: auto; /* Mantener la proporción */
+  object-fit: contain; /* Asegura que el logo completo se vea dentro del espacio */
+  padding: 0; /* Asegura que no haya padding extra que afecte el tamaño real */
+}
+
+/* Ajustes para el contenedor de los logos en la navbar */
+.navbar .container-fluid > div:first-child { /* Selecciona el div que contiene los logos institucionales */
+  /* Reemplaza 'gap-4' de Bootstrap con flexbox manual si es necesario un control más fino */
+  display: flex;
+  align-items: center;
+  /* Puedes ajustar el margen o padding de este div si quieres que el grupo completo se mueva */
+  /* Por ejemplo, para que el grupo de logos se centre en móvil */
+}
+
+@media (max-width: 768px) {
+  .navbar .container-fluid > div:first-child {
+    /* En móvil, si los logos se ven pequeños o muy juntos, puedes aumentar la altura o el espaciado */
+    /* Por ejemplo: */
+    /* height: 50px; */
+    /* gap: 1rem; si quieres usar gap y no me-x */
+  }
+  .navbar .logo-header {
+    height: 35px; /* Ligeramente más pequeños en móvil si es necesario */
+  }
+}
+
+/* Asegúrate de que la clase '.logo' si existe en otros lugares y afectaba el encabezado, sea re-evaluada para no interferir.
+   Lo ideal es que '.logo-header' sea la que controle los logos del encabezado. */
+
+   /* Estilos generales del contenedor de la línea de tiempo */
+.timeline {
+  position: relative;
+  max-width: 900px; /* Ancho máximo para la línea de tiempo */
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Línea vertical central */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #005BA8; /* Color azul de PC Puma */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px; /* Centra la línea */
+}
+
+/* Contenedor de cada item de la línea de tiempo */
+.timeline-item {
+  padding: 10px 0;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* Items de la izquierda */
+.timeline-item {
+  left: 0;
+  padding-right: 50px; /* Espacio para el dot y la línea */
+}
+
+/* Items de la derecha */
+.timeline-item-right {
+  left: 50%;
+  padding-left: 50px; /* Espacio para el dot y la línea */
+  padding-right: 0;
+}
+
+/* Punto/círculo en la línea de tiempo */
+.timeline-dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #005BA8; /* Color azul de PC Puma */
+  border-radius: 50%;
+  top: 25px; /* Ajusta la posición vertical del dot */
+  z-index: 1; /* Asegura que el dot esté sobre la línea */
+  left: calc(50% - 10px); /* Centra el dot en la línea */
+  border: 3px solid #fff; /* Borde blanco para mayor contraste */
+}
+
+/* Contenido de cada item (la tarjeta) */
+.timeline-content {
+  position: relative;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  min-height: 180px; /* Altura mínima para uniformidad visual de las tarjetas */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left; /* Alinea el texto a la izquierda dentro de la tarjeta */
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.timeline-content .card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content .timeline-date {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6c757d;
+  margin-bottom: 0.5rem; /* Espaciado con el párrafo de descripción */
+}
+
+/* Ajustes responsivos para móviles (columna única) */
+@media screen and (max-width: 768px) {
+  .timeline::after {
+    left: 18px; /* Mueve la línea a la izquierda */
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px; /* Todo se alinea a la derecha de la línea */
+    padding-right: 0;
+  }
+
+  .timeline-item-right {
+    left: 0; /* Asegura que los items de la derecha también se muevan a la izquierda */
+  }
+
+  .timeline-dot {
+    left: 10px; /* Mueve los dots a la izquierda de la línea */
+  }
+
+  .timeline-content {
+    text-align: left; /* Asegura que el texto se mantenga a la izquierda */
+  }
+}
+/* Estilos generales del contenedor de la línea de tiempo */
+.timeline {
+  position: relative;
+  max-width: 900px; /* Ancho máximo para la línea de tiempo */
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Línea vertical central */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #005BA8; /* Color azul de PC Puma */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px; /* Centra la línea */
+}
+
+/* Contenedor de cada item de la línea de tiempo */
+.timeline-item {
+  padding: 10px 0;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* Items de la izquierda */
+.timeline-item {
+  left: 0;
+  padding-right: 50px; /* Espacio para el dot y la línea */
+}
+
+/* Items de la derecha */
+.timeline-item-right {
+  left: 50%;
+  padding-left: 50px; /* Espacio para el dot y la línea */
+  padding-right: 0;
+}
+
+/* Punto/círculo en la línea de tiempo */
+.timeline-dot {
+  position: absolute;
+  width: 24px; /* Un poco más grande */
+  height: 24px; /* Un poco más grande */
+  background-color: #005BA8; /* Color azul de PC Puma */
+  border-radius: 50%;
+  top: 30px; /* Ajusta la posición vertical del dot */
+  z-index: 1; /* Asegura que el dot esté sobre la línea */
+  left: calc(50% - 12px); /* Centra el dot en la línea */
+  border: 4px solid #fff; /* Borde blanco más grueso para mayor contraste */
+  box-shadow: 0 0 0 4px rgba(0, 91, 168, 0.2); /* Sombra alrededor del dot */
+}
+
+/* Contenido de cada item (la tarjeta) */
+.timeline-content {
+  position: relative;
+  background-color: #fff;
+  border-radius: 12px; /* Bordes más redondeados */
+  padding: 0; /* Eliminamos el padding aquí, el card-body lo manejará */
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1); /* Sombra más suave y moderna */
+  transition: all 0.4s ease-in-out; /* Transición más lenta y suave */
+  min-height: 250px; /* Altura mínima para uniformidad visual de las tarjetas */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden; /* Para que la imagen se adapte al border-radius */
+}
+
+.timeline-content:hover {
+  transform: translateY(-8px) scale(1.02); /* Efecto "levantar" y un ligero zoom */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25); /* Sombra más pronunciada en hover */
+}
+
+/* Contenedor de la imagen del hito */
+.milestone-visual {
+    height: 150px; /* Altura fija para las imágenes */
+    overflow: hidden;
+    background-color: #f0f8ff; /* Fondo claro si la imagen no llena */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.milestone-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para llenar el espacio */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Contenido de texto dentro de la tarjeta */
+.timeline-content .card-body {
+    padding: 1.5rem; /* Padding interno para el texto */
+    flex-grow: 1; /* Permite que el cuerpo del card se expanda */
+}
+
+.timeline-content .card-title {
+  font-size: 1.3rem; /* Título un poco más grande */
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content .timeline-date {
+  font-size: 1rem; /* Fecha más legible */
+  font-weight: 700; /* Negrita para la fecha */
+  color: #6c757d;
+  margin-bottom: 1rem; /* Más espaciado con el párrafo de descripción */
+  display: block; /* Para que ocupe su propia línea */
+}
+
+.timeline-content .card-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Ajustes responsivos para móviles (columna única) */
+@media screen and (max-width: 768px) {
+  .timeline::after {
+    left: 18px; /* Mueve la línea a la izquierda */
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px; /* Todo se alinea a la derecha de la línea */
+    padding-right: 0;
+  }
+
+  .timeline-item-right {
+    left: 0; /* Asegura que los items de la derecha también se muevan a la izquierda */
+  }
+
+  .timeline-dot {
+    left: 10px; /* Mueve los dots a la izquierda de la línea */
+  }
+
+  .timeline-content {
+    text-align: left; /* Asegura que el texto se mantenga a la izquierda */
+    min-height: 200px; /* Ajusta la altura mínima en móviles */
+  }
+  .timeline-content .milestone-visual {
+    height: 120px; /* Altura de imagen más pequeña en móviles */
+  }
+  .timeline-content .card-body {
+    padding: 1rem; /* Menos padding en móviles */
+  }
+}
+
+.process-step .step-icon {
+  width: 60px;
+  height: 60px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  /* === INICIO DE AJUSTES PARA CÍRCULOS === */
+  border-radius: 50% !important; /* Forzamos el borde circular para evitar anulaciones */
+  flex-shrink: 0; /* Evita que el elemento se comprima dentro de un contenedor flex */
+  /* === FIN DE AJUSTES PARA CÍRCULOS === */
+}
+/* =============================================================== */
+/* === AJUSTES GLOBALES Y BASE (MOVER A global.css EN EL FUTURO) === */
+/* =============================================================== */
+
+/* **Verifica si estas reglas ya están presentes y consolida.** */
+/* Las pongo aquí como referencia de lo que debería ser global. */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Gotham', sans-serif !important; /* Asegura Gotham como fuente principal */
+  caret-color: transparent;
+  padding-top: 60px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
+.bg-pcpuma {
+  background-color: #005BA8 !important;
+}
+.text-primary { color: #005BA8 !important; }
+.text-success { color: #198754 !important; }
+.text-info { color: #0dcaf0 !important; }
+.text-warning { color: #fd7e14 !important; }
+.text-danger { color: #dc3545 !important; }
+.text-muted { color: #6c757d !important; } /* Asegura color mutado de Bootstrap */
+
+.navbar .nav-link:hover {
+  color: #008ED2 !important;
+}
+.navbar.sticky-top {
+  position: fixed;
+  top: 0;
+  z-index: 1030;
+  width: 100%;
+}
+.navbar .logo-header { /* Para los logos UNAM, SDI, PC Puma en el nav */
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  padding: 0;
+}
+
+footer {
+  margin-top: auto;
+  background: linear-gradient(to right, #005BA8, #003d73);
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+footer a {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline !important;
+}
+
+/* Sombras y redondeos comunes (Bootstrap) */
+.shadow-sm { box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important; }
+.shadow { box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important; }
+.shadow-lg { box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important; }
+.rounded-circle { border-radius: 50% !important; } /* Importante para asegurar círculos */
+.rounded { border-radius: .25rem!important; }
+.rounded-pill { border-radius: 50rem!important; }
+.h-100 { height: 100% !important; }
+
+/* Botones genéricos con animación */
+.btn {
+  transition: all 0.3s ease;
+  border-radius: 12px; /* Redondeo general para botones */
+}
+.btn:hover {
+  transform: translateY(-2px); /* Ligeramente levantado */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.btn:active {
+  transform: translateY(0); /* Vuelve a posición normal al hacer clic */
+  box-shadow: none;
+}
+.btn-primary {
+  background: linear-gradient(to right, #005BA8, #008ED2);
+  border: none;
+}
+.btn-primary:hover {
+  background: linear-gradient(to right, #004080, #006FB3); /* Degradado más oscuro */
+}
+
+/* Clases de borde para tarjetas (ej. Misión/Visión) */
+.border-primary { border-color: #005BA8 !important; }
+.border-success { border-color: #198754 !important; }
+.border-info { border-color: #0dcaf0 !important; }
+.border-warning { border-color: #fd7e14 !important; }
+.border-danger { border-color: #dc3545 !important; }
+
+
+/* =============================================================== */
+/* === ESTILOS ESPECÍFICOS PARA DOCENTES.HTML (COPIAR A docentes.css LUEGO) === */
+/* =============================================================== */
+
+/* Hero Banner para Docentes */
+.docentes-hero-banner {
+  height: 480px; /* Altura en escritorio para impacto */
+  position: relative;
+  background: linear-gradient(to bottom right, #002f6c, #003f8a); /* Degradado de fondo */
+  background-image: url('../img/fotos/docentes.webp'); /* IMAGEN DE FONDO OPCIONAL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.docentes-hero-banner canvas#networkCanvas {
+  position: absolute; /* Reemplaza el inline style */
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0.6; /* Un poco más transparente */
+  filter: blur(1px); /* Efecto de desenfoque sutil */
+  pointer-events: none; /* Permite que los clics pasen a los elementos debajo */
+  z-index: 0; /* Asegura que esté en el fondo */
+}
+
+/* Contenido del banner (texto y botones) */
+.docentes-hero-banner h1 {
+  font-size: 3.5rem; /* Título más grande */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.4); /* Sombra para resaltar el texto */
+}
+
+.docentes-hero-banner p.lead {
+  font-size: 1.3rem; /* Subtítulo más grande */
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.3); /* Sombra sutil */
+}
+
+/* Carrusel de frases dentro del hero */
+.frases-carousel-container {
+  min-height: 40px; /* Altura mínima para las frases */
+  overflow: hidden;
+  position: relative;
+  width: 80%; /* Ancho para las frases */
+  max-width: 600px;
+}
+#frasesDocentes li {
+  display: none;
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.85;
+  font-size: 1.1rem;
+  position: absolute; /* Posiciona las frases para la transición */
+  top: 0;
+  left: 0;
+  width: 100%;
+  animation: fadeFrases 5s infinite ease-in-out; /* Animación de fade */
+}
+#frasesDocentes li.active {
+  display: block;
+  animation: none; /* Eliminar animación si ya está activa por JS */
+}
+/* Definición de la animación de fade para las frases */
+@keyframes fadeFrases {
+  0% { opacity: 0; transform: translateY(20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+
+/* Botón principal del hero banner */
+.docentes-hero-banner .btn-lg {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  padding: 0.8rem 2.5rem;
+  border-radius: 50px; /* Botón tipo píldora */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3); /* Sombra más pronunciada */
+  background-color: #fff;
+  color: #002f6c;
+}
+
+.docentes-hero-banner .btn-lg:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  color: #002f6c;
+}
+
+
+/* Sección: ¿Por qué PC Puma para Docentes? (Video y Beneficios) */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Proporción 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Sombra más fuerte */
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.benefits-list .list-group-item {
+  border: none; /* Eliminar bordes entre ítems de la lista */
+  padding-left: 0; /* Asegurar que no haya padding extra */
+  padding-bottom: 1rem; /* Espaciado entre beneficios */
+  background-color: transparent; /* Fondo transparente */
+}
+
+.benefits-list .list-group-item i {
+  /* Los colores de los iconos (text-primary, text-success, etc.)
+     ya vienen de las clases de texto de Bootstrap/Global CSS */
+}
+.benefits-list h5 {
+    font-size: 1.2rem;
+    color: #003366; /* Un tono más oscuro del azul PC Puma */
+}
+.benefits-list p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+
+/* Sección: Herramientas Digitales Recomendadas */
+.filter-buttons-group .btn {
+  border-radius: 50px; /* Botones tipo píldora */
+  padding: 8px 25px;
+  margin: 5px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.filter-buttons-group .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+.filter-buttons-group .filter-btn.active-filter-btn {
+  background-color: #005BA8 !important; /* Fondo azul para el botón activo */
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(0, 91, 168, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Tarjetas de herramientas */
+.tool-card {
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* Sombra distintiva */
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.tool-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2); /* Sombra más intensa en hover */
+}
+
+.tool-card .card-header {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+}
+
+.tool-card .tool-logo {
+  max-width: 80px; /* Tamaño del logo de la herramienta */
+  height: auto;
+  object-fit: contain;
+  margin-top: 1rem;
+}
+
+.tool-card .tool-rating {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #f7b500; /* Color para las estrellas */
+}
+
+.tool-card .card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.tool-card .card-title {
+  font-size: 1.2rem;
+  color: #003366;
+  margin-bottom: 0.5rem;
+}
+
+.tool-card .card-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  flex-grow: 1; /* Permite que el texto crezca y empuje el botón */
+}
+
+.tool-card .toggle-details-btn {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px; /* Botón tipo píldora */
+}
+
+.tool-card .card-footer .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    font-weight: 600;
+}
+.tool-card .card-footer .btn-success:hover {
+    background-color: #218838;
+}
+
+/* Sección: Convocatorias y Eventos Recientes (Tarjetas de Eventos) */
+/* Los estilos de .card-eventos se asumen aquí, si no están en global */
+.card-eventos { /* Revisa si ya tienes esto y si es más genérico */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-eventos:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card-eventos .card-img-top {
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card-eventos .card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-eventos .card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #005BA8;
+  margin-bottom: 0.5rem;
+}
+
+.card-eventos .card-text {
+  font-size: 0.95rem;
+  color: #6c757d;
+}
+
+
+/* Sección: Historias de Impacto Docente (Testimonios) */
+/* Los estilos de .testimonial-card se asumen aquí, si no están en global */
+.testimonial-card {
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card .card-body {
+  padding: 2.5rem;
+  min-height: 180px; /* Asegura una altura mínima para el cuerpo del testimonio */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.testimonial-card .card-body p.card-text {
+  font-style: italic;
+  font-weight: 400; /* Gotham Book */
+  color: #333;
+}
+
+.testimonial-card .card-footer {
+  padding: 1rem 2.5rem;
+  background-color: #f8f9fa;
+  border-top: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.testimonial-card .card-footer img {
+    border: 2px solid #005BA8;
+}
+
+/* Estilos para las estrellas de calificación en el modal */
+.rating-stars {
+  font-size: 1.8rem;
+  color: #ccc; /* Color por defecto de las estrellas (gris) */
+  cursor: pointer;
+}
+.rating-stars .star {
+  transition: color 0.2s ease-in-out;
+}
+.rating-stars .star:hover {
+  color: #f7b500; /* Color de hover */
+}
+
+
+/* ========================================= */
+/* === AJUSTES RESPONSIVOS PARA DOCENTES === */
+/* ========================================= */
+@media (max-width: 991.98px) { /* Para tabletas y móviles */
+  .docentes-hero-banner {
+    height: 400px; /* Altura más compacta en tabletas/móviles */
+  }
+  .docentes-hero-banner h1 {
+    font-size: 2.8rem;
+  }
+  .docentes-hero-banner p.lead {
+    font-size: 1.1rem;
+  }
+  .docentes-hero-banner .btn-lg {
+    font-size: 0.95rem;
+    padding: 0.6rem 2rem;
+  }
+  .frases-carousel-container {
+    font-size: 0.9rem;
+    width: 95%; /* Más ancho en móviles */
+  }
+
+  /* Beneficios en columna vertical */
+  .benefits-list .list-group-item {
+    flex-direction: column; /* Icono arriba, texto abajo */
+    align-items: center !important;
+    text-align: center;
+  }
+  .benefits-list .list-group-item i {
+    margin-right: 0 !important;
+    margin-bottom: 10px; /* Espacio debajo del icono */
+  }
+  .benefits-list h5 {
+    font-size: 1.1rem;
+  }
+  .benefits-list p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 767.98px) { /* Específico para móviles */
+  .docentes-hero-banner {
+    height: 350px;
+  }
+  .docentes-hero-banner h1 {
+    font-size: 2rem;
+  }
+  .docentes-hero-banner p.lead {
+    font-size: 1rem;
+  }
+  /* Ajuste para los botones de filtro de herramientas */
+  .filter-buttons-group .btn {
+    padding: 6px 15px;
+    font-size: 0.85rem;
+  }
+  .search-input-modern {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+  .section-subtitle {
+    font-size: 1.4rem;
+  }
+  .section-subtitle::after {
+    width: 40px;
+  }
+  .tool-card-modern .card-body {
+    padding: 1rem; /* Menos padding en móviles */
+  }
+  .tool-card-modern .card-body i {
+    font-size: 2rem; /* Iconos un poco más pequeños */
+  }
+  .tool-card-modern .card-title {
+    font-size: 1.1rem;
+  }
+  .tool-card-modern .card-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Sección: Convocatorias y Eventos Recientes (Tarjetas de Eventos) */
+.card-eventos {
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  min-height: 380px; /* Altura mínima para consistencia */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-eventos:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card-eventos .card-img-top {
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card-eventos .card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-eventos .card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #005BA8;
+  margin-bottom: 0.5rem;
+}
+
+.card-eventos .card-text {
+  font-size: 0.95rem;
+  color: #6c757d;
+}
+
+
+/* Sección: Historias de Impacto Docente (Testimonios) */
+.testimonial-card {
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card .card-body {
+  padding: 2.5rem;
+  min-height: 180px; /* Asegura una altura mínima para el cuerpo del testimonio */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.testimonial-card .card-body p.card-text {
+  font-style: italic;
+  font-weight: 400; /* Gotham Book */
+  color: #333;
+}
+
+.testimonial-card .card-footer {
+  padding: 1rem 2.5rem;
+  background-color: #f8f9fa;
+  border-top: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.testimonial-card .card-footer img {
+    border: 2px solid #005BA8;
+}
+
+/* Estilos para las estrellas de calificación en el modal */
+.rating-stars {
+  font-size: 1.8rem;
+  color: #ccc; /* Color por defecto de las estrellas (gris) */
+  cursor: pointer;
+}
+.rating-stars .star {
+  transition: color 0.2s ease-in-out;
+}
+.rating-stars .star:hover {
+  color: #f7b500; /* Color de hover */
+}
+
+
+/* ========================================= */
+/* === AJUSTES RESPONSIVOS PARA DOCENTES === */
+/* ========================================= */
+@media (max-width: 991.98px) { /* Para tabletas y móviles */
+  .docentes-hero-banner {
+    height: 400px; /* Altura más compacta en tabletas/móviles */
+  }
+  .docentes-hero-banner h1 {
+    font-size: 2.8rem;
+  }
+  .docentes-hero-banner p.lead {
+    font-size: 1.1rem;
+  }
+  .docentes-hero-banner .btn-lg {
+    font-size: 0.95rem;
+    padding: 0.6rem 2rem;
+  }
+  .frases-carousel-container {
+    font-size: 0.9rem;
+    width: 95%; /* Más ancho en móviles */
+  }
+
+  /* Beneficios en columna vertical */
+  .benefits-list .list-group-item {
+    flex-direction: column; /* Icono arriba, texto abajo */
+    align-items: center !important;
+    text-align: center;
+  }
+  .benefits-list .list-group-item i {
+    margin-right: 0 !important;
+    margin-bottom: 10px; /* Espacio debajo del icono */
+  }
+  .benefits-list h5 {
+    font-size: 1.1rem;
+  }
+  .benefits-list p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 767.98px) { /* Específico para móviles */
+  .docentes-hero-banner {
+    height: 350px;
+  }
+  .docentes-hero-banner h1 {
+    font-size: 2rem;
+  }
+  .docentes-hero-banner p.lead {
+    font-size: 1rem;
+  }
+  /* Ajuste para los botones de filtro de herramientas */
+  .filter-buttons-group .btn {
+    padding: 6px 15px;
+    font-size: 0.85rem;
+  }
+  .search-input-modern {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+  .section-subtitle {
+    font-size: 1.4rem;
+  }
+  .section-subtitle::after {
+    width: 40px;
+  }
+}
+
+/* ===================================================================
+   7. BOTÓN FLOTANTE EQUIPO
+   =================================================================== */
+
+   .flotante-equipo {
+    background-color: #FFD700; /* Amarillo institucional */
+    color: #002F6C; /* Azul oscuro */
+    font-weight: bold;
+    border-radius: 50px; /* Forma de píldora */
+    padding: 12px 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Sombra suave */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1050; /* Siempre por encima de otros elementos */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .flotante-equipo:hover {
+    transform: scale(1.05); /* Efecto de escalado */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+  }
+  
+  .flotante-equipo:focus {
+    outline: 3px solid #002F6C; /* Resaltado accesible */
+    outline-offset: 2px;
+  }
+ /* ===================================================================
+   NUEVA PROPUESTA VISUAL PARA PÁGINA DE EVENTOS
+   =================================================================== */
+
+.eventos-page {
+  background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 30%);
+}
+
+/* -- Nuevo Hero Banner -- */
+.eventos-hero {
+  padding: 4rem 1rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e6f0;
+}
+.eventos-hero-logo {
+  max-height: 120px;
+  margin-bottom: 1.5rem;
+}
+.eventos-hero-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #002f6c;
+}
+.eventos-hero-subtitle {
+  font-size: 1.2rem;
+  color: #5a7b9c;
+  max-width: 600px;
+  margin: 0.5rem auto 0;
+}
+
+/* -- Nuevos Controles de Filtro -- */
+.eventos-controls-wrapper {
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 16px 40px rgba(0, 47, 108, 0.08);
+}
+.nav-pills .nav-link {
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  color: #003f8a;
+  transition: all 0.3s ease;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #005BA8;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 91, 168, 0.3);
+}
+.btn-filtro-evento {
+  background-color: #f0f6fb;
+  color: #003f8a;
+  border: 1px solid #d3e0ec;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.btn-filtro-evento:hover {
+  background-color: #e1eaf3;
+  border-color: #b9cbe0;
+  transform: translateY(-2px);
+}
+.btn-filtro-evento.active {
+  background-color: #005BA8;
+  color: white;
+  border-color: #005BA8;
+  box-shadow: 0 4px 12px rgba(0, 91, 168, 0.2);
+  transform: scale(1.05);
+}
+
+/* -- Nuevas Tarjetas de Evento -- */
+.evento-card-moderno {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #e9eef5;
+  box-shadow: 0 4px 12px rgba(0, 47, 108, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.evento-card-moderno:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 47, 108, 0.1);
+  border-color: #c9d8e8;
+}
+.evento-card-img-container {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+.evento-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.evento-card-moderno:hover .evento-card-img {
+  transform: scale(1.05);
+}
+.evento-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Para que el cuerpo crezca y empuje el footer */
+}
+.evento-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #002f6c;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+.evento-card-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+  flex-grow: 1;
+}
+.evento-card-footer {
+  padding: 0 1.5rem 1.5rem;
+  border-top: none;
+  background-color: transparent;
+}
+
+/* Insignias de Modalidad y Fecha */
+.evento-card-date {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  backdrop-filter: blur(4px);
+  width: 60px;
+}
+.evento-card-date .mes {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #D32F2F;
+  text-transform: uppercase;
+}
+.evento-card-date .dia {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #002f6c;
+  line-height: 1.1;
+}
+
+.evento-badge-modalidad {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  color: #003f8a;
+  background-color: #e6f2ff;
+}
+/* =============================================================== */
+/* === ESTILOS PARA AÑADIR A 'nosotros.html' === */
+/* =============================================================== */
+
+/* Fondos laterales animados */
+/* -- Costados animados (Desktop) -- */
+#left-bg, #right-bg {
+  position: fixed;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  background: transparent;
+  /*
+   * Este z-index negativo es CRUCIAL.
+   * Coloca las animaciones en una capa POR DETRÁS del contenido principal de la página.
+   */
+  z-index: -1;
+  pointer-events: none; /* Permite que el usuario haga clic en los elementos que están "detrás" de la animación. */
+}
+
+#left-bg {
+  left: 0;
+}
+
+#right-bg {
+  right: 0;
+}
+
+#left-canvas, #right-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* Botones circulares de impacto */
+.btn-circular {
+  width: 110px; height: 110px; border-radius: 50%; background-color: #ffffff; border: 2px solid #e0e0e0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: flex; flex-direction: column; justify-content: center;
+  align-items: center; transition: all 0.3s ease-in-out; cursor: pointer; text-decoration: none;
+}
+.btn-circular:hover {
+  background-color: #f0f6fb; transform: translateY(-5px); border-color: #005ba8; box-shadow: 0 8px 25px rgba(0,91,168,0.2);
+}
+.btn-circular .label { font-size: 0.8rem; margin-top: 8px; font-weight: 600; color: #333; }
+.btn-circular.activo {
+  border-width: 3px; border-color: #005ba8; background-color: #e6f0fa;
+}
+.btn-circular.activo .label { color: #005ba8; }
+.btn-circular i { font-size: 2rem; line-height: 1; }
+
+/* Tarjetas de impacto */
+.card-impact-content .card { border: none; text-align: center; font-size: 1.05rem; line-height: 1.7; }
+
+/* Tarjeta de miembro del equipo */
+.team-member-card { display: flex; flex-direction: column; align-items: center; text-align: center; height: 100%; }
+.team-member-card .member-info { flex-grow: 1; display: flex; flex-direction: column; justify-content: flex-start; }
+.row.g-4 { align-items: stretch; }
+
+/* Iconos de redes sociales */
+.social-icon { color: #005BA8; font-size: 2.5rem; transition: all 0.3s ease; }
+.social-icon:hover { color: #003d73; transform: translateY(-4px); }
+
+/* Estilos para la Línea de Tiempo Moderna */
+#hitos-pcpuma-moderno { background-color: #f8f9fa; padding: 80px 0; overflow: hidden; }
+#hitos-pcpuma-moderno h2 { color: #002c5c; font-weight: 700; }
+#hitos-pcpuma-moderno .lead { color: #5a6268; }
+.timeline-moderno { position: relative; max-width: 1200px; margin: 0 auto; }
+.timeline-moderno::after { content: ''; position: absolute; width: 6px; background: linear-gradient(180deg, #0056b3, #0d82d4, #fbc02d); top: 0; bottom: 0; left: 50%; margin-left: -3px; border-radius: 3px; }
+.timeline-moderno-item { padding: 10px 40px; position: relative; width: 50%; }
+.timeline-moderno-item::after { content: ''; position: absolute; width: 24px; height: 24px; right: -12px; background-color: #ffffff; border: 5px solid #0056b3; top: 25px; border-radius: 50%; z-index: 1; transition: all 0.3s ease; animation: pulse-blue 2s infinite; }
+.timeline-moderno-item.left { left: 0; }
+.timeline-moderno-item.right { left: 50%; }
+.timeline-moderno-item::before { content: " "; height: 0; position: absolute; top: 32px; width: 0; z-index: 1; border: medium solid #ffffff; border-width: 10px; }
+.timeline-moderno-item.left::before { right: 30px; border-color: transparent transparent transparent #ffffff; }
+.timeline-moderno-item.right::before { left: 30px; border-color: transparent #ffffff transparent transparent; }
+.timeline-moderno-item.right::after { left: -12px; }
+.timeline-moderno-content { padding: 30px; background: #ffffff; position: relative; border-radius: 12px; box-shadow: 0 5px 15px rgba(0, 44, 92, 0.08), 0 3px 6px rgba(0, 44, 92, 0.05); transition: all 0.3s ease-in-out; border: 1px solid #e9ecef; }
+.timeline-moderno-item:hover .timeline-moderno-content { transform: translateY(-10px); box-shadow: 0 12px 25px rgba(0, 44, 92, 0.12), 0 8px 15px rgba(0, 44, 92, 0.08); }
+.timeline-moderno-item:hover::after { transform: scale(1.1); background-color: #fbc02d; border-color: #003f85; }
+.timeline-moderno-content .moderno-icon { font-size: 2.5rem; float: right; margin-left: 20px; background: linear-gradient(45deg, #0056b3, #fbc02d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; }
+.timeline-moderno-content h5 { color: #002c5c; font-weight: 700; }
+.timeline-moderno-content .timeline-date { font-weight: 600; color: #0056b3; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+.timeline-moderno-content p { color: #343a40; font-size: 1rem; line-height: 1.6; }
+@keyframes pulse-blue { 0% { box-shadow: 0 0 0 0 rgba(0, 86, 179, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(0, 86, 179, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 86, 179, 0); } }
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+  #left-bg, #right-bg { display: none; }
+  .btn-circular { width: 90px; height: 90px; }
+  .btn-circular .label { font-size: 0.7rem; }
+  .btn-circular i { font-size: 1.8rem; }
+  .timeline-moderno::after { left: 31px; }
+  .timeline-moderno-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+  .timeline-moderno-item::before { left: 60px; border-width: 10px 10px 10px 0; border-color: transparent #ffffff transparent transparent; }
+  .timeline-moderno-item.left::after, .timeline-moderno-item.right::after { left: 19px; }
+  .timeline-moderno-item.right { left: 0%; }
+}
+/* ===================================================================
+   CORRECCIÓN PARA FILTROS DE EVENTOS RESPONSIVOS
+   =================================================================== */
+
+/*
+ * Contenedor de los botones de filtro de modalidad.
+ * Lo convertimos en un contenedor flex que permite que los botones se envuelvan.
+ */
+ .eventos-controls-wrapper .btn-group[aria-label="Filtro de modalidad"] {
+  display: flex;         /* Activa el modelo de caja flexible. */
+  flex-wrap: wrap;       /* ¡Esta es la propiedad clave! Permite que los botones pasen a la siguiente línea. */
+  justify-content: center; /* Centra los botones, lo que se ve bien cuando se envuelven. */
+  gap: 0.5rem;           /* Añade un espacio consistente entre los botones. */
+}
+
+/*
+ * Ajuste para los botones de filtro individuales dentro de este contenedor.
+ * Quitamos el margen que puedan tener para que 'gap' controle el espaciado.
+ */
+.eventos-controls-wrapper .btn-group[aria-label="Filtro de modalidad"] .btn-filtro-evento {
+  margin: 0; /* Reseteamos el margen para evitar conflictos con la propiedad 'gap'. */
+}
+
+

@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <title>
+    Eventos 2026 · PC Puma
+  </title>
+  <!-- Código de Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VK96VK5GZ5">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-VK96VK5GZ5');
+  </script>
+  <link href="../img/favicons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" />
+  <link href="../img/favicons/favicon.svg" rel="icon" type="image/svg+xml" />
+  <link href="../img/favicons/favicon.ico" rel="shortcut icon" />
+  <link href="../img/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+  <meta content="PC Puma" name="apple-mobile-web-app-title" />
+  <link href="../img/favicons/site.webmanifest" rel="manifest" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="../css/global.css" rel="stylesheet" />
+  <link href="../css/eventos.css?v=8" rel="stylesheet" />
+  <link href="../css/style_accessibility.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="../css/index.css" rel="stylesheet" />
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1 0 auto;
+    }
+
+    .logo-unam-footer {
+      max-width: 200px;
+      margin-right: 10px;
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <nav role="navigation" class="navbar navbar-expand-lg navbar-dark pcp-navbar sticky-top">
+    <div class="container-fluid">
+      <div class="p-2 d-flex align-items-center">
+        <a href="https://www.unam.mx/" target="_blank">
+          <img loading="lazy" alt="Logotipo de la UNAM" src="../img/logos/unam.webp" class="logo-header me-3" />
+        </a>
+        <a href="https://sdi.unam.mx/" target="_blank">
+          <img loading="lazy" alt="Logotipo de la SDI - UNAM" src="../img/logos/sdi.webp" class="logo-header me-3" />
+        </a>
+        <a href="../index.html">
+          <img loading="lazy" alt="Logotipo del proyecto PC Puma" src="../img/logos/logo-pcpuma.webp" class="logo-header me-3" />
+        </a>
+        <a href="#">
+          <img loading="lazy" alt="Logotipo de la UNAM" src="../img/logos/Logo_unam475.png" class="logo-header" />
+        </a>
+      </div>
+      <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house-fill me-1"></i>Inicio</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="estudiantes.html"><i
+                class="bi bi-laptop me-1"></i>Estudiantes</a></li>
+          <li class="nav-item"><a class="nav-link" href="docentes.html"><i
+                class="bi bi-person-fill me-1"></i>Docentes</a></li>
+          <li class="nav-item"><a class="nav-link" href="admin.html"><i class="bi bi-gear me-1"></i>TI</a></li>
+          <li class="nav-item"><a class="nav-link active" href="eventos.html"><i
+                class="bi bi-calendar-event me-1"></i>Eventos</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html"><i class="bi bi-question-circle me-1"></i>FAQ</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html"><i class="bi bi-envelope me-1"></i>Contacto</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html"><i
+                class="bi bi-info-circle me-1"></i>Nosotros</a></li>
+          <li class="nav-item d-none"><a class="nav-link" href="#" id="adminLoginBtn" title="Acceso Administrador"><i class="bi bi-person-fill"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main role="main" class="eventos-page">
+    <section class="eventos-hero" data-aos="fade-in">
+      <canvas id="networkCanvas"></canvas>
+      <div class="container text-center position-relative" style="z-index: 2;">
+        <h1 class="eventos-hero-title" data-aos="fade-up" data-aos-delay="200">Agenda de Eventos 2026</h1>
+        <p class="eventos-hero-subtitle" data-aos="fade-up" data-aos-delay="300">Explora, aprende y participa en las actividades que PC Puma tiene para ti.</p>
+        
+        <!-- Contenedor de Búsqueda -->
+        <div class="search-wrapper" data-aos="fade-up" data-aos-delay="400">
+          <div class="search-box">
+            <i class="bi bi-search search-icon"></i>
+            <input type="text" id="eventSearchInput" placeholder="Buscar eventos, temas o ponentes...">
+          </div>
+        </div>
+
+        <!-- Filtros por Modalidad -->
+        <div class="filter-pills-container" data-aos="fade-up" data-aos-delay="500">
+          <div class="filter-pills">
+            <button class="filter-pill active" data-filtro="todos">
+              <i class="bi bi-layers-fill me-2"></i>Todos
+            </button>
+            <button class="filter-pill" data-filtro="enlinea">
+              <i class="bi bi-wifi me-2"></i>En línea
+            </button>
+            <button class="filter-pill" data-filtro="presencial">
+              <i class="bi bi-building me-2"></i>Presencial
+            </button>
+            <button class="filter-pill" data-filtro="hibrido">
+              <i class="bi bi-laptop me-2"></i>Híbrido
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container pt-3 pb-5">
+      <div class="row">
+        <!-- Columna de Contenido a Ancho Completo -->
+        <div class="col-lg-10 mx-auto col-md-12">
+          <!-- Contenedor Evento Destacado -->
+          <div id="evento-destacado-container" class="mb-5" data-aos="fade-up"></div>
+
+          <!-- Sección de Próximos Eventos -->
+          <div class="mb-5" id="proximos-section">
+            <div class="d-flex justify-content-between align-items-center mb-4" data-aos="fade-up">
+              <h3 class="seccion-titulo text-blue font-outfit m-0">Próximos eventos</h3>
+              <a href="#" id="verTodosEventos" class="ver-todos-link">Ver todos los eventos <i class="bi bi-arrow-right-short ms-1"></i></a>
+            </div>
+            <!-- Grid de Eventos Próximos -->
+            <div id="eventos-proximos" class="row g-4" data-aos="fade-up"></div>
+          </div>
+
+          <!-- Sección de Eventos Pasados -->
+          <div class="mt-5 pt-4 border-top">
+            <div class="d-flex justify-content-between align-items-center mb-4" data-aos="fade-up">
+              <h3 class="seccion-titulo text-blue font-outfit m-0">Eventos pasados</h3>
+            </div>
+            <!-- Grid de Eventos Pasados -->
+            <div id="eventos-pasados" class="row g-4 mb-4" data-aos="fade-up"></div>
+            <!-- Botón Ver Todo Pasados -->
+            <div class="text-center mt-3 mb-5 d-none" id="verTodosPasadosContainer" data-aos="fade-up">
+              <button class="btn-apple btn-apple-outline" id="verTodosPasadosBtn">
+                Ver todos los eventos pasados <i class="bi bi-chevron-down ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL DE DETALLE DEL EVENTO (APPLE SHEET MODAL) -->
+    <div class="apple-sheet-backdrop" id="appleSheetBackdrop">
+      <div class="apple-sheet-content" id="appleSheetContent">
+        <div class="apple-sheet-drag-handle"></div>
+        <button class="apple-sheet-close-btn" id="closeAppleSheetBtn" aria-label="Cerrar detalles">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        
+        <div class="apple-sheet-hero" id="sheetHero">
+          <img src="" alt="" id="sheetHeroImg">
+        </div>
+        
+        <div class="apple-sheet-body">
+          <div class="apple-sheet-grid">
+            
+            <!-- Columna Izquierda: Información Principal -->
+            <div class="apple-sheet-main-info">
+              <div class="apple-sheet-header">
+                <span class="apple-sheet-category" id="sheetCategory">CURSO</span>
+                <h2 class="apple-sheet-title" id="sheetTitle">Título del Evento</h2>
+              </div>
+              
+              <div class="apple-sheet-description-section">
+                <h3 class="apple-sheet-section-title">Acerca de esta actividad</h3>
+                <p class="apple-sheet-description" id="sheetDescription">
+                  Descripción detallada del evento...
+                </p>
+              </div>
+              
+              <!-- Tags/Etiquetas del Evento -->
+              <div class="apple-sheet-tags" id="sheetTags"></div>
+            </div>
+            
+            <!-- Columna Derecha: Panel de Metadatos y Acciones -->
+            <div class="apple-sheet-sidebar">
+              <div class="apple-sheet-meta-list">
+                
+                <div class="apple-sheet-meta-item" id="sheetMetaFechaContainer">
+                  <i class="bi bi-calendar3"></i>
+                  <div>
+                    <span class="apple-sheet-meta-label">Fecha</span>
+                    <span class="apple-sheet-meta-val" id="sheetMetaFecha">23 de Febrero, 2026</span>
+                  </div>
+                </div>
+                
+                <div class="apple-sheet-meta-item">
+                  <i class="bi bi-laptop"></i>
+                  <div>
+                    <span class="apple-sheet-meta-label">Modalidad</span>
+                    <span class="apple-sheet-meta-val" id="sheetMetaModalidad">En línea</span>
+                  </div>
+                </div>
+
+                <div class="apple-sheet-meta-item" id="sheetMetaUbicacionContainer">
+                  <i class="bi bi-geo-alt"></i>
+                  <div>
+                    <span class="apple-sheet-meta-label">Ubicación</span>
+                    <span class="apple-sheet-meta-val" id="sheetMetaUbicacion">En línea</span>
+                  </div>
+                </div>
+                
+                <div class="apple-sheet-meta-item" id="sheetMetaPonenteContainer">
+                  <i class="bi bi-person-badge"></i>
+                  <div>
+                    <span class="apple-sheet-meta-label">Ponente</span>
+                    <span class="apple-sheet-meta-val" id="sheetMetaPonente">Cisco Academy</span>
+                  </div>
+                </div>
+                
+                <div class="apple-sheet-meta-item" id="sheetMetaPublicoContainer">
+                  <i class="bi bi-people"></i>
+                  <div>
+                    <span class="apple-sheet-meta-label">Dirigido a</span>
+                    <span class="apple-sheet-meta-val" id="sheetMetaPublico">Comunidad Universitaria</span>
+                  </div>
+                </div>
+                
+              </div>
+              
+              <div class="apple-sheet-actions">
+                <a href="#" class="btn-apple btn-apple-secondary" id="sheetBtnConvocatoria" target="_blank">
+                  <i class="bi bi-file-earmark-text"></i>
+                  Ver Convocatoria
+                </a>
+                <a href="#" class="btn-apple btn-apple-primary" id="sheetBtnRegistro" target="_blank">
+                  <i class="bi bi-pencil-square"></i>
+                  Registrarme
+                </a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL DE LOGIN ADMINISTRADOR -->
+    <div class="admin-modal-backdrop" id="adminLoginModal">
+      <div class="admin-modal-content glass-card p-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h4 class="m-0 font-outfit text-blue"><i class="bi bi-shield-lock-fill me-2"></i>Acceso Administrador</h4>
+          <button class="btn-close-admin" id="closeLoginModalBtn" aria-label="Cerrar"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="mb-3">
+          <label for="adminUsername" class="form-label small fw-semibold">Usuario</label>
+          <input type="text" id="adminUsername" class="form-control admin-input" placeholder="Nombre de usuario">
+        </div>
+        <div class="mb-3">
+          <label for="adminPassword" class="form-label small fw-semibold">Contraseña</label>
+          <input type="password" id="adminPassword" class="form-control admin-input" placeholder="Contraseña">
+        </div>
+        <div id="loginErrorMsg" class="text-danger small mb-3 d-none">Usuario o contraseña incorrectos</div>
+        <button class="btn-apple btn-apple-primary w-100" id="submitLoginBtn">Iniciar Sesión</button>
+      </div>
+    </div>
+
+    <!-- MODAL DE PANEL ADMINISTRADOR -->
+    <div class="admin-modal-backdrop" id="adminPanelModal">
+      <div class="admin-modal-content panel-content glass-card p-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h4 class="m-0 font-outfit text-blue"><i class="bi bi-gear-wide-connected me-2"></i>Panel de Administración</h4>
+          <div class="d-flex gap-2">
+            <button class="btn-apple btn-apple-outline btn-sm" id="downloadJsonBtn"><i class="bi bi-download me-1"></i>Descargar JSON</button>
+            <button class="btn-close-admin" id="closePanelModalBtn" aria-label="Cerrar"><i class="bi bi-x-lg"></i></button>
+          </div>
+        </div>
+        
+        <form id="addEventForm">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="eventTitle" class="form-label small fw-semibold">Título del Evento *</label>
+              <input type="text" id="eventTitle" class="form-control admin-input" required>
+            </div>
+            <div class="col-md-6">
+              <label for="eventDate" class="form-label small fw-semibold">Fecha del Evento *</label>
+              <input type="date" id="eventDate" class="form-control admin-input" required>
+            </div>
+            <div class="col-md-6">
+              <label for="eventCategory" class="form-label small fw-semibold">Categoría (ej. Curso, Taller, Webinar) *</label>
+              <input type="text" id="eventCategory" class="form-control admin-input" required placeholder="Webinar">
+            </div>
+            <div class="col-md-6">
+              <label for="eventModalidad" class="form-label small fw-semibold">Modalidad *</label>
+              <select id="eventModalidad" class="form-select admin-input" required>
+                <option value="En línea">En línea</option>
+                <option value="Presencial">Presencial</option>
+                <option value="Híbrido">Híbrido</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="eventPonente" class="form-label small fw-semibold">Ponente o Instructor *</label>
+              <input type="text" id="eventPonente" class="form-control admin-input" required placeholder="MVZ Laura Sánchez">
+            </div>
+            <div class="col-md-6">
+              <label for="eventPublico" class="form-label small fw-semibold">Público *</label>
+              <input type="text" id="eventPublico" class="form-control admin-input" required placeholder="Docentes">
+            </div>
+            <div class="col-md-6">
+              <label for="eventUbicacion" class="form-label small fw-semibold">Ubicación (opcional si es Online)</label>
+              <input type="text" id="eventUbicacion" class="form-control admin-input" placeholder="Aula Magna / Zoom">
+            </div>
+            <div class="col-md-6">
+              <label for="eventRegistro" class="form-label small fw-semibold">Enlace de Registro / Formulario *</label>
+              <input type="url" id="eventRegistro" class="form-control admin-input" required placeholder="https://forms.gle/...">
+            </div>
+            <div class="col-md-6">
+              <label for="eventBanner" class="form-label small fw-semibold">Cargar Banner PNG *</label>
+              <input type="file" id="eventBanner" class="form-control admin-input" accept="image/png,image/jpeg,image/webp" required>
+            </div>
+            <div class="col-md-6">
+              <label for="eventConvocatoria" class="form-label small fw-semibold">Cargar Convocatoria PDF *</label>
+              <input type="file" id="eventConvocatoria" class="form-control admin-input" accept="application/pdf" required>
+            </div>
+            <div class="col-12">
+              <label for="eventDescription" class="form-label small fw-semibold">Descripción del Evento *</label>
+              <textarea id="eventDescription" class="form-control admin-input" rows="3" required></textarea>
+            </div>
+          </div>
+          <div class="mt-4 d-flex justify-content-end gap-2">
+            <button type="button" class="btn-apple btn-apple-outline" id="clearFormBtn">Limpiar Formulario</button>
+            <button type="submit" class="btn-apple btn-apple-primary">Guardar Evento</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- PIE DE PÁGINA  -->
+  <footer class="footer bg-pcpuma text-white" role="contentinfo">
+    <div class="container pt-4 pb-3">
+
+      <div class="row align-items-center">
+
+        <!-- COLUMNA 1 : LOGO -->
+        <div class="col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+          <img src="../img/logos/Logo UNGU.png" alt="Universidad Nacional Autónoma de México" class="logo-unam-footer">
+        </div>
+
+
+        <!-- COLUMNA 2 : INFORMACIÓN LEGAL -->
+        <div class="col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+
+          <p class="fw-bold mb-3 text-white">© 2026 PC Puma - UNAM</p>
+
+          <p class="small mb-3">
+            Hecho en México. Universidad Nacional Autónoma de México (UNAM).
+            Todos los derechos reservados 2026.
+          </p>
+
+          <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+
+            <a href="https://www.facebook.com/UNAM.PCPuma/" target="_blank">
+              <i class="bi bi-facebook fs-5 text-white"></i>
+            </a>
+
+            <a href="https://twitter.com/PCPuma_UNAM" target="_blank">
+              <i class="bi bi-twitter-x fs-5 text-white"></i>
+            </a>
+
+            <a href="https://www.instagram.com/pc_puma/" target="_blank">
+              <i class="bi bi-instagram fs-5 text-white"></i>
+            </a>
+
+            <a href="https://www.tiktok.com/@contactopcpuma" target="_blank">
+              <i class="bi bi-tiktok fs-5 text-white"></i>
+            </a>
+
+            <a href="https://www.youtube.com/@ContactoPCPUMA" target="_blank">
+              <i class="bi bi-youtube fs-5 text-white"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- COLUMNA 3 : DOCUMENTOS -->
+        <div class="col-lg-3 text-start mb-3 mb-lg-0">
+
+          <h6 class="fw-bold mb-3 text-white">LIGAS DE INTERÉS</h6>
+
+          <ul class="list-unstyled footer-links">
+
+            <li>
+              <a href="../archivos/Lineamientos_Generales_PCPUMA.pdf" target="_blank">
+                Lineamientos Generales
+              </a>
+            </li>
+
+            <li>
+              <a href="../archivos/AvisoPrivacidad_Simplificado_ProyectoPCPUMA.pdf" target="_blank">
+                Aviso de Privacidad Simplificado
+              </a>
+            </li>
+
+            <li>
+              <a href="../archivos/AvisoPrivacidad_Integral_ProyectoPCPUMA.pdf" target="_blank">
+                Aviso de Privacidad Integral
+              </a>
+            </li>
+
+            <li>
+              <a href="creditos.html">
+                Créditos
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <!-- COLUMNA 4 : LOGO -->
+        <div class="col-lg-3 text-center text-lg-end">
+          <img src="../img/logos/Logo_unam475.png" alt="Universidad Nacional Autónoma de México" class="logo-unam-footer">
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../js/network-bg.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({
+        duration: 800,
+        once: true
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let eventos = [];
+      let mostrarTodosPasados = false;
+      const hoy = new Date();
+      hoy.setHours(0, 0, 0, 0); // Normalizar a medianoche para comparaciones de fecha
+
+      // Referencias del Modal Apple Sheet
+      const sheetBackdrop = document.getElementById('appleSheetBackdrop');
+      const sheetContent = document.getElementById('appleSheetContent');
+      const closeSheetBtn = document.getElementById('closeAppleSheetBtn');
+      const sheetHero = document.getElementById('sheetHero');
+      const sheetHeroImg = document.getElementById('sheetHeroImg');
+      const sheetCategory = document.getElementById('sheetCategory');
+      const sheetTitle = document.getElementById('sheetTitle');
+      const sheetDescription = document.getElementById('sheetDescription');
+      const sheetTags = document.getElementById('sheetTags');
+      
+      const sheetMetaFecha = document.getElementById('sheetMetaFecha');
+      const sheetMetaModalidad = document.getElementById('sheetMetaModalidad');
+      const sheetMetaUbicacion = document.getElementById('sheetMetaUbicacion');
+      const sheetMetaPonente = document.getElementById('sheetMetaPonente');
+      const sheetMetaPublico = document.getElementById('sheetMetaPublico');
+      
+      const sheetMetaUbicacionContainer = document.getElementById('sheetMetaUbicacionContainer');
+      const sheetMetaPonenteContainer = document.getElementById('sheetMetaPonenteContainer');
+      const sheetMetaPublicoContainer = document.getElementById('sheetMetaPublicoContainer');
+
+      const sheetBtnConvocatoria = document.getElementById('sheetBtnConvocatoria');
+      const sheetBtnRegistro = document.getElementById('sheetBtnRegistro');
+
+      // Nuevas referencias del layout a ancho completo
+      const searchInput = document.getElementById('eventSearchInput');
+      const destacadoContainer = document.getElementById('evento-destacado-container');
+      const verTodosBtn = document.getElementById('verTodosEventos');
+      const verTodosPasadosContainer = document.getElementById('verTodosPasadosContainer');
+      const verTodosPasadosBtn = document.getElementById('verTodosPasadosBtn');
+
+      // Referencias de Modales Admin
+      const adminLoginBtn = document.getElementById('adminLoginBtn');
+      const adminLoginModal = document.getElementById('adminLoginModal');
+      const adminPanelModal = document.getElementById('adminPanelModal');
+      const closeLoginModalBtn = document.getElementById('closeLoginModalBtn');
+      const closePanelModalBtn = document.getElementById('closePanelModalBtn');
+      const submitLoginBtn = document.getElementById('submitLoginBtn');
+      const adminUsernameInput = document.getElementById('adminUsername');
+      const adminPasswordInput = document.getElementById('adminPassword');
+      const loginErrorMsg = document.getElementById('loginErrorMsg');
+
+      const addEventForm = document.getElementById('addEventForm');
+      const clearFormBtn = document.getElementById('clearFormBtn');
+      const downloadJsonBtn = document.getElementById('downloadJsonBtn');
+
+      let bannerBase64 = '';
+      let convocatoriaBase64 = '';
+
+      // Cargar eventos locales desde localStorage
+      let localEventos = [];
+      try {
+        localEventos = JSON.parse(localStorage.getItem('local_eventos') || '[]');
+      } catch (e) {
+        console.error('Error al parsear eventos locales de localStorage:', e);
+      }
+
+      // Cargar eventos desde JSON
+      fetch('../data/eventos.json')
+        .then(response => response.json())
+        .then(data => {
+          // Unir eventos del servidor con eventos locales del administrador
+          eventos = [...data, ...localEventos];
+          filtrarYMostrarEventos(); // Muestra todos al inicio
+        })
+        .catch(error => console.error('Error al cargar ../data/eventos.json:', error));
+
+      // Función para normalizar texto (quitar acentos, espacios, etc.)
+      const normalizarTexto = (str) => {
+        if (!str) return '';
+        return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '');
+      };
+
+      // Abrir Modal con detalles completos
+      function abrirDetalleEvento(ev) {
+        const fechaEvento = new Date(ev.fecha + 'T00:00:00');
+        const dia = fechaEvento.getDate();
+        const mes = fechaEvento.toLocaleString('es-ES', { month: 'short' }).replace('.', '');
+        const año = fechaEvento.getFullYear();
+        const mesFormateado = mes.charAt(0).toUpperCase() + mes.slice(1);
+        const fechaCompleta = `${dia} de ${mesFormateado}, ${año}`;
+
+        // Inyectar datos principales
+        if (sheetHero) {
+          // Si es base64, usarlo directamente
+          sheetHero.style.backgroundImage = `url('${ev.imagen}')`;
+        }
+        sheetHeroImg.src = ev.imagen;
+        sheetHeroImg.alt = ev.titulo;
+        sheetCategory.textContent = ev.categoria || 'Actividad';
+        sheetTitle.textContent = ev.titulo;
+        sheetDescription.textContent = ev.descripcion;
+
+        // Inyectar metadatos
+        sheetMetaFecha.textContent = fechaCompleta;
+        sheetMetaModalidad.textContent = ev.modalidad;
+        
+        // Ubicación
+        if (ev.ubicacion) {
+          sheetMetaUbicacion.textContent = ev.ubicacion;
+          sheetMetaUbicacionContainer.style.display = 'flex';
+        } else {
+          const modNorm = normalizarTexto(ev.modalidad);
+          sheetMetaUbicacion.textContent = modNorm === 'enlinea' ? 'En línea' : ev.modalidad;
+          sheetMetaUbicacionContainer.style.display = 'flex';
+        }
+        
+        // Ponente
+        if (ev.ponente) {
+          sheetMetaPonente.textContent = ev.ponente;
+          sheetMetaPonenteContainer.style.display = 'flex';
+        } else {
+          sheetMetaPonenteContainer.style.display = 'none';
+        }
+        
+        // Público
+        if (ev.publico) {
+          sheetMetaPublico.textContent = ev.publico;
+          sheetMetaPublicoContainer.style.display = 'flex';
+        } else {
+          sheetMetaPublicoContainer.style.display = 'none';
+        }
+
+        // Renderizar botones de acción
+        if (ev.convocatoria && ev.convocatoria !== '#') {
+          sheetBtnConvocatoria.href = ev.convocatoria;
+          sheetBtnConvocatoria.style.display = 'inline-flex';
+        } else {
+          sheetBtnConvocatoria.style.display = 'none';
+        }
+
+        if (ev.registro) {
+          sheetBtnRegistro.href = ev.registro;
+          sheetBtnRegistro.style.display = 'inline-flex';
+        } else {
+          sheetBtnRegistro.style.display = 'none';
+        }
+
+        // Renderizar tags/etiquetas
+        sheetTags.innerHTML = '';
+        if (ev.tags && ev.tags.length > 0) {
+          ev.tags.forEach(tag => {
+            const span = document.createElement('span');
+            span.className = 'apple-sheet-tag';
+            span.textContent = `#${tag}`;
+            sheetTags.appendChild(span);
+          });
+        } else {
+          // Fallback: usar categoría o público como tags si no existen
+          if (ev.categoria) {
+            const span1 = document.createElement('span');
+            span1.className = 'apple-sheet-tag';
+            span1.textContent = `#${ev.categoria.toLowerCase()}`;
+            sheetTags.appendChild(span1);
+          }
+          if (ev.publico) {
+            const span2 = document.createElement('span');
+            span2.className = 'apple-sheet-tag';
+            span2.textContent = `#${ev.publico.toLowerCase()}`;
+            sheetTags.appendChild(span2);
+          }
+        }
+
+        // Animación de Apertura
+        sheetBackdrop.classList.add('show');
+        document.body.style.overflow = 'hidden'; // Evitar scroll de fondo
+      }
+
+      // Cerrar Modal
+      function cerrarDetalleEvento() {
+        sheetBackdrop.classList.remove('show');
+        document.body.style.overflow = ''; // Restaurar scroll
+      }
+
+      closeSheetBtn.addEventListener('click', cerrarDetalleEvento);
+      
+      sheetBackdrop.addEventListener('click', function(e) {
+        // Cerrar si se hace clic fuera del modal content
+        if (e.target === sheetBackdrop) {
+          cerrarDetalleEvento();
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && sheetBackdrop.classList.contains('show')) {
+          cerrarDetalleEvento();
+        }
+      });
+
+      function renderizarDestacado(eventoDestacado) {
+        if (!eventoDestacado) {
+          destacadoContainer.style.display = 'none';
+          return;
+        }
+        destacadoContainer.style.display = 'block';
+        
+        // Formatear fecha humana
+        const fechaEvento = new Date(eventoDestacado.fecha + 'T00:00:00');
+        const dia = fechaEvento.getDate();
+        const mes = fechaEvento.toLocaleString('es-ES', { month: 'long' });
+        const año = fechaEvento.getFullYear();
+        const fechaFormateada = `${dia} de ${mes}, ${año}`;
+        
+        destacadoContainer.innerHTML = `
+          <div class="destacado-card glass-card row g-0 overflow-hidden" style="cursor: pointer;">
+            <div class="col-md-8 destacado-content p-4 d-flex flex-column justify-content-between">
+              <div>
+                <span class="destacado-badge mb-3 d-inline-block">EVENTO DESTACADO</span>
+                <h2 class="destacado-title font-outfit mb-2">${eventoDestacado.titulo}</h2>
+                <p class="destacado-desc mb-3 text-muted">${eventoDestacado.descripcion}</p>
+              </div>
+              <div class="destacado-meta d-flex align-items-center justify-content-between flex-wrap gap-3 mt-2">
+                <div class="d-flex align-items-center flex-wrap gap-3">
+                  <div class="meta-item d-flex align-items-center gap-1 text-muted">
+                    <i class="bi bi-calendar3 text-blue"></i>
+                    <span>${fechaFormateada}</span>
+                  </div>
+                  <div class="meta-item d-flex align-items-center gap-1 text-muted">
+                    <i class="bi bi-clock text-blue"></i>
+                    <span>${eventoDestacado.hora || '17:00 hrs (CDMX)'}</span>
+                  </div>
+                  <span class="badge-modalidad-destacado badge-purple">${eventoDestacado.modalidad}</span>
+                </div>
+                <a href="${eventoDestacado.registro}" target="_blank" class="btn-apple btn-apple-primary btn-destacado-register-left">
+                  Registrarme <i class="bi bi-arrow-right-short ms-1"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4 destacado-img-wrapper position-relative" style="background-image: url('${eventoDestacado.imagen}');">
+              <img src="${eventoDestacado.imagen}" class="destacado-img" alt="${eventoDestacado.titulo}">
+            </div>
+          </div>
+        `;
+        
+        // Clic en la tarjeta destacada abre el modal
+        const card = destacadoContainer.querySelector('.destacado-card');
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('.btn-destacado-register') || e.target.closest('.btn-destacado-register-left')) {
+            return;
+          }
+          abrirDetalleEvento(eventoDestacado);
+        });
+      }
+
+      function crearTarjetaEvento(ev, esPasado = false) {
+        const fechaEvento = new Date(ev.fecha + 'T00:00:00');
+        const dia = String(fechaEvento.getDate()).padStart(2, '0');
+        const mes = fechaEvento.toLocaleString('es-ES', { month: 'short' }).substring(0, 3).toUpperCase().replace('.', '');
+
+        const modalidadNormalizada = normalizarTexto(ev.modalidad);
+
+        let badgeClass = 'badge-blue';
+        if (modalidadNormalizada === 'enlinea') badgeClass = 'badge-purple';
+        if (modalidadNormalizada === 'presencial') badgeClass = 'badge-green';
+        if (modalidadNormalizada === 'hibrido') badgeClass = 'badge-orange';
+
+        const col = document.createElement('div');
+        col.className = 'col-lg-4 col-md-6 mb-4 evento-col';
+
+        const card = document.createElement('div');
+        card.className = `card evento-card-moderno shadow-sm h-100 ${esPasado ? 'evento-pasado-card' : ''}`;
+        
+        card.addEventListener('click', function(e) {
+          if (e.target.closest('.btn-action-circle') || e.target.closest('.btn-apple')) {
+            return;
+          }
+          abrirDetalleEvento(ev);
+        });
+
+        // Icono de metadata (reemplazar reloj por ubicación si es presencial/híbrido)
+        let metaIcon = 'bi-clock';
+        let metaValue = ev.hora || '16:00 - 18:00 hrs';
+        if (ev.ubicacion && (modalidadNormalizada === 'presencial' || modalidadNormalizada === 'hibrido')) {
+          metaIcon = 'bi-geo-alt';
+          metaValue = ev.ubicacion;
+        }
+
+        card.innerHTML = `
+          <div class="evento-card-img-container">
+            <img src="${ev.imagen}" class="evento-card-img" alt="${ev.titulo}" loading="lazy">
+            <div class="date-circle">
+              <span class="day">${dia}</span>
+              <span class="month">${mes}</span>
+            </div>
+            <span class="card-badge-modalidad ${badgeClass}">${ev.modalidad}</span>
+          </div>
+          
+          <div class="evento-card-body d-flex flex-column">
+            <h5 class="evento-card-title font-outfit" title="${ev.titulo}">${ev.titulo}</h5>
+            <p class="evento-card-instructor mb-3">Imparte: ${ev.ponente || 'Instructor'}</p>
+            
+            <div class="evento-card-metadata mt-auto d-flex align-items-center justify-content-between">
+              <div class="evento-card-metadata-left d-flex align-items-center gap-3">
+                <div class="metadata-detail d-flex align-items-center gap-1" title="${metaValue}">
+                  <i class="bi ${metaIcon} text-muted"></i>
+                  <span class="text-muted small text-truncate" style="max-width: 120px;">${metaValue}</span>
+                </div>
+                ${ev.cupo ? `
+                <div class="metadata-detail d-flex align-items-center gap-1" title="Capacidad: ${ev.cupo}">
+                  <i class="bi bi-people text-muted"></i>
+                  <span class="text-muted small">${ev.cupo}</span>
+                </div>
+                ` : ''}
+              </div>
+              <button class="btn-action-circle" aria-label="Ver detalles">
+                <i class="bi bi-arrow-right-short"></i>
+              </button>
+            </div>
+          </div>
+        `;
+
+        // Click en la flecha abre el detalle
+        const arrowBtn = card.querySelector('.btn-action-circle');
+        arrowBtn.addEventListener('click', () => abrirDetalleEvento(ev));
+
+        col.appendChild(card);
+        return col;
+      }
+
+      function mostrarEventos(eventosAmostrar, contenedorId, esPasado = false) {
+        const contenedor = document.getElementById(contenedorId);
+        contenedor.innerHTML = '';
+        if (contenedorId === 'eventos-proximos') {
+          // Mantener la sección de próximos siempre visible como solicita el usuario
+          document.getElementById('proximos-section').style.display = 'block';
+        }
+        
+        if (eventosAmostrar.length === 0) {
+          if (contenedorId === 'eventos-proximos') {
+            contenedor.innerHTML = '<div class="col-12"><p class="text-center text-muted mt-4">Por el momento no hay más eventos próximos programados.</p></div>';
+          } else {
+            contenedor.innerHTML = '<div class="col-12"><p class="text-center text-muted mt-4">No se encontraron eventos en esta categoría.</p></div>';
+          }
+        } else {
+          eventosAmostrar.forEach(ev => {
+            contenedor.appendChild(crearTarjetaEvento(ev, esPasado));
+          });
+        }
+      }
+
+      function filtrarYMostrarEventos() {
+        const activePill = document.querySelector('.filter-pill.active');
+        const filtroModalidad = activePill ? activePill.getAttribute('data-filtro') : 'todos';
+        const queryBusqueda = searchInput ? normalizarTexto(searchInput.value) : '';
+
+        // Identificar el evento destacado: el más próximo que sea vigente (futuro u hoy)
+        const proximosVigentes = eventos.filter(ev => new Date(ev.fecha + 'T00:00:00') >= hoy);
+        proximosVigentes.sort((a, b) => new Date(a.fecha + 'T00:00:00') - new Date(b.fecha + 'T00:00:00'));
+        
+        let eventoDestacado = proximosVigentes.length > 0 ? proximosVigentes[0] : null;
+
+        // Renderizar el destacado si cumple los filtros actuales de modalidad y búsqueda
+        let cumpleDestacado = true;
+        if (eventoDestacado) {
+          if (filtroModalidad !== 'todos') {
+            if (normalizarTexto(eventoDestacado.modalidad) !== filtroModalidad) cumpleDestacado = false;
+          }
+          if (queryBusqueda) {
+            const tit = normalizarTexto(eventoDestacado.titulo);
+            const desc = normalizarTexto(eventoDestacado.descripcion);
+            const pon = normalizarTexto(eventoDestacado.ponente);
+            const cat = normalizarTexto(eventoDestacado.categoria);
+            if (!tit.includes(queryBusqueda) && !desc.includes(queryBusqueda) && !pon.includes(queryBusqueda) && !cat.includes(queryBusqueda)) {
+              cumpleDestacado = false;
+            }
+          }
+        } else {
+          cumpleDestacado = false;
+        }
+        
+        if (cumpleDestacado && eventoDestacado) {
+          renderizarDestacado(eventoDestacado);
+        } else {
+          destacadoContainer.style.display = 'none';
+        }
+
+        // Filtrar los demás eventos para dividirlos en próximos y pasados
+        const eventosFiltrados = eventos.filter(ev => {
+
+
+          // Filtro por modalidad
+          if (filtroModalidad !== 'todos') {
+            if (normalizarTexto(ev.modalidad) !== filtroModalidad) return false;
+          }
+
+          // Filtro por búsqueda
+          if (queryBusqueda) {
+            const tit = normalizarTexto(ev.titulo);
+            const desc = normalizarTexto(ev.descripcion);
+            const pon = normalizarTexto(ev.ponente);
+            const cat = normalizarTexto(ev.categoria);
+            if (!tit.includes(queryBusqueda) && !desc.includes(queryBusqueda) && !pon.includes(queryBusqueda) && !cat.includes(queryBusqueda)) {
+              return false;
+            }
+          }
+
+          return true;
+        });
+
+        // Separar vigentes y pasados dinámicamente comparando con la fecha de hoy
+        const proximos = eventosFiltrados.filter(ev => new Date(ev.fecha + 'T00:00:00') >= hoy);
+        const pasados = eventosFiltrados.filter(ev => new Date(ev.fecha + 'T00:00:00') < hoy);
+
+        // Próximos: ascendente (los más cercanos al día de hoy primero)
+        proximos.sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+        
+        // Pasados: descendente (los más recientes que ya pasaron primero)
+        pasados.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+
+        mostrarEventos(proximos, 'eventos-proximos', false);
+
+        // Configurar la visualización de eventos pasados y su botón de alternancia
+        if (pasados.length > 3) {
+          if (verTodosPasadosContainer) {
+            verTodosPasadosContainer.classList.remove('d-none');
+          }
+          if (verTodosPasadosBtn) {
+            if (mostrarTodosPasados) {
+              verTodosPasadosBtn.innerHTML = `Ver menos <i class="bi bi-chevron-up ms-1"></i>`;
+            } else {
+              verTodosPasadosBtn.innerHTML = `Ver todos los eventos pasados <i class="bi bi-chevron-down ms-1"></i>`;
+            }
+          }
+          const pasadosAMostrar = mostrarTodosPasados ? pasados : pasados.slice(0, 3);
+          mostrarEventos(pasadosAMostrar, 'eventos-pasados', true);
+        } else {
+          if (verTodosPasadosContainer) {
+            verTodosPasadosContainer.classList.add('d-none');
+          }
+          mostrarEventos(pasados, 'eventos-pasados', true);
+        }
+
+        // Refrescar AOS para que detecte las tarjetas dinámicas y no se queden invisibles
+        if (typeof AOS !== 'undefined') {
+          setTimeout(() => {
+            AOS.refresh();
+          }, 50);
+        }
+      }
+
+      // Búsqueda en vivo
+      if (searchInput) {
+        searchInput.addEventListener('input', () => {
+          mostrarTodosPasados = false;
+          filtrarYMostrarEventos();
+        });
+      }
+
+      // Filtros por modalidad
+      document.querySelectorAll('.filter-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          mostrarTodosPasados = false;
+          filtrarYMostrarEventos();
+        });
+      });
+
+      // Liga de ver todos
+      if (verTodosBtn) {
+        verTodosBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (searchInput) searchInput.value = '';
+          document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+          const defaultPill = document.querySelector('[data-filtro="todos"]');
+          if (defaultPill) defaultPill.classList.add('active');
+          mostrarTodosPasados = false;
+          filtrarYMostrarEventos();
+        });
+      }
+
+      // Listener para expandir/colapsar eventos pasados
+      if (verTodosPasadosBtn) {
+        verTodosPasadosBtn.addEventListener('click', () => {
+          mostrarTodosPasados = !mostrarTodosPasados;
+          filtrarYMostrarEventos();
+        });
+      }
+
+      // -------------------------------------------------------------
+      // FUNCIONES DEL PANEL DE ADMINISTRACIÓN
+      // -------------------------------------------------------------
+
+      // Alternar login modal
+      if (adminLoginBtn) {
+        adminLoginBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          adminUsernameInput.value = '';
+          adminPasswordInput.value = '';
+          loginErrorMsg.classList.add('d-none');
+          adminLoginModal.classList.add('show');
+        });
+      }
+
+      if (closeLoginModalBtn) {
+        closeLoginModalBtn.addEventListener('click', () => {
+          adminLoginModal.classList.remove('show');
+        });
+      }
+
+      if (closePanelModalBtn) {
+        closePanelModalBtn.addEventListener('click', () => {
+          adminPanelModal.classList.remove('show');
+        });
+      }
+
+      // Validar credenciales adminpcpuma / pcpuma2026
+      if (submitLoginBtn) {
+        submitLoginBtn.addEventListener('click', () => {
+          const user = adminUsernameInput.value.trim();
+          const pass = adminPasswordInput.value.trim();
+          if (user === 'adminpcpuma' && pass === 'pcpuma2026') {
+            adminLoginModal.classList.remove('show');
+            adminPanelModal.classList.add('show');
+            loginErrorMsg.classList.add('d-none');
+          } else {
+            loginErrorMsg.classList.remove('d-none');
+          }
+        });
+      }
+
+      // Conversión de Banner (PNG) a Base64
+      const bannerInput = document.getElementById('eventBanner');
+      if (bannerInput) {
+        bannerInput.addEventListener('change', (e) => {
+          const file = e.target.files[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = function(evt) {
+            bannerBase64 = evt.target.result;
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      // Conversión de Convocatoria (PDF) a Base64
+      const convInput = document.getElementById('eventConvocatoria');
+      if (convInput) {
+        convInput.addEventListener('change', (e) => {
+          const file = e.target.files[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = function(evt) {
+            convocatoriaBase64 = evt.target.result;
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      // Limpiar Formulario
+      if (clearFormBtn) {
+        clearFormBtn.addEventListener('click', () => {
+          if (addEventForm) addEventForm.reset();
+          bannerBase64 = '';
+          convocatoriaBase64 = '';
+        });
+      }
+
+      // Guardar evento en localStorage
+      if (addEventForm) {
+        addEventForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const newEvent = {
+            id: 'event-' + Date.now(),
+            titulo: document.getElementById('eventTitle').value.trim(),
+            fecha: document.getElementById('eventDate').value,
+            categoria: document.getElementById('eventCategory').value.trim(),
+            modalidad: document.getElementById('eventModalidad').value,
+            ponente: document.getElementById('eventPonente').value.trim(),
+            publico: document.getElementById('eventPublico').value.trim(),
+            ubicacion: document.getElementById('eventUbicacion').value.trim() || 'En línea',
+            registro: document.getElementById('eventRegistro').value.trim(),
+            descripcion: document.getElementById('eventDescription').value.trim(),
+            imagen: bannerBase64 || '../img/eventos/default-banner.png',
+            convocatoria: convocatoriaBase64 || '#',
+            tags: [document.getElementById('eventCategory').value.toLowerCase().trim()]
+          };
+
+          // Guardar a localStorage
+          let savedEvents = [];
+          try {
+            savedEvents = JSON.parse(localStorage.getItem('local_eventos') || '[]');
+          } catch (err) {
+            console.error('Error leyendo eventos de localStorage:', err);
+          }
+          savedEvents.push(newEvent);
+          localStorage.setItem('local_eventos', JSON.stringify(savedEvents));
+
+          // Actualizar memoria e interfaz
+          eventos.push(newEvent);
+          filtrarYMostrarEventos();
+
+          // Reset y cerrar
+          addEventForm.reset();
+          bannerBase64 = '';
+          convocatoriaBase64 = '';
+          alert('¡Evento guardado exitosamente localmente! Revisa las secciones correspondientes.');
+          adminPanelModal.classList.remove('show');
+        });
+      }
+
+      // Descargar el archivo eventos.json consolidado (servidor + localStorage)
+      if (downloadJsonBtn) {
+        downloadJsonBtn.addEventListener('click', () => {
+          // Generar una descarga del JSON limpio de eventos
+          // Para que el archivo descargado no contenga los Base64 de las convocatorias locales pesadas (o sí, según deseen, ya que las cadenas Base64 permiten que las imágenes y PDFs se desplieguen directamente sin subidas físicas de archivos al servidor estático, lo cual es de gran utilidad)
+          // Mantendremos todo el objeto completo para máxima portabilidad
+          const jsonString = JSON.stringify(eventos, null, 2);
+          const blob = new Blob([jsonString], { type: 'application/json' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'eventos.json';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        });
+      }
+
+      // Atajo de Teclado opcional para cerrar con Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          if (adminLoginModal.classList.contains('show')) adminLoginModal.classList.remove('show');
+          if (adminPanelModal.classList.contains('show')) adminPanelModal.classList.remove('show');
+        }
+      });
+    });
+  </script>
+  <script>
+    window.cbConfig = {
+      chatId: "95e57fa3-a653-4e2d-896b-d8d7d408a649"
+    };
+  </script>
+  <script src="https://app.chatbit.co/embed.min.js" defer></script>
+</body>
+
+</html>

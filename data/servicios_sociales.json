@@ -1,0 +1,29 @@
+[
+  {
+    "titulo": "Mejoramiento de la infraestructura de red para la conectividad del programa institucional PC Puma",
+    "programa": "SS-2025-12/221-8035",
+    "area": "Ingeniería en Telecomunicaciones, Computación y Arquitectura",
+    "ubicacion": "Ciudad Universitaria, UNAM",
+    "enlace": "https://forms.gle/redtelecom2025",
+    "imagen": "img/fotos/convocatoria_infraestructura.png",
+    "periodo": "Por definir"
+  },
+  {
+    "titulo": "Gobernanza de Datos y Gestión del Conocimiento en PC Puma",
+    "programa": "SS-2025-12/221-8037",
+    "area": "Ciencia de Datos, Gestión del Conocimiento, Informática, Archivonomía",
+    "ubicacion": "Modalidad híbrida (CU y remoto)",
+    "enlace": "archivos/Gobernanza de Datos.pdf",
+    "imagen": "img/fotos/convocatoria_gobernanza.png",
+    "periodo": "Por definir"
+  },
+  {
+    "titulo": "Apoyo en el desarrollo de proyectos de Transformación Digital en la UNAM",
+    "programa": "SS-2025-12/221-8036",
+    "area": "Diseño UX/UI, Ciencias Sociales, Comunicación Visual",
+    "ubicacion": "Modalidad híbrida",
+    "enlace": "https://forms.gle/uiux2025",
+    "imagen": "img/fotos/convocatoria_transformacion.png",
+    "periodo": "Por definir"
+  }
+]

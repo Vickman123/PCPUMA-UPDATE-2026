@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <title>
+    Estudiantes | PC Puma
+  </title>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VK96VK5GZ5">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-VK96VK5GZ5');
+  </script>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="../css/global.css?v=5" rel="stylesheet" />
+  <link href="../css/estudiantes.css?v=5" rel="stylesheet" />
+  <link href="../css/style_accessibility.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="apple-touch-icon" sizes="57x57" href="../img/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../img/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../img/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../img/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../img/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../img/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../img/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../img/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../img/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../img/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/favicons/favicon-16x16.png">
+  <link rel="manifest" href="../img/favicons/manifest.json">
+  <link href="../css/index.css" rel="stylesheet" />
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="../img/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <nav role="navigation" class="navbar navbar-expand-lg navbar-dark pcp-navbar sticky-top">
+    <div class="container-fluid">
+      <div class="p-2 d-flex align-items-center">
+        <a href="https://www.unam.mx/" target="_blank">
+          <img loading="lazy" alt="Logotipo de la UNAM" src="../img/logos/unam.webp" class="logo-header me-3" />
+        </a>
+        <a href="https://sdi.unam.mx/" target="_blank">
+          <img loading="lazy" alt="Logotipo de la SDI - UNAM" src="../img/logos/sdi.webp" class="logo-header me-3" />
+        </a>
+        <a href="../index.html">
+          <img loading="lazy" alt="Logotipo del proyecto PC Puma" src="../img/logos/logo-pcpuma.webp" class="logo-header me-3" />
+        </a>
+        <a href="#">
+          <img loading="lazy" alt="Logotipo de la UNAM" src="../img/logos/Logo_unam475.png" class="logo-header" />
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">
+              <i class="bi bi-house-fill me-1"></i>Inicio
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="estudiantes.html">
+              <i class="bi bi-laptop me-1"></i>Estudiantes
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="docentes.html">
+              <i class="bi bi-person-fill me-1"></i>Docentes
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="admin.html">
+              <i class="bi bi-gear me-1"></i>TI
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="eventos.html">
+              <i class="bi bi-calendar-event me-1"></i>Eventos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="faq.html">
+              <i class="bi bi-question-circle me-1"></i>FAQ
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html"> <i class="bi bi-envelope me-1"></i>Contacto
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="nosotros.html">
+              <i class="bi bi-info-circle me-1"></i>Nosotros
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header style="position: relative; height: 280px; background: radial-gradient(circle at center, #002147 0%, #000c18 100%) !important; overflow: hidden;">
+    <canvas id="networkCanvas" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.65; z-index: 0;"></canvas>
+    <div
+      class="container h-100 d-flex flex-column justify-content-center align-items-center position-relative z-1 text-white text-center">
+      <h1 class="display-4 fw-bold text-white" data-aos="fade-down">
+        Estudiantes
+      </h1>
+
+      <p class="fs-5 fw-light text-white opacity-75" data-aos="fade-up">
+        Conéctate, participa y aprende con PC Puma
+      </p>
+    </div>
+  </header>
+
+  <main role="main">
+
+
+
+    <section class="my-5" id="servicios-estudiantes" data-aos="fade-up">
+      <div class="container">
+        <!-- Encabezado -->
+        <div class="text-center mb-5">
+          <h2 class="text-primary fw-bold">Servicios PC Puma para ti</h2>
+          <p class="lead text-muted col-lg-9 mx-auto">
+            Conéctate, accede a dispositivos y fortalece tus habilidades digitales con PC Puma.
+            Descubre cómo aprovechar al máximo tu experiencia universitaria.
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Conectividad -->
+          <div class="col-md-4">
+            <div class="card h-100 glass-card service-card service-card-action" tabindex="0">
+              <div class="card-body d-flex flex-column text-center p-4">
+                <div class="action-icon gradient-primary text-white mx-auto mb-3">
+                  <i class="bi bi-wifi"></i>
+                </div>
+                <h5 class="mt-2 fw-bold">Conectividad Universitaria</h5>
+                <p class="text-muted">
+                  Conéctate a la red <strong>.:PC Puma [Iniciales de tu entidad]:.</strong>
+                  Ejemplo: <em>.:PC Puma FI:.</em> para Ingeniería.
+                </p>
+                <ul class="text-start small text-muted mb-3">
+                  <li>📶 Contraseña precompartida (WPA2/WPA3)</li>
+                  <li>🔑 Portal cautivo (correo <strong>@unam.mx</strong>)</li>
+                  <li>👤 Autenticación 802.1X (usuario institucional)</li>
+                </ul>
+                <div class="mt-auto d-grid gap-2">
+                  <a class="btn btn-primary" href="../index.html#cobertura">
+                    Ver cobertura WiFi
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Préstamo de Dispositivos -->
+          <div class="col-md-4">
+            <div class="card h-100 glass-card service-card service-card-action" tabindex="0">
+              <div class="card-body d-flex flex-column text-center p-4">
+                <div class="action-icon gradient-success text-white mx-auto mb-3">
+                  <i class="bi bi-laptop"></i>
+                </div>
+                <h5 class="mt-2 fw-bold">Préstamo de Dispositivos</h5>
+                <p class="text-muted">
+                  Solicita <strong>Laptops, iPads</strong> o <strong>Chromebooks</strong> para actividades académicas.
+                  Revisa los <a href="../archivos/LineamientosPCPuma.pdf" target="_blank">lineamientos</a> antes de solicitar.
+                </p>
+                <div class="mt-auto d-grid gap-2">
+                  <a class="btn btn-success" href="https://modulospcpuma.unam.mx" target="_blank" rel="noopener">
+                    Solicitar equipo
+                  </a>
+                  <a class="btn btn-outline-success" href="#solicitar-equipo">
+                    Ver pasos
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Capacitación Digital -->
+          <div class="col-md-4">
+            <div class="card h-100 glass-card service-card service-card-action" tabindex="0">
+              <div class="card-body d-flex flex-column text-center p-4">
+                <div class="action-icon gradient-warning text-white mx-auto mb-3">
+                  <i class="bi bi-mortarboard"></i>
+                </div>
+                <h5 class="mt-2 fw-bold">Capacitación Digital</h5>
+                <p class="text-muted">
+                  Participa en <strong>talleres y eventos</strong> sobre tecnología educativa.
+                  Consulta las capacitaciones nuevas y pasadas.
+                </p>
+                <div class="mt-auto d-grid gap-2">
+                  <a class="btn btn-warning text-dark" href="eventos.html">
+                    Ver capacitaciones
+                  </a>
+                  <a class="btn btn-outline-warning" href="docentes.html#herramientas">
+                    Herramientas digitales
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nota contextual -->
+        <div class="text-center small text-muted mt-4">
+          <i class="bi bi-info-circle me-1"></i>
+          Consejo: usa <kbd>Tab</kbd> para enfocar y <kbd>Enter</kbd> para activar una tarjeta.
+        </div>
+      </div>
+    </section>
+    <!-- Etapa 1: Conectividad -->
+    <section class="my-5" id="conectividad-estudiantes" data-aos="fade-up">
+      <h2 class="text-primary fw-bold text-center mb-4">Conectividad PC Puma en tu Entidad</h2>
+      <p class="lead text-center text-muted mb-5">
+        Accede a internet seguro, confiable y de alta calidad desde tu facultad, plantel o dependencia.
+      </p>
+      <div class="row align-items-center">
+        <div class="col-lg-6 text-center mb-4 mb-lg-0">
+          <video class="img-fluid rounded shadow-lg" style="max-width: 90%;" autoplay muted defaultMuted volume="0" loop
+            playsinline preload="metadata" poster="../img/fotos/conectividad_estudiantes.webp">
+            <source src="../videos/conectividad_estudiantes.webm" type="video/webm">
+            Tu navegador no soporta la reproducción de video.
+          </video>
+
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card p-4 glass-card">
+            <div class="card-body">
+              <h5 class="card-title fw-bold text-dark mb-3">Red WiFi institucional: tu acceso al conocimiento</h5>
+              <ul class="list-group list-group-flush mb-3">
+                <li class="list-group-item d-flex align-items-center"><i
+                    class="bi bi-router-fill text-primary me-3 fs-4"></i>Conexión en aulas, bibliotecas, explanadas y
+                  espacios comunes.</li>
+                <li class="list-group-item d-flex align-items-center"><i
+                    class="bi bi-speedometer2 text-primary me-3 fs-4"></i>Velocidad y estabilidad para videollamadas,
+                  plataformas educativas y navegación.</li>
+                <li class="list-group-item d-flex align-items-center"><i
+                    class="bi bi-shield-lock-fill text-primary me-3 fs-4"></i>Red segura y protegida para todas tus
+                  actividades académicas.</li>
+              </ul>
+              <div class="alert alert-info mt-4" role="alert">
+                <i class="bi bi-info-circle-fill me-2"></i>
+                Si aún no hay conectividad en tu espacio, ¡está en camino! La red se activa por fases y pronto llegará a
+                todas las entidades.
+              </div>
+              <div class="container text-center" data-aos="fade-up">
+
+                <a href="../index.html#cobertura" class="btn btn-outline-primary mt-3">Ver cobertura nacional</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+
+    <!-- Etapa 2: Préstamo de Dispositivos -->
+    <section class="my-5 py-5 bg-light" id="solicitar-equipo" data-aos="fade-up">
+      <h2 class="text-primary fw-bold text-center mb-4">Cómo Solicitar tu Equipo</h2>
+      <p class="lead text-center text-muted mb-5">
+        Obtener una laptop, tableta o Chromebook es fácil. Sigue estos sencillos pasos:
+      </p>
+      <div class="row justify-content-center">
+        <div class="col-md-4 mb-4">
+          <div class="process-step card h-100 glass-card border-primary">
+            <div class="card-body text-center">
+              <div
+                class="step-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3">
+                1</div>
+              <h5 class="card-title fw-bold text-dark">Regístrate en línea</h5>
+              <p class="card-text text-muted">
+                Entra a <a href="https://modulospcpuma.unam.mx" target="_blank"
+                  class="text-primary fw-bold">modulospcpuma.unam.mx</a>, elige "Alumno" y completa tus datos para
+                validar tu pertenencia a la UNAM.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="process-step card h-100 glass-card border-success">
+            <div class="card-body text-center">
+              <div
+                class="step-icon bg-success text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3">
+                2</div>
+              <h5 class="card-title fw-bold text-dark">Solicita tu equipo</h5>
+              <p class="card-text text-muted">
+                Inicia sesión, selecciona tu entidad y el tipo de dispositivo disponible. Confirma tu solicitud y obtén
+                tu código QR.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="process-step card h-100 glass-card border-info">
+            <div class="card-body text-center">
+              <div
+                class="step-icon bg-info text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3">
+                3</div>
+              <h5 class="card-title fw-bold text-dark">Recoge y Devuelve</h5>
+              <p class="card-text text-muted">
+                Acude al módulo PC Puma de tu entidad con tu QR. Disfruta tu equipo y devuélvelo a tiempo en el mismo
+                módulo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container text-center" data-aos="fade-up">
+
+        <!-- Video explicativo -->
+        <div class="mt-5">
+          <h5 class="fw-bold text-dark mb-3">🎥 Aprende cómo solicitarlo paso a paso</h5>
+          <div class="ratio ratio-16x9 shadow rounded">
+            <video class="w-100 rounded" autoplay muted loop playsinline poster="../img/banners/Banner Estudiantes.webp">
+              <source src="../videos/Pasos para préstamo general.webm" type="video/webm">
+              <source src="../videos/Pasos para préstamo general.mp4" type="video/mp4">
+              Tu navegador no soporta la reproducción de video.
+            </video>
+          </div>
+          <p class="small text-muted mt-2">
+            Consulta este video para conocer el proceso de registro y préstamo.
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="https://modulospcpuma.unam.mx" target="_blank" class="btn btn-primary btn-lg me-3">
+          <i class="bi bi-box-arrow-up-right me-2"></i>Solicitar equipo ahora
+        </a>
+        <button class="btn btn-outline-secondary btn-lg" onclick="toggleLineamientosPopup(); return false;">
+          <i class="bi bi-file-earmark-text me-2"></i>Lineamientos de préstamo
+        </button>
+        <div class="container my-4" id="lineamientosCard" style="display: none;">
+          <div class="card border-primary" data-aos="fade-up">
+            <div class="card-header bg-primary text-white">
+              Lineamientos Generales del Préstamo de Dispositivos
+              <button aria-label="Cerrar" class="btn-close btn-close-white float-end"
+                onclick="toggleLineamientosPopup()" type="button"></button>
+            </div>
+            <div class="card-body" style="max-height: 500px; overflow-y: auto;">
+              <h5>1. Objetivo</h5>
+              <p>Establecer las normas básicas para el uso responsable y equitativo del servicio de préstamo de
+                dispositivos del Programa PC Puma...</p>
+              <h5>2. Población beneficiaria</h5>
+              <p>Estudiantes activos de nivel medio superior, superior y posgrado. Docentes y personal académico con
+                actividades frente a grupo o en proyectos académicos.</p>
+              <h5>3. Tipos de dispositivos disponibles</h5>
+              <p>Laptops, Chromebooks, iPads (u otros dispositivos móviles disponibles según la entidad)</p>
+              <h5>4. Modalidades de préstamo</h5>
+              <ul>
+                <li>Préstamo individual</li>
+                <li>Laboratorio móvil</li>
+                <li>Préstamo masivo temporal</li>
+              </ul>
+              <h5>5. Requisitos generales</h5>
+              <p>Registro en el sistema, correo institucional, sin adeudos o sanciones, aceptación de términos.</p>
+              <h5>6. Proceso de préstamo</h5>
+              <p>Registro, selección, entrega, firma.</p>
+              <h5>7. Devolución</h5>
+              <p>En fecha acordada, en buen estado, con respaldo de información.</p>
+              <h5>8. Tiempo de préstamo</h5>
+              <p>Establecido por cada entidad.</p>
+              <h5>9. Sanciones por incumplimiento</h5>
+              <ul>
+                <li>Retrasos: suspensión temporal</li>
+                <li>Pérdida/daño: reposición o bloqueo</li>
+                <li>Reincidencia: exclusión</li>
+              </ul>
+              <h5>10. Consideraciones especiales</h5>
+              <p>Las entidades pueden adaptar los lineamientos a sus condiciones operativas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container my-5 py-5 bg-light" id="modulos-activos" data-aos="fade-up">
+      <h2 class="text-primary fw-bold text-center mb-4">?? Entidades con Módulos Activos</h2>
+      <p class="lead text-center text-muted mb-5">
+        Encuentra el módulo de préstamo de dispositivos PC Puma más cercano en tu entidad universitaria.
+      </p>
+      <div id="modulos-entidades-grid" class="row g-4 justify-content-center">
+      </div>
+    </section>
+    <section class="social-section py-5 text-center">
+      <div class="container">
+        <h2 class="fw-bold text-white mb-3">Â¡Conéctate con PC Puma!</h2>
+        <p class="lead text-white-50 mb-5">
+          Síguenos en nuestras redes sociales y entérate de <strong>capacitaciones</strong>,
+          <strong>talleres</strong>, <strong>workshops</strong> y todas las novedades que impulsan tu vida académica.
+        </p>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-6 col-md-2">
+            <a href="https://pcpuma.unam.mx" target="_blank" class="social-card">
+              <i class="bi bi-globe"></i>
+              <span>Sitio Web</span>
+            </a>
+          </div>
+          <div class="col-6 col-md-2">
+            <a href="https://www.facebook.com/UNAM.PCPuma/" target="_blank" class="social-card">
+              <i class="bi bi-facebook"></i>
+              <span>Facebook</span>
+            </a>
+          </div>
+          <div class="col-6 col-md-2">
+            <a href="https://twitter.com/PCPuma_UNAM" target="_blank" class="social-card">
+              <i class="bi bi-twitter-x"></i>
+              <span>Twitter</span>
+            </a>
+          </div>
+          <div class="col-6 col-md-2">
+            <a href="https://www.instagram.com/pc_puma/" target="_blank" class="social-card">
+              <i class="bi bi-instagram"></i>
+              <span>Instagram</span>
+            </a>
+          </div>
+          <div class="col-6 col-md-2">
+            <a href="https://www.tiktok.com/@contactopcpuma?lang=es-419" target="_blank" class="social-card">
+              <i class="bi bi-tiktok"></i>
+              <span>TikTok</span>
+            </a>
+          </div>
+          <div class="col-6 col-md-2">
+            <a href="https://www.youtube.com/@ContactoPCPUMA" target="_blank" class="social-card">
+              <i class="bi bi-youtube"></i>
+              <span>YouTube</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <a href="eventos.html" class="btn btn-light btn-lg px-4 shadow-lg">
+            <i class="bi bi-calendar-event me-2"></i> Ver próximos talleres y capacitaciones
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer bg-pcpuma text-white" role="contentinfo">
+    <div class="container pt-4 pb-3">
+      <div class="row align-items-center">
+        <!-- COLUMNA 1 : LOGO -->
+        <div class="col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+          <img src="../img/logos/Logo UNGU.png" alt="Universidad Nacional Autónoma de México" class="logo-unam-footer" loading="lazy">
+        </div>
+
+        <!-- COLUMNA 2 : INFORMACIÓN LEGAL -->
+        <div class="col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+          <p class="fw-bold mb-3 text-white">© 2026 PC Puma - UNAM</p>
+          <p class="small mb-3">
+            Hecho en México. Universidad Nacional Autónoma de México (UNAM).
+            Todos los derechos reservados 2026.
+          </p>
+          <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+            <a href="https://www.facebook.com/UNAM.PCPuma/" target="_blank">
+              <i class="bi bi-facebook fs-5 text-white"></i>
+            </a>
+            <a href="https://twitter.com/PCPuma_UNAM" target="_blank">
+              <i class="bi bi-twitter-x fs-5 text-white"></i>
+            </a>
+            <a href="https://www.instagram.com/pc_puma/" target="_blank">
+              <i class="bi bi-instagram fs-5 text-white"></i>
+            </a>
+            <a href="https://www.tiktok.com/@contactopcpuma" target="_blank">
+              <i class="bi bi-tiktok fs-5 text-white"></i>
+            </a>
+            <a href="https://www.youtube.com/@ContactoPCPUMA" target="_blank">
+              <i class="bi bi-youtube fs-5 text-white"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- COLUMNA 3 : DOCUMENTOS -->
+        <div class="col-lg-3 text-start mb-3 mb-lg-0">
+          <h6 class="fw-bold mb-3 text-white">LIGAS DE INTERÉS</h6>
+          <ul class="list-unstyled footer-links">
+            <li>
+              <a href="../archivos/Lineamientos_Generales_PCPUMA.pdf" target="_blank">
+                Lineamientos Generales
+              </a>
+            </li>
+            <li>
+              <a href="../archivos/AvisoPrivacidad_Simplificado_ProyectoPCPUMA.pdf" target="_blank">
+                Aviso de Privacidad Simplificado
+              </a>
+            </li>
+            <li>
+              <a href="../archivos/AvisoPrivacidad_Integral_ProyectoPCPUMA.pdf" target="_blank">
+                Aviso de Privacidad Integral
+              </a>
+            </li>
+            <li>
+              <a href="creditos.html">
+                Créditos
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- COLUMNA 4 : LOGO -->
+        <div class="col-lg-3 text-center text-lg-end">
+          <img src="../img/logos/Logo_unam475.png" alt="Universidad Nacional Autónoma de México" class="logo-unam-footer" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../js/network-bg.js"></script>
+  <script src="../js/render_modulos.js"></script>
+
+  <script>
+    function toggleLineamientosPopup() {
+      const card = document.getElementById("lineamientosCard");
+      card.style.display = (card.style.display === "none") ? "block" : "none";
+    }
+  </script>
+  <script>
+    function toggleManualPopup() {
+      const manual = document.getElementById("manualCard");
+      manual.style.display = (manual.style.display === "none") ? "block" : "none";
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({
+        duration: 800,
+        once: true
+      });
+    });
+  </script>
+  <script>
+    window.cbConfig = {
+      chatId: "95e57fa3-a653-4e2d-896b-d8d7d408a649"
+    };
+  </script>
+  <script src="https://app.chatbit.co/embed.min.js" defer></script>
+</body>
+
+</html>

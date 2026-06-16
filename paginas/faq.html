@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Centro de Ayuda - PC Puma</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicons/favicon-16x16.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="../css/global.css?v=5" rel="stylesheet" />
+    <link href="../css/faq.css" rel="stylesheet" />
+    <link href="../css/index.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark pcp-navbar sticky-top" role="navigation">
+        <div class="container-fluid">
+            <div class="p-2 d-flex align-items-center">
+                <a href="https://www.unam.mx/" target="_blank">
+                    <img loading="lazy" alt="Logotipo de la UNAM" src="../img/logos/unam.webp" class="logo-header me-3" />
+                </a>
+                <a href="https://sdi.unam.mx/" target="_blank">
+                    <img loading="lazy" alt="Logotipo de la SDI - UNAM" src="../img/logos/sdi.webp" class="logo-header me-3" />
+                </a>
+                <a href="../index.html">
+                    <img loading="lazy" alt="Logotipo del proyecto PC Puma" src="../img/logos/logo-pcpuma.webp" class="logo-header me-3" />
+                </a>
+                <a href="#">
+                    <img loading="lazy" alt="Logotipo de la UNAM" src="../img/logos/Logo_unam475.png" class="logo-header" />
+                </a>
+            </div>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse"
+                type="button"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../index.html"><i
+                                class="bi bi-house-fill me-1"></i>Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="estudiantes.html"><i
+                                class="bi bi-laptop me-1"></i>Estudiantes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="docentes.html"><i
+                                class="bi bi-person-fill me-1"></i>Docentes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admin.html"><i class="bi bi-gear me-1"></i>TI</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="eventos.html"><i
+                                class="bi bi-calendar-event me-1"></i>Eventos</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="faq.html"><i
+                                class="bi bi-question-circle me-1"></i>FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html"><i
+                                class="bi bi-envelope me-1"></i>Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html"><i
+                                class="bi bi-info-circle me-1"></i>Nosotros</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main role="main">
+        <section class="faq-hero">
+            <canvas id="networkCanvas"></canvas>
+            <div class="container text-center">
+                <h1 class="display-5 fw-bold text-white mb-3">Hola, ¿cómo podemos ayudarte?</h1>
+                <div class="mx-auto" style="max-width: 700px;">
+                    <input type="search" id="faq-search-input" class="form-control form-control-lg"
+                        placeholder="Busca por palabra clave (ej. 'préstamo', 'contraseña', 'locker')...">
+                </div>
+            </div>
+        </section>
+
+        <div class="container py-5">
+            <div id="hub-view">
+                <section id="quick-actions" class="mb-5">
+                    <h2 class="text-center mb-4">Acciones Rápidas</h2>
+                    <div class="row g-4">
+                        <div class="col-md-4 d-flex">
+                            <a href="javascript:void(0)" onclick="toggleFaq('conectividad')"
+                                class="card action-card w-100">
+                                <div class="card-body">
+                                    <i class="bi bi-wifi"></i>
+                                    <h5>Conectividad WiFi</h5>
+                                    <p>Guías y solución de problemas de conexión.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 d-flex">
+                            <a href="javascript:void(0)" onclick="toggleFaq('dispositivos')"
+                                class="card action-card w-100">
+                                <div class="card-body">
+                                    <i class="bi bi-laptop"></i>
+                                    <h5>Préstamo de Equipo</h5>
+                                    <p>Solicitudes, horarios y uso de lockers.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 d-flex">
+                            <a href="javascript:void(0)" onclick="toggleFaq('docentes')" class="card action-card w-100">
+                                <div class="card-body">
+                                    <i class="bi bi-mortarboard"></i>
+                                    <h5>Recursos para Docentes</h5>
+                                    <p>Herramientas y laboratorios móviles.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="explore-topics">
+                    <h2 class="text-center mb-4">Explorar todos los temas</h2>
+                    <div class="row g-3">
+                        <div class="col-md-6"><a href="javascript:void(0)" onclick="toggleFaq('estudiantes')"
+                                class="topic-link"><i class="bi bi-people"></i><span>Estudiantes</span></a></div>
+                        <div class="col-md-6"><a href="javascript:void(0)" onclick="toggleFaq('soporte')"
+                                class="topic-link"><i class="bi bi-tools"></i><span>Soporte Técnico</span></a></div>
+                        <div class="col-md-6"><a href="javascript:void(0)" onclick="toggleFaq('eventos')"
+                                class="topic-link"><i class="bi bi-calendar-event"></i><span>Eventos</span></a></div>
+                        <div class="col-md-6"><a href="javascript:void(0)" onclick="toggleFaq('privacidad')"
+                                class="topic-link"><i class="bi bi-shield-lock"></i><span>Privacidad</span></a></div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="results-view" style="display: none;">
+                <button id="back-to-hub" class="btn btn-outline-primary mb-4"><i class="bi bi-arrow-left"></i> Volver a
+                    todos los temas</button>
+                <div id="faq-container">
+                </div>
+            </div>
+
+        </div>
+
+        <section id="still-stuck" class="bg-light py-5 mt-5">
+            <div class="container text-center">
+                <h2 class="mb-3">¿Aún tienes dudas?</h2>
+                <p class="lead text-muted mb-4">No te preocupes, estamos para ayudarte.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <button id="ask-ai-btn" class="btn btn-primary btn-lg"><i class="bi bi-robot me-2"></i>Chatear con
+                        PC Puma IA</button>
+                    <a href="contacto.html" class="btn btn-secondary btn-lg"><i
+                            class="bi bi-envelope me-2"></i>Contactar a Soporte</a>
+                </div>
+            </div>
+        </section>
+
+        <div id="faq-source-data" style="display: none;">
+            <div class="faq-section" id="conectividad">
+                <h3 class="mb-4">Conectividad</h3>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>¿Qué es el servicio de conectividad del Programa PC Puma?</summary>
+                        <div class="faq-answer">
+                            <p>Es un servicio de internet inalámbrico de propósito académico que proporciona acceso
+                                gratuito y seguro a la comunidad universitaria para apoyar actividades de aprendizaje,
+                                docencia, investigación y vinculación digital.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Quiénes pueden hacer uso de la red PC Puma?</summary>
+                        <div class="faq-answer">
+                            <p>Todos los estudiantes, docentes y trabajadores activos de la UNAM. También pueden tener
+                                acceso personas externas autorizadas (tesistas, becarios, servicio social) mediante
+                                oficio institucional.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Cómo se llama la red WiFi de PC Puma en mi entidad?</summary>
+                        <div class="faq-answer">
+                            <p>El nombre del SSID suele tener el formato: .:PC Puma [Iniciales de tu entidad]:. Por
+                                ejemplo: .:PC Puma FI:. para la Facultad de Ingeniería.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Cómo me conecto a la red WiFi PC Puma?</summary>
+                        <div class="faq-answer">
+                            <p>Dependerá del tipo de red implementada en tu entidad. Existen tres principales formas de
+                                autenticación:
+                            <ul>
+                                <li>Contraseña precompartida (WPA2/WPA3)</li>
+                                <li>Portal cautivo (iniciar sesión con tu correo @unam.mx)</li>
+                                <li>Autenticación 802.1X (usuario institucional)</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿La red PC Puma funciona fuera del horario escolar?</summary>
+                        <div class="faq-answer">
+                            <p>Sí. La conectividad está habilitada las 24 horas del día, los 7 días de la semana, aunque
+                                puede haber mantenimientos programados por el área de TI de cada entidad.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué actividades están permitidas en la red PC Puma?</summary>
+                        <div class="faq-answer">
+                            <p>Están permitidas únicamente actividades académicas y de investigación. Se prohíbe el uso
+                                para descargas ilegales, juegos en línea, sitios inapropiados o cualquier actividad que
+                                consuma ancho de banda de forma excesiva o indebida.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué hago si no puedo conectarme o la señal es débil?</summary>
+                        <div class="faq-answer">
+                            <p>Debes reportarlo al área de soporte técnico de tu entidad. Asegúrate de estar en una zona
+                                con cobertura (como aulas, bibliotecas, explanadas) y de seguir correctamente el método
+                                de autenticación vigente.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Hay límite de dispositivos que puedo conectar a la red PC Puma?</summary>
+                        <div class="faq-answer">
+                            <p>Cada entidad puede establecer límites locales, pero en general, se recomienda conectar
+                                máximo 2 o 3 dispositivos por usuario para mantener un buen rendimiento en la red.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Es seguro usar la red PC Puma? ¿Mi información está protegida?</summary>
+                        <div class="faq-answer">
+                            <p>Sí. Las redes utilizan estándares modernos de seguridad (WPA3, RADIUS, portal cautivo) y
+                                las conexiones están cifradas. Aun así, se recomienda evitar el uso de datos sensibles
+                                en redes públicas y cerrar tus sesiones al terminar.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Puedo usar la red PC Puma en eventos o espacios abiertos?</summary>
+                        <div class="faq-answer">
+                            <p>Sí. La red puede habilitarse temporalmente en eventos académicos o zonas comunes
+                                (auditorios, explanadas) mediante configuraciones especiales solicitadas al área de TI
+                                de la entidad.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div class="faq-section" id="dispositivos">
+                <h3 class="mb-4">Préstamo de Dispositivos</h3>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>¿Qué tipo de dispositivos puedo solicitar en préstamo a través del programa PC Puma?
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Puedes solicitar dispositivos móviles como laptops, iPads o Chromebooks, según la
+                                disponibilidad de tu entidad. Todos los equipos están configurados con herramientas
+                                académicas y conectividad PC Puma.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Quién puede solicitar un dispositivo en préstamo?</summary>
+                        <div class="faq-answer">
+                            <p>Estudiantes y profesores activos de la UNAM con relación académica vigente. Algunos
+                                usuarios externos (tesistas, becarios, servicio social) pueden acceder si presentan un
+                                oficio institucional justificado.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Dónde solicito el préstamo de un equipo?</summary>
+                        <div class="faq-answer">
+                            <p>A través del sitio oficial del sistema de préstamo: <a
+                                    href="https://modulospcpuma.unam.mx"
+                                    target="_blank">https://modulospcpuma.unam.mx</a>. También puedes acudir
+                                directamente al módulo PC Puma de tu entidad si necesitas apoyo para registrarte.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué modalidades de préstamo existen?</summary>
+                        <div class="faq-answer">
+                            <p>
+                            <ul>
+                                <li>Préstamo individual en módulo PC Puma</li>
+                                <li>Préstamo para actividades académicas programadas (laboratorio móvil)</li>
+                                <li>Autopréstamo en lockers inteligentes disponibles 24/7</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Por cuánto tiempo puedo usar el dispositivo prestado?</summary>
+                        <div class="faq-answer">
+                            <p>
+                            <ul>
+                                <li>Módulo: hasta 2 horas, renovable si hay disponibilidad</li>
+                                <li>Locker: hasta 18 horas, con devolución automatizada</li>
+                                <li>Laboratorios móviles: conforme a la programación del docente</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué necesito para registrar mi solicitud?</summary>
+                        <div class="faq-answer">
+                            <p>
+                            <ul>
+                                <li>Credencial de la UNAM o número de cuenta</li>
+                                <li>Correo institucional</li>
+                                <li>Estar inscrito o activo como profesor en la entidad</li>
+                                <li>Confirmar los términos de uso y política de privacidad</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué hago si el equipo no funciona correctamente?</summary>
+                        <div class="faq-answer">
+                            <p>Debes reportarlo inmediatamente al área responsable de tu entidad al momento de la
+                                entrega o durante su uso. No debes intentar repararlo por tu cuenta.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué pasa si no devuelvo el equipo a tiempo?</summary>
+                        <div class="faq-answer">
+                            <p>Existen sanciones progresivas por retraso, que van desde la suspensión temporal del
+                                servicio hasta la suspensión definitiva en caso de omisión grave o daño no reportado.
+                            </p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Puedo personalizar el equipo que me prestan?</summary>
+                        <div class="faq-answer">
+                            <p>No. Los equipos están preconfigurados con software académico y de seguridad. No está
+                                permitido modificar configuraciones, instalar apps no autorizadas ni remover los
+                                elementos de identidad institucional.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Puedo llevarme el dispositivo fuera de la entidad?</summary>
+                        <div class="faq-answer">
+                            <p>Dependerá de la modalidad de préstamo. En los módulos y lockers, los dispositivos están
+                                pensados para uso en espacios universitarios.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div class="faq-section" id="docentes">
+                <h3 class="mb-4">Docentes</h3>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>¿Qué beneficios ofrece el Programa PC Puma a los docentes de la UNAM?</summary>
+                        <div class="faq-answer">
+                            <p>PC Puma ofrece acceso a conectividad WiFi de alta calidad, préstamo de dispositivos como
+                                laptops o iPads, y capacitaciones en el uso de herramientas digitales para fortalecer la
+                                docencia híbrida, las evaluaciones, y la creación de contenidos educativos.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Cómo puedo acceder a la red WiFi PC Puma si soy profesor en una entidad participante?
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Puedes conectarte al SSID institucional .::PC Puma [Iniciales de tu entidad]::. usando
+                                alguno de los siguientes métodos:
+                            <ul>
+                                <li>Contraseña WPA2/WPA3 (proporcionada por tu área de TI)</li>
+                                <li>Portal cautivo (con tu cuenta @unam.mx)</li>
+                                <li>Servidor RADIUS (si está habilitado en tu entidad)</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Está permitido usar la red PC Puma para preparar mis clases o calificar trabajos?
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Sí. La conectividad PC Puma está diseñada para uso académico y docente: acceso a
+                                plataformas educativas, videollamadas, gestión de aulas virtuales, descarga de
+                                materiales, y más.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Puedo solicitar dispositivos en préstamo como profesor?</summary>
+                        <div class="faq-answer">
+                            <p>Sí. Como docente activo puedes solicitar el préstamo de equipos móviles (laptops, iPads,
+                                Chromebooks) para apoyar tus actividades de enseñanza, ya sea individualmente o como
+                                parte de un laboratorio móvil para tu grupo.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Cómo solicito el préstamo de dispositivos para uso en el aula con mis alumnos?
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Debes contactar al responsable del Programa PC Puma en tu entidad y agendar previamente
+                                la solicitud mediante el sistema institucional de calendarización o vía el portal <a
+                                    href="https://modulospcpuma.unam.mx"
+                                    target="_blank">https://modulospcpuma.unam.mx</a>, si está habilitado.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Cuáles son mis responsabilidades al usar un laboratorio móvil en clase?</summary>
+                        <div class="faq-answer">
+                            <p>Debes supervisar el uso de los dispositivos durante la actividad, asegurar su devolución
+                                completa y reportar cualquier anomalía. El equipo queda bajo tu resguardo mientras esté
+                                en uso con tu grupo.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué pasa si necesito hacer una evaluación con dispositivos PC Puma?</summary>
+                        <div class="faq-answer">
+                            <p>Puedes programar el uso del laboratorio móvil para aplicar evaluaciones colegiadas o
+                                exámenes digitales. Es importante hacerlo con anticipación y coordinar con el área de TI
+                                para asegurar la conectividad y funcionalidad de los equipos.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué capacitaciones ofrece el programa para los docentes?</summary>
+                        <div class="faq-answer">
+                            <p>El programa ha brindado cursos en temas como:
+                            <ul>
+                                <li>Herramientas digitales (Google Workspace, Canva for Education, Khan Academy)</li>
+                                <li>Evaluación en línea</li>
+                                <li>Creación de contenido multimedia</li>
+                                <li>Seguridad digital y privacidad</li>
+                                <li>Uso pedagógico de los dispositivos PC Puma</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Dónde me puedo inscribir a las capacitaciones?</summary>
+                        <div class="faq-answer">
+                            <p>La mayoría de las capacitaciones son gestionadas por tu entidad en colaboración con la
+                                CPTI. Mantente atento a las convocatorias internas o consulta en el módulo PC Puma o con
+                                el responsable de tecnologías en tu facultad o escuela.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Puedo solicitar una capacitación personalizada para mi grupo de docentes o asignatura?
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Sí. Puedes enviar una solicitud al responsable de PC Puma en tu entidad o a través del
+                                correo institucional lineamientos-entidades@pcpuma.unam.mx para coordinar una
+                                capacitación especializada de acuerdo a las necesidades del área académica.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div class="faq-section" id="estudiantes">
+                <h3 class="mb-4">Estudiantes</h3>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>¿Qué servicios ofrece el Programa PC Puma a los estudiantes?</summary>
+                        <div class="faq-answer">
+                            <p>PC Puma ofrece acceso gratuito a Internet WiFi de alta calidad en tu entidad, préstamo de
+                                dispositivos (laptops, iPads, Chromebooks) y capacitaciones para que puedas desarrollar
+                                competencias digitales útiles en tu vida académica.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Dónde me puedo conectar al WiFi PC Puma como estudiante?</summary>
+                        <div class="faq-answer">
+                            <p>Puedes conectarte en aulas, bibliotecas, explanadas, salas de estudio y otros espacios de
+                                tu entidad donde esté habilitada la red WiFi con el
+                                nombre:<br><code>.::PC Puma [Iniciales de tu entidad]::.</code><br>Por
+                                ejemplo:<code>.::PC Puma FCPyS::.</code></p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Cómo me conecto a la red WiFi?</summary>
+                        <div class="faq-answer">
+                            <p>Dependiendo de la configuración de tu entidad, puedes conectarte usando:
+                            <ul>
+                                <li>Una contraseña compartida (WPA2/WPA3)</li>
+                                <li>Tu correo <code>@unam.mx</code> a través de un portal de inicio de sesión</li>
+                                <li>Autenticación con usuario institucional (802.1X)</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Para qué actividades puedo usar la red PC Puma?</summary>
+                        <div class="faq-answer">
+                            <p>El uso debe ser académico: tomar clases en línea, consultar bibliografía, hacer tareas,
+                                usar plataformas educativas (como Classroom, Moodle, Teams, etc.). No está permitido
+                                usarla para videojuegos, torrents o contenido inapropiado.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué dispositivos puedo pedir prestados si soy estudiante?</summary>
+                        <div class="faq-answer">
+                            <p>Puedes solicitar el préstamo de laptops, iPads o Chromebooks según la disponibilidad en
+                                tu entidad. Estos dispositivos están configurados con software educativo y acceso
+                                automático a la red PC Puma.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Cómo solicito el préstamo de un dispositivo?</summary>
+                        <div class="faq-answer">
+                            <p>Debes ingresar a: <a href="https://modulospcpuma.unam.mx"
+                                    target="_blank">https://modulospcpuma.unam.mx</a><br>Ahí puedes hacer tu registro,
+                                validar tu pertenencia a la entidad y elegir la modalidad de préstamo disponible (módulo
+                                presencial o lockers inteligentes).</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Cuánto tiempo puedo usar el dispositivo? ¿Lo puedo renovar?</summary>
+                        <div class="faq-answer">
+                            <p>
+                            <ul>
+                                <li>Módulo presencial: hasta 2 horas, con posibilidad de renovación si hay
+                                    disponibilidad</li>
+                                <li>Lockers (autopréstamo): hasta 18 horas</li>
+                            </ul>Debes devolverlo antes de que expire el tiempo para evitar sanciones.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué pasa si entrego el dispositivo tarde o dañado?</summary>
+                        <div class="faq-answer">
+                            <p>Podrías recibir sanciones que van desde suspensión temporal del servicio hasta reposición
+                                del equipo si se determina negligencia. Cada 15 minutos de retraso implican 1 semana de
+                                suspensión del servicio.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Hay capacitaciones para aprender a usar bien los dispositivos y herramientas
+                            digitales?</summary>
+                        <div class="faq-answer">
+                            <p>Sí. El programa ofrece talleres para estudiantes sobre:
+                            <ul>
+                                <li>Google Workspace y herramientas colaborativas</li>
+                                <li>Seguridad digital</li>
+                                <li>Diseño con Canva</li>
+                                <li>Uso educativo de dispositivos iOS o Chromebook</li>
+                                <li>Gestión de plataformas educativas</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Cómo me inscribo a una capacitación o taller?</summary>
+                        <div class="faq-answer">
+                            <p>Consulta las redes sociales o página de tu facultad o escuela. También puedes preguntar
+                                directamente en el módulo PC Puma de tu entidad o con tu responsable de tecnologías.
+                                Muchas capacitaciones son en línea y gratuitas.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div class="faq-section" id="soporte">
+                <h3 class="mb-4">Soporte Técnico</h3>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>¿Qué tipo de soporte ofrece el área de TI de mi entidad relacionado con el Programa PC
+                            Puma?</summary>
+                        <div class="faq-answer">
+                            <p>El área de TI brinda soporte técnico local para conectividad, préstamo, configuración de
+                                dispositivos y seguimiento de fallas.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿A quién me dirijo si no puedo conectarme al WiFi PC Puma dentro de mi entidad?
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Debes contactar directamente al responsable técnico local (área de cómputo o soporte TI)
+                                de tu facultad o escuela.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Quién revisa los equipos de préstamo si tienen problemas de funcionamiento?</summary>
+                        <div class="faq-answer">
+                            <p>El personal de soporte TI de cada entidad realiza mantenimiento básico y gestiona
+                                garantías si es necesario.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué pasa si el módulo de préstamo o el locker inteligente presenta fallas?</summary>
+                        <div class="faq-answer">
+                            <p>Debes reportarlo al área de TI, quienes verificarán sensores, cerraduras, software y, si
+                                procede, lo canalizarán a la Coordinación Central.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿El soporte técnico puede ayudarme con mi propio dispositivo?</summary>
+                        <div class="faq-answer">
+                            <p>Solo en casos relacionados con la conexión PC Puma o plataformas institucionales. No se
+                                brinda soporte a equipos personales.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Cómo sé quién es el responsable de soporte PC Puma en mi entidad?</summary>
+                        <div class="faq-answer">
+                            <p>Consulta en el módulo de préstamo, la coordinación de tecnologías o el sitio web local de
+                                tu entidad.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué herramientas utiliza el soporte TI para monitorear la conectividad?</summary>
+                        <div class="faq-answer">
+                            <p>Plataformas de red (controladores WiFi, RADIUS, monitoreo) y estadísticas del sistema
+                                proporcionadas por la Coordinación Central.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué hago si hay puntos WiFi apagados o sin señal?</summary>
+                        <div class="faq-answer">
+                            <p>Repórtalo al área de TI, quienes revisarán el estado del Access Point, cableado y
+                                energía.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿El personal técnico también participa en capacitaciones del programa?</summary>
+                        <div class="faq-answer">
+                            <p>Sí. Reciben formación de la CPTI para operar correctamente los sistemas de conectividad y
+                                préstamo.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿A dónde acudo si el área de TI no responde o no hay responsable?</summary>
+                        <div class="faq-answer">
+                            <p>Escribe a <a
+                                    href="mailto:lineamientos-entidades@pcpuma.unam.mx">lineamientos-entidades@pcpuma.unam.mx</a>
+                                para canalizar el reporte a la Coordinación Central.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div class="faq-section" id="eventos">
+                <h3 class="mb-4">Eventos</h3>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>¿Qué tipo de eventos organiza el Programa PC Puma?</summary>
+                        <div class="faq-answer">
+                            <p>El programa realiza capacitaciones técnicas, talleres prácticos, webinars, encuentros
+                                académicos, charlas y giras tecnológicas para impulsar el uso educativo de la tecnología
+                                en la UNAM.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Quiénes pueden participar en los eventos de capacitación del programa?</summary>
+                        <div class="faq-answer">
+                            <p>Estudiantes, docentes, personal de TI y operadores del programa PC Puma. Muchos eventos
+                                están abiertos a toda la comunidad universitaria y son gratuitos.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Cómo me entero de los próximos eventos o talleres?</summary>
+                        <div class="faq-answer">
+                            <p>Las convocatorias se publican en el sitio oficial de PC Puma, redes sociales de cada
+                                entidad, carteles en los módulos y por correo institucional.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué temas se abordan en los talleres y webinars?</summary>
+                        <div class="faq-answer">
+                            <p>Herramientas digitales (Google Workspace, Canva, Khan Academy), docencia híbrida,
+                                seguridad digital, evaluación con tecnología, gestión de contenidos y uso pedagógico de
+                                dispositivos.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué es la gira "PC Puma: Tu Experiencia Tecnológica"?</summary>
+                        <div class="faq-answer">
+                            <p>Una iniciativa que visita entidades de la UNAM para mostrar los servicios del programa,
+                                brindar talleres breves, resolver dudas y realizar actividades interactivas con la
+                                comunidad.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Puedo obtener constancia por participar en un taller o webinar?</summary>
+                        <div class="faq-answer">
+                            <p>Sí. Algunos eventos otorgan constancias electrónicas, siempre que cumplas con la
+                                asistencia requerida y completes la encuesta de satisfacción.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Las capacitaciones son presenciales o en línea?</summary>
+                        <div class="faq-answer">
+                            <p>Hay modalidades presenciales, virtuales y mixtas. Los webinars suelen realizarse por
+                                Zoom, Meet u otras plataformas institucionales.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Dónde me registro para participar en una capacitación o taller?</summary>
+                        <div class="faq-answer">
+                            <p>En las ligas de registro que incluyen las convocatorias oficiales o directamente en el
+                                módulo PC Puma de tu entidad.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Puedo proponer un tema o solicitar una capacitación para mi entidad?</summary>
+                        <div class="faq-answer">
+                            <p>Sí. Puedes enviar tu solicitud a tu responsable local de PC Puma o escribir a <a
+                                    href="mailto:lineamientos-entidades@pcpuma.unam.mx">lineamientos-entidades@pcpuma.unam.mx</a>.
+                            </p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué impacto han tenido estas actividades en la comunidad universitaria?</summary>
+                        <div class="faq-answer">
+                            <p>Durante 2023, más de 480 personas fueron capacitadas en tecnología y habilidades
+                                digitales, fortaleciendo la transformación digital de la comunidad universitaria.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div class="faq-section" id="privacidad">
+                <h3 class="mb-4">Privacidad</h3>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>¿Qué tipo de datos personales recolecta el Programa PC Puma?</summary>
+                        <div class="faq-answer">
+                            <p>Nombre completo, número de cuenta o nómina, correo institucional, registro de uso de red
+                                o préstamo, e información técnica del dispositivo. Se usan solo con fines académicos,
+                                estadísticos u operativos.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué se hace con la información que proporciono al conectarme a la red WiFi PC Puma?
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Se valida tu identidad, se registran accesos y se monitorean fallas o problemas de
+                                seguridad. No se comparte ni se usa con fines comerciales.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Se rastrea mi actividad cuando navego por internet en la red PC Puma?</summary>
+                        <div class="faq-answer">
+                            <p>No se rastrea contenido específico, pero se monitorean patrones de uso para mejorar el
+                                servicio y detectar abusos o usos indebidos.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Mis archivos o sesiones están protegidos si uso un dispositivo en préstamo?</summary>
+                        <div class="faq-answer">
+                            <p>Sí, pero debes cerrar tus sesiones, no guardar contraseñas ni dejar información sensible.
+                                Los equipos son de uso temporal y compartido.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué pasa con mis datos si solicito un préstamo desde el sitio web del programa?
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Se usan únicamente para gestionar el préstamo. Están protegidos conforme a la Ley General
+                                de Protección de Datos Personales en Posesión de Sujetos Obligados.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Los dispositivos prestados tienen cámaras, micrófonos o sistemas de geolocalización
+                            activos?</summary>
+                        <div class="faq-answer">
+                            <p>Sí, pero no son monitoreados. Se activan solo por el usuario. No hay seguimiento remoto
+                                ni grabación desde el sistema.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué puedo hacer si detecto un posible mal uso de mis datos o sospecho una vulneración
+                            de privacidad?</summary>
+                        <div class="faq-answer">
+                            <p>Repórtalo al responsable local del programa o escribe a <a
+                                    href="mailto:lineamientos-entidades@pcpuma.unam.mx">lineamientos-entidades@pcpuma.unam.mx</a>.
+                                También puedes acudir a la Unidad de Transparencia de la UNAM.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿La red PC Puma bloquea páginas o servicios para proteger mi privacidad?</summary>
+                        <div class="faq-answer">
+                            <p>Sí. Se filtran sitios maliciosos, fraudulentos, inapropiados o no académicos para
+                                proteger tu experiencia digital y tu seguridad.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Puedo solicitar acceso, corrección o eliminación de mis datos del sistema de préstamos
+                            o conectividad?</summary>
+                        <div class="faq-answer">
+                            <p>Sí. Puedes ejercer tus derechos ARCO (Acceso, Rectificación, Cancelación u Oposición)
+                                mediante solicitud por escrito a tu entidad.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Dónde puedo consultar los Avisos de Privacidad del Programa PC Puma?</summary>
+                        <div class="faq-answer">
+                            <p>En el sitio web oficial del programa, en los módulos de préstamo, formularios de registro
+                                en línea y formularios físicos de solicitud.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- PIE DE PÁGINA  -->
+    <footer class="footer bg-pcpuma text-white" role="contentinfo">
+        <div class="container pt-4 pb-3">
+
+            <div class="row align-items-center">
+
+                <!-- COLUMNA 1 : LOGO -->
+                <div class="col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+                    <img src="../img/logos/Logo UNGU.png" alt="Universidad Nacional Autónoma de México" class="logo-unam-footer">
+                </div>
+
+
+                <!-- COLUMNA 2 : INFORMACIÓN LEGAL -->
+                <div class="col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+
+                    <p class="fw-bold mb-3 text-white">© 2026 PC Puma - UNAM</p>
+
+                    <p class="small mb-3">
+                        Hecho en México. Universidad Nacional Autónoma de México (UNAM).
+                        Todos los derechos reservados 2026.
+                    </p>
+
+                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+
+                        <a href="https://www.facebook.com/UNAM.PCPuma/" target="_blank">
+                            <i class="bi bi-facebook fs-5 text-white"></i>
+                        </a>
+
+                        <a href="https://twitter.com/PCPuma_UNAM" target="_blank">
+                            <i class="bi bi-twitter-x fs-5 text-white"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/pc_puma/" target="_blank">
+                            <i class="bi bi-instagram fs-5 text-white"></i>
+                        </a>
+
+                        <a href="https://www.tiktok.com/@contactopcpuma" target="_blank">
+                            <i class="bi bi-tiktok fs-5 text-white"></i>
+                        </a>
+
+                        <a href="https://www.youtube.com/@ContactoPCPUMA" target="_blank">
+                            <i class="bi bi-youtube fs-5 text-white"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COLUMNA 3 : DOCUMENTOS -->
+                <div class="col-lg-3 text-start mb-3 mb-lg-0">
+
+                    <h6 class="fw-bold mb-3 text-white">LIGAS DE INTERÉS</h6>
+
+                    <ul class="list-unstyled footer-links">
+
+                        <li>
+                            <a href="../archivos/Lineamientos_Generales_PCPUMA.pdf" target="_blank">
+                                Lineamientos Generales
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../archivos/AvisoPrivacidad_Simplificado_ProyectoPCPUMA.pdf" target="_blank">
+                                Aviso de Privacidad Simplificado
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../archivos/AvisoPrivacidad_Integral_ProyectoPCPUMA.pdf" target="_blank">
+                                Aviso de Privacidad Integral
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="creditos.html">
+                                Créditos
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- COLUMNA 4 : LOGO -->
+                <div class="col-lg-3 text-center text-lg-end">
+                    <img src="../img/logos/Logo_unam475.png" alt="Universidad Nacional Autónoma de México"
+                        class="logo-unam-footer">
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('faq-search-input');
+            const faqContainer = document.getElementById('faq-container');
+            const faqSourceData = document.getElementById('faq-source-data');
+            const hubView = document.getElementById('hub-view');
+            const resultsView = document.getElementById('results-view');
+            const backToHubBtn = document.getElementById('back-to-hub');
+            let allFaqData = {};
+
+            function loadFaqs() {
+                if (faqSourceData) {
+                    faqSourceData.querySelectorAll('.faq-section').forEach(section => {
+                        allFaqData[section.id] = section.innerHTML;
+                    });
+                    faqSourceData.remove();
+                }
+            }
+
+            function showHub() {
+                hubView.style.display = 'block';
+                resultsView.style.display = 'none';
+                searchInput.value = '';
+            }
+
+            function showResults() {
+                hubView.style.display = 'none';
+                resultsView.style.display = 'block';
+            }
+
+            function renderSection(categoryId) {
+                if (allFaqData[categoryId]) {
+                    faqContainer.innerHTML = `<div class="faq-section" style="display:block;" id="${categoryId}">${allFaqData[categoryId]}</div>`;
+                }
+            }
+
+            window.openFaq = function (categoryId, questionIndex) {
+                toggleFaq(categoryId);
+                setTimeout(() => {
+                    const section = document.getElementById(categoryId);
+                    if (section) {
+                        const questions = section.querySelectorAll('.faq-item');
+                        if (questions[questionIndex]) {
+                            questions[questionIndex].open = true;
+                            questions[questionIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    }
+                }, 100);
+            }
+
+            window.toggleFaq = function (categoryId) {
+                renderSection(categoryId);
+                showResults();
+            }
+
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase().trim();
+
+                if (!searchTerm) {
+                    showHub();
+                    return;
+                }
+
+                faqContainer.innerHTML = '';
+                let resultsFound = false;
+
+                for (const categoryId in allFaqData) {
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = allFaqData[categoryId];
+                    const items = tempDiv.querySelectorAll('.faq-item');
+                    let matchingItemsHtml = '';
+
+                    items.forEach(item => {
+                        if (item.textContent.toLowerCase().includes(searchTerm)) {
+                            item.open = true;
+                            matchingItemsHtml += item.outerHTML;
+                            resultsFound = true;
+                        }
+                    });
+
+                    if (matchingItemsHtml) {
+                        const categoryTitle = tempDiv.querySelector('h3').outerHTML;
+                        faqContainer.innerHTML += `<div class="faq-section" style="display:block;">${categoryTitle}<div class="faq-list">${matchingItemsHtml}</div></div>`;
+                    }
+                }
+
+                if (!resultsFound) {
+                    faqContainer.innerHTML = `<p class="text-center text-muted mt-4">No se encontraron resultados para tu búsqueda.</p>`;
+                }
+                showResults();
+            });
+
+            backToHubBtn.addEventListener('click', showHub);
+
+            loadFaqs();
+
+            const aiButton = document.getElementById('ask-ai-btn');
+            if (aiButton) {
+                aiButton.addEventListener('click', () => {
+                    if (window.chatbit && typeof window.chatbit.open === 'function') {
+                        window.chatbit.open();
+                    } else {
+                        console.log('El chatbot no está disponible o aún no ha cargado.');
+                    }
+                });
+            }
+        });
+    </script>
+
+    <script src="../js/network-bg.js"></script>
+    <script>
+        window.cbConfig = { chatId: "95e57fa3-a653-4e2d-896b-d8d7d408a649" };
+    </script>
+    <script src="https://app.chatbit.co/embed.min.js" defer></script>
+</body>
+
+</html>

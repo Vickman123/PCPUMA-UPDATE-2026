@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* ===================================================================
+   ARCHIVO: global.css
+   VERSIÓN: Definitiva, a prueba de fallos para producción.
+   =================================================================== */
+
+/* --- 1. Importación de Fuentes Gotham (Método Robusto) --- */
+/* Se definen las rutas absolutas para evitar cualquier error de ubicación. */
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Light.woff2') format('woff2');
+  font-weight: 300; /* Light */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Book.woff2') format('woff2');
+  font-weight: 400; /* Regular / Book */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Medium.woff2') format('woff2');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('../fonts/Gotham-Bold.woff2') format('woff2');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- 2. Aplicación Global de la Fuente y Tipografía --- */
+/* Se aplica la fuente base al body para que todos los elementos la hereden.
+   Se eliminan los !important para evitar conflictos y tener un CSS más limpio. */
+body {
+  font-family: 'Gotham', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 60px; /* Espacio para el navbar fijo */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+main {
+  flex: 1; /* Asegura que el footer se quede abajo */
+}
+
+/* Se define el peso de la fuente para cada tipo de texto.
+   El navegador usará el archivo de fuente correcto basado en este peso. */
+h1, h2, .display-5 {
+  font-weight: 700;
+  color: #005BA8;
+}
+h3, h4, h5, h6 {
+  font-weight: 500;
+  color: #003366; /* Usa el azul oscuro para subtítulos */
+}
+body, p, a, li, button, .btn {
+  font-weight: 400; /* Usa Gotham-Book.woff2 */
+  color: #212529; /* Gris Oscuro para párrafos */
+}
+footer, small, .text-muted {
+  font-weight: 300; /* Usa Gotham-Light.woff2 */
+}
+
+/* --- 3. Componentes Globales (Estilos simplificados) --- */
+.navbar.sticky-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+}
+.bg-pcpuma {
+  background-color: #005BA8 !important;
+}
+.navbar .nav-link:hover {
+  color: #FFD700 !important;
+}
+.navbar .logo-header {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+.navbar .nav-link.active {
+  font-weight: bold;
+  border-bottom: 2px solid #FFD700 !important;
+  color: #FFD700 !important;
+}
+.footer {
+  margin-top: auto;
+  width: 100vw;
+  background: linear-gradient(to right, #005BA8, #003d73);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* --- 4. Accesibilidad --- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  background: #003366;
+  color: white;
+  z-index: 1050;
+}
+*:focus-visible {
+  outline: 3px solid #FFA500;
+  outline-offset: 3px;
+}
+/* ===== Footer PC Puma ===== */
+footer {
+  background-color: #00264d !important; /* Azul institucional con mejor contraste */
+  color: #f1f1f1 !important;            /* Gris muy claro para evitar blanco puro sobre azul */
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer p,
+footer a {
+  color: #f8f9fa !important; /* Texto claro accesible */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); /* Añade contraste y legibilidad */
+  margin: 0;
+}
+
+footer a:hover {
+  color: #FFD700 !important; /* Amarillo institucional al hover */
+  text-decoration: none;
+}
+/* Forzar Gotham en todo el sitio */
+body, button, input, select, textarea {
+  font-family: 'Gotham', 'GothamBook', 'GothamMedium', 'Gotham-Bold', sans-serif;
+}
+
+/* Específicamente en botones */
+.btn {
+  font-family: 'Gotham', 'GothamMedium', sans-serif !important;
+  font-weight: 500; /* ajusta según tu guía tipográfica */
+  letter-spacing: 0.2px;
+}
+
+/* --- Liquid Glass Variables & Utilities (Apple 2026 Theme) --- */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+  --glass-shadow-hover: 0 16px 48px 0 rgba(0, 91, 168, 0.15);
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+}
+
+.glass-card {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(140%) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--glass-shadow) !important;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              border-color 0.3s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glass-shadow-hover) !important;
+  border-color: rgba(0, 91, 168, 0.25) !important;
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.35) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.card-node-glow, .social-glow {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.section-title-apple {
+  font-family: 'Outfit', -apple-system, sans-serif !important;
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: #002d66;
+  letter-spacing: -0.5px;
+}

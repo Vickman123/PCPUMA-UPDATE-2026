@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conócenos y Contacta - PC Puma</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="../css/global.css" rel="stylesheet">
+    <link href="../css/contacto.css" rel="stylesheet">
+    <link href="../css/style_accessibility.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet" />
+    <link href="../img/favicons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" />
+    <link href="../img/favicons/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="../img/favicons/favicon.ico" rel="shortcut icon" />
+    <link href="../img/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+    <meta content="PC Puma" name="apple-mobile-web-app-title" />
+    <link href="../img/favicons/site.webmanifest" rel="manifest" />
+</head>
+
+<body>
+    <nav role="navigation" class="navbar navbar-expand-lg navbar-dark pcp-navbar sticky-top">
+        <div class="container-fluid">
+            <div class="p-2 d-flex align-items-center">
+                <a href="https://www.unam.mx/" target="_blank">
+                    <img loading="lazy" alt="Logotipo de la UNAM" src="../img/logos/unam.webp" class="logo-header me-3" />
+                </a>
+                <a href="https://sdi.unam.mx/" target="_blank">
+                    <img loading="lazy" alt="Logotipo de la SDI - UNAM" src="../img/logos/sdi.webp" class="logo-header me-3" />
+                </a>
+                <a href="../index.html">
+                    <img loading="lazy" alt="Logotipo del proyecto PC Puma" src="../img/logos/logo-pcpuma.webp" class="logo-header me-3" />
+                </a>
+                <a href="#">
+                    <img loading="lazy" alt="Logotipo de la UNAM" src="../img/logos/Logo_unam475.png" class="logo-header" />
+                </a>
+            </div>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse"
+                type="button"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../index.html"><i
+                                class="bi bi-house-fill me-1"></i>Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="estudiantes.html"><i
+                                class="bi bi-laptop me-1"></i>Estudiantes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="docentes.html"><i
+                                class="bi bi-person-fill me-1"></i>Docentes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admin.html"><i class="bi bi-gear me-1"></i>TI</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="eventos.html"><i
+                                class="bi bi-calendar-event me-1"></i>Eventos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html"><i
+                                class="bi bi-question-circle me-1"></i>FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contacto.html"><i
+                                class="bi bi-envelope me-1"></i>Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html"><i
+                                class="bi bi-info-circle me-1"></i>Nosotros</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="contact-hero">
+            <canvas id="networkCanvas"></canvas>
+            <div class="container text-center">
+                <h1 class="display-4 fw-bold text-white" data-aos="fade-down">
+                    Ponte en Contacto
+                </h1>
+
+                <p class="fs-5 fw-light text-white opacity-75" data-aos="fade-up" data-aos-delay="100">
+                    Tu opinión es fundamental para nosotros. Elige la opción que mejor se adapte a tu necesidad.
+                </p>
+            </div>
+        </header>
+
+        <section class="container my-5" id="contacto-cards" data-aos="fade-up">
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-lg-5 d-flex">
+                    <div class="contact-card text-center">
+                        <i class="bi bi-lightbulb-fill display-3 text-primary mb-3"></i>
+                        <h4 class="card-title fw-bold">Sugerencias y Dudas Generales</h4>
+                        <p class="card-text">
+                            ¿Tienes una idea para mejorar, una pregunta sobre el programa o quieres compartir una
+                            historia de éxito? Utiliza nuestro formulario.
+                        </p>
+                        <button class="btn btn-primary mt-auto" data-bs-toggle="modal"
+                            data-bs-target="#contactFormModal">
+                            <i class="bi bi-pencil-square me-2"></i>Llenar Formulario
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 d-flex">
+                    <div class="contact-card text-center">
+                        <i class="bi bi-tools display-3 text-success mb-3"></i>
+                        <h4 class="card-title fw-bold">Soporte Técnico Local</h4>
+                        <p class="card-text">
+                            Si tienes un problema con la conexión WiFi o con un equipo en préstamo, debes contactar al
+                            responsable de TI de tu propia entidad.
+                        </p>
+                        <a href="admin.html#cobertura" class="btn btn-success mt-auto">
+                            <i class="bi bi-geo-alt-fill me-2"></i>Buscar Contacto Técnico
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="text-center small text-muted mt-4">
+                Tus datos se utilizan exclusivamente para fines de mejora del Programa PC Puma, conforme al
+                <a href="../archivos/AvisoPrivacidad_Simplificado_ProyectoPCPUMA.pdf" target="_blank">Aviso de
+                    Privacidad</a>.
+            </div>
+        </section>
+    </main>
+
+    <div class="modal fade" id="contactFormModal" tabindex="-1" aria-labelledby="contactFormModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactFormModalLabel">Formulario de Sugerencias y Dudas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="iframe-container">
+                        <iframe
+                            src="https://docs.google.com/forms/d/e/1FAIpQLSeuNtIeAH6iZ0NrPAl4SV6Drzni-kdepI5fiI2Ctkfc75Lg5g/viewform?embedded=true"
+                            frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PIE DE PÁGINA  -->
+    <footer class="footer bg-pcpuma text-white" role="contentinfo">
+        <div class="container pt-4 pb-3">
+
+            <div class="row align-items-center">
+
+                <!-- COLUMNA 1 : LOGO -->
+                <div class="col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+                    <img src="../img/logos/Logo UNGU.png" alt="Universidad Nacional Autónoma de México" class="logo-unam-footer">
+                </div>
+
+
+                <!-- COLUMNA 2 : INFORMACIÓN LEGAL -->
+                <div class="col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+
+                    <p class="fw-bold mb-3 text-white">© 2026 PC Puma - UNAM</p>
+
+                    <p class="small mb-3">
+                        Hecho en México. Universidad Nacional Autónoma de México (UNAM).
+                        Todos los derechos reservados 2026.
+                    </p>
+
+                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+
+                        <a href="https://www.facebook.com/UNAM.PCPuma/" target="_blank">
+                            <i class="bi bi-facebook fs-5 text-white"></i>
+                        </a>
+
+                        <a href="https://twitter.com/PCPuma_UNAM" target="_blank">
+                            <i class="bi bi-twitter-x fs-5 text-white"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/pc_puma/" target="_blank">
+                            <i class="bi bi-instagram fs-5 text-white"></i>
+                        </a>
+
+                        <a href="https://www.tiktok.com/@contactopcpuma" target="_blank">
+                            <i class="bi bi-tiktok fs-5 text-white"></i>
+                        </a>
+
+                        <a href="https://www.youtube.com/@ContactoPCPUMA" target="_blank">
+                            <i class="bi bi-youtube fs-5 text-white"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COLUMNA 3 : DOCUMENTOS -->
+                <div class="col-lg-3 text-start mb-3 mb-lg-0">
+
+                    <h6 class="fw-bold mb-3 text-white">LIGAS DE INTERÉS</h6>
+
+                    <ul class="list-unstyled footer-links">
+
+                        <li>
+                            <a href="../archivos/Lineamientos_Generales_PCPUMA.pdf" target="_blank">
+                                Lineamientos Generales
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../archivos/AvisoPrivacidad_Simplificado_ProyectoPCPUMA.pdf" target="_blank">
+                                Aviso de Privacidad Simplificado
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../archivos/AvisoPrivacidad_Integral_ProyectoPCPUMA.pdf" target="_blank">
+                                Aviso de Privacidad Integral
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="creditos.html">
+                                Créditos
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- COLUMNA 4 : LOGO -->
+                <div class="col-lg-3 text-center text-lg-end">
+                    <img src="../img/logos/Logo_unam475.png" alt="Universidad Nacional Autónoma de México"
+                        class="logo-unam-footer">
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/network-bg.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+        });
+    </script>
+
+    <script>
+        window.cbConfig = {
+            chatId: "95e57fa3-a653-4e2d-896b-d8d7d408a649"
+        };
+    </script>
+    <script src="https://app.chatbit.co/embed.min.js" defer></script>
+
+</body>
+
+</html>

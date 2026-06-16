@@ -1,0 +1,77 @@
+/* ========================================================
+   Estilos para página de Créditos (Diseño Sobrio y Minimalista)
+   ======================================================== */
+
+body {
+    background-color: #ffffff; /* Fondo blanco por defecto */
+}
+
+/* --- Estilos para la lista de créditos --- */
+.credits-section .section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #005BA8; /* Azul PC Puma */
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e0e5ec;
+}
+
+.credits-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+}
+
+.credits-section strong {
+    color: #212529; /* Gris oscuro para nombres */
+    font-weight: 500;
+}
+
+/* --- Columna Lateral --- */
+.side-panel {
+    top: 100px; /* Offset para el navbar fijo */
+    padding: 1.5rem;
+    background-color: #f8f9fa; /* Fondo gris claro */
+    border-radius: 12px;
+    border: 1px solid #e0e5ec;
+}
+
+.side-panel-logo {
+    max-width: 150px;
+    opacity: 0.8;
+}
+
+.side-panel h5 {
+    color: #003366;
+    font-weight: 700;
+}
+
+/* --- Sección de Herramientas de IA --- */
+.ai-tools-section {
+    background-color: #002a4a; /* Azul oscuro institucional */
+}
+
+.ai-tools-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+    margin-top: 2rem;
+}
+
+.ai-tools-list span {
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+/* --- Responsividad --- */
+@media (max-width: 992px) {
+    .side-panel {
+        position: static; /* Desactivar el 'sticky' en pantallas pequeñas */
+        margin-top: 3rem;
+    }
+}

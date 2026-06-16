@@ -1,0 +1,303 @@
+/* =============================================================
+   admin.css — PC Puma (Diseño "Portal de Integración")
+   ESTILO: Apple 2026 Liquid Glass
+   ============================================================= */
+
+body {
+  background-color: #f4f6f9;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', -apple-system, sans-serif !important;
+}
+
+/* --- 1. Hero Central --- */
+#hero-admin {
+  position: relative;
+  height: 280px;
+  background: radial-gradient(circle at center, #001f3f 0%, #000c18 100%) !important;
+  overflow: hidden;
+  color: white;
+}
+#hero-admin canvas {
+  opacity: 0.5;
+}
+
+/* --- 2. Dashboard de Coordinación Central --- */
+#coordination-dashboard {
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+.status-card {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(140%) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+  padding: 1rem;
+}
+
+.status-card .list-group-item {
+  font-weight: 500;
+  color: #212529;
+  padding: 1.1rem 1.25rem;
+  background: transparent !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+.status-card .list-group-item:last-child {
+  border-bottom: none !important;
+}
+
+.status-card .badge {
+  font-size: .8rem;
+  font-weight: 600;
+  padding: .4em .8em;
+  border: 1px solid transparent;
+}
+
+/* --- 3. Guías de Implementación (Pestañas Segmentadas Estilo Apple) --- */
+.implementation-tabs {
+  background: rgba(120, 120, 128, 0.08) !important;
+  border-radius: 14px !important;
+  padding: 4px !important;
+  border: none !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.implementation-tabs .nav-item {
+  margin: 0 !important;
+}
+
+.implementation-tabs .nav-link {
+  border: none !important;
+  border-radius: 10px !important;
+  color: #5a7b9c !important;
+  font-size: 0.95rem !important;
+  padding: 8px 16px !important;
+  font-weight: 600 !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  background: transparent !important;
+}
+
+.implementation-tabs .nav-link:hover:not(.active) {
+  color: #002d66 !important;
+}
+
+.implementation-tabs .nav-link.active {
+  background-color: #ffffff !important;
+  color: #002d66 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 3px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+#guidesTabContent {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(140%) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--glass-shadow) !important;
+}
+
+.resource-card {
+  background: rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: var(--radius-md);
+  box-shadow: var(--glass-shadow);
+  transition: transform .35s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow .35s ease;
+  text-align: center;
+  padding: 1.5rem !important;
+}
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glass-shadow-hover) !important;
+  border-color: rgba(0, 91, 168, 0.25) !important;
+}
+
+.resource-card .resource-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(0, 91, 168, 0.08);
+  color: #005BA8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.resource-card .resource-icon i {
+  font-size: 1.35rem !important;
+  display: inline-block;
+  line-height: 1;
+}
+.resource-card:hover .resource-icon {
+  background: #005BA8;
+  color: #ffffff !important;
+  transform: scale(1.05);
+}
+
+/* --- 4. Herramientas y Recursos Centralizados --- */
+.action-card {
+  background: rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: var(--radius-md);
+  box-shadow: var(--glass-shadow);
+  transition: transform .35s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow .35s ease, border-color .3s ease;
+  text-align: center;
+  padding: 1.75rem !important;
+}
+.action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glass-shadow-hover) !important;
+  border-color: #005BA8 !important;
+}
+
+.action-card .action-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.action-card .action-icon i {
+  font-size: 1.5rem !important;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Colores de iconos adaptados con fondos suaves y cambio a hover sólido */
+.action-card .action-icon.text-primary {
+  background: rgba(0, 91, 168, 0.08);
+  color: #005BA8 !important;
+}
+.action-card:hover .action-icon.text-primary {
+  background: #005BA8;
+  color: #ffffff !important;
+  transform: scale(1.05);
+}
+
+.action-card .action-icon.text-success {
+  background: rgba(40, 167, 69, 0.08);
+  color: #28a745 !important;
+}
+.action-card:hover .action-icon.text-success {
+  background: #28a745;
+  color: #ffffff !important;
+  transform: scale(1.05);
+}
+
+.action-card .action-icon.text-info {
+  background: rgba(23, 162, 184, 0.08);
+  color: #17a2b8 !important;
+}
+.action-card:hover .action-icon.text-info {
+  background: #17a2b8;
+  color: #ffffff !important;
+  transform: scale(1.05);
+}
+
+/* --- 5. Panorama General (Buscador y Entidades) --- */
+.pcp-toolbar.card {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+}
+#buscadorEntidades {
+  background: rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+}
+
+#listaEntidades .card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: var(--glass-shadow);
+  transition: transform .35s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow .35s ease;
+  overflow: hidden;
+}
+#listaEntidades .card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--glass-shadow-hover);
+}
+#listaEntidades .card .card-header {
+  background-color: #005BA8;
+  height: 60px;
+  border: none;
+}
+#listaEntidades .card .card-body {
+  padding-top: 45px;
+  position: relative;
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(10px);
+}
+#listaEntidades .card img {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  object-fit: contain;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,.15);
+  border: 4px solid #fff;
+  position: absolute;
+  top: -40px;
+  left: 0; right: 0;
+  transition: transform .3s ease;
+}
+#listaEntidades .card:hover img {
+  transform: scale(1.06);
+}
+
+.logo-entidad {
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid #005BA8;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  object-fit: contain;
+  padding: 6px;
+}
+
+/* --- 6. Mapa Leaflet (Glass Map) --- */
+#map {
+  height: 500px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--glass-shadow);
+  border: 1px solid var(--glass-border);
+}
+
+.pcp-map-filters .btn-filtro {
+  background: rgba(255, 255, 255, 0.6) !important;
+  color: #005BA8 !important;
+  font-weight: 600;
+  border-radius: 50px !important;
+  padding: 6px 16px !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  font-size: .88rem !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  backdrop-filter: blur(8px);
+  margin: 3px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02) !important;
+}
+.pcp-map-filters .btn-filtro:hover:not(.activo-filtro) {
+  background: #ffffff !important;
+  color: #003d73 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+}
+.pcp-map-filters .btn-filtro.activo-filtro {
+  background: #005BA8 !important;
+  color: #fff !important;
+  border-color: #005BA8 !important;
+  box-shadow: 0 4px 12px rgba(0,91,168,.2) !important;
+}

@@ -1,0 +1,57 @@
+:root {
+    --pcp-azul-principal: #005BA8; /* Color Pantone 2945C del manual */
+    --pcp-azul-claro: #008ED2;   /* Color Pantone 299C del manual */
+}
+
+body {
+    font-family: 'Gotham', sans-serif;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f7f9; /* Un fondo neutro y profesional */
+    padding: 1rem;
+}
+
+.login-card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+.login-logo-container {
+    margin-bottom: 1.5rem;
+}
+
+.login-logo-container img {
+    max-width: 200px; /* Ajusta el tamaño del logo como necesites */
+    height: auto;
+}
+
+.input-group-text {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    color: var(--pcp-azul-principal);
+}
+
+.form-control:focus {
+    border-color: var(--pcp-azul-claro);
+    box-shadow: 0 0 0 0.25rem rgba(0, 91, 168, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--pcp-azul-principal);
+    border-color: var(--pcp-azul-principal);
+    font-weight: 500;
+    padding: 0.75rem;
+}
+
+.btn-primary:hover {
+    background-color: #004b8d; /* Una versión ligeramente más oscura del azul para el hover */
+    border-color: #004b8d;
+}

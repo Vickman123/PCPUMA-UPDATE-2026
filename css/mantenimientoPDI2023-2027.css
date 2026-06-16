@@ -1,0 +1,151 @@
+/* Mantenimiento PDI 2023-2027 Styles */
+
+/* Hero Header Section */
+.hero-summary {
+  background: linear-gradient(135deg, #0d47a1 0%, #00274c 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  /* Ensures any background effects stay within the radius */
+}
+
+/* Optional: Add a subtle overlay pattern if desired, but ensure text is readable */
+.hero-summary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../img/fotos/pattern-white-alpha.png');
+  /* Hypothetical pattern */
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure content sits above the background */
+.hero-summary>* {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-summary h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #ffffff !important;
+}
+
+.hero-summary .lead {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: 2rem;
+  opacity: 1;
+  color: #ffffff !important;
+}
+
+/* KPI Cards in Hero */
+.hero-summary .card-kpi {
+  background-color: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-summary .card-kpi:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero-summary .card-kpi h5 {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-summary .card-kpi .display-6 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+/* Specific text colors for KPIs */
+.text-primary-custom {
+  color: #0d47a1;
+}
+
+.text-success-custom {
+  color: #198754;
+}
+
+.text-warning-custom {
+  color: #ffc107;
+}
+
+/* Filter Section */
+.form-label {
+  font-weight: 600;
+  color: #00274c;
+  margin-bottom: 0.5rem;
+}
+
+.form-select {
+  border-radius: 0.5rem;
+  border: 1px solid #ced4da;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form-select:focus {
+  border-color: #0d47a1;
+  box-shadow: 0 0 0 0.25rem rgba(13, 71, 161, 0.25);
+}
+
+/* Table Styles */
+.table-responsive {
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.table thead {
+  background-color: #00274c;
+  color: white;
+}
+
+.table thead th {
+  border-bottom: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding: 1rem;
+}
+
+.table tbody td {
+  padding: 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(13, 71, 161, 0.05);
+}

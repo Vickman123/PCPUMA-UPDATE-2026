@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tabla Periódica de Apps de IA — Selección 2024+</title>
+
+  <!-- UX/Accesibilidad: respetar preferencias del usuario -->
+  <meta name="color-scheme" content="dark light" />
+
+  <style>
+    /* ============================================================
+       THEME • Inspirado en la línea visual PC Puma (azules/gotham)
+       Nota: conservamos TODO el contenido original; sólo mejoramos.
+       ============================================================ */
+
+    :root{
+      --bg:#0b1020;            /* fondo profundo */
+      --card:#121834;          /* tarjetas */
+      --ink:#eaf1ff;           /* texto base */
+      --muted:#a9b4cf;         /* texto secundario */
+      --accent:#6cf0ff;        /* acento (cian) */
+      --chip:#1f2650;          /* chips */
+      --ring:#95f7ff80;        /* foco */
+      --primary:#005BA8;       /* azul institucional PC Puma (../css/global.css) */
+      --warning:#FFD700;       /* acento dorado institucional */
+      --ok:#8fffba;
+      --danger:#ff8f8f;
+
+      /* paleta por categoría */
+      --c-chat:#8dd2ff;          /* Chatbots & Texto */
+      --c-search:#a8ffcf;        /* Búsqueda */
+      --c-image:#ffc773;         /* Imágenes */
+      --c-video:#ff92b6;         /* Video */
+      --c-audio:#c7a6ff;         /* Audio */
+      --c-present:#9fe5ff;       /* Presentaciones */
+      --c-product:#9effc2;       /* Productividad/Docs */
+      --c-edu:#ffd38b;           /* Educación */
+      --c-agents:#b9ff9e;        /* Agentes/No‑code */
+
+      /* alto contraste (se activa con [data-contrast=high]) */
+      --hc-bg:#000;
+      --hc-card:#000;
+      --hc-ink:#fff;
+      --hc-muted:#cfcfcf;
+      --hc-chip:#000;
+      --hc-ring:#fff;
+      --hc-border:#fff;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, "Gotham", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:
+        radial-gradient(1200px 800px at 80% -10%, #253069, transparent 60%),
+        var(--bg);
+      color:var(--ink);
+      line-height:1.35;
+    }
+
+    /* Preferencias de movimiento */
+    @media (prefers-reduced-motion: reduce){
+      *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+    }
+
+    /* Alto contraste (toggle) */
+    body[data-contrast="high"]{
+      background: var(--hc-bg) !important;
+      color: var(--hc-ink) !important;
+    }
+    body[data-contrast="high"] .tile,
+    body[data-contrast="high"] .search,
+    body[data-contrast="high"] .sel{
+      background: var(--hc-card) !important;
+      color: var(--hc-ink) !important;
+      border-color: var(--hc-border) !important;
+      box-shadow: none !important;
+    }
+    body[data-contrast="high"] .chip{
+      background: var(--hc-chip) !important;
+      color: var(--hc-ink) !important;
+      border: 2px solid var(--hc-border) !important;
+    }
+    body[data-contrast="high"] .tile .desc{ color: var(--hc-ink) !important; }
+    body[data-contrast="high"] .tile .badge{ background:#000; border-color:#fff; }
+    body[data-contrast="high"] .tile:hover{ transform:none !important; }
+    body[data-contrast="high"] .toolbar .small{ color: var(--hc-ink); }
+
+    /* Header */
+    header{
+      max-width:1200px; margin:32px auto 16px; padding:0 20px;
+      display:grid; gap:10px;
+    }
+    h1{margin:0; font-weight:800; letter-spacing:.2px;}
+    .subtitle{color:var(--muted)}
+
+    /* Toolbar / Controles */
+    .toolbar{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:8px}
+    .search{flex:1; min-width:220px; background:var(--card); border:1px solid #273063; color:var(--ink); padding:12px 14px; border-radius:12px}
+    .sel{background:var(--card); border:1px solid #273063; color:var(--ink); padding:12px 14px; border-radius:12px}
+    .small{font-size:.9rem; color:var(--muted)}
+    .toolbar .btn{
+      background:var(--chip); color:var(--ink); border:1px solid #2c3567; padding:10px 14px; border-radius:12px; cursor:pointer;
+    }
+    .toolbar .btn:focus{outline:2px solid var(--ring); outline-offset:2px}
+
+    /* Chips de categoría */
+    .controls{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:8px}
+    .chip{background:var(--chip); color:var(--ink); border:1px solid #2c3567; padding:8px 12px; border-radius:999px; font-size:.9rem; cursor:pointer; user-select:none}
+    .chip[data-active="true"]{outline:2px solid var(--ring); box-shadow:0 0 0 1px #000 inset}
+    .chip:focus{outline:2px solid var(--ring); outline-offset:2px}
+
+    /* Leyenda */
+    .legend{display:flex; gap:12px; flex-wrap:wrap}
+    .legend .k{display:flex; align-items:center; gap:6px; color:var(--muted); font-size:.9rem}
+    .dot{width:12px; height:12px; border-radius:2px}
+
+    /* Grid */
+    .grid{
+      max-width:1200px; margin:12px auto 40px; padding:0 20px;
+      display:grid; grid-template-columns:repeat(12, 1fr); gap:10px;
+    }
+    @media (max-width:1200px){ .grid{grid-template-columns:repeat(8,1fr)} }
+    @media (max-width:900px){ .grid{grid-template-columns:repeat(6,1fr)} }
+    @media (max-width:700px){ .grid{grid-template-columns:repeat(4,1fr)} }
+    @media (max-width:480px){ .grid{grid-template-columns:repeat(2,1fr)} }
+
+    /* Tarjeta */
+    .tile{
+      position:relative; background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)), var(--card);
+      min-height:92px; border-radius:14px; padding:10px; border:1px solid #1b2350;
+      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease; 
+      display:flex; flex-direction:column; gap:8px; isolation:isolate;
+      text-decoration: none;
+    }
+    .tile:hover{transform:translateY(-2px); box-shadow:0 10px 28px rgba(0,0,0,.35); border-color:#2a3580}
+    .tile[data-price="G"]::after, .tile[data-price="F"]::after, .tile[data-price="C"]::after{
+      content:attr(data-price); position:absolute; top:8px; right:8px; font-size:.72rem; font-weight:700; 
+      padding:4px 6px; border-radius:999px; background:#00000055; color:var(--ink); border:1px solid #2c3567;
+    }
+    .tile .head{display:flex; align-items:center; gap:8px}
+    .tile .logo{width:32px; height:32px; border-radius:8px; background:#0e1433; display:grid; place-items:center; font-weight:800; font-size:.8rem; border:1px solid #2c3567}
+    .tile .name{font-weight:700; line-height:1.1}
+    .tile .desc{font-size:.8rem; color:var(--muted); line-height:1.25}
+    .badge{position:absolute; left:10px; bottom:10px; font-size:.7rem; padding:4px 6px; border-radius:8px; background:#00000055; border:1px solid #2c3567; color:var(--ink)}
+
+    .tile:focus{outline:2px solid var(--ring); outline-offset:2px; border-radius:12px}
+
+    /* Category color stripe */
+    .stripe{position:absolute; inset:auto auto 0 0; height:4px; border-bottom-left-radius:14px; border-bottom-right-radius:14px;}
+
+    footer{max-width:1200px; margin:0 auto 60px; padding:0 20px; color:var(--muted); font-size:.9rem}
+    .note{opacity:.9}
+
+    /* Barra superior con toggles de accesibilidad */
+    .topbar{
+      max-width:1200px; margin:8px auto 0; padding:0 20px;
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:flex-end;
+    }
+    .toggle{
+      display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:10px;
+      background:#0f1635; border:1px solid #273063; color:var(--ink); cursor:pointer; user-select:none;
+    }
+    .toggle input{accent-color:var(--primary)}
+
+    /* Tooltip simple (para precios) */
+    .tooltip{
+      position:absolute; bottom:100%; right:8px; transform:translateY(-6px);
+      background:#000; color:#fff; padding:6px 8px; border-radius:8px; font-size:.75rem;
+      opacity:0; pointer-events:none; transition:opacity .15s ease;
+    }
+    .tile:hover .tooltip{opacity:0.9}
+
+    /* Chips con iconito categoría */
+    .chip .dot{width:10px; height:10px; border-radius:2px; display:inline-block; margin-right:6px; vertical-align:middle}
+  </style>
+</head>
+<body>
+  <!-- Accesibilidad: enlace de salto -->
+  <a href="#grid" class="visually-hidden-focusable" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden">Saltar a resultados</a>
+
+  <!-- Barra de accesibilidad (alto contraste / reducir animación) -->
+  <div class="topbar" aria-label="Preferencias de visualización">
+    <label class="toggle"><input type="checkbox" id="contrastToggle" /> Alto contraste</label>
+    <label class="toggle"><input type="checkbox" id="motionToggle" /> Reducir animación</label>
+  </div>
+
+  <header role="banner">
+    <h1>Tabla periódica de <span style="color:var(--accent)">Apps de IA</span> (selección moderna)</h1>
+    <div class="subtitle">Curada para 2024+ con foco en calidad, tracción y novedades. Filtra por categoría y modalidad de uso (G=Gratis, F=Freemium, C=Créditos/limitado). Estilo y color en línea con PC Puma [oai_citation:2‡../css/global.css](file-service://file-AX9CsDYZfCUEsKVKYxfBf7) y con criterios WCAG AA [oai_citation:3‡accesibilidad.html](file-service://file-BRaar9dCzzEUPN1bWkYqV1).</div>
+
+    <nav class="toolbar" aria-label="Búsqueda y filtros principales">
+      <input id="q" class="search" type="search" placeholder="Buscar por nombre o función…" aria-label="Buscar por nombre o función" />
+      <select id="price" class="sel" aria-label="Filtrar por modalidad">
+        <option value="">Modalidad: todas</option>
+        <option value="G">Gratis</option>
+        <option value="F">Freemium</option>
+        <option value="C">Créditos</option>
+      </select>
+      <!-- Mejora UI: ordenamiento -->
+      <select id="sort" class="sel" aria-label="Ordenar resultados">
+        <option value="az">Ordenar: A‑Z</option>
+        <option value="recent">Más recientes</option>
+        <option value="cat">Por categoría</option>
+      </select>
+      <button id="reset" class="btn" type="button" aria-label="Restablecer filtros">Restablecer</button>
+      <span class="small" id="count" role="status" aria-live="polite"></span>
+    </nav>
+
+    <div class="legend" aria-label="Leyenda de categorías">
+      <div class="k"><span class="dot" style="background:var(--c-chat)"></span>Chatbots & Texto</div>
+      <div class="k"><span class="dot" style="background:var(--c-search)"></span>Búsqueda</div>
+      <div class="k"><span class="dot" style="background:var(--c-image)"></span>Imágenes</div>
+      <div class="k"><span class="dot" style="background:var(--c-video)"></span>Video</div>
+      <div class="k"><span class="dot" style="background:var(--c-audio)"></span>Audio/Música</div>
+      <div class="k"><span class="dot" style="background:var(--c-present)"></span>Presentaciones</div>
+      <div class="k"><span class="dot" style="background:var(--c-product)"></span>Productividad/Docs</div>
+      <div class="k"><span class="dot" style="background:var(--c-edu)"></span>Educación</div>
+      <div class="k"><span class="dot" style="background:var(--c-agents)"></span>Agentes & No‑code</div>
+    </div>
+
+    <!-- Filtros por categoría: convertidos a botones accesibles con teclado -->
+    <div class="controls" id="cat-controls" role="group" aria-label="Filtros de categorías"></div>
+  </header>
+
+  <!-- role="grid" para navegación accesible de “tarjetas” -->
+  <main class="grid" id="grid" aria-live="polite" role="grid"></main>
+
+  <footer role="contentinfo">
+    <p class="note">Esta selección es independiente y no afiliada. Las marcas y logotipos pertenecen a sus respectivos dueños. Última curaduría: 2024‑Q4. Estilo coherente con los lineamientos visuales y accesibles del sitio PC Puma [oai_citation:4‡../css/global.css](file-service://file-AX9CsDYZfCUEsKVKYxfBf7) [oai_citation:5‡accesibilidad.html](file-service://file-BRaar9dCzzEUPN1bWkYqV1).</p>
+  </footer>
+
+  <script>
+  // ============================================================
+  // DATA (Mantenido 100% igual; NO se elimina nada)
+  // price: G=Gratis, F=Freemium, C=Créditos/uso limitado
+  // ============================================================
+  const APPS = [
+    // Chatbots & Texto
+    {name:"ChatGPT (GPT‑4o)", url:"https://chat.openai.com/", cat:"chat", price:"F", year:2024, desc:"Asistente multimodal de alta calidad para texto, visión y voz."},
+    {name:"Claude 3 (Opus/Sonnet)", url:"https://claude.ai/", cat:"chat", price:"F", year:2024, desc:"Razonamiento fuerte y escritura natural, enfoque en seguridad."},
+    {name:"Gemini 1.5", url:"https://gemini.google.com/", cat:"chat", price:"F", year:2024, desc:"Contexto largo y capacidades multimodales de Google."},
+
+    // Búsqueda & investigación
+    {name:"Perplexity", url:"https://www.perplexity.ai/", cat:"search", price:"F", year:2024, desc:"Búsqueda con respuestas citadas y navegación web."},
+    {name:"Kagi Assistant", url:"https://kagi.com/", cat:"search", price:"F", year:2024, desc:"Búsqueda premium con resúmenes y filtros potentes."},
+
+    // Imágenes
+    {name:"Midjourney", url:"https://www.midjourney.com/", cat:"image", price:"C", year:2024, desc:"Arte generativo de alta fidelidad (v6+)."},
+    {name:"Adobe Firefly", url:"https://www.adobe.com/products/firefly.html", cat:"image", price:"F", year:2024, desc:"Generación y edición con integración Creative Cloud."},
+    {name:"Ideogram 2", url:"https://ideogram.ai/", cat:"image", price:"F", year:2024, desc:"Texto en imagen confiable y estilos variados."},
+    {name:"Stable Diffusion 3", url:"https://stability.ai/", cat:"image", price:"F", year:2024, desc:"Modelo abierto de última generación para imágenes."},
+    {name:"Canva Magic Studio", url:"https://www.canva.com/magic/", cat:"image", price:"F", year:2024, desc:"Suite de diseño con IA para no‑diseñadores."},
+
+    // Video & animación
+    {name:"Runway Gen‑3", url:"https://runwayml.com/", cat:"video", price:"C", year:2024, desc:"Texto‑a‑video fluido con controles avanzados."},
+    {name:"Pika 1.0", url:"https://pika.art/", cat:"video", price:"F", year:2024, desc:"Generación y edición de video accesible."},
+    {name:"Luma Dream Machine", url:"https://lumalabs.ai/dream-machine", cat:"video", price:"C", year:2024, desc:"Video realista con buena coherencia temporal."},
+    {name:"Sora (preview)", url:"https://openai.com/sora", cat:"video", price:"C", year:2024, desc:"Demostración de texto‑a‑video de largo formato."},
+
+    // Audio & música
+    {name:"ElevenLabs", url:"https://elevenlabs.io/", cat:"audio", price:"F", year:2024, desc:"Síntesis de voz realista y clonación.",},
+    {name:"Suno", url:"https://suno.com/", cat:"audio", price:"F", year:2024, desc:"Música de texto a canción con voces."},
+    {name:"Udio", url:"https://www.udio.com/", cat:"audio", price:"F", year:2024, desc:"Composición musical con control por prompt."},
+    {name:"Krisp", url:"https://krisp.ai/", cat:"audio", price:"F", year:2024, desc:"Cancelación de ruido impulsada por IA."},
+
+    // Presentaciones
+    {name:"Tome", url:"https://tome.app/", cat:"present", price:"F", year:2024, desc:"Presentaciones generadas por IA listas para pitch."},
+    {name:"Gamma", url:"https://gamma.app/", cat:"present", price:"F", year:2024, desc:"Docs, sitios y slides en minutos."},
+    {name:"Canva Presentations", url:"https://www.canva.com/", cat:"present", price:"F", year:2024, desc:"Plantillas, co‑creación y voz‑a‑slides."},
+    {name:"SlidesAI", url:"https://www.slidesai.io/", cat:"present", price:"F", year:2024, desc:"Genera slides a partir de texto."},
+
+    // Productividad / Docs
+    {name:"Notion AI", url:"https://www.notion.so/", cat:"product", price:"F", year:2024, desc:"Resúmenes, escritura y bases de conocimiento."},
+    {name:"GrammarlyGO", url:"https://www.grammarly.com/", cat:"product", price:"F", year:2024, desc:"Asistencia de escritura con contexto."},
+    {name:"AskYourPDF", url:"https://askyourpdf.com/", cat:"product", price:"F", year:2024, desc:"Chatea con PDFs y añade referencias."},
+    {name:"Humata", url:"https://www.humata.ai/", cat:"product", price:"F", year:2024, desc:"Análisis de documentos largos con citas."},
+    {name:"QuillBot", url:"https://quillbot.com/", cat:"product", price:"F", year:2024, desc:"Paráfrasis y revisión estilo académico."},
+
+    // Educación
+    {name:"MagicSchool AI", url:"https://www.magicschool.ai/", cat:"edu", price:"F", year:2024, desc:"Herramientas para docentes: rúbricas, planes y más."},
+    {name:"Socratic (Google)", url:"https://socratic.org/", cat:"edu", price:"G", year:2024, desc:"Ayuda guiada para estudiantes (móvil)."},
+    {name:"Khanmigo (Khan Academy)", url:"https://www.khanacademy.org/", cat:"edu", price:"F", year:2024, desc:"Tutor con IA para varias materias."},
+    {name:"Wolfram|Alpha", url:"https://www.wolframalpha.com/", cat:"edu", price:"F", year:2024, desc:"Motor de conocimiento computacional."},
+
+    // Agentes & No‑code
+    {name:"Zapier AI", url:"https://zapier.com/ai", cat:"agents", price:"F", year:2024, desc:"Agentes y flujos sin código con LLMs."},
+    {name:"Make (Integromat) + AI", url:"https://www.make.com/", cat:"agents", price:"F", year:2024, desc:"Automatiza entre apps con pasos de IA."},
+    {name:"Replit Agents", url:"https://replit.com/", cat:"agents", price:"F", year:2024, desc:"Agentes para generar y ejecutar código."},
+    {name:"V0 by Vercel", url:"https://v0.dev/", cat:"agents", price:"F", year:2024, desc:"UI a partir de prompts para React/Next."}
+  ];
+
+  // Metadatos de categoría
+  const CAT_META = {
+    chat:{label:"Chatbots & Texto", color:getColor('--c-chat')},
+    search:{label:"Búsqueda", color:getColor('--c-search')},
+    image:{label:"Imágenes", color:getColor('--c-image')},
+    video:{label:"Video", color:getColor('--c-video')},
+    audio:{label:"Audio/Música", color:getColor('--c-audio')},
+    present:{label:"Presentaciones", color:getColor('--c-present')},
+    product:{label:"Productividad/Docs", color:getColor('--c-product')},
+    edu:{label:"Educación", color:getColor('--c-edu')},
+    agents:{label:"Agentes & No‑code", color:getColor('--c-agents')},
+  };
+
+  function getColor(varName){
+    return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+  }
+
+  // Nodos UI
+  const catControls = document.getElementById('cat-controls');
+  const grid = document.getElementById('grid');
+  const q = document.getElementById('q');
+  const price = document.getElementById('price');
+  const sortSel = document.getElementById('sort');
+  const counter = document.getElementById('count');
+  const resetBtn = document.getElementById('reset');
+  const contrastToggle = document.getElementById('contrastToggle');
+  const motionToggle = document.getElementById('motionToggle');
+
+  // ============================================================
+  // ACCESIBILIDAD & PREFERENCIAS
+  // - Alto contraste y Reducir animación con persistencia
+  // ============================================================
+  initToggles();
+  function initToggles(){
+    const savedContrast = localStorage.getItem('tbl.contrast') === '1';
+    const savedMotion = localStorage.getItem('tbl.motion') === '1';
+    contrastToggle.checked = savedContrast;
+    motionToggle.checked = savedMotion;
+    applyContrast(savedContrast);
+    applyMotion(savedMotion);
+
+    contrastToggle.addEventListener('change', ()=>{
+      localStorage.setItem('tbl.contrast', contrastToggle.checked ? '1':'0');
+      applyContrast(contrastToggle.checked);
+    });
+    motionToggle.addEventListener('change', ()=>{
+      localStorage.setItem('tbl.motion', motionToggle.checked ? '1':'0');
+      applyMotion(motionToggle.checked);
+    });
+  }
+  function applyContrast(on){ document.body.setAttribute('data-contrast', on ? 'high':''); }
+  function applyMotion(on){
+    document.documentElement.style.setProperty('scroll-behavior', on ? 'auto':'smooth');
+  }
+
+  // ============================================================
+  // CHIPS DE CATEGORÍA (teclado y mouse) • accesibles
+  // ============================================================
+  Object.entries(CAT_META).forEach(([key, meta])=>{
+    const el = document.createElement('button');
+    el.className='chip';
+    el.dataset.key = key;
+    el.setAttribute('aria-pressed','false');
+    el.setAttribute('role','button');
+    el.setAttribute('tabindex','0');
+    el.innerHTML = `<span class="dot" style="background:${meta.color}"></span>${meta.label}`;
+    el.addEventListener('click', ()=>toggleChip(el));
+    el.addEventListener('keydown', (ev)=>{ if(ev.key==='Enter' || ev.key===' '){ ev.preventDefault(); toggleChip(el);} });
+    catControls.appendChild(el);
+  });
+
+  function toggleChip(el){
+    el.dataset.active = el.dataset.active!=="true" ? "true" : "false";
+    el.setAttribute('aria-pressed', el.dataset.active==="true");
+    persistState(); render();
+  }
+
+  function activeCats(){
+    return [...catControls.querySelectorAll('.chip')].filter(c=>c.dataset.active==="true").map(c=>c.dataset.key);
+  }
+
+  // ============================================================
+  // ESTADO, URL y PERSISTENCIA
+  // - Deep-link ?q=&price=&cats=&sort=
+  // - Persistencia en localStorage
+  // ============================================================
+  const STATE = { q:'', price:'', cats:[], sort:'az' };
+
+  // Cargar desde URL/localStorage
+  loadInitialState();
+  function loadInitialState(){
+    const params = new URLSearchParams(location.search);
+    const stored = JSON.parse(localStorage.getItem('tbl.state') || '{}');
+
+    STATE.q = params.get('q') ?? stored.q ?? '';
+    STATE.price = params.get('price') ?? stored.price ?? '';
+    STATE.sort = params.get('sort') ?? stored.sort ?? 'az';
+    const catsParam = params.get('cats');
+    const catsStored = stored.cats ?? [];
+    STATE.cats = catsParam ? catsParam.split(',').filter(Boolean) : catsStored;
+
+    // Aplicar a UI
+    q.value = STATE.q;
+    price.value = STATE.price;
+    sortSel.value = STATE.sort;
+    if(STATE.cats.length){
+      STATE.cats.forEach(k=>{
+        const btn = catControls.querySelector(`.chip[data-key="${k}"]`);
+        if(btn){ btn.dataset.active="true"; btn.setAttribute('aria-pressed','true'); }
+      });
+    }
+  }
+
+  function persistState(){
+    STATE.q = q.value.trim();
+    STATE.price = price.value;
+    STATE.sort = sortSel.value;
+    STATE.cats = activeCats();
+    localStorage.setItem('tbl.state', JSON.stringify(STATE));
+    const usp = new URLSearchParams();
+    if(STATE.q) usp.set('q', STATE.q);
+    if(STATE.price) usp.set('price', STATE.price);
+    if(STATE.cats.length) usp.set('cats', STATE.cats.join(','));
+    if(STATE.sort && STATE.sort!=='az') usp.set('sort', STATE.sort);
+    const newUrl = location.pathname + (usp.toString()? ('?'+usp.toString()) : '');
+    history.replaceState(null, '', newUrl);
+  }
+
+  // Eventos UI
+  q.addEventListener('input', ()=>{ persistState(); render(); });
+  price.addEventListener('change', ()=>{ persistState(); render(); });
+  sortSel.addEventListener('change', ()=>{ persistState(); render(); });
+  resetBtn.addEventListener('click', ()=>{
+    q.value=''; price.value=''; sortSel.value='az';
+    catControls.querySelectorAll('.chip').forEach(c=>{ c.dataset.active="false"; c.setAttribute('aria-pressed','false'); });
+    persistState(); render();
+  });
+
+  // ============================================================
+  // RENDER
+  // - Ordenamiento: A-Z / recientes / categoría
+  // - Foco accesible
+  // ============================================================
+  function render(){
+    const query = q.value.trim().toLowerCase();
+    const p = price.value;
+    const cats = activeCats();
+    grid.innerHTML='';
+
+    let list = APPS.filter(a=>{
+      const matchQ = !query || (a.name.toLowerCase().includes(query) || a.desc.toLowerCase().includes(query));
+      const matchP = !p || a.price===p;
+      const matchC = cats.length===0 || cats.includes(a.cat);
+      return matchQ && matchP && matchC;
+    });
+
+    // Orden
+    const sort = sortSel.value;
+    if(sort==='az'){
+      list.sort((a,b)=>a.name.localeCompare(b.name,'es',{sensitivity:'base'}));
+    } else if(sort==='recent'){
+      list.sort((a,b)=> (b.year||0) - (a.year||0) || a.name.localeCompare(b.name,'es'));
+    } else if(sort==='cat'){
+      const order = Object.keys(CAT_META);
+      list.sort((a,b)=>{
+        const d = order.indexOf(a.cat) - order.indexOf(b.cat);
+        return d!==0 ? d : a.name.localeCompare(b.name,'es');
+      });
+    }
+
+    list.forEach((app, idx)=>{
+      const t = document.createElement('a');
+      t.href = app.url; t.target='_blank'; t.rel='noopener noreferrer';
+      t.className='tile';
+      t.dataset.price = app.price;
+      t.setAttribute('data-cat', app.cat);
+      t.setAttribute('role','row');
+      t.setAttribute('tabindex','0'); // navegable con teclado
+      t.setAttribute('aria-label', `${app.name}. ${CAT_META[app.cat].label}. ${app.desc}. ${labelPrice(app.price)}${app.year>=2024? ', nuevo':''}`);
+
+      // head
+      const head = document.createElement('div'); head.className='head';
+      const logo = document.createElement('div'); logo.className='logo'; logo.textContent = getInitials(app.name);
+      const name = document.createElement('div'); name.className='name'; name.textContent = app.name;
+      head.appendChild(logo); head.appendChild(name);
+
+      const desc = document.createElement('div'); desc.className='desc'; desc.textContent = app.desc;
+
+      const badge = document.createElement('div'); badge.className='badge'; badge.textContent = labelPrice(app.price) + (app.year>=2024? ' • nuevo': '');
+
+      const stripe = document.createElement('div'); stripe.className='stripe'; stripe.style.background = CAT_META[app.cat].color;
+
+      // Tooltip sobre el badge (explica precio) • no intrusivo
+      const tip = document.createElement('div'); tip.className='tooltip';
+      tip.textContent = "G: Gratis · F: Freemium · C: Créditos/limitado";
+
+      t.appendChild(head); t.appendChild(desc); t.appendChild(badge); t.appendChild(stripe); t.appendChild(tip);
+      grid.appendChild(t);
+    });
+
+    counter.textContent = `${list.length} apps mostradas`;
+  }
+
+  function getInitials(name){
+    return name.split(/\s|\(|\)/).filter(Boolean).slice(0,2).map(s=>s[0]).join('').slice(0,3).toUpperCase();
+  }
+  function labelPrice(p){
+    return p==='G'? 'Gratis' : p==='F'? 'Freemium' : 'Créditos';
+  }
+
+  // Primera pintura
+  render();
+
+  // ============================================================
+  // COMENTARIOS TÉCNICOS (importante para mantenimiento):
+  // - Mejora UX: añadimos ordenamiento, restablecer, contador vivo.
+  // - Accesibilidad: roles, aria-live, foco visible, tooltips, teclado.
+  // - Preferencias: alto contraste y reducir animación con persistencia.
+  // - Estado: URL + localStorage para compartir y recordar filtros.
+  // - Estilo: colores alineados con ../css/global.css (PC Puma) y WCAG AA.
+  //   Referencias: color institucional y tipografía Gotham [oai_citation:6‡../css/global.css](file-service://file-AX9CsDYZfCUEsKVKYxfBf7);
+  //   política de accesibilidad del sitio [oai_citation:7‡accesibilidad.html](file-service://file-BRaar9dCzzEUPN1bWkYqV1).
+  // ============================================================
+  </script>
+</body>
+</html>

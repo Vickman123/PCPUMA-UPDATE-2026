@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Proyecto PC Puma - UNAM | Conoce al equipo detrás de la transformación digital">
+  <meta name="keywords" content="PC Puma, UNAM, Computación, Tecnología, Estudiantes, Docentes, Administración, Equipo, Nosotros">
+  <meta name="author" content="PC Puma Team">
+  <title>Nosotros - Programa PC Puma</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="../img/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../img/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../img/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../img/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../img/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../img/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../img/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../img/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../img/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../img/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../img/favicons/favicon-16x16.png">
+  <link rel="manifest" href="../img/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="../img/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link href="../css/index.css" rel="stylesheet" />
+  <link href="../css/global.css?v=5" rel="stylesheet" />
+  <link href="../css/nosotros.css?v=9" rel="stylesheet" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VK96VK5GZ5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-VK96VK5GZ5');
+  </script>
+
+  <style>
+    .org-card-node {
+      position: relative;
+      z-index: 1;
+      transition: z-index 0s;
+    }
+    .org-chart-wrapper {
+      position: relative;
+      overflow: visible;
+    }
+    .org-connectors-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .connector-path {
+      transition: stroke 0.3s ease, stroke-width 0.3s ease;
+    }
+    .team-subgroup-wrapper {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <nav role="navigation" class="navbar navbar-expand-lg navbar-dark pcp-navbar sticky-top">
+    <div class="container-fluid">
+      <div class="p-2 d-flex align-items-center">
+        <a href="https://www.unam.mx/" target="_blank">
+          <img loading="lazy" alt="Logotipo de la UNAM" src="../img/logos/unam.webp" class="logo-header me-3" />
+        </a>
+        <a href="https://sdi.unam.mx/" target="_blank">
+          <img loading="lazy" alt="Logotipo de la SDI - UNAM" src="../img/logos/sdi.webp" class="logo-header me-3" />
+        </a>
+        <a href="../index.html">
+          <img loading="lazy" alt="Logotipo del proyecto PC Puma" src="../img/logos/logo-pcpuma.webp" class="logo-header me-3" />
+        </a>
+        <a href="#">
+          <img loading="lazy" alt="Logotipo de la UNAM" src="../img/logos/Logo_unam475.png" class="logo-header" />
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house-fill me-1"></i>Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="estudiantes.html"><i class="bi bi-laptop me-1"></i>Estudiantes</a></li>
+          <li class="nav-item"><a class="nav-link" href="docentes.html"><i class="bi bi-person-fill me-1"></i>Docentes</a></li>
+          <li class="nav-item"><a class="nav-link" href="admin.html"><i class="bi bi-gear me-1"></i>TI</a></li>
+          <li class="nav-item"><a class="nav-link" href="eventos.html"><i class="bi bi-calendar-event me-1"></i>Eventos</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html"><i class="bi bi-question-circle me-1"></i>FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html"><i class="bi bi-envelope me-1"></i>Contacto</a></li>
+          <li class="nav-item"><a class="nav-link active" href="nosotros.html"><i class="bi bi-info-circle me-1"></i>Nosotros</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="left-bg"><canvas id="left-canvas"></canvas></div>
+  <div id="right-bg"><canvas id="right-canvas"></canvas></div>
+
+  <section class="que-es-section position-relative" id="que-es-y-pilares" style="background: transparent;">
+    <div class="container px-4">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="section-title-apple text-primary mb-4">¿Qué es PC Puma?</h2>
+        <p class="lead text-muted col-lg-9 mx-auto fs-5 lh-lg" style="text-align: justify; text-justify: inter-word;">
+          El Programa PC Puma es una iniciativa estratégica de la Universidad Nacional Autónoma de México que impulsa la transformación digital en la comunidad universitaria. Su objetivo es fomentar una cultura digital que garantice el acceso equitativo a la conectividad y a las herramientas tecnológicas, como condición esencial para fortalecer el aprendizaje, la docencia y la innovación. Este proyecto es promovido por la Secretaría de Desarrollo Institucional a través de la Coordinación de Proyectos Tecnológicos y de Innovación, desde donde se impulsa la transformación digital con un profundo sentido social y humano.
+        </p>
+      </div>
+
+      <div class="d-flex justify-content-center gap-4 flex-wrap mb-4" data-aos="fade-up" data-aos-delay="200" id="pillar-tabs-container">
+        <button class="pillar-tab-btn active glass-card" data-pillar="proposito">
+          <div class="pillar-tab-icon text-warning bg-warning-subtle"><i class="bi bi-lightbulb-fill"></i></div>
+          <span class="pillar-tab-label">Propósito</span>
+        </button>
+        <button class="pillar-tab-btn glass-card" data-pillar="objetivos">
+          <div class="pillar-tab-icon text-success bg-success-subtle"><i class="bi bi-people-fill"></i></div>
+          <span class="pillar-tab-label">Objetivos</span>
+        </button>
+        <button class="pillar-tab-btn glass-card" data-pillar="mision">
+          <div class="pillar-tab-icon text-info bg-info-subtle"><i class="bi bi-bullseye"></i></div>
+          <span class="pillar-tab-label">Misión</span>
+        </button>
+        <button class="pillar-tab-btn glass-card" data-pillar="vision">
+          <div class="pillar-tab-icon text-danger bg-danger-subtle"><i class="bi bi-eye-fill"></i></div>
+          <span class="pillar-tab-label">Visión</span>
+        </button>
+      </div>
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+        <div class="col-lg-8 col-md-10">
+          <div class="pillar-detail-card glass-card p-4 text-center position-relative overflow-hidden">
+            <div class="card-node-glow"></div>
+            <div class="card-glow-decor" id="pillar-glow" style="opacity: 0.15; filter: blur(35px); width: 200px; height: 200px; position: absolute; top: -50px; right: -50px; border-radius: 50%; transition: background-color 0.4s ease;"></div>
+            <div class="pillar-content-wrapper">
+              <h3 class="pillar-detail-title mb-3 text-primary" id="pillar-title">Propósito</h3>
+              <p class="pillar-detail-text text-muted fs-5 lh-lg mb-0" id="pillar-text" style="text-align: justify; text-justify: inter-word;">
+                Democratizar el acceso a la tecnología, generando inclusión. Buscamos que cada estudiante y docente tenga las mismas oportunidades de conexión y desarrollo digital, fomentando la equidad académica sostenible.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 bg-light-glass position-relative" id="equipo-pcpuma">
+    <div class="container-fluid px-md-5">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="section-title-apple text-primary">El Organigrama Digital</h2>
+        <p class="lead text-muted col-lg-8 mx-auto">
+          Conoce la estructura y el talento de los profesionales que guían e implementan las soluciones digitales dentro de PC Puma. Interactúa con las tarjetas y filtra por equipos.
+        </p>
+      </div>
+
+      <div class="org-filters d-flex flex-wrap justify-content-center gap-3 mb-5" data-aos="fade-up" data-aos-delay="100">
+        <button class="btn-filter-pill active" data-filter="all">Todo el Equipo</button>
+        <button class="btn-filter-pill" data-filter="liderazgo">Comité de Dirección</button>
+        <button class="btn-filter-pill" data-filter="trans-digital">Transformación Digital</button>
+        <button class="btn-filter-pill" data-filter="infraestructura-conectividad">Infraestructura y Conectividad</button>
+        <button class="btn-filter-pill" data-filter="arquitectura-tecnologica">Arquitectura Tecnológica</button>
+        <button class="btn-filter-pill" data-filter="soporte-continuidad">Soporte y Continuidad</button>
+      </div>
+
+      <div class="org-chart-wrapper position-relative py-4">
+        <svg class="org-connectors-svg" id="orgConnectors"></svg>
+
+        <!-- NIVEL 1: Coordinador General -->
+        <div class="org-level-row level-1 d-flex justify-content-center mb-5">
+          <div class="org-card-node level-1-node glass-card" id="card-1" data-dept="liderazgo" data-reports-to="">
+            <div class="card-node-glow"></div>
+            <div class="card-node-avatar">
+              <img src="../img/equipo/1.png" alt="Mtro. Francisco Adolfo López Suárez" loading="lazy">
+            </div>
+            <div class="card-node-info">
+              <h4 class="node-name">Mtro. Francisco Adolfo López Suárez</h4>
+              <p class="node-role">Coordinador de Proyectos Tecnológicos y de Innovación</p>
+              <span class="node-badge badge-coordinador">Coordinador General</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- NIVEL 2: Jefes de Departamento / Responsables de Área (Yessenia ahora a la par) -->
+        <div class="org-level-row level-2 d-flex flex-wrap justify-content-center gap-4 mb-5">
+          
+          <div class="org-card-node level-2-node glass-card" id="card-4" data-dept="liderazgo trans-digital" data-reports-to="card-1">
+            <div class="card-node-glow"></div>
+            <div class="card-node-avatar">
+              <img src="../img/equipo/4.png" alt="Ing. Amado Esparza Martín del Campo" loading="lazy">
+            </div>
+            <div class="card-node-info">
+              <h4 class="node-name">Ing. Amado Esparza Martín del Campo</h4>
+              <p class="node-role">Jefe de Depto. de Proyectos de Transformación Digital</p>
+              <span class="node-badge badge-lider">Jefe de Departamento</span>
+            </div>
+          </div>
+
+          <div class="org-card-node level-2-node glass-card" id="card-3" data-dept="liderazgo" data-reports-to="card-1">
+            <div class="card-node-glow"></div>
+            <div class="card-node-avatar">
+              <img src="../img/equipo/3.png" alt="Lic. Liliana B. Estrada Pérez" loading="lazy">
+            </div>
+            <div class="card-node-info">
+              <h4 class="node-name">Lic. Liliana B. Estrada Pérez</h4>
+              <p class="node-role">Jefa de Enlace y Planeación</p>
+              <span class="node-badge badge-lider">Jefa de Enlace</span>
+            </div>
+          </div>
+
+          <div class="org-card-node level-2-node glass-card" id="card-2" data-dept="liderazgo infraestructura-conectividad arquitectura-tecnologica" data-reports-to="card-1">
+            <div class="card-node-glow"></div>
+            <div class="card-node-avatar">
+              <img src="../img/equipo/2.png" alt="Ing. Gerardo Balbuena Navor" loading="lazy">
+            </div>
+            <div class="card-node-info">
+              <h4 class="node-name">Ing. Gerardo Balbuena Navor</h4>
+              <p class="node-role">Jefe de Depto. de Análisis y Desarrollo de Conectividad</p>
+              <span class="node-badge badge-lider">Jefe de Departamento</span>
+            </div>
+          </div>
+
+          <div class="org-card-node level-2-node glass-card" id="card-5" data-dept="liderazgo" data-reports-to="card-1">
+            <div class="card-node-glow"></div>
+            <div class="card-node-avatar">
+              <img src="../img/equipo/5.png" alt="Fís. Maureen Galindo Cabrera" loading="lazy">
+            </div>
+            <div class="card-node-info">
+              <h4 class="node-name">Fís. Maureen Galindo Cabrera</h4>
+              <p class="node-role">Responsable del Área de Ciencia de Datos</p>
+              <span class="node-badge badge-lider">Ciencia de Datos</span>
+            </div>
+          </div>
+
+          <div class="org-card-node level-2-node glass-card" id="card-12" data-dept="liderazgo soporte-continuidad" data-reports-to="card-1">
+            <div class="card-node-glow"></div>
+            <div class="card-node-avatar">
+              <img src="../img/equipo/12.png" alt="Roberto Aburto López" loading="lazy">
+            </div>
+            <div class="card-node-info">
+              <h4 class="node-name">Roberto Aburto López</h4>
+              <p class="node-role">Continuidad Operativa y Sostenibilidad Tecnológica</p>
+              <span class="node-badge badge-lider">Soporte y Continuidad</span>
+            </div>
+          </div>
+
+          <!-- Yessenia movida a Nivel 2, a la par de Roberto, conectada al Coordinador -->
+          <div class="org-card-node level-2-node glass-card" id="card-14" data-dept="liderazgo soporte-continuidad" data-reports-to="card-1">
+            <div class="card-node-glow"></div>
+            <div class="card-node-avatar">
+              <img src="../img/equipo/14.png" alt="Ing. Yessenia" loading="lazy">
+            </div>
+            <div class="card-node-info">
+              <h4 class="node-name">Ing. Yessenia</h4>
+              <p class="node-role">Responsable de Continuidad Operativa</p>
+              <span class="node-badge badge-lider">Liderazgo</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- NIVEL 3: Equipos Técnicos (Ordenados en 3 columnas principales) -->
+        <div class="org-level-row level-3 container-fluid mt-5">
+          <div class="row justify-content-center gy-5">
+            
+            <!-- Columna Izquierda: Transformación Digital -->
+            <div class="col-12 col-lg-4 d-flex flex-column align-items-center" id="group-trans-digital">
+              <div class="team-subgroup-wrapper theme-green">
+                <h5 class="team-subgroup-title text-center mb-4">
+                  <i class="bi bi-people-fill me-2"></i>Equipo de Transformación Digital
+                </h5>
+                <div class="row g-3 justify-content-center">
+                  
+                  <div class="col-12 col-sm-6 col-lg-12 d-flex justify-content-center">
+                    <div class="org-card-node level-3-node glass-card h-100" id="card-11" data-dept="trans-digital" data-reports-to="card-4">
+                      <div class="card-node-glow"></div>
+                      <div class="card-node-avatar">
+                        <img src="../img/equipo/11.jpeg" alt="Mtro. Francisco J. Aguilar González" loading="lazy">
+                      </div>
+                      <div class="card-node-info">
+                        <h4 class="node-name">Mtro. Francisco J. Aguilar González</h4>
+                        <p class="node-role">Especialista en Gestión del Cambio y Capacitación</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-sm-6 col-lg-12 d-flex justify-content-center">
+                    <div class="org-card-node level-3-node glass-card h-100" id="card-9" data-dept="trans-digital" data-reports-to="card-4">
+                      <div class="card-node-glow"></div>
+                      <div class="card-node-avatar">
+                        <img src="../img/equipo/9.png" alt="Arq. Renata Alarcón Miranda" loading="lazy">
+                      </div>
+                      <div class="card-node-info">
+                        <h4 class="node-name">Arq. Renata Alarcón Miranda</h4>
+                        <p class="node-role">Especialista en Diseño e Integración Tecnológica</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-sm-6 col-lg-12 d-flex justify-content-center">
+                    <div class="org-card-node level-3-node glass-card h-100" id="card-10" data-dept="trans-digital" data-reports-to="card-4">
+                      <div class="card-node-glow"></div>
+                      <div class="card-node-avatar">
+                        <img src="../img/equipo/10.png" alt="Ing. Víctor M. Carreño Garavito" loading="lazy">
+                      </div>
+                      <div class="card-node-info">
+                        <h4 class="node-name">Ing. Víctor M. Carreño Garavito</h4>
+                        <p class="node-role">Especialista de Gestión y Entrega de Servicios TI</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-sm-6 col-lg-12 d-flex justify-content-center">
+                    <div class="org-card-node level-3-node glass-card h-100" id="card-13" data-dept="trans-digital" data-reports-to="card-4">
+                      <div class="card-node-glow"></div>
+                      <div class="card-node-avatar">
+                        <img src="../img/equipo/13.png" alt="Jair Edrei Téllez García" loading="lazy">
+                      </div>
+                      <div class="card-node-info">
+                        <h4 class="node-name">Jair Edrei Téllez García</h4>
+                        <p class="node-role">Ingeniero de Software - Midlevel</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Columna Central: Infraestructura y Conectividad -->
+            <div class="col-12 col-lg-4 d-flex flex-column align-items-center" id="group-infraestructura-conectividad">
+              <div class="team-subgroup-wrapper theme-blue">
+                <h5 class="team-subgroup-title text-center mb-4">
+                  <i class="bi bi-diagram-3-fill me-2"></i>Infraestructura y Conectividad
+                </h5>
+                <div class="row g-3 justify-content-center">
+                  
+                  <div class="col-12 col-sm-6 col-lg-12 d-flex justify-content-center">
+                    <div class="org-card-node level-3-node glass-card h-100" id="card-6" data-dept="infraestructura-conectividad" data-reports-to="card-2">
+                      <div class="card-node-glow"></div>
+                      <div class="card-node-avatar">
+                        <img src="../img/equipo/6.png" alt="Ing. Eduardo Robledo Aguirre" loading="lazy">
+                      </div>
+                      <div class="card-node-info">
+                        <h4 class="node-name">Ing. Eduardo Robledo Aguirre</h4>
+                        <p class="node-role">Líder de Proyecto (Software)</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-sm-6 col-lg-12 d-flex justify-content-center">
+                    <div class="org-card-node level-3-node glass-card h-100" id="card-7" data-dept="infraestructura-conectividad" data-reports-to="card-2">
+                      <div class="card-node-glow"></div>
+                      <div class="card-node-avatar">
+                        <img src="../img/equipo/7.png" alt="Alejandro Fabian Sánchez Vielma" loading="lazy">
+                      </div>
+                      <div class="card-node-info">
+                        <h4 class="node-name">Alejandro Fabian Sánchez Vielma</h4>
+                        <p class="node-role">Líder de Proyectos (Redes)</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-sm-6 col-lg-12 d-flex justify-content-center">
+                    <div class="org-card-node level-3-node glass-card h-100" id="card-8" data-dept="infraestructura-conectividad" data-reports-to="card-2">
+                      <div class="card-node-glow"></div>
+                      <div class="card-node-avatar">
+                        <img src="../img/equipo/8.png" alt="Arturo Gonzales Aguilar" loading="lazy">
+                      </div>
+                      <div class="card-node-info">
+                        <h4 class="node-name">Arturo Gonzales Aguilar</h4>
+                        <p class="node-role">Líder de Proyectos (Infraestructura)</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-sm-6 col-lg-12 d-flex justify-content-center">
+                    <div class="org-card-node level-3-node glass-card h-100" id="card-15" data-dept="infraestructura-conectividad" data-reports-to="card-2">
+                      <div class="card-node-glow"></div>
+                      <div class="card-node-avatar">
+                        <img src="../img/equipo/15.png" alt="Ing. Alan" loading="lazy">
+                      </div>
+                      <div class="card-node-info">
+                        <h4 class="node-name">Ing. Alan</h4>
+                        <p class="node-role">Ingeniero de Conectividad</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Columna Derecha: Arquitectura Tecnológica -->
+            <div class="col-12 col-lg-4 d-flex flex-column align-items-center" id="group-arquitectura-tecnologica">
+              <div class="team-subgroup-wrapper theme-purple">
+                <h5 class="team-subgroup-title text-center mb-4">
+                  <i class="bi bi-layers-fill me-2"></i>Arquitectura Tecnológica
+                </h5>
+                <div class="row g-3 justify-content-center">
+                  
+                  <div class="col-12 col-sm-6 col-lg-12 d-flex justify-content-center">
+                    <div class="org-card-node level-3-node glass-card h-100" id="card-16" data-dept="arquitectura-tecnologica" data-reports-to="card-2">
+                      <div class="card-node-glow"></div>
+                      <div class="card-node-avatar">
+                        <img src="../img/equipo/16.png" alt="Arq. Manuel" loading="lazy">
+                      </div>
+                      <div class="card-node-info">
+                        <h4 class="node-name">Arq. Manuel</h4>
+                        <p class="node-role">Arquitecto de Conectividad</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-sm-6 col-lg-12 d-flex justify-content-center">
+                    <div class="org-card-node level-3-node glass-card h-100" id="card-17" data-dept="arquitectura-tecnologica" data-reports-to="card-2">
+                      <div class="card-node-glow"></div>
+                      <div class="card-node-avatar">
+                        <img src="../img/equipo/17.png" alt="Ing. Nombre" loading="lazy">
+                      </div>
+                      <div class="card-node-info">
+                        <h4 class="node-name">Ing. Nombre</h4>
+                        <p class="node-role">Ingeniero de Conectividad</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-sm-6 col-lg-12 d-flex justify-content-center">
+                    <div class="org-card-node level-3-node glass-card h-100" id="card-18" data-dept="arquitectura-tecnologica" data-reports-to="card-2">
+                      <div class="card-node-glow"></div>
+                      <div class="card-node-avatar">
+                        <img src="../img/equipo/18.png" alt="Arq. Nombre" loading="lazy">
+                      </div>
+                      <div class="card-node-info">
+                        <h4 class="node-name">Arq. Nombre</h4>
+                        <p class="node-role">Arquitecto de Conectividad</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-sm-6 col-lg-12 d-flex justify-content-center">
+                    <div class="org-card-node level-3-node glass-card h-100" id="card-19" data-dept="arquitectura-tecnologica" data-reports-to="card-2">
+                      <div class="card-node-glow"></div>
+                      <div class="card-node-avatar">
+                        <img src="../img/equipo/19.png" alt="Arq. Nombre" loading="lazy">
+                      </div>
+                      <div class="card-node-info">
+                        <h4 class="node-name">Arq. Nombre</h4>
+                        <p class="node-role">Arquitecto de Conectividad</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="org-scroll-hint d-md-none text-center mt-3">
+        <span class="badge px-3 py-2 rounded-pill small" style="background-color: var(--pcp-blue, #005BA8); box-shadow: 0 4px 12px rgba(0, 91, 168, 0.15);">
+          <i class="bi bi-arrow-left-right me-1"></i> Desliza horizontalmente para explorar el organigrama
+        </span>
+      </div>
+
+      <div class="text-center mt-5 pt-4" data-aos="fade-up">
+        <h4 class="mb-4 fw-semibold text-dark fs-4" style="letter-spacing: 0.3px;">
+          Liderazgos que hacen posible esta colaboración
+        </h4>
+        <div class="img-liderazgo-wrapper glass-card p-2 mx-auto" style="max-width: 900px;">
+          <img alt="Liderazgos que impulsan esta colaboración" class="img-fluid rounded-4 shadow-sm" src="../img/fotos/Liderazgos.jpeg" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="social-section py-5 text-center position-relative overflow-hidden">
+    <div class="container position-relative" style="z-index: 2;">
+      <h2 class="section-title-apple text-primary mb-3" data-aos="fade-up">¡Conéctate con PC Puma!</h2>
+      <p class="lead text-muted mb-5 col-lg-8 mx-auto" data-aos="fade-up" data-aos-delay="100">
+        Síguenos en nuestras redes sociales oficiales y entérate antes que nadie de capacitaciones, talleres y todas las novedades tecnológicas de la UNAM.
+      </p>
+
+      <div class="row g-4 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="https://pcpuma.unam.mx" target="_blank" class="social-glass-card card-web" data-color="rgba(0, 91, 168, 0.4)">
+            <div class="social-glow"></div>
+            <i class="bi bi-globe"></i>
+            <span class="social-name">Sitio Web</span>
+            <span class="social-handle">pcpuma.unam.mx</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="https://www.facebook.com/UNAM.PCPuma/" target="_blank" class="social-glass-card card-facebook" data-color="rgba(24, 119, 242, 0.4)">
+            <div class="social-glow"></div>
+            <i class="bi bi-facebook"></i>
+            <span class="social-name">Facebook</span>
+            <span class="social-handle">@UNAM.PCPuma</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="https://twitter.com/PCPuma_UNAM" target="_blank" class="social-glass-card card-twitter" data-color="rgba(0, 0, 0, 0.4)">
+            <div class="social-glow"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+              <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+            </svg>
+            <span class="social-name">Twitter / X</span>
+            <span class="social-handle">@PCPuma_UNAM</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="https://www.instagram.com/pc_puma/" target="_blank" class="social-glass-card card-instagram" data-color="rgba(225, 48, 108, 0.4)">
+            <div class="social-glow"></div>
+            <i class="bi bi-instagram"></i>
+            <span class="social-name">Instagram</span>
+            <span class="social-handle">@pc_puma</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="https://www.tiktok.com/@contactopcpuma?lang=es-419" target="_blank" class="social-glass-card card-tiktok" data-color="rgba(1, 1, 1, 0.4)">
+            <div class="social-glow"></div>
+            <i class="bi bi-tiktok"></i>
+            <span class="social-name">TikTok</span>
+            <span class="social-handle">@contactopcpuma</span>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="https://www.youtube.com/@ContactoPCPUMA" target="_blank" class="social-glass-card card-youtube" data-color="rgba(255, 0, 0, 0.4)">
+            <div class="social-glow"></div>
+            <i class="bi bi-youtube"></i>
+            <span class="social-name">YouTube</span>
+            <span class="social-handle">@ContactoPCPUMA</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer bg-pcpuma text-white" role="contentinfo">
+    <div class="container pt-4 pb-3">
+      <div class="row align-items-center">
+        <div class="col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+          <img src="../img/logos/Logo UNGU.png" alt="Universidad Nacional Autónoma de México" class="logo-unam-footer" loading="lazy">
+        </div>
+        <div class="col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+          <p class="fw-bold mb-3 text-white">© 2026 PC Puma - UNAM</p>
+          <p class="small mb-3">
+            Hecho en México. Universidad Nacional Autónoma de México (UNAM).
+            Todos los derechos reservados 2026.
+          </p>
+          <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+            <a href="https://www.facebook.com/UNAM.PCPuma/" target="_blank"><i class="bi bi-facebook fs-5 text-white"></i></a>
+            <a href="https://twitter.com/PCPuma_UNAM" target="_blank"><i class="bi bi-twitter-x fs-5 text-white"></i></a>
+            <a href="https://www.instagram.com/pc_puma/" target="_blank"><i class="bi bi-instagram fs-5 text-white"></i></a>
+            <a href="https://www.tiktok.com/@contactopcpuma" target="_blank"><i class="bi bi-tiktok fs-5 text-white"></i></a>
+            <a href="https://www.youtube.com/@ContactoPCPUMA" target="_blank"><i class="bi bi-youtube fs-5 text-white"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 text-start mb-3 mb-lg-0">
+          <h6 class="fw-bold mb-3 text-white">LIGAS DE INTERÉS</h6>
+          <ul class="list-unstyled footer-links">
+            <li><a href="../archivos/Lineamientos_Generales_PCPUMA.pdf" target="_blank">Lineamientos Generales</a></li>
+            <li><a href="../archivos/AvisoPrivacidad_Simplificado_ProyectoPCPUMA.pdf" target="_blank">Aviso de Privacidad Simplificado</a></li>
+            <li><a href="../archivos/AvisoPrivacidad_Integral_ProyectoPCPUMA.pdf" target="_blank">Aviso de Privacidad Integral</a></li>
+            <li><a href="creditos.html">Créditos</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 text-center text-lg-end">
+          <img src="../img/logos/Logo_unam475.png" alt="Universidad Nacional Autónoma de México" class="logo-unam-footer" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    function iniciarNetworkCanvas(idCanvas, colores) {
+      const canvas = document.getElementById(idCanvas);
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width = canvas.width = canvas.offsetWidth;
+      let height = canvas.height = canvas.offsetHeight;
+
+      let nodes = [];
+      const nodeCount = 35; 
+
+      for (let i = 0; i < nodeCount; i++) {
+        nodes.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          color: colores[Math.floor(Math.random() * colores.length)]
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < nodeCount; i++) {
+          let n = nodes[i];
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, 2, 0, Math.PI * 2);
+          ctx.fillStyle = n.color;
+          ctx.fill();
+        }
+
+        for (let i = 0; i < nodeCount; i++) {
+          for (let j = i + 1; j < nodeCount; j++) {
+            let n1 = nodes[i];
+            let n2 = nodes[j];
+            let dx = n1.x - n2.x;
+            let dy = n1.y - n2.y;
+            let dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 90) {
+              ctx.beginPath();
+              ctx.moveTo(n1.x, n1.y);
+              ctx.lineTo(n2.x, n2.y);
+              ctx.strokeStyle = 'rgba(0, 91, 168, 0.18)';
+              ctx.stroke();
+            }
+          }
+        }
+
+        for (let i = 0; i < nodeCount; i++) {
+          let n = nodes[i];
+          n.x += n.vx;
+          n.y += n.vy;
+          if (n.x < 0 || n.x > width) n.vx *= -1;
+          if (n.y < 0 || n.y > height) n.vy *= -1;
+        }
+
+        requestAnimationFrame(draw);
+      }
+
+      window.addEventListener('resize', () => {
+        if (!canvas) return;
+        width = canvas.width = canvas.offsetWidth;
+        height = canvas.height = canvas.offsetHeight;
+      });
+
+      draw();
+    }
+
+    window.addEventListener('load', function () {
+      iniciarNetworkCanvas('left-canvas', ['#005BA8', 'rgba(0, 91, 168, 0.4)']);
+      iniciarNetworkCanvas('right-canvas', ['#005BA8', 'rgba(0, 91, 168, 0.4)']);
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      AOS.init({ duration: 800, once: true });
+      gsap.registerPlugin(ScrollTrigger);
+
+      // ==========================================
+      // 1. LÓGICA DEL TAB SWITCHER DE PILARES
+      // ==========================================
+      const pillarData = {
+        proposito: {
+          title: "Propósito",
+          text: "Democratizar el acceso a la tecnología, generando inclusión. Buscamos que cada estudiante y docente tenga las mismas oportunidades de conexión y desarrollo digital, fomentando la equidad académica sostenible.",
+          color: "#ffd700"
+        },
+        objetivos: {
+          title: "Objetivos",
+          text: "Consolidar una comunidad universitaria conectada y resiliente, con infraestructura, formación y servicios tecnológicos de vanguardia que respondan a los desafíos contemporáneos de la educación.",
+          color: "#198754"
+        },
+        mision: {
+          title: "Misión",
+          text: "Conectar a la UNAM mediante proyectos que fomenten la accesibilidad, habilidades digitales e inclusión social, a través de soluciones sostenibles, éticas y humanistas enfocadas en las personas.",
+          color: "#0dcaf0"
+        },
+        vision: {
+          title: "Visión",
+          text: "Ser el referente institucional en conectividad e inclusión digital dentro de la UNAM, sirviendo como cimiento tecnológico para la transformación educativa y social de toda la Universidad.",
+          color: "#dc3545"
+        }
+      };
+
+      const tabButtons = document.querySelectorAll(".pillar-tab-btn");
+      const detailTitle = document.getElementById("pillar-title");
+      const detailText = document.getElementById("pillar-text");
+      const detailGlow = document.getElementById("pillar-glow");
+
+      if (detailGlow) {
+        detailGlow.style.backgroundColor = pillarData.proposito.color;
+      }
+
+      tabButtons.forEach(btn => {
+        btn.addEventListener("click", function() {
+          if (this.classList.contains("active")) return;
+          tabButtons.forEach(b => b.classList.remove("active"));
+          this.classList.add("active");
+
+          const pillarKey = this.getAttribute("data-pillar");
+          const data = pillarData[pillarKey];
+
+          if (data) {
+            gsap.to(".pillar-content-wrapper", {
+              opacity: 0,
+              y: -10,
+              duration: 0.25,
+              onComplete: () => {
+                detailTitle.textContent = data.title;
+                detailText.textContent = data.text;
+                if (detailGlow) {
+                  detailGlow.style.backgroundColor = data.color;
+                }
+                gsap.to(".pillar-content-wrapper", {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.35,
+                  ease: "power2.out"
+                });
+              }
+            });
+          }
+        });
+      });
+
+      // ==========================================
+      // 2. ORGANIGRAMA DIGITAL INTERACTIVO
+      // ==========================================
+      const cards = document.querySelectorAll(".org-card-node");
+      const filters = document.querySelectorAll(".btn-filter-pill");
+      const svgElement = document.getElementById("orgConnectors");
+
+      function drawConnectors() {
+        if (!svgElement) return;
+        svgElement.innerHTML = ''; 
+        
+        const wrapperEl = document.querySelector(".org-chart-wrapper");
+        if (!wrapperEl) return;
+        const wrapperRect = wrapperEl.getBoundingClientRect();
+        
+        const activeFilter = document.querySelector(".btn-filter-pill.active").getAttribute("data-filter");
+        if (activeFilter !== "all" && activeFilter !== "liderazgo") {
+          return; 
+        }
+
+        const nodes = Array.from(cards).filter(c => c.style.display !== "none" && c.style.opacity !== "0");
+        
+        nodes.forEach(node => {
+          const parentId = node.getAttribute("data-reports-to");
+          if (!parentId) return;
+
+          const parentEl = document.getElementById(parentId);
+          if (!parentEl || parentEl.style.display === "none") return;
+
+          const parentRect = parentEl.getBoundingClientRect();
+          const childRect = node.getBoundingClientRect();
+
+          const startX = (parentRect.left + parentRect.width / 2) - wrapperRect.left;
+          const startY = parentRect.bottom - wrapperRect.top;
+          const endX = (childRect.left + childRect.width / 2) - wrapperRect.left;
+          const endY = childRect.top - wrapperRect.top;
+
+          const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+          const midY = startY + (endY - startY) / 2;
+          
+          const d = `M ${startX} ${startY} C ${startX} ${midY}, ${endX} ${midY}, ${endX} ${endY}`;
+          
+          path.setAttribute("d", d);
+          path.setAttribute("class", "connector-path");
+          path.setAttribute("id", `path-${parentEl.id}-to-${node.id}`);
+          path.setAttribute("stroke", "rgba(0, 91, 168, 0.16)");
+          path.setAttribute("stroke-width", "2");
+          path.setAttribute("fill", "none");
+          
+          svgElement.appendChild(path);
+        });
+      }
+
+      setTimeout(drawConnectors, 500);
+      window.addEventListener("resize", drawConnectors);
+      window.addEventListener("orientationchange", drawConnectors);
+
+      filters.forEach(btn => {
+        btn.addEventListener("click", function () {
+          filters.forEach(f => f.classList.remove("active"));
+          this.classList.add("active");
+
+          const filterVal = this.getAttribute("data-filter");
+          const targetsToHide = [];
+          const targetsToShow = [];
+
+          cards.forEach(card => {
+            const depts = card.getAttribute("data-dept").split(" ");
+            if (filterVal === "all" || depts.includes(filterVal)) {
+              targetsToShow.push(card);
+            } else {
+              targetsToHide.push(card);
+            }
+          });
+
+          if (targetsToHide.length > 0) {
+            gsap.to(targetsToHide, {
+              opacity: 0,
+              scale: 0.9,
+              y: -10,
+              duration: 0.3,
+              stagger: 0.05,
+              onComplete: () => {
+                targetsToHide.forEach(c => c.style.display = "none");
+                drawConnectors();
+              }
+            });
+          }
+
+          targetsToShow.forEach(c => {
+            c.style.display = (c.classList.contains('level-3-node')) ? "block" : "flex";
+          });
+
+          gsap.fromTo(targetsToShow,
+            { opacity: 0, scale: 0.9, y: 15 },
+            { 
+              opacity: 1, 
+              scale: 1, 
+              y: 0, 
+              duration: 0.5, 
+              stagger: 0.05, 
+              delay: targetsToHide.length > 0 ? 0.25 : 0,
+              onComplete: () => {
+                drawConnectors();
+              }
+            }
+          );
+          
+          const transGroup = document.getElementById("group-trans-digital");
+          const infraGroup = document.getElementById("group-infraestructura-conectividad");
+          const arqGroup = document.getElementById("group-arquitectura-tecnologica");
+          
+          if (filterVal === "trans-digital") {
+            gsap.to([infraGroup, arqGroup], { opacity: 0, duration: 0.2, onComplete: () => { 
+              infraGroup.style.display = "none"; 
+              arqGroup.style.display = "none"; 
+            }});
+            transGroup.style.display = "block";
+            gsap.to(transGroup, { opacity: 1, duration: 0.3, onComplete: drawConnectors });
+          } else if (filterVal === "infraestructura-conectividad") {
+            gsap.to([transGroup, arqGroup], { opacity: 0, duration: 0.2, onComplete: () => { 
+              transGroup.style.display = "none"; 
+              arqGroup.style.display = "none"; 
+            }});
+            infraGroup.style.display = "block";
+            gsap.to(infraGroup, { opacity: 1, duration: 0.3, onComplete: drawConnectors });
+          } else if (filterVal === "arquitectura-tecnologica") {
+            gsap.to([transGroup, infraGroup], { opacity: 0, duration: 0.2, onComplete: () => { 
+              transGroup.style.display = "none"; 
+              infraGroup.style.display = "none"; 
+            }});
+            arqGroup.style.display = "block";
+            gsap.to(arqGroup, { opacity: 1, duration: 0.3, onComplete: drawConnectors });
+          } else {
+            transGroup.style.display = "block";
+            infraGroup.style.display = "block";
+            arqGroup.style.display = "block";
+            gsap.to([transGroup, infraGroup, arqGroup], { opacity: 1, duration: 0.3, onComplete: drawConnectors });
+          }
+        });
+      });
+
+      cards.forEach(card => {
+        card.addEventListener("mouseenter", function () {
+          const selfId = this.id;
+          const reportsTo = this.getAttribute("data-reports-to");
+
+          if (reportsTo) {
+            const pathEl = document.getElementById(`path-${reportsTo}-to-${selfId}`);
+            if (pathEl) {
+              pathEl.classList.add("connector-active");
+              pathEl.setAttribute("stroke", "#FFD700");
+              pathEl.setAttribute("stroke-width", "3.5");
+            }
+          }
+
+          document.querySelectorAll(`[data-reports-to="${selfId}"]`).forEach(child => {
+            const childPath = document.getElementById(`path-${selfId}-to-${child.id}`);
+            if (childPath) {
+              childPath.classList.add("connector-active");
+              childPath.setAttribute("stroke", "#FFD700");
+              childPath.setAttribute("stroke-width", "3.5");
+            }
+          });
+
+          cards.forEach(c => {
+            if (c !== this && c.id !== reportsTo && c.getAttribute("data-reports-to") !== selfId) {
+              gsap.to(c, { opacity: 0.45, scale: 0.98, duration: 0.3 });
+            }
+          });
+        });
+
+        card.addEventListener("mouseleave", function () {
+          document.querySelectorAll(".connector-path").forEach(path => {
+            path.classList.remove("connector-active");
+            path.setAttribute("stroke", "rgba(0, 91, 168, 0.16)");
+            path.setAttribute("stroke-width", "2");
+          });
+
+          cards.forEach(c => {
+            if (c.style.display !== "none") {
+              gsap.to(c, { opacity: 1, scale: 1, duration: 0.3 });
+            }
+          });
+        });
+      });
+
+      // ==========================================
+      // 3. EFECTO 3D TILT MEJORADO (Escala y Z-Index)
+      // ==========================================
+      const tiltElements = document.querySelectorAll(".org-card-node, .social-glass-card, .pillar-tab-btn, .pillar-detail-card");
+      
+      tiltElements.forEach(el => {
+        el.addEventListener("mousemove", function(e) {
+          const rect = this.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const xc = rect.width / 2;
+          const yc = rect.height / 2;
+
+          const angleX = (yc - y) / 12;
+          const angleY = (x - xc) / 12;
+
+          gsap.to(this, {
+            rotationX: angleX,
+            rotationY: angleY,
+            scale: 1.08,
+            zIndex: 100,
+            duration: 0.2,
+            ease: "power2.out",
+            transformPerspective: 800
+          });
+
+          const glow = this.querySelector(".card-node-glow, .social-glow");
+          if (glow) {
+            gsap.to(glow, {
+              x: x - glow.offsetWidth / 2,
+              y: y - glow.offsetHeight / 2,
+              opacity: 0.6,
+              duration: 0.2
+            });
+          }
+        });
+
+        el.addEventListener("mouseleave", function() {
+          gsap.to(this, {
+            rotationX: 0,
+            rotationY: 0,
+            scale: 1,
+            zIndex: 1,
+            duration: 0.4,
+            ease: "elastic.out(1, 0.6)"
+          });
+
+          const glow = this.querySelector(".card-node-glow, .social-glow");
+          if (glow) {
+            gsap.to(glow, {
+              opacity: 0,
+              duration: 0.4
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+

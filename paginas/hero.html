@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inicio | Programa PC Puma – UNAM</title>
+    <meta name="description"
+        content="PC Puma - Programa de conectividad móvil, préstamo de dispositivos y formación digital para la comunidad UNAM" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicons/favicon-16x16.png">
+    <link href="../css/eventos.css" rel="stylesheet">
+    <link rel="manifest" href="../img/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../img/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet">
+    <link href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" rel="stylesheet">
+    <link href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" rel="stylesheet">
+    <link href="../css/global.css?v=5" rel="stylesheet" />
+    <link href="../css/index.css" rel="stylesheet" />
+    <link href="../css/style_accessibility.css" rel="stylesheet" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VK96VK5GZ5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VK96VK5GZ5');
+    </script>
+    <style>
+        html,
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+</head>
+
+<body>
+
+    <!--NAVBAR-->
+    <nav role="navigation" class="navbar navbar-expand-lg navbar-dark bg-pcpuma sticky-top">
+        <div class="container-fluid">
+            <div class="p-2 d-flex align-items-center">
+                <a href="https://www.unam.mx/" target="_blank"><img loading="lazy" alt="Logotipo de la UNAM"
+                        src="../img/logos/unam.webp" class="logo-header me-3" /></a>
+                <a href="https://sdi.unam.mx/" target="_blank"><img loading="lazy" alt="Logotipo de la SDI - UNAM"
+                        src="../img/logos/sdi.webp" class="logo-header me-3" /></a>
+                <a href="../index.html"><img loading="lazy" alt="Logotipo del proyecto PC Puma" src="../img/logos/logo-pcpuma.webp"
+                        class="logo-header" /></a>
+            </div>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="../index.html"><i
+                                class="bi bi-house-fill me-1"></i>Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="estudiantes.html"><i
+                                class="bi bi-laptop me-1"></i>Estudiantes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="docentes.html"><i
+                                class="bi bi-person-fill me-1"></i>Docentes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admin.html"><i class="bi bi-gear me-1"></i>TI</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="eventos.html"><i
+                                class="bi bi-calendar-event me-1"></i>Eventos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html"><i
+                                class="bi bi-question-circle me-1"></i>FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html"><i
+                                class="bi bi-envelope me-1"></i>Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html"><i
+                                class="bi bi-info-circle me-1"></i>Nosotros</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--SECCION HERO-->
+    <section class="pcp-hero">
+        <div class="pcp-hero-bg" id="pcpHeroBg"></div>
+        <div class="pcp-hero-overlay"></div>
+
+        <div class="pcp-hero-container">
+
+            <div class="pcp-hero-text">
+
+                <div class="pcp-hero-eyebrow">
+                    Innovación y Tecnología
+                </div>
+
+                <h1 class="pcp-hero-title">
+                    Construyendo el <br>
+                    <span class="pcp-hero-highlight">Futuro Digital</span> de la UNAM
+                </h1>
+
+                <p class="pcp-hero-description">
+                    Potenciamos la investigación y la docencia a través de soluciones tecnológicas de vanguardia.
+                    Conectamos el conocimiento académico con la infraestructura digital del mañana.
+                </p>
+
+                <div class="pcp-hero-buttons">
+                    <a href="#servicios" class="pcp-btn-primary">Explorar Servicios</a>
+                    <a href="#eventos" class="pcp-btn-secondary">Ver eventos</a>
+                </div>
+
+            </div>
+
+
+            <div class="pcp-hero-card">
+
+                <div class="pcp-hero-stat">
+                    <div class="pcp-hero-icon">
+                        <i class="bi bi-plus-circle"></i>
+                    </div>
+                    <div>
+                        <div class="pcp-hero-stat-number">12,812</div>
+                        <div class="pcp-hero-stat-text">Access Point</div>
+                    </div>
+                </div>
+
+                <div class="pcp-hero-stat">
+                    <div class="pcp-hero-icon">
+                        <i class="bi bi-clock-history"></i>
+                    </div>
+                    <div>
+                        <div class="pcp-hero-stat-number">73</div>
+                        <div class="pcp-hero-stat-text">Entidades Participantes</div>
+                    </div>
+                </div>
+
+                <div class="pcp-hero-stat">
+                    <div class="pcp-hero-icon">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+                    <div>
+                        <div class="pcp-hero-stat-number">338,774</div>
+                        <div class="pcp-hero-stat-text">Usuarios beneficiados</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="pcp-scroll-indicator">
+
+            <div class="pcp-scroll-mouse">
+                <div class="pcp-scroll-wheel"></div>
+            </div>
+
+            <!-- NUEVO -->
+            <div class="pcp-scroll-mobile">
+                <i class="bi bi-phone"></i>
+            </div>
+
+            <span class="pcp-scroll-text">SCROLL</span>
+
+        </div>
+    </section>
+
+    <!--SECCION QUE ES PC PUMA-->
+    <section class="py-5 bg-light" data-aos="fade-up" id="que-es">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h2 class="mb-4">¿Qué es PC Puma?</h2>
+                    <p class="text-justify">
+                        El Programa PC Puma es una iniciativa estratégica de la Universidad
+                        Nacional Autónoma de México que impulsa la transformación digital en la
+                        comunidad universitaria. Su objetivo es fomentar una cultura digital
+                        que garantice el acceso equitativo a la conectividad y a las
+                        herramientas tecnológicas, como condición esencial para fortalecer el
+                        aprendizaje, la docencia y la innovación. <br>Este proyecto es
+                        promovido por la Secretaría de Desarrollo Institucional a través de la
+                        Coordinación de Proyectos Tecnológicos y de Innovación, desde donde se
+                        impulsa la transformación digital con un profundo sentido social y
+                        humano.
+                    </p>
+                    <a class="btn btn-primary mt-3" href="nosotros.html">Conócenos más</a>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <div class="video-pcpuma-container">
+                        <video preload="auto" class="video-pcpuma-final" autoplay muted loop playsinline
+                            poster="../img/banners/Banner Estudiantes.webp">
+                            <source src="../videos/Conectando UNAM Puma.webm" type="video/webm">
+                            Tu navegador no soporta la reproducción de video.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SECCION SERVICIOS-->
+    <section id="servicios" class="container-fluid py-5 text-center text-white"
+        style="position: relative; overflow: hidden; background-color: #002a4a;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.2;">
+            <canvas id="serviciosCanvas" style="width: 100%; height: 100%;"></canvas>
+        </div>
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="mb-3 text-white">Servicios de PC Puma</h2>
+                <p class="lead text-white-50 col-lg-8 mx-auto">
+                    Soluciones tecnológicas de <strong>inclusión digital</strong> y
+                    <strong>transformación digital</strong> para conectarte, aprender y crecer.
+                </p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card card-servicio-mejorado h-100" data-aos="fade-up">
+                        <div class="card-body d-flex flex-column">
+                            <h6 class="eje-label eje-label-inclusion">EJE: INCLUSIÓN DIGITAL
+                            </h6>
+                            <div class="servicio-icon icon-conectividad"><i class="bi bi-wifi"></i></div>
+                            <h5 class="card-title">Conectividad <br> Cobertura Total</h5>
+                            <p class="card-text flex-grow-1">Navega, investiga y colabora
+                                sin interrupciones con la red WiFi PC Puma de alta
+                                velocidad en la universidad.</p>
+                            <ul class="list-unstyled feature-list mt-auto">
+                                <li><i class="bi bi-check-lg text-success"></i> Más de
+                                    11,000 puntos de acceso</li>
+                                <li><i class="bi bi-check-lg text-success"></i> Red
+                                    segura y de alta velocidad</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card card-servicio-mejorado h-100" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-body d-flex flex-column">
+                            <h6 class="eje-label eje-label-inclusion">EJE: INCLUSIÓN DIGITAL
+                            </h6>
+                            <div class="servicio-icon icon-prestamo"><i class="bi bi-laptop"></i></div>
+                            <h5 class="card-title">Préstamo de Dispositivos</h5>
+                            <p class="card-text flex-grow-1">Accede al equipo que necesitas
+                                para cada una de tus tareas académicas y potencia tu
+                                rendimiento.</p>
+                            <ul class="list-unstyled feature-list mt-auto">
+                                <li><i class="bi bi-check-lg text-success"></i> Laptops,
+                                    iPads y Chromebooks</li>
+                                <li><i class="bi bi-check-lg text-success"></i> Módulos y
+                                    Lockers de autopréstamo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card card-servicio-mejorado h-100" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-body d-flex flex-column">
+                            <h6 class="eje-label eje-label-transformacion">EJE:
+                                TRANSFORMACIÓN DIGITAL</h6>
+                            <div class="servicio-icon icon-capacitacion"><i class="bi bi-person-video3"></i></div>
+                            <h5 class="card-title">Capacitación</h5>
+                            <p class="card-text flex-grow-1">Potencia tus habilidades y el
+                                uso de nuevas herramientas para la docencia y el
+                                aprendizaje.</p>
+                            <ul class="list-unstyled feature-list mt-auto">
+                                <li><i class="bi bi-check-lg text-success"></i> Talleres
+                                    de herramientas digitales</li>
+                                <li><i class="bi bi-check-lg text-success"></i> Asesoría
+                                    técnica especializada</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--SECCION COBERTURA NACIONAL MAPA-->
+    <section id="cobertura" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="mb-3">Cobertura Nacional de la Red WiFi</h2>
+                <p class="lead text-muted col-lg-8 mx-auto">Mapa interactivo con la cobertura actual
+                    de la red PC Puma en las entidades universitarias de todo el país.</p>
+            </div>
+            <div>
+                <div class="text-center mb-4">
+                    <div class="btn-group flex-wrap pcp-map-filters" role="group" aria-label="Filtros de entidades">
+                        <button class="btn btn-filtro"
+                            onclick="marcarBotonActivo('Facultades'); filtrarCapas('Facultades')"
+                            type="button">Facultades</button>
+                        <button class="btn btn-filtro" onclick="marcarBotonActivo('FES'); filtrarCapas('FES')"
+                            type="button">FES</button>
+                        <button class="btn btn-filtro" onclick="marcarBotonActivo('ENES'); filtrarCapas('ENES')"
+                            type="button">ENES</button>
+                        <button class="btn btn-filtro" onclick="marcarBotonActivo('ENP'); filtrarCapas('ENP')"
+                            type="button">ENP</button>
+                        <button class="btn btn-filtro" onclick="marcarBotonActivo('CCH'); filtrarCapas('CCH')"
+                            type="button">CCH</button>
+                        <button class="btn btn-filtro"
+                            onclick="marcarBotonActivo('Institutos'); filtrarCapas('Institutos')"
+                            type="button">Institutos</button>
+                        <button class="btn btn-filtro" onclick="marcarBotonActivo('Otros'); filtrarCapas('Otros')"
+                            type="button">Otros</button>
+                        <button class="btn btn-filtro activo-filtro"
+                            onclick="marcarBotonActivo('Todos'); filtrarCapas('Todos')" type="button">Mostrar
+                            Todos</button>
+                    </div>
+                </div>
+                <div id="map"></div>
+                <div class="alert alert-info mt-4 col-lg-8 mx-auto small" role="alert">
+                    <i class="bi bi-info-circle-fill me-2"></i>
+                    Para más detalles, haz clic en los íconos del mapa para ver el medio de
+                    contacto de cada entidad.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--SECCION ESTADISTICAS-->
+    <section class="py-5" style="background-color: #F5F9FF;">
+        <div class="container" data-aos="fade-up">
+            <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+                <div class="row g-0 align-items-center">
+                    <div class="col-lg-6 p-5 text-center text-lg-start">
+                        <div class="mb-4">
+                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle shadow"
+                                style="width:80px; height:80px; background-color:#005ba8;">
+
+                                <i class="bi bi-laptop fs-1 text-white"></i>
+
+                            </div>
+                        </div>
+                        <h2 class="fw-bold text-pcpuma mb-3">¿Necesitas un equipo para tus
+                            clases?</h2>
+                        <p class="lead text-dark mb-4">
+                            Solicita el préstamo de <strong>laptops</strong>,
+                            <strong>tabletas</strong> o <strong>Chromebooks</strong>
+                            y fortalece tu <span class="fw-semibold" style="color:#005ba8;">
+                                aprendizaje y enseñanza digital
+                            </span>.
+                        </p>
+                        <!-- BOTÓN ANIMADO PC PUMA -->
+                        <style>
+                            .btn-pcpuma-animated {
+                                padding: 1.1em 2.2em;
+                                border: 2px solid #000;
+                                font-size: 1.1rem;
+                                color: #131313;
+                                cursor: pointer;
+                                position: relative;
+                                overflow: hidden;
+                                transition: all 0.3s ease;
+                                border-radius: 50px;
+                                background-color: #ecd448;
+                                /* Amarillo institucional */
+                                font-weight: bold;
+                                box-shadow: 0 4px 0 0 #000;
+                                text-decoration: none;
+                                display: inline-flex;
+                                align-items: center;
+                                gap: 0.6rem;
+                            }
+
+                            .btn-pcpuma-animated span,
+                            .btn-pcpuma-animated i {
+                                position: relative;
+                                z-index: 2;
+                            }
+
+                            /* Efecto animado cruzado */
+                            .btn-pcpuma-animated::before {
+                                content: "";
+                                position: absolute;
+                                width: 120px;
+                                height: 140%;
+                                background-color: #ff6700;
+                                top: 50%;
+                                left: -150px;
+                                transform: skewX(30deg) translateY(-50%);
+                                transition: all 0.5s ease;
+                                z-index: 1;
+                            }
+
+                            .btn-pcpuma-animated:hover {
+                                background-color: #4cc9f0;
+                                color: #fff;
+                                box-shadow: 0 4px 0 0 #0d3b66;
+                            }
+
+                            .btn-pcpuma-animated:hover::before {
+                                left: 120%;
+                            }
+
+                            .btn-pcpuma-animated:active {
+                                transform: scale(0.92);
+                            }
+                        </style>
+
+                        <!-- BOTÓN ANIMADO PC PUMA -->
+                        <style>
+                            .btn-pcpuma-animated {
+                                padding: 1.1em 2.2em;
+                                border: 2px solid #000;
+                                font-size: 1.1rem;
+                                color: #131313;
+                                cursor: pointer;
+                                position: relative;
+                                overflow: hidden;
+                                transition: all 0.3s ease;
+                                border-radius: 50px;
+                                background-color: #ecd448;
+                                /* Amarillo institucional */
+                                font-weight: bold;
+                                box-shadow: 0 4px 0 0 #000;
+                                text-decoration: none;
+                                display: inline-flex;
+                                align-items: center;
+                                gap: 0.6rem;
+                            }
+
+                            .btn-pcpuma-animated span,
+                            .btn-pcpuma-animated i {
+                                position: relative;
+                                z-index: 2;
+                            }
+
+                            /* Efecto animado cruzado */
+                            .btn-pcpuma-animated::before {
+                                content: "";
+                                position: absolute;
+                                width: 120px;
+                                height: 140%;
+                                background-color: #ff6700;
+                                top: 50%;
+                                left: -150px;
+                                transform: skewX(30deg) translateY(-50%);
+                                transition: all 0.5s ease;
+                                z-index: 1;
+                            }
+
+                            .btn-pcpuma-animated:hover {
+                                background-color: #4cc9f0;
+                                color: #fff;
+                                box-shadow: 0 4px 0 0 #0d3b66;
+                            }
+
+                            .btn-pcpuma-animated:hover::before {
+                                left: 120%;
+                            }
+
+                            .btn-pcpuma-animated:active {
+                                transform: scale(0.92);
+                            }
+                        </style>
+
+                        <a class="btn-pcpuma-animated" href="https://modulospcpuma.unam.mx" target="_blank">
+                            <i class="bi bi-box-arrow-up-right"></i>
+                            <span>Solicita tu equipo</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 text-center bg-light p-4">
+                        <h5 class="fw-bold text-dark mb-3">📺 Cómo solicitar tu equipo paso a
+                            paso</h5>
+                        <div class="ratio ratio-16x9 rounded shadow-sm">
+                            <video class="w-100 rounded" autoplay muted loop playsinline
+                                poster="../img/banners/Banner Estudiantes.webp">
+                                <source src="../videos/Pasos%20para%20préstamo%20general.webm" type="video/webm">
+                                Tu navegador no soporta la reproducción de video.
+                            </video>
+                        </div>
+                        <p class="small text-muted mt-2">Tutorial oficial del proceso de
+                            registro y préstamo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <div class="p-4 rounded-3 shadow-sm bg-white border border-2 border-warning d-inline-block"
+                    style="max-width: 900px;">
+                    <p class="mb-0 text-dark small">
+                        <i class="bi bi-info-circle-fill text-warning me-2"></i>
+                        La <strong>disponibilidad de equipos</strong> y los
+                        <strong>lineamientos de uso</strong> pueden variar en cada entidad.
+                        Consulta directamente en tu módulo PC Puma para conocer los detalles
+                        aplicables en tu facultad, escuela, instituto o plantel.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENTOS RECIENTES -->
+    <section class="py-5 bg-white" id="eventos">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-pcpuma" data-aos="fade-up">
+                    Convocatorias y eventos recientes
+                </h2>
+
+                <p class="text-muted col-lg-7 mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Descubre los próximos cursos, talleres, webinars y actividades organizadas
+                    por PC Puma para fortalecer las competencias digitales de la comunidad
+                    universitaria.
+                </p>
+
+            </div>
+
+            <div class="row justify-content-center gx-4 gy-4" id="eventos-recientes"></div>
+
+            <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="300">
+                <a class="btn btn-outline-primary" href="eventos.html">
+                    Ver todos los eventos
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!--PROGRAMA-->
+    <section id="perfiles-comunidad" class="container py-5">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="mb-3">Un Programa para Toda la Comunidad</h2>
+            <p class="lead text-muted col-lg-8 mx-auto">Descubre los recursos, herramientas y beneficios
+                que PC Puma tiene para ti</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="card-perfil-unificado shadow">
+                    <div class="card-perfil-bg" style="background-image: url('../img/fotos/estudiantes.webp');"></div>
+                    <div class="card-perfil-overlay">
+                        <div class="card-body text-white text-center">
+                            <i class="bi bi-mortarboard fs-1 mb-3"></i>
+                            <h4 class="card-title text-white">Estudiantes</h4>
+                            <p class="card-text">Acceso a préstamo de laptops, conectividad
+                                móvil y espacios de estudio equipados.</p>
+                            <a href="estudiantes.html" class="btn btn-warning stretched-link">Ver beneficios</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-perfil-unificado shadow">
+                    <div class="card-perfil-bg" style="background-image: url('../img/fotos/docentes.webp');"></div>
+                    <div class="card-perfil-overlay">
+                        <div class="card-body text-white text-center">
+                            <i class="bi bi-easel fs-1 mb-3"></i>
+                            <h4 class="card-title text-white">Docentes</h4>
+                            <p class="card-text">Recursos digitales, formación docente e
+                                innovación para tus clases.</p>
+                            <a href="docentes.html" class="btn btn-warning stretched-link">Descubrir
+                                herramientas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-perfil-unificado shadow">
+                    <div class="card-perfil-bg" style="background-image: url('../img/fotos/Admin.webp');">
+                    </div>
+                    <div class="card-perfil-overlay">
+                        <div class="card-body text-white text-center">
+                            <i class="bi bi-gear fs-1 mb-3"></i>
+                            <h4 class="card-title text-white">Responsables TI</h4>
+                            <p class="card-text">Infraestructura de red, soporte técnico y
+                                guías de acompañamiento.</p>
+                            <a href="admin.html" class="btn btn-warning stretched-link">Acceder al
+                                panel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="py-5" style="background-color: #F5F9FF;">
+        <div class="container text-center" data-aos="fade-up">
+
+            <div class="text-center mb-5">
+
+                <h2 class="fw-bold text-pcpuma">
+                    Cifras del Programa PC Puma
+                </h2>
+
+                <p class="text-muted col-lg-7 mx-auto">
+                    Indicadores que reflejan el impacto del programa en la comunidad
+                    universitaria,
+                    impulsando la conectividad, el acceso a dispositivos y el fortalecimiento de
+                    la cultura digital en la UNAM.
+                </p>
+
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card shadow-sm border-0 rounded-4 h-100 p-4 text-center">
+                        <div class="mb-3"><i class="bi bi-wifi fs-1 text-primary"></i></div>
+                        <div class="display-6 fw-bold text-primary" id="cifra_antenas">0</div>
+                        <p class="small text-muted">Antenas WiFi activas</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card shadow-sm border-0 rounded-4 h-100 p-4 text-center">
+                        <div class="mb-3"><i class="bi bi-building fs-1 text-primary"></i>
+                        </div>
+                        <div class="display-6 fw-bold text-primary" id="cifra_aulas">0</div>
+                        <p class="small text-muted">Aulas y laboratorios conectados</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card shadow-sm border-0 rounded-4 h-100 p-4 text-center">
+                        <div class="mb-3"><i class="bi bi-people-fill fs-1 text-primary"></i>
+                        </div>
+                        <div class="display-6 fw-bold text-primary" id="cifra_usuarios">0</div>
+                        <p class="small text-muted">Usuarios beneficiados</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center mt-3">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card shadow-sm border-0 rounded-4 h-100 p-4 text-center">
+                        <div class="mb-3"><i class="bi bi-laptop fs-1 text-primary"></i></div>
+                        <div class="display-6 fw-bold text-primary" id="cifra_dispositivos">0
+                        </div>
+                        <p class="small text-muted">Dispositivos para préstamo</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card shadow-sm border-0 rounded-4 h-100 p-4 text-center">
+                        <div class="mb-3"><i class="bi bi-check-circle fs-1 text-primary"></i>
+                        </div>
+                        <div class="display-6 fw-bold text-primary" id="cifra_prestamos">0
+                        </div>
+                        <p class="small text-muted">Préstamos realizados 2026</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card shadow-sm border-0 rounded-4 h-100 p-4 text-center">
+                        <div class="mb-3"><i class="bi bi-mortarboard-fill fs-1 text-primary"></i>
+                        </div>
+                        <div class="display-6 fw-bold text-primary" id="cifra_entidades">0
+                        </div>
+                        <p class="small text-muted">Entidades participantes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios Sociales -->
+    <section class="py-5 bg-light" id="servicios-sociales">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-pcpuma">Convocatorias de Servicio Social</h2>
+                <p class="text-muted col-lg-7 mx-auto">
+                    Participa en proyectos de innovación tecnológica, análisis de datos y
+                    transformación digital dentro del programa PC Puma.
+                </p>
+            </div>
+
+            <div class="row g-4 justify-content-center" id="servicioSocialContainer"></div>
+
+        </div>
+    </section>
+
+    <section id="directorio-entidades"
+        class="container-fluid py-5 text-center text-white position-relative overflow-hidden"
+        style="background-color: #005BA8; min-height: 700px;">
+
+        <!-- Fondo animado -->
+        <canvas id="networkCanvas"
+            style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0; opacity:0.35;">
+        </canvas>
+
+        <!-- Contenido -->
+        <div class="container position-relative" style="z-index:1;">
+
+            <div class="text-center mb-5">
+
+                <h2 class="fw-bold text-white" data-aos="fade-down">
+                    Entidades que integran el programa
+                </h2>
+
+                <p class="text-white-50 col-lg-7 mx-auto" data-aos="fade-down" data-aos-delay="100">
+                    PC Puma se encuentra presente en facultades, escuelas, institutos y centros
+                    de investigación de la UNAM, fortaleciendo la conectividad y el acceso a
+                    tecnologías digitales en toda la comunidad universitaria.
+                </p>
+
+            </div>
+
+            <!-- Grid de entidades -->
+            <div id="entidades-grid" class="row justify-content-center g-4 mt-4" data-aos="fade-up">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODAL DINÁMICO ENTIDADES -->
+    <div class="modal fade" id="entidadModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header bg-pcpuma">
+                    <h5 class="modal-title text-white" id="modalTitulo"></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
+                    </button>
+                </div>
+
+                <div class="modal-body" id="modalContenido">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--SEPARACION-->
+    <div class="modal fade" id="modal1" tabindex="-1">
+    </div>
+    <div class="modal fade" id="modal40" tabindex="-1">
+    </div>
+    </main>
+
+    <!-- PIE DE PÁGINA  -->
+    <footer class="footer bg-pcpuma text-white" role="contentinfo">
+        <div class="container pt-4 pb-3">
+
+            <div class="row align-items-center">
+
+                <!-- COLUMNA 1 : LOGO -->
+                <div class="col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+                    <img src="../img/logos/Logo UNGU.png" alt="Universidad Nacional Autónoma de México" class="logo-unam-footer">
+                </div>
+
+
+                <!-- COLUMNA 2 : INFORMACIÓN LEGAL -->
+                <div class="col-lg-3 text-center text-lg-start mb-3 mb-lg-0">
+
+                    <p class="fw-bold mb-3 text-white">© 2026 PC Puma - UNAM</p>
+
+                    <p class="small mb-3">
+                        Hecho en México. Universidad Nacional Autónoma de México (UNAM).
+                        Todos los derechos reservados 2026.
+                    </p>
+
+                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+
+                        <a href="https://www.facebook.com/UNAM.PCPuma/" target="_blank">
+                            <i class="bi bi-facebook fs-5 text-white"></i>
+                        </a>
+
+                        <a href="https://twitter.com/PCPuma_UNAM" target="_blank">
+                            <i class="bi bi-twitter-x fs-5 text-white"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/pc_puma/" target="_blank">
+                            <i class="bi bi-instagram fs-5 text-white"></i>
+                        </a>
+
+                        <a href="https://www.tiktok.com/@contactopcpuma" target="_blank">
+                            <i class="bi bi-tiktok fs-5 text-white"></i>
+                        </a>
+
+                        <a href="https://www.youtube.com/@ContactoPCPUMA" target="_blank">
+                            <i class="bi bi-youtube fs-5 text-white"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COLUMNA 3 : DOCUMENTOS -->
+                <div class="col-lg-3 text-start mb-3 mb-lg-0">
+
+                    <h6 class="fw-bold mb-3 text-white">LIGAS DE INTERÉS</h6>
+
+                    <ul class="list-unstyled footer-links">
+
+                        <li>
+                            <a href="../archivos/Lineamientos_Generales_PCPUMA.pdf" target="_blank">
+                                Lineamientos Generales
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../archivos/AvisoPrivacidad_Simplificado_ProyectoPCPUMA.pdf" target="_blank">
+                                Aviso de Privacidad Simplificado
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../archivos/AvisoPrivacidad_Integral_ProyectoPCPUMA.pdf" target="_blank">
+                                Aviso de Privacidad Integral
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="creditos.html">
+                                Créditos
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- COLUMNA 4 : LOGO -->
+                <div class="col-lg-3 text-center text-lg-end">
+                    <img src="../img/logos/Logo_unam475.png" alt="Universidad Nacional Autónoma de México"
+                        class="logo-unam-footer">
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- BOTÓN FLOTANTE ANIMADO PC PUMA -->
+    <style>
+        .flotante-equipo {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 1.1em 2em;
+            background-color: #ecd448;
+            /* Amarillo PC Puma */
+            color: #131313;
+            font-weight: bold;
+            font-size: 1rem;
+            border: 2px solid #000;
+            border-radius: 50px;
+            box-shadow: 0 4px 0 0 #000;
+            text-decoration: none;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            z-index: 9999;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flotante-equipo::before {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 140%;
+            background-color: #ff6700;
+            top: 50%;
+            left: -150px;
+            transform: skewX(30deg) translateY(-50%);
+            transition: all 0.5s ease;
+            z-index: 1;
+        }
+
+        .flotante-equipo span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .flotante-equipo:hover {
+            background-color: #4cc9f0;
+            color: #fff;
+            box-shadow: 0 4px 0 0 #0d3b66;
+        }
+
+        .flotante-equipo:hover::before {
+            left: 120%;
+        }
+
+        .flotante-equipo:active {
+            transform: scale(0.92);
+        }
+    </style>
+
+    <a class="flotante-equipo" href="https://modulospcpuma.unam.mx" target="_blank">
+        <span>Solicita tu equipo</span>
+    </a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" defer></script>
+    <script src="../js/network-bg.js" defer></script>
+    <script src="../js/entidades_index.js"></script>
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init({ duration: 800, once: true });
+
+            function animateValue(id, start, end, duration) {
+                const element = document.getElementById(id);
+                if (!element) return;
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const value = Math.floor(progress * (end - start) + start);
+                    element.textContent = value.toLocaleString('es-MX');
+                    if (progress < 1) { window.requestAnimationFrame(step); }
+                };
+                window.requestAnimationFrame(step);
+            }
+            animateValue("cifra_antenas", 0, 12812, 2000);
+            animateValue("cifra_aulas", 0, 6968, 2000);
+            animateValue("cifra_usuarios", 0, 338774, 2000);
+            animateValue("cifra_dispositivos", 0, 13139, 2000);
+            animateValue("cifra_prestamos", 0, 285132, 2000);
+            animateValue("cifra_entidades", 0, 73, 2000);
+
+            // --- LÓGICA PARA EL MAPA DE COBERTURA (CORREGIDA) ---
+            // --- LÓGICA PARA EL MAPA DE COBERTURA (CORREGIDA) ---
+            (function initMap() {
+                const mapElement = document.getElementById('map');
+                if (!mapElement) return;
+
+                const map = L.map('map').setView([23.6345, -102.5528], 5);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map);
+                setTimeout(() => map.invalidateSize(), 400);
+
+                const entidadesMapa = [
+                    { 'nombre': 'Instituto de Física', 'coords': [19.325474610603433, -99.17579572194856], 'logo': '../img/logos/IFISICA.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Instituto de Física', 'correo': 'institutodefisica@pcpuma.unam.mx', 'web': 'https://w2.fisica.unam.mx/bif/info/show_pcpuma' },
+                    { 'nombre': 'Instituto de Biología', 'coords': [19.320983296784707, -99.19356584697681], 'logo': '../img/logos/IBIOLOGIA.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Instituto de Biología', 'correo': 'institutodebiologia@pcpuma.unam.mx', 'web': 'https://www.ib.unam.mx/' },
+                    { 'nombre': 'Instituto de Geofísica', 'coords': [19.326925198678282, -99.17573781685239], 'logo': '../img/fotos/default.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Instituto de Geofísica', 'correo': 'institutodegeofisica@pcpuma.unam.mx', 'web': 'https://www.geofisica.unam.mx/' },
+                    { 'nombre': 'Instituto de Investigaciones Jurídicas', 'coords': [19.31637350580925, -99.17960214141897], 'logo': '../img/fotos/default.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Instituto de Investigaciones Jurídicas', 'correo': 'institutodeinvestigacionesjuridicas@pcpuma.unam.mx', 'web': 'https://www.juridicas.unam.mx/' },
+                    { 'nombre': 'FES Zaragoza', 'coords': [19.38499406249111, -99.03683219671362], 'logo': '../img/logos/FESZARAGOZA.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Zaragoza', 'correo': 'feszaragoza@pcpuma.unam.mx' },
+                    { 'nombre': 'FES Iztacala', 'coords': [19.525524395165338, -99.1875494382314], 'logo': '../img/logos/FESIZTACALA.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Iztacala', 'correo': 'fesiztacala@pcpuma.unam.mx' },
+                    { 'nombre': 'FES Cuautitlán', 'coords': [19.637238884322016, -99.20675098531684], 'logo': '../img/logos/FESCUAUTITLAN.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Cuautitlán', 'correo': 'fescuautitlan@pcpuma.unam.mx' },
+                    { 'nombre': 'FES Aragón', 'coords': [19.474905277041735, -99.04261623162851], 'logo': '../img/logos/FESARAGON.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Aragón', 'correo': 'fesaragon@pcpuma.unam.mx' },
+                    { 'nombre': 'FES Acatlán', 'coords': [19.483980490981725, -99.24608134459692], 'logo': '../img/logos/FESACATLAN.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Acatlán', 'correo': 'fesacatlan@pcpuma.unam.mx', 'web': 'https://www.acatlan.unam.mx/pcpuma/' },
+                    { 'nombre': 'Facultad de Psicología', 'coords': [19.335371630096684, -99.18820538616221], 'logo': '../img/logos/FPSICOLOGIA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Psicología', 'correo': 'facultaddepsicologia@pcpuma.unam.mx' },
+                    { 'nombre': 'Facultad de Odontología', 'coords': [19.33469445030701, -99.1813586418355], 'logo': '../img/logos/FODONTOLOGIA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Odontología', 'correo': 'facultaddeodontologia@pcpuma.unam.mx' },
+                    { 'nombre': 'Facultad de Música', 'coords': [19.354114563479538, -99.15338310520872], 'logo': '../img/logos/FMUSICA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Música', 'correo': 'facultaddemusica@pcpuma.unam.mx' },
+                    { 'nombre': 'Facultad de Medicina Veterinaria y Zootecnia', 'coords': [19.32966649083588, -99.17697108137068], 'logo': '../img/logos/FMVZ.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Medicina Veterinaria y Zootecnia', 'correo': 'facultaddemedicinaveterinariayzootecnia@pcpuma.unam.mx' },
+                    { 'nombre': 'Facultad de Medicina', 'coords': [19.33319681263341, -99.18012782835417], 'logo': '../img/logos/FMEDICINA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Medicina', 'correo': 'facultaddemedicina@pcpuma.unam.mx' },
+                    { 'nombre': 'Facultad de Ingeniería', 'coords': [19.331120077304863, -99.18451144740555], 'logo': '../img/logos/FINGENIERIA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Ingeniería', 'correo': 'facultaddeingenieria@pcpuma.unam.mx' },
+                    { 'nombre': 'Facultad de Filosofía y Letras', 'coords': [19.33487018621355, -99.18656088986764], 'logo': '../img/logos/FFYL.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Filosofía y Letras', 'correo': 'facultaddefilosofiayletras@pcpuma.unam.mx' },
+                    { 'nombre': 'Facultad de Economía', 'coords': [19.33585187733933, -99.1810034149215], 'logo': '../img/logos/FECONOMIA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Economía', 'correo': 'facultaddeeconomia@pcpuma.unam.mx' },
+                    { 'nombre': 'Facultad de Derecho', 'coords': [19.334711486400952, -99.18454048801497], 'logo': '../img/logos/DERECHO.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Derecho', 'correo': 'facultaddederecho@pcpuma.unam.mx' },
+                    { 'nombre': 'Facultad de Ciencias Políticas y Sociales', 'coords': [19.31893075050844, -99.17760991999347], 'logo': '../img/logos/FCPYS.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Ciencias Políticas y Sociales', 'correo': 'facultaddecienciaspoliticasysociales@pcpuma.unam.mx' },
+                    { 'nombre': 'Facultad de Ciencias', 'coords': [19.32412945504399, -99.17915652714242], 'logo': '../img/logos/FCIENCIAS.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Ciencias', 'correo': 'facultaddeciencias@pcpuma.unam.mx' },
+                    { 'nombre': 'Facultad de Artes y Diseño', 'coords': [19.252282599214126, -99.1178333371921], 'logo': '../img/logos/FAD.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Artes y Diseño', 'correo': 'facultaddeartesydiseno@pcpuma.unam.mx' },
+                    { 'nombre': 'Facultad de Arquitectura', 'coords': [19.330848044161417, -99.188348396485], 'logo': '../img/logos/FARQUITECTURA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Arquitectura', 'correo': 'facultaddearquitectura@pcpuma.unam.mx' },
+                    { 'nombre': 'Facultad de Contaduría y Administración', 'coords': [19.324312125504214, -99.18538474649544], 'logo': '../img/fotos/default.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Contaduría y Administración', 'correo': 'facultaddecontaduriayadministracion@pcpuma.unam.mx' },
+                    { 'nombre': 'Facultad de Enfermería y Obstetricia', 'coords': [19.292168756720198, -99.15072043533844], 'logo': '../img/fotos/default.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Enfermería y Obstetricia', 'correo': 'facultaddeenfermeriayobstetricia@pcpuma.unam.mx' },
+                    { 'nombre': 'ENES Oaxaca', 'coords': [17.070907, -96.695651], 'logo': '../img/logos/ENESO.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES Oaxaca', 'correo': 'enesoaxaca@pcpuma.unam.mx' },
+                    { 'nombre': 'ENES Morelia', 'coords': [19.649573312650706, -101.22145383976972], 'logo': '../img/logos/ENESMORELIA.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES Morelia', 'correo': 'enesmorelia@pcpuma.unam.mx' },
+                    { 'nombre': 'ENES Mérida', 'coords': [20.988215670250913, -89.73412033729292], 'logo': '../img/logos/ENESMERIDA.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES Mérida', 'correo': 'enesmerida@pcpuma.unam.mx' },
+                    { 'nombre': 'ENES León', 'coords': [21.042821809228883, -101.67264500849731], 'logo': '../img/logos/ENESLEON.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES León', 'correo': 'enesleon@pcpuma.unam.mx' },
+                    { 'nombre': 'ENES Juriquilla', 'coords': [20.705332796348923, -100.44884252957387], 'logo': '../img/logos/ENESJURIQUILLA.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES Juriquilla', 'correo': 'enesjuriquilla@pcpuma.unam.mx' },
+                    { 'nombre': 'Escuela Nacional de Artes Cinematográficas', 'coords': [19.318869045009976, -99.17444091453791], 'logo': '../img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Escuela Nacional de Artes Cinematográficas', 'correo': 'escuelanacionaldeartescinematograficas@pcpuma.unam.mx' },
+                    { 'nombre': 'Escuela Nacional de Lenguas, Lingüística y Traducción', 'coords': [19.3318179732864, -99.18220098012718], 'logo': '../img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Escuela Nacional de Lenguas, Lingüística y Traducción', 'correo': 'escuelanacionaldelenguaslinguisticaytraduccion@pcpuma.unam.mx' },
+                    { 'nombre': 'Escuela Nacional de Trabajo Social', 'coords': [19.324056617197513, -99.18566802988228], 'logo': '../img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Escuela Nacional de Trabajo Social', 'correo': 'escuelanacionaldetrabajosocial@pcpuma.unam.mx' },
+                    { 'nombre': 'Coordinación Mixta de Posgrado', 'coords': [19.309894953882555, -99.18442937962074], 'logo': '../img/logos/POSGRADO.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Coordinación Mixta de Posgrado', 'correo': 'coordinacionmixtadeposgrado@pcpuma.unam.mx' },
+                    { 'nombre': 'Unidad de Extensión Universitaria Oaxaca', 'coords': [17.06138413676055, -96.72083523358762], 'logo': '../img/logos/UEUO.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Unidad de Extensión Universitaria Oaxaca', 'correo': 'unidaddeextensionuniversitariaoaxaca@pcpuma.unam.mx' },
+                    { 'nombre': 'Centro de Nanociencias y Nanotecnología', 'coords': [31.86791106321224, -116.66507268199652], 'logo': '../img/logos/CNYN.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Centro de Nanociencias y Nanotecnología', 'correo': 'cnyn@pcpuma.unam.mx' },
+                    { 'nombre': 'Pabellón Nacional de la Biodiversidad', 'coords': [19.311832212847605, -99.18375996533628], 'logo': '../img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Pabellón Nacional de la Biodiversidad', 'correo': 'pabellonnacionaldelabiodiversidad@pcpuma.unam.mx' },
+                    { 'nombre': 'Antiguo Colegio de San Ildefonso', 'coords': [19.436002385912087, -99.12964992423919], 'logo': '../img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Antiguo Colegio de San Ildefonso', 'correo': 'antiguocolegiodesanildefonso@pcpuma.unam.mx' },
+                    { 'nombre': 'ENP 1 Gabino Barreda', 'coords': [19.272270009505142, -99.12090875207542], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 1 Gabino Barreda', 'correo': 'enp1gabinobarreda@pcpuma.unam.mx' },
+                    { 'nombre': 'ENP 2 Erasmo Castellanos Quinto', 'coords': [19.384414013128122, -99.09930753544026], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 2 Erasmo Castellanos Quinto', 'correo': 'enp2erasmocastellanosquinto@pcpuma.unam.mx' },
+                    { 'nombre': 'ENP 3 Justo Sierra', 'coords': [19.482832698395395, -99.09370977282835], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 3 Justo Sierra', 'correo': 'enp3justosierra@pcpuma.unam.mx' },
+                    { 'nombre': 'ENP 4 Vidal Castañeda y Nájera', 'coords': [19.40420411365316, -99.19386587406278], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 4 Vidal Castañeda y Nájera', 'correo': 'enp4vidalcastanedaynajera@pcpuma.unam.mx' },
+                    { 'nombre': 'ENP 5 José Vasconcelos', 'coords': [19.307831704853378, -99.13328444337402], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 5 José Vasconcelos', 'correo': 'enp5josevasconcelos@pcpuma.unam.mx' },
+                    { 'nombre': 'ENP 6 Antonio Caso', 'coords': [19.352377330266204, -99.15516094707934], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 6 Antonio Caso', 'correo': 'enp6antoniocaso@pcpuma.unam.mx' },
+                    { 'nombre': 'ENP 7 Ezequiel A. Chávez', 'coords': [19.418816914298294, -99.1255695249077], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 7 Ezequiel A. Chávez', 'correo': 'enp7ezequielachavez@pcpuma.unam.mx' },
+                    { 'nombre': 'ENP 8 Miguel E. Schulz', 'coords': [19.36721387098644, -99.19380290573983], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 8 Miguel E. Schulz', 'correo': 'enp8migueleschulz@pcpuma.unam.mx' },
+                    { 'nombre': 'ENP 9 Pedro de Alba', 'coords': [19.483918948897248, -99.1267973696952], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 9 Pedro de Alba', 'correo': 'enp9pedrodealba@pcpuma.unam.mx' },
+                    { 'nombre': 'CCH Vallejo', 'coords': [19.484208569636674, -99.14184532418193], 'logo': '../img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Vallejo', 'correo': 'cchvallejo@pcpuma.unam.mx' },
+                    { 'nombre': 'CCH Sur', 'coords': [19.310911875632716, -99.1991763396687], 'logo': '../img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Sur', 'correo': 'cchsur@pcpuma.unam.mx' },
+                    { 'nombre': 'CCH Oriente', 'coords': [19.38550253237042, -99.05944636427637], 'logo': '../img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Oriente', 'correo': 'cchoriente@pcpuma.unam.mx' },
+                    { 'nombre': 'CCH Naucalpan', 'coords': [19.474576990214963, -99.24291189919353], 'logo': '../img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Naucalpan', 'correo': 'cchnaucalpan@pcpuma.unam.mx' },
+                    { 'nombre': 'CCH Azcapotzalco', 'coords': [19.500225173254734, -99.20277836486008], 'logo': '../img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Azcapotzalco', 'correo': 'cchazcapotzalco@pcpuma.unam.mx' }
+                ];
+
+                const clusters = { "Facultades": L.markerClusterGroup(), "FES": L.markerClusterGroup(), "ENES": L.markerClusterGroup(), "ENP": L.markerClusterGroup(), "CCH": L.markerClusterGroup(), "Institutos": L.markerClusterGroup(), "Otros": L.markerClusterGroup() };
+
+                entidadesMapa.forEach(function (entidad) {
+                    const icono = L.divIcon({ html: `<img src="${entidad.logo}" class="logo-entidad" alt="${entidad.nombre}">`, iconSize: [40, 40], iconAnchor: [20, 40], popupAnchor: [0, -40], className: '' });
+                    const popupContent = `<strong>${entidad.nombre}</strong><br>Responsable: <strong>${entidad.responsable}</strong><br>Correo: <a href='mailto:${entidad.correo}'>${entidad.correo}</a>`;
+                    const marcador = L.marker(entidad.coords, { icon: icono }).bindPopup(popupContent);
+
+                    // Lógica de traducción corregida
+                    let tipo = "Otros";
+                    const claseLowerCase = entidad.clase.toLowerCase();
+                    if (claseLowerCase.includes('facultad')) tipo = "Facultades";
+                    else if (claseLowerCase.includes('fes')) tipo = "FES";
+                    else if (claseLowerCase.includes('enes')) tipo = "ENES";
+                    else if (claseLowerCase.includes('enp')) tipo = "ENP";
+                    else if (claseLowerCase.includes('cch')) tipo = "CCH";
+                    else if (claseLowerCase.includes('instituto')) tipo = "Institutos";
+
+                    if (clusters[tipo]) {
+                        clusters[tipo].addLayer(marcador);
+                    }
+                });
+
+                for (let key in clusters) { map.addLayer(clusters[key]); }
+
+                // Hacemos las funciones accesibles globalmente para los `onclick`
+                window.filtrarCapas = function (tipo) {
+                    for (let key in clusters) { map.removeLayer(clusters[key]); }
+                    if (tipo === "Todos") { for (let key in clusters) { map.addLayer(clusters[key]); } }
+                    else { if (clusters[tipo]) map.addLayer(clusters[tipo]); }
+                }
+
+                window.marcarBotonActivo = function (nombreFiltro) {
+                    document.querySelectorAll('.btn-filtro').forEach(boton => {
+                        boton.classList.remove('activo-filtro');
+                        if (boton.textContent.trim() === nombreFiltro || (nombreFiltro === 'Todos' && boton.textContent.trim() === 'Mostrar Todos')) {
+                            boton.classList.add('activo-filtro');
+                        }
+                    });
+                }
+            })();
+        });
+    </script>
+
+    <script>
+        window.cbConfig = { chatId: "95e57fa3-a653-4e2d-896b-d8d7d408a649" };
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                const script = document.createElement("script");
+                script.src = "https://app.chatbit.co/embed.min.js";
+                script.defer = true;
+                document.body.appendChild(script);
+            }, 3000);
+        });
+    </script>
+    <script>
+        fetch('../data/servicios_sociales.json')
+            .then(response => response.json())
+            .then(data => {
+
+                const container = document.getElementById('servicioSocialContainer');
+                container.innerHTML = "";
+
+                data.forEach(item => {
+
+                    const emailSubject = encodeURIComponent(`Solicitud de Servicio Social - ${item.titulo}`);
+
+                    const emailBody = encodeURIComponent(
+                        `Estimados/as,
+
+Mi nombre es [Tu Nombre] y soy estudiante de [Tu Carrera/Licenciatura] en la UNAM. 
+Estoy muy interesado/a en la convocatoria de servicio social para "${item.titulo}" en el área de ${item.area}.
+
+Adjunto mi CV para su consideración.
+
+Saludos cordiales,
+[Tu Nombre Completo]
+`);
+
+                    const card = document.createElement('div');
+                    card.className = 'col-lg-4 col-md-6';
+
+                    card.innerHTML = `
+
+<div class="card card-servicio-social h-100 shadow-sm border-0">
+
+<div class="card-body d-flex flex-column">
+
+<div class="mb-3 text-center">
+<i class="bi bi-briefcase-fill text-primary fs-2"></i>
+</div>
+
+<h5 class="card-title fw-bold text-primary text-center mb-3">
+${item.titulo}
+</h5>
+
+<div class="small text-muted mb-3">
+
+<p class="mb-1">
+<i class="bi bi-diagram-3 me-1"></i>
+<strong>Área:</strong> ${item.area}
+</p>
+
+<p class="mb-1">
+<i class="bi bi-geo-alt me-1"></i>
+<strong>Ubicación:</strong> ${item.ubicacion}
+</p>
+
+<p class="mb-3">
+<i class="bi bi-calendar-event me-1"></i>
+<strong>Periodo:</strong> ${item.periodo || "Por definir"}
+</p>
+
+</div>
+
+<div class="mt-auto">
+
+<a 
+href="mailto:contacto@pcpuma.unam.mx?subject=${emailSubject}&body=${emailBody}" 
+class="btn btn-primary w-100">
+
+<i class="bi bi-send me-1"></i>
+Aplicar ahora
+
+</a>
+
+</div>
+
+</div>
+</div>
+
+`;
+
+                    container.appendChild(card);
+
+                });
+
+            })
+            .catch(error => console.error('Error al cargar JSON de servicios sociales:', error));
+    </script>
+    <script>
+        const hero = document.querySelector(".pcp-hero");
+        const heroBg = document.querySelector("#pcpHeroBg");
+
+        hero.addEventListener("mousemove", (e) => {
+
+            const x = (window.innerWidth - e.pageX * 2) / 100;
+            const y = (window.innerHeight - e.pageY * 2) / 100;
+
+            heroBg.style.transform = `translate(${x}px,${y}px) scale(1.1)`;
+
+        });
+
+        hero.addEventListener("mouseleave", () => {
+            heroBg.style.transform = "translate(0,0) scale(1.1)";
+        });
+    </script>
+    <!--JS EVENTOS-->
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            let eventos = [];
+
+            fetch('../data/eventos.json')
+                .then(response => response.json())
+                .then(data => {
+
+                    const hoy = new Date();
+                    hoy.setHours(0, 0, 0, 0);
+
+                    // ordenar eventos próximos
+                    eventos = data
+                        .filter(ev => new Date(ev.fecha) >= hoy)
+                        .sort((a, b) => new Date(a.fecha) - new Date(b.fecha))
+                        .slice(0, 3); // mostrar solo 3
+
+                    mostrarEventosHome(eventos);
+
+                });
+
+            function crearCardHome(ev) {
+
+                const fechaEvento = new Date(ev.fecha + 'T00:00:00');
+
+                const dia = fechaEvento.getDate();
+                const mes = fechaEvento.toLocaleString('es-ES', { month: 'short' }).replace('.', '');
+
+                return `
+       <div class="col-lg-4 col-md-6">
+
+       <div class="card evento-card-moderno shadow-sm h-100">
+
+       <div class="evento-card-img-container">
+
+       <img src="${ev.imagen}" class="evento-card-img">
+
+       <div class="evento-card-date">
+       <span class="dia">${dia}</span>
+       <span class="mes">${mes}</span>
+       </div>
+
+       <div class="evento-badge-modalidad">
+       ${ev.modalidad}
+       </div>
+
+       </div>
+
+       <div class="evento-card-body">
+
+       <h5 class="evento-card-title">
+       ${ev.titulo}
+       </h5>
+
+       <p class="evento-card-description">
+       ${ev.descripcion.substring(0, 120)}...
+       </p>
+
+       </div>
+
+       <div class="evento-card-footer">
+
+       <a href="eventos.html"
+       class="btn btn-primary w-100">
+
+       Ver detalles
+       </a> 
+       </div></div></div>
+       `;
+            }
+
+            function mostrarEventosHome(lista) {
+
+                const contenedor = document.getElementById("eventos-recientes");
+
+                contenedor.innerHTML = '';
+
+                lista.forEach(ev => {
+                    contenedor.innerHTML += crearCardHome(ev);
+                });
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1654 @@
+/* ===================================================================
+   ARCHIVO: eventos.css
+   DESCRIPCIÓN: genda de Eventos
+   AUTOR: PC PUMA - Equipo de Diseño Web  
+   FECHA: Junio 2026
+   =================================================================== */
+
+/* --- 1. Variables del Sistema de Diseño (Colores Originales PC Puma) --- */
+:root {
+  --apple-bg-primary: #f8f9fa;
+  --apple-bg-secondary: #ffffff;
+  --apple-card-bg: rgba(255, 255, 255, 0.9);
+  --apple-text-primary: #212529;
+  --apple-text-secondary: #5a7b9c;
+  --apple-text-tertiary: #86868b;
+  
+  /* Azul Institucional PC Puma */
+  --apple-accent: #005BA8; 
+  --apple-accent-hover: #004682;
+  --apple-accent-light: #f0f6fb;
+  --apple-accent-rgb: 0, 91, 168;
+  
+  /* Bordes y Sombras */
+  --apple-border: rgba(0, 0, 0, 0.08);
+  --apple-border-light: rgba(0, 0, 0, 0.04);
+  --apple-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.02);
+  --apple-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.04), 0 16px 36px rgba(0, 47, 108, 0.06);
+  --apple-shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.08), 0 30px 80px rgba(0, 0, 0, 0.12);
+  
+  /* Curvas e Interacciones */
+  --apple-radius-sm: 10px;
+  --apple-radius-md: 16px;
+  --apple-radius-lg: 20px;
+  --apple-radius-xl: 26px;
+  
+  --apple-easing: cubic-bezier(0.16, 1, 0.3, 1);
+  --apple-transition-normal: all 0.5s var(--apple-easing);
+  --apple-transition-fast: all 0.25s var(--apple-easing);
+}
+
+/* --- 2. Estructura General y Fondo --- */
+.eventos-page {
+  background: radial-gradient(circle at 0% 0%, rgba(0, 91, 168, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 100% 100%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+              #f4f6fa;
+  min-height: 100vh;
+  padding-bottom: 3rem;
+}
+
+/* --- 3. Hero Section (Compacto y Elegante) --- */
+.eventos-hero {
+  padding: 3rem 1rem 1.5rem; /* Espacio vacío reducido al mínimo */
+  background-color: transparent;
+  border-bottom: none;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.eventos-hero-logo {
+  max-height: 90px;
+  margin-bottom: 1rem; /* Reducido para juntar elementos */
+  filter: drop-shadow(0 4px 12px rgba(0, 91, 168, 0.12));
+  transition: transform 0.8s var(--apple-easing);
+}
+
+.eventos-hero-logo:hover {
+  transform: scale(1.04);
+}
+
+.eventos-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #002f6c; /* Azul oscuro corporativo */
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.eventos-hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--apple-text-secondary);
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+/* --- 4. Controles de Filtros Ajustados (Compactos) --- */
+.eventos-controls-wrapper {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--apple-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 1rem; /* Padding reducido para evitar espacio vacío */
+  margin-bottom: 1.5rem; /* Margen reducido al mínimo para juntar con las tarjetas */
+  box-shadow: var(--apple-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Pestañas de Tiempo (Próximos / Pasados) */
+.eventos-controls-wrapper #eventoTabs {
+  background: rgba(120, 120, 128, 0.08);
+  border-radius: 12px;
+  padding: 3px;
+  display: inline-flex;
+  border: none;
+  position: relative;
+  width: auto;
+}
+
+.eventos-controls-wrapper #eventoTabs .nav-item {
+  position: relative;
+  z-index: 1;
+}
+
+.eventos-controls-wrapper #eventoTabs .nav-link {
+  background: transparent;
+  border: none;
+  color: #5a7b9c;
+  font-weight: 600;
+  border-radius: 9px;
+  padding: 6px 20px;
+  font-size: 0.9rem;
+  transition: var(--apple-transition-fast);
+  box-shadow: none;
+}
+
+.eventos-controls-wrapper #eventoTabs .nav-link:hover:not(.active) {
+  color: #002f6c;
+}
+
+/* Color Azul Original PC Puma al Activar Pestaña */
+.eventos-controls-wrapper #eventoTabs .nav-link.active {
+  background-color: var(--apple-accent); /* Azul original */
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 3px 8px rgba(0, 91, 168, 0.15);
+}
+
+/* Filtros por Modalidad (Pastillas Estilo Foto 2) */
+#filtro-modalidad-botones {
+  background: rgba(120, 120, 128, 0.08);
+  border-radius: 12px;
+  padding: 3px;
+  display: inline-flex;
+  border: none;
+  flex-wrap: nowrap;
+  gap: 2px;
+}
+
+.btn-filtro-evento {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #003f8a;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 8px 18px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  border-radius: 50px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03) !important;
+}
+
+.btn-filtro-evento:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(0, 91, 168, 0.2);
+  color: #003f8a;
+  transform: translateY(-1px);
+}
+
+/* Color Azul Original PC Puma al Activar Filtro */
+.btn-filtro-evento.active {
+  background: linear-gradient(135deg, #005BA8 0%, #003366 100%) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 8px 20px rgba(0, 91, 168, 0.25) !important;
+  transform: translateY(-1px);
+}
+
+/* --- 5. Tarjetas de Eventos Premium Compactas (Sin Espacio Vacío) --- */
+.evento-card-moderno {
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 10px 30px rgba(0, 43, 91, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+}
+
+.evento-card-moderno:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(0, 91, 168, 0.25) !important;
+  box-shadow: 0 20px 45px rgba(0, 43, 91, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Contenedor de Imagen */
+.evento-card-img-container {
+  height: 190px;
+  overflow: hidden;
+  position: relative;
+  background-color: #f0f0f2;
+}
+
+.evento-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.evento-card-moderno:hover .evento-card-img {
+  transform: scale(1.05);
+}
+
+.evento-card-date {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border-radius: var(--apple-radius-sm);
+  padding: 0.4rem 0.6rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  width: 58px;
+  z-index: 2;
+}
+
+.evento-card-date .mes {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #D32F2F; /* Rojo original de la segunda foto */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1px;
+}
+
+.evento-card-date .dia {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #002f6c; /* Azul oscuro original */
+  line-height: 1;
+}
+
+.evento-badge-modalidad {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+  color: #005BA8 !important; /* Azul original */
+  background: rgba(240, 246, 251, 0.8) !important; /* Celeste muy suave */
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(211, 224, 236, 0.6) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  z-index: 2;
+}
+
+/* Cuerpo de la Tarjeta (Ajustado y Compacto) */
+.evento-card-body {
+  padding: 1rem; /* Reducido de 1.5rem para juntar contenido */
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+/* Eyebrow de Categoría */
+.evento-card-category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--apple-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.3rem; /* Reducido */
+}
+
+.evento-card-title {
+  font-size: 1.15rem; /* Ajuste sutil */
+  font-weight: 600;
+  color: #003366; /* Azul original */
+  line-height: 1.3;
+  margin-bottom: 0.4rem; /* Reducido */
+  letter-spacing: -0.015em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 3rem; /* Ajustado para uniformidad */
+}
+
+.evento-card-description {
+  font-size: 0.85rem;
+  color: #212529; /* Color de párrafo original */
+  line-height: 1.4;
+  margin-bottom: 0.8rem; /* Reducido */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 3.5rem; /* Ajustado para uniformidad */
+}
+
+/* Sección de Metadatos Enriquecidos (Compacto) */
+.evento-card-metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem; /* Más juntos */
+  margin-top: auto;
+  padding-top: 0.6rem;
+  margin-bottom: 0.8rem; /* Reducido */
+  border-top: 1px solid #e9eef5;
+}
+
+.evento-card-metadata-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  font-size: 0.82rem !important;
+  color: #5a7b9c !important;
+  margin-bottom: 0.35rem;
+}
+
+.evento-card-metadata-item i {
+  color: var(--apple-accent) !important;
+  font-size: 1rem !important;
+  flex-shrink: 0;
+  opacity: 0.9;
+  width: auto !important;
+  height: auto !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.evento-card-metadata-item span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Override general .card i for the whole card content to prevent size blowout */
+.evento-card-moderno i {
+  font-size: 1rem !important;
+  width: auto !important;
+  height: auto !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Modality badge icon overrides */
+.evento-badge-modalidad i {
+  font-size: 0.85rem !important;
+  color: inherit !important;
+  margin-right: 0.2rem;
+}
+
+/* Botonera de Acción en Tarjeta (Estilo Original Foto 2) */
+.evento-card-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
+  z-index: 2;
+}
+
+.evento-card-actions.has-both-buttons {
+  grid-template-columns: 1fr 1fr;
+}
+
+.btn-apple {
+  border-radius: 50px !important; /* Estilo píldora Apple */
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  padding: 0.55rem 1.1rem !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 10px rgba(0, 91, 168, 0.05) !important;
+}
+
+.btn-apple:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 15px rgba(0, 91, 168, 0.12) !important;
+}
+
+/* Correct icon sizes inside buttons */
+.btn-apple i {
+  font-size: 0.88rem !important;
+  color: inherit !important;
+}
+
+/* Botones con los Colores Exactos de la Foto 2 */
+.btn-apple-primary {
+  background-color: var(--apple-accent) !important; /* Azul original */
+  color: #ffffff !important;
+  border: 1px solid var(--apple-accent) !important;
+}
+
+.btn-apple-primary:hover {
+  background-color: var(--apple-accent-hover) !important;
+  border-color: var(--apple-accent-hover) !important;
+}
+
+.btn-apple-outline {
+  background-color: transparent !important;
+  color: var(--apple-accent) !important; /* Azul original */
+  border: 1px solid var(--apple-accent) !important; /* Borde azul */
+}
+
+.btn-apple-outline:hover {
+  background-color: #f0f6fb !important;
+  color: var(--apple-accent-hover) !important;
+  border-color: var(--apple-accent-hover) !important;
+}
+
+/* --- 6. Pop-up de Detalles Premium con Imagen Lateral (Tipo Póster) --- */
+.apple-sheet-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1060;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apple-sheet-backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Contenedor del Modal */
+.apple-sheet-content {
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  width: 100%;
+  box-shadow: 0 30px 70px rgba(0, 47, 108, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+  transform: translateY(100%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.apple-sheet-backdrop.show .apple-sheet-content {
+  transform: translateY(0);
+}
+
+/* Botón de Cierre Superior Circular (Apple Style) */
+.apple-sheet-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #212529;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--apple-transition-fast);
+  z-index: 12;
+}
+
+.apple-sheet-close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.12);
+  transform: scale(1.05);
+}
+
+/* Indicador de arrastre táctil para móviles */
+.apple-sheet-drag-handle {
+  width: 36px;
+  height: 5px;
+  background-color: rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  margin: 8px auto 4px;
+  flex-shrink: 0;
+  display: none;
+}
+
+/* Banner / Contenedor de la Imagen */
+.apple-sheet-hero {
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Efecto de fondo difuminado para rellenar espacios y evitar recortes */
+.apple-sheet-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  filter: blur(15px) brightness(0.9);
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.apple-sheet-hero img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Mostrar completa sin recortar */
+}
+
+/* --- REGLAS EXCLUSIVAS PARA ESCRITORIO (IMAGEN EN LATERAL COMO PÓSTER) --- */
+@media (min-width: 769px) {
+  .apple-sheet-backdrop {
+    align-items: center; /* Centrado en pantalla */
+    padding: 1.5rem;
+  }
+  
+  .apple-sheet-content {
+    display: grid;
+    grid-template-columns: 340px 1fr; /* Columna 1: Poster, Columna 2: Detalles */
+    height: 80vh;
+    max-height: 640px;
+    max-width: 1000px;
+    border-radius: var(--apple-radius-xl);
+  }
+  
+  /* Banner / Imagen Lateral Izquierda Tipo Póster */
+  .apple-sheet-hero {
+    grid-column: 1;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .apple-sheet-hero img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mostrar completa sin recortar en el póster lateral */
+    object-position: center;
+  }
+  
+  /* Sombra sutil al lado de la imagen para efecto 3D */
+  .apple-sheet-hero::after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: linear-gradient(to right, transparent 85%, rgba(0, 0, 0, 0.25) 100%);
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  /* Cuerpo Derecho de la Información con Scroll */
+  .apple-sheet-body {
+    grid-column: 2;
+    overflow-y: auto;
+    padding: 2.2rem 2rem;
+    height: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.15) transparent;
+  }
+  
+  .apple-sheet-body::-webkit-scrollbar {
+    width: 5px;
+  }
+  .apple-sheet-body::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+  }
+
+  /* Rejilla de información interior (Info + Sidebar agrupado a la derecha) */
+  .apple-sheet-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr; /* Dividido en contenido principal y metadatos */
+    gap: 2rem;
+  }
+}
+
+/* --- DETALLES DE INFORMACIÓN EN EL POP-UP --- */
+.apple-sheet-header {
+  margin-bottom: 1.25rem;
+}
+
+.apple-sheet-category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--apple-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+  display: inline-block;
+}
+
+.apple-sheet-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #002f6c;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 0px;
+}
+
+.apple-sheet-description-section {
+  border-top: 1px solid var(--apple-border);
+  padding-top: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.apple-sheet-section-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 0.6rem;
+}
+
+.apple-sheet-description {
+  font-size: 0.9rem;
+  color: #212529;
+  line-height: 1.55;
+  text-align: justify;
+}
+
+/* Barra Lateral de Metadatos en Pop-up (Estilo Foto 3) */
+.apple-sheet-sidebar {
+  background: rgba(255, 255, 255, 0.4) !important;
+  border-radius: var(--apple-radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  height: fit-content;
+  box-shadow: 0 8px 32px rgba(0, 47, 108, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+}
+
+.apple-sheet-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.apple-sheet-meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.apple-sheet-meta-item i {
+  color: var(--apple-accent); /* Iconos en azul original */
+  font-size: 1.1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.apple-sheet-meta-label {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: var(--apple-text-tertiary);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 1px;
+}
+
+.apple-sheet-meta-val {
+  font-size: 0.88rem;
+  color: #212529;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* Botones del Pop-up con Colores de la Foto 3 */
+.apple-sheet-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.apple-sheet-actions .btn-apple {
+  width: 100%;
+  font-size: 0.88rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px; /* Curva estándar */
+}
+
+/* Botón Convocatoria Pop-up (Fondo Celeste/Gris original y Texto Azul) */
+.apple-sheet-actions .btn-apple-secondary {
+  background-color: #e1eaf3; /* Fondo de la Foto 3 */
+  color: #005BA8 !important; /* Azul original */
+  border: 1px solid transparent;
+}
+
+.apple-sheet-actions .btn-apple-secondary:hover {
+  background-color: #d2e1f0;
+}
+
+/* Botón Registrarme Pop-up (Azul Corporativo original y Texto Blanco) */
+.apple-sheet-actions .btn-apple-primary {
+  background-color: var(--apple-accent);
+  color: #ffffff !important;
+  border: 1px solid var(--apple-accent);
+}
+
+.apple-sheet-actions .btn-apple-primary:hover {
+  background-color: var(--apple-accent-hover);
+}
+
+/* Etiquetas (Tags) del evento */
+.apple-sheet-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.apple-sheet-tag {
+  font-size: 0.7rem;
+  color: #5a7b9c;
+  background-color: #f0f6fb;
+  border: 1px solid #d3e0ec;
+  padding: 0.3rem 0.7rem;
+  border-radius: 50px;
+  font-weight: 500;
+}
+
+/* --- 7. Adaptabilidad Responsiva Impecable --- */
+@media (max-width: 991px) {
+  .eventos-hero-title {
+    font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .eventos-hero {
+    padding: 2.5rem 1rem 1rem;
+  }
+  
+  .eventos-hero-logo {
+    max-height: 70px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .eventos-hero-title {
+    font-size: 2.1rem;
+  }
+  
+  .eventos-hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .eventos-controls-wrapper {
+    padding: 0.85rem;
+    gap: 0.85rem;
+    border-radius: var(--apple-radius-md);
+  }
+  
+  #filtro-modalidad-botones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 4px;
+  }
+  
+  .btn-filtro-evento {
+    justify-content: center;
+    padding: 9px;
+  }
+  
+  .eventos-controls-wrapper #eventoTabs {
+    width: 100%;
+  }
+  
+  .eventos-controls-wrapper #eventoTabs .nav-item {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .eventos-controls-wrapper #eventoTabs .nav-link {
+    width: 100%;
+    padding: 7px 10px;
+  }
+  
+  /* Modal de Detalles en Pantallas Medianas/Pequeñas (Apilado Vertical) */
+  .apple-sheet-backdrop {
+    align-items: flex-end;
+  }
+  
+  .apple-sheet-content {
+    border-radius: var(--apple-radius-xl) var(--apple-radius-xl) 0 0;
+    height: 90vh;
+  }
+  
+  .apple-sheet-drag-handle {
+    display: block;
+  }
+  
+  .apple-sheet-hero {
+    height: 200px;
+    width: 100%;
+  }
+  
+  .apple-sheet-body {
+    padding: 1.25rem 1.25rem 2.5rem;
+    flex: 1 1 auto;
+    overflow-y: auto;
+  }
+  
+  .apple-sheet-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .apple-sheet-title {
+    font-size: 1.5rem;
+  }
+  
+  .apple-sheet-sidebar {
+    padding: 1rem;
+  }
+}
+
+#eventos {
+  background: radial-gradient(circle at 10% 20%, rgba(0, 91, 168, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 90% 80%, rgba(255, 215, 0, 0.03) 0%, transparent 50%),
+              #ffffff !important;
+  position: relative;
+}
+
+/* ===================================================================
+   NUEVOS ESTILOS LIQUID GLASS (MOCKUP CONÉCTATE 2026)
+   =================================================================== */
+
+/* Hero Banner y Canvas de Nodos */
+.eventos-hero {
+  position: relative;
+  background: radial-gradient(circle at center, #071936 0%, #000c1e 100%) !important;
+  padding: 3.5rem 1rem 2.5rem !important;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+#networkCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.eventos-hero-title {
+  color: #ffffff !important;
+  font-size: 3.25rem !important;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.eventos-hero-subtitle {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 1.15rem;
+  margin-bottom: 2rem !important;
+}
+
+/* Gradiente de Oro Institucional */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* Barra de Búsqueda tipo Glass */
+.search-wrapper {
+  max-width: 580px;
+  margin: 0 auto 1.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 50px;
+  padding: 0.35rem 0.5rem;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.search-box:focus-within {
+  border-color: rgba(255, 215, 0, 0.6) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 10px 35px rgba(0, 91, 168, 0.3), 0 0 0 4px rgba(255, 215, 0, 0.1);
+}
+
+.search-icon {
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 1rem;
+  font-size: 1.1rem;
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #ffffff !important;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.8rem;
+  outline: none;
+}
+
+.search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.search-shortcut {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  pointer-events: none;
+}
+
+/* Píldoras de Filtrado por Modalidad */
+.filter-pills-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-pills {
+  display: inline-flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+}
+
+.filter-pill {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 550;
+  border-radius: 50px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.filter-pill:hover:not(.active) {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.filter-pill.active {
+  background: #005BA8 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(0, 91, 168, 0.35);
+}
+
+/* Tarjeta Destacada */
+.destacado-card {
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 24px !important;
+  box-shadow: var(--apple-shadow-md) !important;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.destacado-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 20px 40px rgba(0, 43, 91, 0.08) !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+}
+
+.destacado-content {
+  padding: 2.25rem !important;
+}
+
+.destacado-badge {
+  background: #005BA8;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+}
+
+.destacado-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #003366;
+  line-height: 1.25;
+}
+
+.destacado-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.destacado-meta .meta-item {
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.destacado-meta .meta-item i {
+  font-size: 1.05rem;
+}
+
+.badge-modalidad-destacado {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-purple {
+  background: rgba(111, 66, 193, 0.12) !important;
+  color: #6f42c1 !important;
+  border: 1px solid rgba(111, 66, 193, 0.25) !important;
+}
+
+.destacado-img-wrapper {
+  min-height: 280px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.destacado-img-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  filter: blur(15px) brightness(0.95);
+  transform: scale(1.15);
+  z-index: 1;
+}
+
+.destacado-img {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  max-height: 240px;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Mostrar completo sin recortar */
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  transition: transform 0.6s ease;
+}
+
+.destacado-card:hover .destacado-img {
+  transform: scale(1.04);
+}
+
+.btn-destacado-register-left {
+  padding: 0.55rem 1.25rem !important;
+  border-radius: 50px !important;
+  font-size: 0.82rem !important;
+  box-shadow: 0 6px 15px rgba(0, 91, 168, 0.15) !important;
+  font-weight: 600 !important;
+  white-space: nowrap;
+}
+
+/* Encabezados y Enlaces */
+.seccion-titulo {
+  font-size: 1.5rem;
+  font-weight: 650;
+  color: #003366;
+}
+
+.ver-todos-link {
+  color: #005BA8;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: opacity 0.25s;
+}
+
+.ver-todos-link:hover {
+  opacity: 0.85;
+  color: #003366;
+}
+
+/* Tarjetas de Eventos Grid */
+.evento-card-moderno {
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow: var(--apple-shadow-sm) !important;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+}
+
+.evento-card-moderno:hover {
+  transform: translateY(-5px) scale(1.01) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(0, 91, 168, 0.25) !important;
+  box-shadow: var(--apple-shadow-md) !important;
+}
+
+.evento-card-img-container {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+
+.evento-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.evento-card-moderno:hover .evento-card-img {
+  transform: scale(1.04);
+}
+
+/* Círculo de fecha */
+.date-circle {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  z-index: 3;
+}
+
+.date-circle .day {
+  font-size: 1.15rem;
+  font-weight: 750;
+  color: #003366;
+  line-height: 1;
+}
+
+.date-circle .month {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #D32F2F;
+  line-height: 1;
+  margin-top: 1px;
+  letter-spacing: 0.02em;
+}
+
+/* Modalidad badges */
+.card-badge-modalidad {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  font-size: 0.68rem;
+  font-weight: 650;
+  padding: 0.25rem 0.65rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  z-index: 3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.badge-blue {
+  background: rgba(0, 91, 168, 0.12) !important;
+  color: #005BA8 !important;
+  border: 1px solid rgba(0, 91, 168, 0.25) !important;
+}
+
+.badge-green {
+  background: rgba(40, 167, 69, 0.12) !important;
+  color: #28a745 !important;
+  border: 1px solid rgba(40, 167, 69, 0.25) !important;
+}
+
+.badge-orange {
+  background: rgba(253, 126, 20, 0.12) !important;
+  color: #fd7e14 !important;
+  border: 1px solid rgba(253, 126, 20, 0.25) !important;
+}
+
+.evento-card-body {
+  padding: 1.25rem !important;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.evento-card-title {
+  font-size: 1.05rem;
+  font-weight: 650;
+  color: #003366;
+  line-height: 1.35;
+  margin-bottom: 0.35rem;
+  height: 2.8rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.evento-card-instructor {
+  font-size: 0.82rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.evento-card-metadata {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.metadata-detail i {
+  font-size: 0.9rem;
+}
+
+/* Botón circular con flecha */
+.btn-action-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e8f0fe;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #005BA8;
+  font-size: 1.25rem;
+  transition: all 0.25s ease;
+}
+
+.evento-card-moderno:hover .btn-action-circle {
+  background: #005BA8;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Banner Proponer Evento */
+.proponer-banner {
+  background: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 20px !important;
+  box-shadow: var(--apple-shadow-sm) !important;
+  transition: all 0.3s ease;
+}
+
+.proponer-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--apple-shadow-md) !important;
+}
+
+.banner-icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #005BA8;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.banner-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #003366;
+}
+
+.banner-subtitle {
+  font-size: 0.88rem;
+}
+
+.btn-proponer {
+  padding: 0.6rem 1.25rem !important;
+  font-size: 0.85rem !important;
+}
+
+/* Sidebar Calendario */
+.sidebar-calendario {
+  background: rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 22px !important;
+  box-shadow: var(--apple-shadow-sm) !important;
+  height: fit-content;
+}
+
+.sidebar-titulo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #003366;
+  letter-spacing: -0.01em;
+}
+
+.mes-tag {
+  font-size: 0.72rem;
+  font-weight: 750;
+  color: #005BA8;
+  letter-spacing: 0.08em;
+  border-bottom: 2px solid rgba(0, 91, 168, 0.15);
+  padding-bottom: 4px;
+}
+
+.calendario-item {
+  transition: transform 0.2s ease;
+}
+
+.calendario-item:hover {
+  transform: translateX(3px);
+}
+
+.date-circle-sidebar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid #005BA8;
+  color: #005BA8;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+.event-title-sidebar {
+  font-size: 0.85rem;
+  font-weight: 550;
+  color: #212529;
+  line-height: 1.3;
+}
+
+.ver-calendario-link {
+  color: #005BA8;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.ver-calendario-link:hover {
+  opacity: 0.8;
+}
+
+/* Responsividad */
+@media (max-width: 991px) {
+  .destacado-img-wrapper {
+    height: 240px;
+    min-height: unset;
+  }
+  .destacado-title {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .eventos-hero-title {
+    font-size: 2.25rem !important;
+  }
+  .filter-pills {
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 16px;
+    padding: 8px;
+  }
+  .filter-pill {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Modales Administrador */
+.admin-modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.admin-modal-backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.admin-modal-content {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(30px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(30px) saturate(190%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2) !important;
+  width: 90%;
+  max-width: 420px;
+  transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.admin-modal-content.panel-content {
+  max-width: 720px;
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.admin-modal-backdrop.show .admin-modal-content {
+  transform: scale(1);
+}
+.btn-close-admin {
+  background: transparent;
+  border: none;
+  font-size: 1.15rem;
+  color: #6c757d;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.btn-close-admin:hover {
+  color: #212529;
+}
+.admin-input {
+  background: rgba(255, 255, 255, 0.6) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 8px !important;
+  padding: 0.55rem 0.75rem !important;
+  font-size: 0.9rem !important;
+  transition: all 0.25s !important;
+}
+.admin-input:focus {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: #005BA8 !important;
+  box-shadow: 0 0 0 3px rgba(0, 91, 168, 0.12) !important;
+  outline: none !important;
+}
+
+/* Estilo atenuado para tarjetas pasadas */
+.evento-pasado-card {
+  opacity: 0.8;
+  filter: grayscale(15%);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+.evento-pasado-card:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/* Icono de login en Navbar */
+#adminLoginBtn {
+  cursor: pointer;
+}
+#adminLoginBtn i {
+  font-size: 1.1rem;
+  transition: transform 0.2s;
+}
+#adminLoginBtn:hover i {
+  transform: scale(1.1);
+  color: #FFD700 !important;
+}
+
+/* --- 8. Optimizaciones Adicionales de Responsividad Premium --- */
+@media (max-width: 768px) {
+  /* Tarjeta Destacada en Móviles y Tablets */
+  .destacado-card {
+    border-radius: 20px !important;
+    margin-bottom: 2rem !important;
+  }
+  .destacado-content {
+    padding: 1.5rem !important;
+  }
+  .destacado-title {
+    font-size: 1.38rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .destacado-desc {
+    font-size: 0.88rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .destacado-img-wrapper {
+    height: 200px !important;
+    min-height: unset !important;
+  }
+  .btn-destacado-register {
+    bottom: 1rem !important;
+    right: 1rem !important;
+    padding: 0.55rem 1.1rem !important;
+    font-size: 0.82rem !important;
+  }
+  .destacado-meta {
+    gap: 0.75rem !important;
+  }
+  
+  /* Ajustes generales de espaciado */
+  .container.pt-3.pb-5 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Ajustes de tipografía del Hero en móviles pequeños */
+  .eventos-hero-title {
+    font-size: 1.75rem !important;
+    letter-spacing: -0.01em;
+  }
+  .eventos-hero-subtitle {
+    font-size: 0.92rem !important;
+    padding: 0 0.5rem;
+  }
+  
+  /* Barra de búsqueda y filtros en teléfonos */
+  .search-wrapper {
+    margin-bottom: 1.25rem;
+  }
+  .search-box {
+    padding: 0.25rem 0.4rem;
+  }
+  .search-box input {
+    font-size: 0.88rem;
+    padding: 0.4rem 0.5rem;
+  }
+  
+  .filter-pill {
+    padding: 0.35rem 0.75rem !important;
+    font-size: 0.76rem !important;
+    gap: 0.3rem !important;
+  }
+  
+  /* Márgenes de títulos de secciones */
+  .seccion-titulo {
+    font-size: 1.25rem !important;
+  }
+  
+  /* Ajustes de tarjetas en grilla */
+  .evento-card-title {
+    font-size: 0.98rem !important;
+    height: 2.6rem;
+  }
+  .evento-card-instructor {
+    font-size: 0.78rem !important;
+  }
+  .evento-card-metadata-left {
+    gap: 0.5rem !important;
+  }
+  .metadata-detail span {
+    font-size: 0.75rem !important;
+  }
+}

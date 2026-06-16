@@ -1,0 +1,166 @@
+{
+  "temas": [
+    {
+      "nombre": "Conectividad",
+      "icono": "bi-wifi",
+      "descripcion": "Información sobre acceso a la red WiFi PC Puma, configuración y cobertura.",
+      "preguntas": [
+        {
+          "pregunta": "¿Qué es el servicio de conectividad del Programa PC Puma?",
+          "respuesta": "Es un servicio de internet inalámbrico de propósito académico que proporciona acceso gratuito y seguro a la comunidad universitaria para apoyar actividades de aprendizaje, docencia, investigación y vinculación digital."
+        },
+        {
+          "pregunta": "¿Quiénes pueden hacer uso de la red PC Puma?",
+          "respuesta": "Todos los estudiantes, docentes y trabajadores activos de la UNAM. También pueden tener acceso personas externas autorizadas (tesistas, becarios, servicio social) mediante oficio institucional."
+        },
+        {
+          "pregunta": "¿Cómo me conecto a la red WiFi PC Puma?",
+          "respuesta": "Dependerá del tipo de red implementada en tu entidad. Existen tres principales formas de autenticación: contraseña precompartida (WPA2/WPA3), portal cautivo (iniciar sesión con tu correo @unam.mx) o autenticación 802.1X (usuario institucional)."
+        },
+        {
+          "pregunta": "¿Qué actividades están permitidas en la red PC Puma?",
+          "respuesta": "Están permitidas únicamente actividades académicas y de investigación. Se prohíbe el uso para descargas ilegales, juegos en línea, sitios inapropiados o cualquier actividad que consuma ancho de banda de forma excesiva o indebida."
+        },
+        {
+          "pregunta": "¿Es seguro usar la red PC Puma? ¿Mi información está protegida?",
+          "respuesta": "Sí. Las redes utilizan estándares modernos de seguridad (WPA3, RADIUS, portal cautivo) y las conexiones están cifradas. Aun así, se recomienda evitar el uso de datos sensibles en redes públicas y cerrar tus sesiones al terminar."
+        }
+      ]
+    },
+    {
+      "nombre": "Préstamos",
+      "icono": "bi-laptop",
+      "descripcion": "Solicitudes, requisitos y modalidades de préstamo de dispositivos.",
+      "preguntas": [
+        {
+          "pregunta": "¿Qué tipo de dispositivos puedo solicitar en préstamo a través del programa PC Puma?",
+          "respuesta": "Puedes solicitar dispositivos móviles como laptops, iPads o Chromebooks, según la disponibilidad de tu entidad. Todos los equipos están configurados con herramientas académicas y conectividad PC Puma."
+        },
+        {
+          "pregunta": "¿Quién puede solicitar un dispositivo en préstamo?",
+          "respuesta": "Estudiantes y profesores activos de la UNAM con relación académica vigente. Algunos usuarios externos (tesistas, becarios, servicio social) pueden acceder si presentan un oficio institucional justificado."
+        },
+        {
+          "pregunta": "¿Qué modalidades de préstamo existen?",
+          "respuesta": "Préstamo individual en módulo PC Puma (hasta 2 horas), préstamo para actividades académicas programadas (laboratorio móvil), y autopréstamo en lockers inteligentes disponibles 24/7 (hasta 18 horas)."
+        },
+        {
+          "pregunta": "¿Qué pasa si no devuelvo el equipo a tiempo?",
+          "respuesta": "Existen sanciones progresivas por retraso, que van desde la suspensión temporal del servicio hasta la suspensión definitiva en caso de omisión grave o daño no reportado."
+        },
+        {
+          "pregunta": "¿Puedo personalizar el equipo que me prestan?",
+          "respuesta": "No. Los equipos están preconfigurados con software académico y de seguridad. No está permitido modificar configuraciones, instalar apps no autorizadas ni remover los elementos de identidad institucional."
+        }
+      ]
+    },
+    {
+      "nombre": "Docentes",
+      "icono": "bi-person-video2",
+      "descripcion": "Opciones de conectividad, préstamo y capacitación para docentes.",
+      "preguntas": [
+        {
+          "pregunta": "¿Qué beneficios ofrece el Programa PC Puma a los docentes de la UNAM?",
+          "respuesta": "PC Puma ofrece acceso a conectividad WiFi de alta calidad, préstamo de dispositivos como laptops o iPads, y capacitaciones en el uso de herramientas digitales para fortalecer la docencia híbrida, las evaluaciones, y la creación de contenidos educativos."
+        },
+        {
+          "pregunta": "¿Cómo solicito el préstamo de dispositivos para uso en el aula con mis alumnos?",
+          "respuesta": "Debes contactar al responsable del Programa PC Puma en tu entidad y agendar previamente la solicitud mediante el sistema institucional de calendarización o vía el portal https://modulospcpuma.unam.mx, si está habilitado."
+        },
+        {
+          "pregunta": "¿Qué capacitaciones ofrece el programa para los docentes?",
+          "respuesta": "El programa ha brindado cursos en temas como: Herramientas digitales (Google Workspace, Canva for Education, Khan Academy), evaluación en línea, creación de contenido multimedia, seguridad digital y privacidad, y uso pedagógico de los dispositivos PC Puma."
+        },
+        {
+          "pregunta": "¿Qué pasa si necesito hacer una evaluación con dispositivos PC Puma?",
+          "respuesta": "Puedes programar el uso del laboratorio móvil para aplicar evaluaciones colegiadas o exámenes digitales. Es importante hacerlo con anticipación y coordinar con el área de TI para asegurar la conectividad y funcionalidad de los equipos."
+        },
+        {
+          "pregunta": "¿Puedo solicitar una capacitación personalizada para mi grupo de docentes o asignatura?",
+          "respuesta": "Sí. Puedes enviar una solicitud al responsable de PC Puma en tu entidad o a través del correo institucional lineamientos-entidades@pcpuma.unam.mx para coordinar una capacitación especializada de acuerdo a las necesidades del área académica."
+        }
+      ]
+    },
+    {
+      "nombre": "Soporte",
+      "icono": "bi-tools",
+      "descripcion": "Atención técnica, fallas en conectividad o dispositivos.",
+      "preguntas": [
+        {
+          "pregunta": "¿A quién me dirijo si no puedo conectarme al WiFi PC Puma dentro de mi entidad?",
+          "respuesta": "Debes contactar directamente al responsable técnico local (área de cómputo o soporte TI) de tu facultad o escuela."
+        },
+        {
+          "pregunta": "¿Qué hago si el dispositivo prestado presenta fallas?",
+          "respuesta": "Debes reportarlo inmediatamente al área responsable de tu entidad al momento de la entrega o durante su uso. No debes intentar repararlo por tu cuenta."
+        },
+        {
+          "pregunta": "¿El soporte técnico puede ayudarme con mi propio dispositivo?",
+          "respuesta": "Solo en casos relacionados con la conexión PC Puma o plataformas institucionales. No se brinda soporte a equipos personales."
+        },
+        {
+          "pregunta": "¿Qué hago si hay puntos WiFi apagados o sin señal?",
+          "respuesta": "Repórtalo al área de TI, quienes revisarán el estado del Access Point, cableado y energía."
+        },
+        {
+          "pregunta": "¿A dónde acudo si el área de TI no responde o no hay responsable?",
+          "respuesta": "Escribe a lineamientos-entidades@pcpuma.unam.mx para canalizar el reporte a la Coordinación Central."
+        }
+      ]
+    },
+    {
+      "nombre": "Privacidad",
+      "icono": "bi-shield-loc",
+      "descripcion": "Tratamiento de datos personales, vigilancia y seguridad digital.",
+      "preguntas": [
+        {
+          "pregunta": "¿Qué tipo de datos personales recolecta el Programa PC Puma?",
+          "respuesta": "Nombre completo, número de cuenta o nómina, correo institucional, registro de uso de red o préstamo, e información técnica del dispositivo. Se usan solo con fines académicos, estadísticos u operativos."
+        },
+        {
+          "pregunta": "¿Se rastrea mi actividad cuando navego por internet en la red PC Puma?",
+          "respuesta": "No se rastrea contenido específico, pero se monitorean patrones de uso para mejorar el servicio y detectar abusos o usos indebidos."
+        },
+        {
+          "pregunta": "¿Mis archivos o sesiones están protegidos si uso un dispositivo en préstamo?",
+          "respuesta": "Sí, pero debes cerrar tus sesiones, no guardar contraseñas ni dejar información sensible. Los equipos son de uso temporal y compartido."
+        },
+        {
+          "pregunta": "¿Qué puedo hacer si detecto un posible mal uso de mis datos o sospecho una vulneración de privacidad?",
+          "respuesta": "Repórtalo al responsable local del programa o escribe a lineamientos-entidades@pcpuma.unam.mx. También puedes acudir a la Unidad de Transparencia de la UNAM."
+        },
+        {
+          "pregunta": "¿Puedo solicitar acceso, corrección o eliminación de mis datos del sistema de préstamos o conectividad?",
+          "respuesta": "Sí. Puedes ejercer tus derechos ARCO (Acceso, Rectificación, Cancelación u Oposición) mediante solicitud por escrito a tu entidad."
+        }
+      ]
+    },
+    {
+      "nombre": "Eventos",
+      "icono": "bi-calendar-event",
+      "descripcion": "Capacitaciones, talleres y actividades organizadas por el programa.",
+      "preguntas": [
+        {
+          "pregunta": "¿Qué tipo de eventos organiza el Programa PC Puma?",
+          "respuesta": "El programa realiza capacitaciones técnicas, talleres prácticos, webinars, encuentros académicos, charlas y giras tecnológicas para impulsar el uso educativo de la tecnología en la UNAM."
+        },
+        {
+          "pregunta": "¿Quiénes pueden participar en los eventos de capacitación del programa?",
+          "respuesta": "Estudiantes, docentes, personal de TI y operadores del programa PC Puma. Muchos eventos están abiertos a toda la comunidad universitaria y son gratuitos."
+        },
+        {
+          "pregunta": "¿Qué temas se abordan en los talleres y webinars?",
+          "respuesta": "Herramientas digitales (Google Workspace, Canva, Khan Academy), docencia híbrida, seguridad digital, evaluación con tecnología, gestión de contenidos y uso pedagógico de dispositivos."
+        },
+        {
+          "pregunta": "¿Puedo obtener constancia por participar en un taller o webinar?",
+          "respuesta": "Sí. Algunos eventos otorgan constancias electrónicas, siempre que cumplas con la asistencia requerida y completes la encuesta de satisfacción."
+        },
+        {
+          "pregunta": "¿Puedo proponer un tema o solicitar una capacitación para mi entidad?",
+          "respuesta": "Sí. Puedes enviar tu solicitud a tu responsable local de PC Puma o escribir a lineamientos-entidades@pcpuma.unam.mx."
+        }
+      ]
+    }
+  ]
+}
