@@ -1,38 +1,282 @@
 <!DOCTYPE html>
 <html lang="es">
-
+ 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Docentes - PC Puma</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub de Innovación Digital Docente - PC Puma UNAM</title>
 
-    <meta name="description"
-        content="Recursos, herramientas y servicios del Programa PC Puma para docentes de la UNAM.">
-    <link rel="icon" href="../img/favicons/favicon-96x96.png" sizes="96x96" type="image/png" />
-    <link rel="icon" href="../img/favicons/favicon.svg" type="image/svg+xml" />
-    <link rel="shortcut icon" href="../img/favicons/favicon.ico" />
-    <link rel="apple-touch-icon" href="../img/favicons/apple-touch-icon.png" sizes="180x180" />
-    <meta name="apple-mobile-web-app-title" content="PC Puma" />
-    <link rel="manifest" href="../img/favicons/site.webmanifest" />
+    <!-- Meta Tags para SEO y Redes Sociales -->
+    <meta name="description" content="Portal de innovación docente de PC Puma UNAM. Descubre herramientas digitales, evaluaciones formativas y favoritos.">
+    <meta name="keywords" content="UNAM, PC Puma, Docentes, Innovación Educativa, Recursos Digitales, Pedagogía Digital">
+    <meta property="og:title" content="Hub de Innovación Digital Docente - PC Puma UNAM">
+    <meta property="og:description" content="Descubre y evalúa herramientas de vanguardia para enriquecer tus clases presenciales e híbridas.">
+    <meta property="og:type" content="website">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VK96VK5GZ5"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-VK96VK5GZ5');
-    </script>
-
+    <!-- CSS de Terceros (Bootstrap y Icons) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link href="../css/global.css" rel="stylesheet" />
-    <link href="../css/docentes.css" rel="stylesheet" />
-    <link href="../css/index.css" rel="stylesheet" />
-    <link href="../css/style_accessibility.css" rel="stylesheet" />
+
+    <!-- CSS de Coherencia de Diseño del Portal PC Puma -->
+    <link href="../css/global.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="../css/style_accessibility.css" rel="stylesheet">
+
+    <!-- Estilos del Hub Docente -->
+    <link href="../css/docentes.css" rel="stylesheet">
+    
+    <!-- Favicons -->
+    <link href="../img/favicons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" />
+    <link href="../img/favicons/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="../img/favicons/favicon.ico" rel="shortcut icon" />
+
+    <!-- Overrides de CSS para forzar Light Theme y Coherencia de Diseño -->
+    <style>
+        /* Reset de Variables CSS para forzar Light Theme */
+        :root {
+            --bg-dark: #f8f9fa !important;
+            --bg-darker: #ffffff !important;
+            --text-light: #212529 !important;
+            --text-muted: #495057 !important;
+            
+            --glass-bg: rgba(255, 255, 255, 0.85) !important;
+            --glass-bg-hover: rgba(255, 255, 255, 0.95) !important;
+            --glass-bg-dark: rgba(255, 255, 255, 0.95) !important;
+            --glass-border: rgba(0, 91, 168, 0.12) !important;
+            --glass-border-hover: rgba(0, 91, 168, 0.25) !important;
+            --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+            --glass-shadow-glow: 0 0 25px rgba(0, 91, 168, 0.08) !important;
+        }
+
+        body {
+            background-color: #f8f9fa !important;
+            color: #212529 !important;
+        }
+
+        .bg-mesh-glow {
+            background: radial-gradient(circle at 10% 20%, rgba(0, 91, 168, 0.04) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.03) 0%, transparent 40%),
+                        #f8f9fa !important;
+        }
+
+        /* --- Estilo del Banner Hero Docentes (de docentes.css) --- */
+        .hero-docentes {
+            position: relative;
+            padding: 5.5rem 1rem;
+            background: radial-gradient(circle at center, #001f3f 0%, #000c18 100%) !important;
+            overflow: hidden;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+        }
+        .hero-docentes canvas#networkCanvas {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.6;
+        }
+        .hero-docentes h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white !important;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            letter-spacing: normal !important;
+        }
+        .hero-docentes p.lead {
+            opacity: 0.95;
+            font-size: 1.25rem;
+            color: #ffffff !important;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .hero-docentes .btn {
+            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .hero-docentes .btn-outline-light {
+            color: #ffffff !important;
+            border-color: rgba(255, 255, 255, 0.6) !important;
+        }
+        .hero-docentes .btn-outline-light:hover {
+            background-color: #ffffff !important;
+            color: #001f3f !important;
+        }
+        .hero-docentes .btn-warning {
+            color: #001f3f !important;
+            background-color: #FFD700 !important;
+            border-color: #FFD700 !important;
+        }
+        .hero-docentes .btn-warning:hover {
+            background-color: #ffea70 !important;
+            border-color: #ffea70 !important;
+        }
+
+        /* --- Modificaciones del Hub sobre Fondo Claro --- */
+        .coverflow-card-item .card-tool-name {
+            color: #003366 !important;
+        }
+
+        .coverflow-card-item .card-tool-cat {
+            background: rgba(0, 91, 168, 0.05) !important;
+            color: #005ba8 !important;
+            border: 1px solid rgba(0, 91, 168, 0.15) !important;
+        }
+
+        /* Cajas de Logos */
+        .card-logo-box, .detail-logo-box, .favorite-logo-thumb, .rank-logo-thumb, .scroller-logo-box {
+            background-color: #ffffff !important;
+            border: 1px solid rgba(0, 91, 168, 0.15) !important;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.03) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            color: #005ba8 !important;
+            overflow: hidden;
+        }
+
+        .card-logo-box span, .detail-logo-box span, .favorite-logo-thumb span, .rank-logo-thumb span, .scroller-logo-box span {
+            font-weight: 800;
+            color: #005ba8 !important;
+        }
+
+        /* Ajustes de Grids y Listas */
+        .library-grid-view .text-white, .library-list-view .text-white {
+            color: #212529 !important;
+        }
+
+        /* Ficha de Detalles */
+        .detail-title-group h3 {
+            color: #003366 !important;
+        }
+
+        .detail-description-text {
+            color: #495057 !important;
+        }
+
+        .detail-educational-uses-box {
+            background: rgba(0, 91, 168, 0.03) !important;
+            border: 1px solid rgba(0, 91, 168, 0.1) !important;
+        }
+
+        .detail-educational-uses-box h5 {
+            color: #005ba8 !important;
+        }
+
+        .detail-educational-uses-box p {
+            color: #495057 !important;
+        }
+
+        .score-num-label {
+            color: #003366 !important;
+        }
+
+        .score-text-label {
+            color: #6c757d !important;
+        }
+
+        /* Formulario de Evaluación */
+        .evaluation-form-title {
+            color: #003366 !important;
+        }
+
+        .eval-input-area {
+            background: #ffffff !important;
+            border: 1px solid rgba(0, 91, 168, 0.2) !important;
+            color: #212529 !important;
+        }
+
+        .eval-input-area:focus {
+            border-color: #005ba8 !important;
+            box-shadow: 0 0 8px rgba(0, 91, 168, 0.15) !important;
+        }
+
+        /* Rankings & Tendencias */
+        .rankings-trends-row h3 {
+            color: #003366 !important;
+        }
+
+        .rank-name-label {
+            color: #003366 !important;
+        }
+
+        .rank-cat-label {
+            color: #6c757d !important;
+        }
+
+        .rank-score-val {
+            color: #212529 !important;
+        }
+
+        /* Recomendados */
+        .scroller-content h4 {
+            color: #003366 !important;
+        }
+
+        .scroller-content p {
+            color: #6c757d !important;
+        }
+
+        .scroller-footer-row {
+            border-top: 1px solid rgba(0, 91, 168, 0.1) !important;
+        }
+
+        .scroller-score span {
+            color: #212529 !important;
+        }
+
+        /* Drawer de Favoritos */
+        .favorites-side-panel {
+            background-color: #ffffff !important;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.08) !important;
+        }
+
+        .favorites-panel-header h4 {
+            color: #003366 !important;
+        }
+
+        .favorite-name-label {
+            color: #212529 !important;
+        }
+
+        .favorite-cat-label {
+            color: #6c757d !important;
+        }
+
+        /* Fix coverflow reflective effects */
+        .coverflow-card-item {
+            -webkit-box-reflect: below 8px linear-gradient(transparent 70%, rgba(255, 255, 255, 0.15)) !important;
+        }
+
+        /* General Layout spacing */
+        .detail-evaluation-grid, .rankings-trends-row, .recommended-carousel-section {
+            padding-top: 2rem !important;
+            padding-bottom: 2rem !important;
+        }
+
+        .category-chip.active {
+            background: #005ba8 !important;
+            color: #ffffff !important;
+            border-color: #005ba8 !important;
+            box-shadow: 0 10px 20px rgba(0, 91, 168, 0.15) !important;
+        }
+
+        .pcp-navbar {
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08) !important;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Malla de Fondo Translúcida -->
+    <div class="bg-mesh-glow"></div>
+
+    <!-- 1. Navbar Oficial PC Puma (Igual al de las demás páginas) -->
     <nav role="navigation" class="navbar navbar-expand-lg navbar-dark pcp-navbar sticky-top">
         <div class="container-fluid">
             <div class="p-2 d-flex align-items-center">
@@ -66,7 +310,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="docentes.html">
+                        <a class="nav-link active" aria-current="page" href="#">
                             <i class="bi bi-person-fill me-1"></i>Docentes
                         </a>
                     </li>
@@ -94,283 +338,243 @@
                             <i class="bi bi-info-circle me-1"></i>Nosotros
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning fw-semibold" href="#" id="btnOpenFavs" aria-label="Ver favoritos">
+                            <i class="bi bi-heart-fill me-1 text-danger"></i>Favoritos
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <main role="main">
-        <section class="hero-docentes">
-            <canvas id="networkCanvas"></canvas>
-            <div class="container text-center position-relative z-1">
-                <h1 class="display-4 fw-bold" data-aos="fade-down">Docencia con Innovación</h1>
-                <p class="lead fs-4" data-aos="fade-up">Explora, evalúa y transforma tu práctica educativa con
-                    tecnología.</p>
-                <div class="d-flex justify-content-center flex-wrap gap-3 mt-4" data-aos="zoom-in">
-                    <a class="btn btn-warning btn-lg" href="#conectividad-prestamo">
-                        <i class="bi bi-laptop me-2"></i>Solicitar un Préstamo
-                    </a>
-                    <a class="btn btn-outline-light btn-lg" href="#biblioteca-tic">
-                        <i class="bi bi-tools me-2"></i>Biblioteca de Recursos Digitales
-                    </a>
-                </div>
+    <!-- 2. Hero Imersivo (Igual al de docentes.html con fondo de red Canvas) -->
+    <header class="hero-docentes">
+        <canvas id="networkCanvas"></canvas>
+        <div class="container text-center position-relative z-1">
+            <h1 class="display-4 fw-bold">Docencia con Innovación</h1>
+            <p class="lead fs-4">Explora, evalúa y transforma tu práctica educativa con tecnología.</p>
+            <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+                <a class="btn btn-warning btn-lg" href="docentes.html#conectividad-prestamo">
+                    <i class="bi bi-laptop me-2"></i>Solicitar un Préstamo
+                </a>
+                <a class="btn btn-outline-light btn-lg" href="#coverflowSection">
+                    <i class="bi bi-tools me-2"></i>Biblioteca de Recursos Digitales
+                </a>
             </div>
-        </section>
+        </div>
+    </header>
 
-        <nav class="container text-center my-5" aria-label="Navegación de la página">
-            <h3 class="h4 text-secondary fw-normal mb-4">Explora esta página</h3>
-            <div class="d-flex justify-content-center flex-wrap gap-3">
-                <a href="#conectividad-prestamo" class="btn btn-outline-secondary"><i class="bi bi-laptop me-1"></i>
-                    Préstamo de Equipos</a>
-                <a href="#biblioteca-tic" class="btn btn-outline-secondary"><i class="bi bi-tools me-1"></i> Biblioteca
-                    de Recursos</a>
-                <a href="#historias-impacto-docente" class="btn btn-outline-secondary"><i
-                        class="bi bi-chat-left-quote me-1"></i> Historias de Impacto</a>
-                <a href="#comunidad-docentes" class="btn btn-outline-secondary"><i class="bi bi-people-fill me-1"></i>
-                    Comunidad</a>
+    <!-- Buscador de Recursos Digitales -->
+    <section class="container py-5" id="coverflowSection">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center mb-4">
+                <h2 class="fw-bold" style="color: #005BA8;">Biblioteca Inteligente de Recursos</h2>
+                <p class="text-muted">Busca e integra herramientas pedagógicas recomendadas por la comunidad académica de la UNAM.</p>
             </div>
-        </nav>
-
-        <section class="container py-5" id="conectividad-prestamo" data-aos="fade-up">
-            <h2 class="text-center section-title-modern">Conectividad y Préstamo de Dispositivos</h2>
-            <p class="lead text-center mb-5 col-lg-8 mx-auto">El programa PC Puma facilita el acceso a la tecnología
-                para garantizar la continuidad académica con equidad, inclusión y acceso digital.</p>
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-7">
-                    <div class="loan-tabs">
-                        <div class="nav nav-pills d-flex flex-column" role="tablist">
-                            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-individual"
-                                type="button" role="tab" aria-selected="true"><i
-                                    class="bi bi-person-fill me-2"></i>Préstamo Individual</button>
-                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-movil" type="button"
-                                role="tab" aria-selected="false"><i class="bi bi-display-fill me-2"></i>Laboratorio
-                                Móvil</button>
-                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-masivo" type="button"
-                                role="tab" aria-selected="false"><i class="bi bi-collection-fill me-2"></i>Préstamo
-                                Masivo para Eventos</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-individual" role="tabpanel">
-                            <h5 class="fw-bold text-primary mb-3">Para tu uso personal</h5>
-                            <ul class="list-unstyled">
-                                <li class="mb-2">
-                                    <strong class="d-block text-body-secondary"><i
-                                            class="bi bi-laptop me-2 text-primary"></i>Equipos:</strong>
-                                    <span>Laptops, iPads, Chromebooks.</span>
-                                </li>
-                                <li class="mb-2">
-                                    <strong class="d-block text-body-secondary"><i
-                                            class="bi bi-calendar-week me-2 text-primary"></i>Periodo:</strong>
-                                    <span>Hasta un semestre (renovable).</span>
-                                </li>
-                                <li>
-                                    <strong class="d-block text-body-secondary"><i
-                                            class="bi bi-file-earmark-text me-2 text-primary"></i>Requisitos:</strong>
-                                    <span>RFC, correo institucional, ID vigente.</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tab-pane fade" id="pills-movil" role="tabpanel">
-                            <h5 class="fw-bold text-primary mb-3">Para tus clases</h5>
-                            <ul class="list-unstyled">
-                                <li class="mb-2">
-                                    <strong class="d-block text-body-secondary"><i
-                                            class="bi bi-lightbulb me-2 text-primary"></i>Ideal para:</strong>
-                                    <span>Prácticas, talleres y actividades grupales.</span>
-                                </li>
-                                <li class="mb-2">
-                                    <strong class="d-block text-body-secondary"><i
-                                            class="bi bi-diagram-3 me-2 text-primary"></i>Coordinación:</strong>
-                                    <span>A través del área TIC de tu entidad.</span>
-                                </li>
-                                <li>
-                                    <strong class="d-block text-body-secondary"><i
-                                            class="bi bi-box-seam me-2 text-primary"></i>Contenido:</strong>
-                                    <span>Carritos móviles con hasta 30 equipos.</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tab-pane fade" id="pills-masivo" role="tabpanel">
-                            <h5 class="fw-bold text-primary mb-3">Para eventos académicos</h5>
-                            <ul class="list-unstyled">
-                                <li class="mb-2">
-                                    <strong class="d-block text-body-secondary"><i
-                                            class="bi bi-calendar-event me-2 text-primary"></i>Uso:</strong>
-                                    <span>Exámenes colegiados, congresos, simposios.</span>
-                                </li>
-                                <li class="mb-2">
-                                    <strong class="d-block text-body-secondary"><i
-                                            class="bi bi-headset me-2 text-primary"></i>Incluye:</strong>
-                                    <span>Asistencia técnica y entrega programada.</span>
-                                </li>
-                                <li>
-                                    <strong class="d-block text-body-secondary"><i
-                                            class="bi bi-building-check me-2 text-primary"></i>Solicitud:</strong>
-                                    <span>Por jefaturas o coordinaciones.</span>
-                                </li>
-                            </ul>
-                        </div>
+            <div class="col-md-8 mb-5">
+                <div class="search-glow-container">
+                    <div class="search-input-wrapper" style="background: #ffffff; border: 1px solid rgba(0, 91, 168, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+                        <i class="bi bi-search" style="color: #005BA8;" aria-hidden="true"></i>
+                        <input type="text" id="searchField" class="search-input-field" style="color: #212529;" placeholder="Buscar herramientas por nombre, área o disciplina..." aria-label="Buscar recursos digitales">
+                        <button class="btn-search-trigger" id="btnSearch">Buscar</button>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
+    <!-- 3. Biblioteca de Recursos: Filtros y Chips -->
+    <main class="library-filters-container">
+        <div class="category-chips-row" role="tablist" aria-label="Categorías de herramientas">
+            <button class="category-chip active" data-category="all" role="tab" aria-selected="true"><i class="bi bi-grid-fill"></i> Todos</button>
+            <button class="category-chip" data-category="IA Generativa" role="tab" aria-selected="false"><i class="bi bi-robot"></i> IA Generativa</button>
+            <button class="category-chip" data-category="Productividad" role="tab" aria-selected="false"><i class="bi bi-check-all"></i> Productividad</button>
+            <button class="category-chip" data-category="Investigación" role="tab" aria-selected="false"><i class="bi bi-search"></i> Investigación</button>
+            <button class="category-chip" data-category="Diseño" role="tab" aria-selected="false"><i class="bi bi-palette"></i> Diseño</button>
+            <button class="category-chip" data-category="Video y Multimedia" role="tab" aria-selected="false"><i class="bi bi-play-circle"></i> Video & Audio</button>
+            <button class="category-chip" data-category="Programación" role="tab" aria-selected="false"><i class="bi bi-code-slash"></i> Programación</button>
+            <button class="category-chip" data-category="Educación" role="tab" aria-selected="false"><i class="bi bi-mortarboard"></i> Educación</button>
+            <button class="category-chip" data-category="Accesibilidad" role="tab" aria-selected="false"><i class="bi bi-eye"></i> Accesibilidad</button>
+            <button class="category-chip" data-category="Colaboración" role="tab" aria-selected="false"><i class="bi bi-people"></i> Colaboración</button>
+            <button class="category-chip" data-category="Ciencia de Datos" role="tab" aria-selected="false"><i class="bi bi-bar-chart"></i> Ciencia de Datos</button>
+        </div>
 
-        <section class="py-5 bg-light" id="biblioteca-tic" data-aos="fade-up">
-            <div class="container">
-                <h2 class="text-center section-title-modern mb-4">Biblioteca de Recursos Digitales</h2>
-
-                <div class="alert alert-info d-flex align-items-center mb-4 small">
-                    <i class="bi bi-info-circle-fill me-2"></i>
-                    <span>Los logotipos y marcas aquí mostrados pertenecen a su respectiva empresa o institución. Se
-                        presentan únicamente con fines <strong>educativos e informativos</strong>.</span>
-                </div>
-
-                <div class="col-lg-8 mx-auto mb-4">
-                    <input id="searchInput" type="text" class="form-control form-control-lg shadow-sm"
-                        placeholder="🔍 Busca por nombre, categoría o descripción (ej: 'video', 'canva', 'evaluación')">
-                </div>
-
-                <div class="row mb-4 align-items-center">
-                    <div class="col-md-4">
-                        <select id="filterCategory" class="form-select">
-                            <option value="">Todas las categorías</option>
-                            <option value="Evaluación">Evaluación</option>
-                            <option value="Contenido">Creación de contenido</option>
-                            <option value="Aula">Gestión del aula</option>
-                            <option value="Video">Video y Multimedia</option>
-                            <option value="Colaboración">Colaboración</option>
-                            <option value="Almacenamiento">Almacenamiento</option>
-                            <option value="Comunicación">Comunicación</option>
-                            <option value="IA">IA Generativa</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4">
-                        <select id="filterRating" class="form-select">
-                            <option value="">Todas las puntuaciones</option>
-                            <option value="4">⭐ 4 o más</option>
-                            <option value="3">⭐ 3 o más</option>
-                            <option value="2">⭐ 2 o más</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div id="toolsContainer" class="row g-4 mt-2">
-                    <div class="col-12 text-center p-5">
-                        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
-                            <span class="visually-hidden">Cargando herramientas...</span>
-                        </div>
-                        <p class="mt-3 text-muted">Cargando herramientas...</p>
-                    </div>
-                </div>
-
-                <nav>
-                    <ul id="pagination" class="pagination justify-content-center mt-4"></ul>
-                </nav>
-
-                <div class="alert alert-info d-flex align-items-center mt-5 small">
-                    <i class="bi bi-info-circle-fill me-2"></i>
-                    <p class="mb-0"><strong>Aviso:</strong> Estas son plataformas de terceros. Muchas ofrecen un modelo
-                        <i>freemium</i> (gratuito con opciones de pago). La decisión de usar versiones de pago es
-                        responsabilidad de cada usuario.
-                    </p>
-                </div>
-
+        <!-- Controles de Vista -->
+        <div class="view-controls-bar">
+            <div class="results-count-label">Recursos filtrados por: <span id="activeCategoryName" class="gradient-text-blue">Todos</span></div>
+            <div class="view-modes-group">
+                <button class="btn-view-mode active" data-mode="carrusel" aria-label="Vista carrusel"><i class="bi bi-view-stacked"></i> Carrusel 3D</button>
+                <button class="btn-view-mode" data-mode="cuadrícula" aria-label="Vista cuadrícula"><i class="bi bi-grid-3x3-gap"></i> Cuadrícula</button>
+                <button class="btn-view-mode" data-mode="lista" aria-label="Vista lista"><i class="bi bi-list-task"></i> Lista</button>
             </div>
-        </section>
-
-        <section class="py-5" id="historias-impacto-docente">
-            <div class="container">
-                <h2 class="text-center section-title-modern">Historias de Impacto Docente</h2>
-                <p class="lead text-center text-muted mb-5 col-lg-8 mx-auto">Descubre cómo otros docentes están
-                    transformando sus clases y proyectos con el apoyo de PC Puma.</p>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card h-100 testimonial-card">
-                            <div class="card-body">
-                                <p class="card-text fs-5">“La conectividad y las herramientas de PC Puma me han
-                                    permitido crear experiencias de aprendizaje híbridas mucho más dinámicas.”</p>
-                            </div>
-                            <div
-                                class="card-footer bg-transparent border-0 text-end d-flex align-items-center justify-content-end">
-                                <img src="../img/fotos/avatar-pcpuma.webp" alt="Avatar docente" class="rounded-circle me-2"
-                                    width="50" height="50">
-                                <small class="text-muted fw-bold">Dra. Elena G. <br /><span class="fw-normal">Facultad
-                                        de Ciencias</span></small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card h-100 testimonial-card">
-                            <div class="card-body">
-                                <p class="card-text fs-5">“El soporte técnico ha sido fundamental. Siempre resuelven mis
-                                    dudas y me ayudan a aprovechar al máximo la tecnología en el aula.”</p>
-                            </div>
-                            <div
-                                class="card-footer bg-transparent border-0 text-end d-flex align-items-center justify-content-end">
-                                <img src="../img/fotos/avatar-pcpuma.webp" alt="Avatar docente" class="rounded-circle me-2"
-                                    width="50" height="50">
-                                <small class="text-muted fw-bold">Mtro. Roberto F. <br /><span
-                                        class="fw-normal">Facultad de Filosofía y Letras</span></small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card h-100 testimonial-card">
-                            <div class="card-body">
-                                <p class="card-text fs-5">“Las capacitaciones me abrieron un mundo de posibilidades para
-                                    la evaluación y creación de contenido interactivo. ¡Mis clases son otras!”</p>
-                            </div>
-                            <div
-                                class="card-footer bg-transparent border-0 text-end d-flex align-items-center justify-content-end">
-                                <img src="../img/fotos/avatar-pcpuma.webp" alt="Avatar docente" class="rounded-circle me-2"
-                                    width="50" height="50">
-                                <small class="text-muted fw-bold">Lic. Sofía C. <br /><span class="fw-normal">Facultad
-                                        de Ciencias Políticas y Sociales</span></small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-5">
-                <a href="contacto.html" class="btn btn-outline-primary btn-lg">¡Comparte tu historia!</a>
-            </div>
-        </section>
-
-        <section class="py-5 bg-light" id="comunidad-docentes" data-aos="fade-up">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-title-modern">Comunidad de Docentes en Red</h2>
-                    <p class="lead mb-4 col-lg-8 mx-auto">Únete a nuestros espacios colaborativos, comparte tus
-                        experiencias y forma parte activa del ecosistema docente del Programa PC Puma.</p>
-                </div>
-
-                <div class="row justify-content-center text-center g-4 my-4">
-                    <div class="col-md-4">
-                        <h5 class="text-primary"><i class="bi bi-lightbulb-fill me-2"></i>Colabora</h5>
-                        <p class="small">Comparte ideas y recursos con otros docentes de la UNAM.</p>
-                    </div>
-
-                    <div class="col-md-4">
-                        <h5 class="text-primary"><i class="bi bi-calendar-event-fill me-2"></i>Entérate</h5>
-                        <p class="small">Sé el primero en conocer nuevas herramientas y capacitaciones.</p>
-                    </div>
-                </div>
-
-                <div class="d-flex justify-content-center mt-3">
-                    <a class="btn btn-success btn-lg d-flex align-items-center gap-2"
-                        href="https://whatsapp.com/channel/0029Va57tNS1dAvzepFLR10G" target="_blank" rel="noopener">
-                        <i class="bi bi-whatsapp fs-4"></i>Unirme al Canal de WhatsApp PC Puma
-                    </a>
-                </div>
-            </div>
-        </section>
+        </div>
     </main>
 
-    <!-- PIE DE PÁGINA -->
+    <!-- 4. Carrusel de Descubrimiento 3D (Coverflow) -->
+    <section class="discovery-centerpiece">
+        <div class="coverflow-viewport" id="coverflowViewport" aria-label="Carrusel 3D interactivo de recursos">
+            <div class="coverflow-container-inner" id="coverflowContainer">
+                <!-- Tarjetas cargadas dinámicamente mediante JS -->
+            </div>
+        </div>
+        <!-- Botones de Navegación del Carrusel -->
+        <div class="coverflow-nav-buttons" id="coverflowNav">
+            <button class="btn-coverflow-arrow" id="btnPrevCoverflow" aria-label="Recurso anterior"><i class="bi bi-arrow-left"></i></button>
+            <div class="coverflow-bullets-indicator" id="coverflowBullets" role="tablist">
+                <!-- Bullets dinámicos -->
+            </div>
+            <button class="btn-coverflow-arrow" id="btnNextCoverflow" aria-label="Siguiente recurso"><i class="bi bi-arrow-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Contenedores de Vistas Alternativas (Cuadrícula y Lista) -->
+    <section class="container px-4 px-md-5 mb-5">
+        <div class="library-grid-view" id="libraryGrid" style="display: none;"></div>
+        <div class="library-list-view" id="libraryList" style="display: none;"></div>
+    </section>
+
+    <!-- 5 & 6. Ficha Técnica (Detalle) & Sistema de Evaluaciones -->
+    <section class="detail-evaluation-grid" id="detailPanelSection">
+        <!-- Panel de Detalle del Recurso Seleccionado -->
+        <div id="detailPanel" aria-live="polite">
+            <!-- Cargado dinámicamente -->
+        </div>
+
+        <!-- Formulario de Calificaciones y Comentarios -->
+        <div class="tool-evaluation-card glass-panel" id="evaluationForm" style="display: none;">
+            <h4 class="evaluation-form-title"><i class="bi bi-pencil-square me-2 text-warning"></i>Evaluar esta herramienta</h4>
+            
+            <div class="star-rating-select-group">
+                <span class="star-rating-label">Tu Calificación:</span>
+                <div class="stars-interactive-row" role="radiogroup" aria-label="Calificación de 1 a 5 estrellas">
+                    <button class="btn-star-rating-select" data-value="1" role="radio" aria-checked="false" aria-label="1 estrella"><i class="bi bi-star"></i></button>
+                    <button class="btn-star-rating-select" data-value="2" role="radio" aria-checked="false" aria-label="2 estrellas"><i class="bi bi-star"></i></button>
+                    <button class="btn-star-rating-select" data-value="3" role="radio" aria-checked="false" aria-label="3 estrellas"><i class="bi bi-star"></i></button>
+                    <button class="btn-star-rating-select" data-value="4" role="radio" aria-checked="false" aria-label="4 estrellas"><i class="bi bi-star"></i></button>
+                    <button class="btn-star-rating-select" data-value="5" role="radio" aria-checked="false" aria-label="5 estrellas"><i class="bi bi-star"></i></button>
+                </div>
+            </div>
+
+            <div class="eval-input-wrapper">
+                <label for="evalComments">Comentarios y sugerencias de uso pedagógico:</label>
+                <textarea id="evalComments" class="eval-input-area" placeholder="¿Cómo utilizas esta herramienta en el aula? Comparte dinámicas o consejos de enseñanza prácticos..."></textarea>
+            </div>
+
+            <div class="eval-recommend-toggle">
+                <input type="checkbox" id="recommendToggle" class="form-check-input bg-transparent border-secondary">
+                <label for="recommendToggle">Recomiendo este recurso para la docencia universitaria</label>
+            </div>
+
+            <button class="btn-submit-eval" id="btnSubmitEval">
+                <i class="bi bi-send-fill"></i> Publicar en el Hub
+            </button>
+        </div>
+    </section>
+
+    <!-- 7. Rankings y Tendencias de la Comunidad -->
+    <section class="rankings-trends-row">
+        <!-- Top Rated Column -->
+        <div class="ranking-column-section">
+            <h3 class="gradient-text-blue"><i class="bi bi-award-fill"></i> Herramientas Mejor Valoradas</h3>
+            <div class="rank-list-wrapper" id="rankList">
+                <!-- Dinámico -->
+            </div>
+        </div>
+
+        <!-- Trends Column -->
+        <div class="trends-column-section">
+            <h3 class="gradient-text-purple"><i class="bi bi-fire"></i> Tendencias en el Aula</h3>
+            <div class="rank-list-wrapper" id="trendList">
+                <!-- Dinámico -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Recomendados para Ti (Horizontal Scroller) -->
+    <section class="recommended-carousel-section">
+        <h2 class="section-header-title text-dark">Recomendados para tu Asignatura</h2>
+        <div class="horizontal-scroller-wrapper" id="recommendedScroller" aria-label="Carrusel de recursos recomendados">
+            <!-- Dinámico -->
+        </div>
+    </section>
+
+    <!-- COMUNIDAD DE DOCENTES EN RED (Canal de WhatsApp Oficial) -->
+    <section class="py-5" id="comunidad-docentes" style="background: #ffffff;">
+        <div class="container">
+            <div class="p-4 p-md-5 rounded-4 shadow-sm" style="background: linear-gradient(135deg, rgba(0, 91, 168, 0.02) 0%, rgba(168, 85, 247, 0.02) 100%); border: 1px solid rgba(0, 91, 168, 0.08);">
+                <div class="text-center mb-5">
+                    <span class="badge mb-3 px-3 py-2 text-success shadow-sm" style="background: rgba(25, 135, 84, 0.08); border-radius: 50px; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase;">
+                        <i class="bi bi-whatsapp me-1"></i> Canal Oficial de Comunicación
+                    </span>
+                    <h2 class="fw-bold mb-3" style="color: #005BA8; font-size: 2.4rem; font-family: 'Outfit', sans-serif; letter-spacing: normal !important;">Comunidad de Docentes en Red</h2>
+                    <p class="text-muted col-lg-8 mx-auto fs-5" style="line-height: 1.6;">Únete a nuestros espacios colaborativos, comparte tus experiencias didácticas y forma parte activa del ecosistema docente del Programa PC Puma.</p>
+                </div>
+
+                <div class="row g-4 justify-content-center mb-5">
+                    <!-- Tarjeta 1: Colabora -->
+                    <div class="col-md-5">
+                        <div class="p-4 h-100 rounded-3 bg-white shadow-sm border text-center text-md-start" style="transition: all 0.3s ease; border-color: rgba(0, 91, 168, 0.08) !important;"
+                             onmouseover="this.style.borderColor='rgba(0, 91, 168, 0.2)'; this.style.transform='translateY(-4px)'; this.style.boxShadow='0 10px 25px rgba(0, 91, 168, 0.05)';"
+                             onmouseout="this.style.borderColor='rgba(0, 91, 168, 0.08)'; this.style.transform='none'; this.style.boxShadow='none';">
+                            <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start gap-3">
+                                <div class="p-3 rounded-circle text-primary" style="background: rgba(0, 91, 168, 0.06); width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="bi bi-lightbulb-fill fs-3"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-2" style="color: #003366; font-family: 'Outfit', sans-serif; font-size: 1.2rem;">Colabora</h5>
+                                    <p class="text-muted small mb-0" style="line-height: 1.5;">Comparte ideas, recursos de aprendizaje interactivos y estrategias de enseñanza con otros docentes de la UNAM.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tarjeta 2: Entérate -->
+                    <div class="col-md-5">
+                        <div class="p-4 h-100 rounded-3 bg-white shadow-sm border text-center text-md-start" style="transition: all 0.3s ease; border-color: rgba(0, 91, 168, 0.08) !important;"
+                             onmouseover="this.style.borderColor='rgba(168, 85, 247, 0.2)'; this.style.transform='translateY(-4px)'; this.style.boxShadow='0 10px 25px rgba(168, 85, 247, 0.05)';"
+                             onmouseout="this.style.borderColor='rgba(0, 91, 168, 0.08)'; this.style.transform='none'; this.style.boxShadow='none';">
+                            <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start gap-3">
+                                <div class="p-3 rounded-circle text-purple" style="background: rgba(168, 85, 247, 0.06); width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #a855f7;">
+                                    <i class="bi bi-calendar-event-fill fs-3"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-2" style="color: #003366; font-family: 'Outfit', sans-serif; font-size: 1.2rem;">Entérate</h5>
+                                    <p class="text-muted small mb-0" style="line-height: 1.5;">Sé el primero en conocer nuevas herramientas digitales, actualizaciones del portal, convocatorias y capacitaciones.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <a class="btn btn-success btn-lg d-inline-flex align-items-center gap-2 px-5 py-3 shadow-lg" 
+                       style="border-radius: 50px; font-weight: 700; transition: all 0.3s ease; background-color: #25d366; border-color: #25d366; font-size: 1.1rem;"
+                       href="https://whatsapp.com/channel/0029Va57tNS1dAvzepFLR10G" target="_blank" rel="noopener"
+                       onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 25px rgba(37, 211, 102, 0.4)';"
+                       onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)';"
+                       aria-label="Unirse al canal de WhatsApp de PC Puma">
+                        <i class="bi bi-whatsapp fs-4"></i> Unirme al Canal de WhatsApp PC Puma
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Panel Lateral Deslizable de Favoritos -->
+    <aside class="favorites-side-panel" id="favoritesPanel" aria-labelledby="favPanelTitle">
+        <div class="favorites-panel-header">
+            <h4 id="favPanelTitle"><i class="bi bi-heart-fill text-danger me-2"></i>Mis Favoritos</h4>
+            <button class="btn-close-favorites-panel" id="btnCloseFavs" aria-label="Cerrar panel de favoritos"><i class="bi bi-x"></i></button>
+        </div>
+        <div class="favorites-items-container-list" id="favoritesItemsList" aria-live="polite">
+            <!-- Dinámico -->
+        </div>
+    </aside>
+
+    <!-- Overlay General UI para desvanecer fondo en paneles -->
+    <div class="general-ui-overlay" id="generalOverlay" aria-hidden="true"></div>
+
+    <!-- PIE DE PÁGINA (Igual al de index.html y docentes.html) -->
     <footer class="footer bg-pcpuma text-white" role="contentinfo">
         <div class="container pt-4 pb-3">
             <div class="row align-items-center">
@@ -439,182 +643,15 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Bootstrap Bundle JS (contiene Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Lógica de fondo de partículas canvas -->
     <script src="../js/network-bg.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            AOS.init({ duration: 800, once: true });
 
-            const toolsContainer = document.getElementById('toolsContainer');
-            const searchInput = document.getElementById('searchInput');
-            const filterCategory = document.getElementById('filterCategory');
-            const filterRating = document.getElementById('filterRating');
-            const pagination = document.getElementById('pagination');
-            const itemsPerPage = 12;
-            let allCards = [];
-
-            // --- PUNTO DE ENTRADA ---
-            main();
-
-            async function main() {
-                try {
-                    let toolsData = null;
-                    let ratingsData = {};
-
-                    // 1. Cargar datos de herramientas
-                    try {
-                        const toolsRes = await fetch('../data/biblioteca_digital_docente.json');
-                        toolsData = await toolsRes.json();
-                    } catch (e) {
-                        console.error("Error al cargar biblioteca_digital_docente.json:", e);
-                    }
-
-                    // 2. Cargar datos de calificaciones (de forma opcional)
-                    try {
-                        const ratingsRes = await fetch('../php/estadisticas.php');
-                        ratingsData = await ratingsRes.json();
-                    } catch (e) {
-                        console.warn("No se pudieron obtener las estadísticas de evaluación. Cargando sin promedios.", e);
-                    }
-
-                    if (!toolsData) {
-                        throw new Error("No se pudo cargar el archivo principal de herramientas.");
-                    }
-
-                    // 3. UNIR LOS DATOS DE EVALUACIÓN CON LOS DATOS DE LAS HERRAMIENTAS
-                    toolsData.categories.forEach(category => {
-                        category.tools.forEach(tool => {
-                            if (ratingsData && ratingsData[tool.tool_id]) {
-                                tool.evaluation = ratingsData[tool.tool_id];
-                            }
-                        });
-                    });
-
-                    // 4. RENDERIZAR LAS TARJETAS CON LA INFORMACIÓN COMPLETA
-                    renderAllTools(toolsData);
-
-                    // 5. INICIALIZAR FILTROS Y PAGINACIÓN
-                    initializeFilteringAndPagination();
-
-                } catch (error) {
-                    console.error("Error al cargar las herramientas:", error);
-                    toolsContainer.innerHTML = `<div class="col-12 text-center p-5"><p class="text-danger">No se pudieron cargar las herramientas. Por favor, intente de nuevo más tarde.</p></div>`;
-                }
-            }
-
-            function renderAllTools(data) {
-                let allToolsHTML = '';
-                data.categories.forEach(category => {
-                    category.tools.forEach(tool => {
-
-                        let ratingHTML = '<span class="text-muted">Sin evaluaciones</span>';
-                        if (tool.evaluation && tool.evaluation.count > 0) {
-                            const average = parseFloat(tool.evaluation.average).toFixed(1);
-                            ratingHTML = `⭐ ${average} / 5 
-                                      <span class="text-muted">(${tool.evaluation.count} evaluac.)</span>`;
-                        }
-
-                        allToolsHTML += `
-                        <div class="col-md-4 col-lg-3 tool-card" data-cat="${category.id}" data-rating="${tool.evaluation.average || 0}">
-                          <div class="card h-100 glass-card p-3 text-center d-flex flex-column">
-                            <div class="category-tag">${category.name}</div>
-                            <img src="${tool.icon_url}" alt="${tool.name}" class="mx-auto mb-2" width="48" height="48" loading="lazy">
-                            <h6 class="text-dark fw-semibold">${tool.name}</h6>
-                            <p class="text-muted small mb-2">${tool.description}</p>
-                            <div class="small mb-3 rating-display" data-tool="${tool.tool_id}">
-                                ${ratingHTML}
-                            </div>
-                            <div class="mt-auto pt-2">
-                              <a class="btn btn-sm btn-success w-100 mb-2" href="${tool.tool_url}" target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-box-arrow-up-right me-1"></i>Ir a la Herramienta
-                              </a>
-                              <a class="btn btn-sm btn-outline-primary w-100" href="${tool.evaluation_url}" target="_blank" rel="noopener noreferrer">Evaluar</a>
-                            </div>
-                          </div>
-                        </div>
-                    `;
-                    });
-                });
-                toolsContainer.innerHTML = allToolsHTML;
-                allCards = Array.from(toolsContainer.querySelectorAll('.tool-card'));
-            }
-
-            function initializeFilteringAndPagination() {
-                let currentPage = 1;
-
-                function getFilteredCards() {
-                    const category = filterCategory.value;
-                    const minRating = parseFloat(filterRating.value) || 0;
-                    const searchText = searchInput.value.toLowerCase().trim();
-
-                    return allCards.filter(card => {
-                        const cardCategory = card.dataset.cat;
-                        const rating = parseFloat(card.dataset.rating) || 0;
-
-                        const name = card.querySelector('h6').textContent.toLowerCase();
-                        const desc = card.querySelector('p').textContent.toLowerCase();
-                        const searchableText = `${name} ${desc} ${cardCategory.toLowerCase()}`;
-
-                        const matchCategory = !category || cardCategory === category;
-                        const matchRating = rating >= minRating;
-                        const matchSearch = searchableText.includes(searchText);
-
-                        return matchCategory && matchRating && matchSearch;
-                    });
-                }
-
-                function showPage(page) {
-                    currentPage = page;
-                    const filteredCards = getFilteredCards();
-                    allCards.forEach(card => card.style.display = 'none');
-                    const start = (page - 1) * itemsPerPage;
-                    const end = start + itemsPerPage;
-                    const pageCards = filteredCards.slice(start, end);
-                    pageCards.forEach(card => card.style.display = 'flex');
-                    renderPagination(filteredCards.length, page);
-                }
-
-                function renderPagination(totalItems, currentPage) {
-                    pagination.innerHTML = '';
-                    const totalPages = Math.ceil(totalItems / itemsPerPage);
-
-                    if (totalPages <= 1) return;
-
-                    const prevDisabled = currentPage === 1 ? 'disabled' : '';
-                    const nextDisabled = currentPage === totalPages ? 'disabled' : '';
-
-                    pagination.innerHTML = `<li class="page-item ${prevDisabled}"><a class="page-link" href="#" data-page="${currentPage - 1}">Anterior</a></li>`;
-                    for (let i = 1; i <= totalPages; i++) {
-                        const active = i === currentPage ? 'active' : '';
-                        pagination.innerHTML += `<li class="page-item ${active}"><a class="page-link" href="#" data-page="${i}">${i}</a></li>`;
-                    }
-                    pagination.innerHTML += `<li class="page-item ${nextDisabled}"><a class="page-link" href="#" data-page="${currentPage + 1}">Siguiente</a></li>`;
-
-                    pagination.querySelectorAll('a').forEach(link => {
-                        link.addEventListener('click', e => {
-                            e.preventDefault();
-                            const page = parseInt(link.dataset.page);
-                            if (!isNaN(page) && page > 0 && page <= totalPages) {
-                                showPage(page);
-                                document.getElementById('biblioteca-tic').scrollIntoView({ behavior: 'smooth' });
-                            }
-                        });
-                    });
-                }
-
-                filterCategory.addEventListener('change', () => showPage(1));
-                filterRating.addEventListener('change', () => showPage(1));
-                searchInput.addEventListener('keyup', () => showPage(1));
-
-                showPage(1);
-            }
-        });
-    </script>
-    <script>
-        window.cbConfig = { chatId: "95e57fa3-a653-4e2d-896b-d8d7d408a649" };
-    </script>
-    <script src="https://app.chatbit.co/embed.min.js" defer></script>
+    <!-- Lógica de docentes.js -->
+    <script src="../js/docentes.js?v=2.2"></script>
 </body>
 
 </html>

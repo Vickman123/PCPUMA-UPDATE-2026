@@ -2,71 +2,52 @@
 <html lang="es">
 
 <head>
-  <meta charset="utf-8" />
-  <title>Admin — PC Puma</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Administradores de TI - PC Puma UNAM</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Meta Tags para SEO -->
+  <meta name="description" content="Portal de coordinación central y soporte tecnológico para administradores de TI del Programa PC Puma UNAM.">
+  <meta name="keywords" content="UNAM, PC Puma, Administradores, TI, Soporte Técnico, Redes, Conectividad">
+
+  <!-- CSS de Terceros (Bootstrap y Icons) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet">
   <link href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" rel="stylesheet">
   <link href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" rel="stylesheet">
-  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="../img/favicons/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../img/favicons/favicon-16x16.png">
-  <link rel="stylesheet" href="../css/global.css?v=5">
-  <link rel="stylesheet" href="../css/admin.css">
-  <link href="../css/index.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style_accessibility.css">
+
+  <!-- CSS de Coherencia de Diseño del Portal PC Puma -->
+  <link href="../css/global.css" rel="stylesheet">
+  <link href="../css/index.css" rel="stylesheet">
+  <link href="../css/style_accessibility.css" rel="stylesheet">
+
+  <!-- Estilos del Portal TI -->
+  <link href="../css/admin.css" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link href="../img/favicons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" />
+  <link href="../img/favicons/favicon.svg" rel="icon" type="image/svg+xml" />
+  <link href="../img/favicons/favicon.ico" rel="shortcut icon" />
   <style>
-    /* Estilos de Terminal para el Estado Operacional */
-    .terminal-status {
-      font-family: 'Consolas', 'Courier New', Courier, monospace;
-      background-color: #0b0f19;
-      color: #00ff66;
-      border: 1px solid rgba(0, 255, 102, 0.25);
-      padding: 6px 14px;
-      border-radius: 8px;
-      font-size: 0.8rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-      display: inline-flex;
-      align-items: center;
-      box-shadow: 0 0 10px rgba(0, 255, 102, 0.05);
-      text-transform: uppercase;
+    .mexico-map-image-wrapper {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
-    .terminal-dot {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      background-color: #00ff66;
-      border-radius: 50%;
-      margin-right: 8px;
-      box-shadow: 0 0 8px #00ff66;
-      animation: terminal-pulse 1.5s infinite;
+    .map-cluster-marker {
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-
-    .terminal-status::after {
-      content: "_";
-      animation: cursor-blink 1s infinite;
-      margin-left: 2px;
-      color: #00ff66;
-    }
-
-    @keyframes terminal-pulse {
-      0%, 100% { opacity: 0.3; transform: scale(0.9); }
-      50% { opacity: 1; transform: scale(1.1); }
-    }
-
-    @keyframes cursor-blink {
-      0%, 100% { opacity: 0; }
-      50% { opacity: 1; }
+    .map-cluster-marker.selected-marker {
+      box-shadow: 0 0 0 3px #ffffff, 0 0 0 6px var(--pcp-blue) !important;
+      transform: scale(1.22) !important;
+      font-weight: 900 !important;
     }
   </style>
 </head>
 
 <body>
+
+  <!-- 1. Navbar Oficial PC Puma -->
   <nav role="navigation" class="navbar navbar-expand-lg navbar-dark pcp-navbar sticky-top">
     <div class="container-fluid">
       <div class="p-2 d-flex align-items-center">
@@ -133,212 +114,188 @@
     </div>
   </nav>
 
-  <section id="hero-admin" style="position:relative; background: radial-gradient(circle at center, #001f3f 0%, #000c18 100%) !important; height:280px; overflow:hidden;">
-    <canvas id="networkCanvas" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0; opacity: 0.65;"></canvas>
-    <div
-      style="position:relative; z-index:1; display:flex; flex-direction:column; justify-content:center; align-items:center; height:100%;">
+  <!-- 2. Hero Central con Estadísticas -->
+  <section id="hero-admin">
+    <canvas id="networkCanvas"></canvas>
+    <div class="hero-content">
       <h1 class="text-white fw-bold display-5 mb-2">Portal de Administradores de TI</h1>
-      <p class="text-white fs-5">Tu portal de integración y estándares del Programa PC Puma.</p>
+      <p class="text-white opacity-75 fs-5">Centro de coordinación tecnológica del Programa PC Puma.</p>
+      
+      <div class="hero-stats-row">
+        <div class="hero-stat-item">
+          <i class="bi bi-bank"></i>
+          <div>
+            <div class="hero-stat-number" id="heroConectadas">72</div>
+            <div class="hero-stat-label">Entidades Conectadas</div>
+          </div>
+        </div>
+        <div class="hero-stat-item">
+          <i class="bi bi-wifi"></i>
+          <div>
+            <div class="hero-stat-number">98.7%</div>
+            <div class="hero-stat-label">Disponibilidad Nacional</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-buttons-row">
+        <a href="#cobertura-section" class="btn hero-btn-pill active"><i class="bi bi-map-fill"></i> Ver Cobertura</a>
+        <a href="#entidades-section" class="btn hero-btn-pill outline"><i class="bi bi-building"></i> Entidades</a>
+        <a href="#guias-section" class="btn hero-btn-pill outline"><i class="bi bi-journal-bookmark-fill"></i> Guías y Recursos</a>
+      </div>
     </div>
   </section>
 
   <main>
-    <section id="coordination-dashboard" class="container py-5">
-      <div class="text-center mb-5">
-        <h2 class="mb-3">Dashboard de Coordinación Central</h2>
-        <p class="lead text-muted col-lg-8 mx-auto">Información prioritaria, estado de servicios compartidos y próximas
-          capacitaciones para todas las entidades.</p>
-      </div>
-      <div class="row g-4 g-lg-5">
-        <div class="col-lg-7">
-          <h4 class="section-subtitle"><i class="bi bi-terminal me-2 text-primary"></i>Estado Operacional de Servicios</h4>
-          <div class="card status-card">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <div><i class="bi bi-server me-2 text-primary"></i>Plataformas de administración de Red en la Nube</div>
-                <span class="terminal-status"><span class="terminal-dot"></span>Operacional</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <div><i class="bi bi-hdd-network-fill me-2 text-primary"></i>Sistema Institucional de Préstamo PC Puma</div>
-                <span class="terminal-status"><span class="terminal-dot"></span>Operacional</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <div><i class="bi bi-headset me-2 text-primary"></i>Portal de Tickets de acompañamiento</div>
-                <span class="terminal-status"><span class="terminal-dot"></span>Operacional</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <div><i class="bi bi-server me-2 text-primary"></i>Servidor de Administración (MDM)</div>
-                <span class="terminal-status"><span class="terminal-dot"></span>Operacional</span>
-              </li>
-              <!-- Para señalar fallas en alguna plataforma: <span class="badge bg-warning-subtle text-warning-emphasis rounded-pill"><i class="bi bi-exclamation-triangle-fill me-1"></i>Mantenimiento Programado</span> -->
-            </ul>
+    <!-- 3. Fichas de Contadores Top -->
+    <section class="container py-4">
+      <div class="row g-4">
+        <div class="col-6 col-md-6 col-lg-3">
+          <div class="top-counter-card">
+            <div class="counter-card-header">
+              <div class="counter-icon-box blue"><i class="bi bi-bank"></i></div>
+              <div class="counter-number-val">71</div>
+            </div>
+            <div class="counter-label-desc">Entidades Conectadas</div>
+            <a href="#entidades-section" class="counter-action-link">Ver todas <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
-        <div class="col-lg-5">
-          <h4 class="section-subtitle">Anuncios y Capacitaciones</h4>
-          <div class="card status-card">
-            <div class="card-body">
-              <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-megaphone-fill me-1"></i> Anuncios Generales
-              </h6>
-              <div class="alert alert-info small p-2 mb-3"><strong>[LINEAMIENTOS]</strong> Actualizaciones en
-                Lineamientos Generales del Programa de Conectividad Móvil PC PUMA.</div>
-              <h6 class="card-subtitle mb-2 mt-4 text-muted"><i class="bi bi-calendar-event-fill me-1"></i> Próximas
-                Capacitaciones</h6>
-              <ul class="list-unstyled mb-0">
-                <li class="mb-2"><strong>26/SEP/2025:</strong>Colquio PC Puma - Taller IA de Google <a
-                    href="https://pcpuma.unam.mx/coloquio/Programa_3er_Coloquio.pdf">Ver más...</a></li>
-                <li><strong>26/SEP/2025:</strong> Coloquio PC Puma - Taller IA de Microsoft <a
-                    href="https://pcpuma.unam.mx/coloquio/Programa_3er_Coloquio.pdf">Ver más...</a></li>
-              </ul>
+        <div class="col-6 col-md-6 col-lg-3">
+          <div class="top-counter-card">
+            <div class="counter-card-header">
+              <div class="counter-icon-box green"><i class="bi bi-wifi"></i></div>
+              <div class="counter-number-val">12,812</div>
             </div>
+            <div class="counter-label-desc">Antenas Activas</div>
+            <a href="#cobertura-section" class="counter-action-link">Ver detalle <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+          <div class="top-counter-card">
+            <div class="counter-card-header">
+              <div class="counter-icon-box purple"><i class="bi bi-laptop"></i></div>
+              <div class="counter-number-val">13,291</div>
+            </div>
+            <div class="counter-label-desc">Equipos Registrados</div>
+            <a href="#entidades-section" class="counter-action-link">Ver detalle <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+          <div class="top-counter-card">
+            <div class="counter-card-header">
+              <div class="counter-icon-box orange"><i class="bi bi-mortarboard"></i></div>
+              <div class="counter-number-val">3</div>
+            </div>
+            <div class="counter-label-desc">Capacitaciones Programadas</div>
+            <a href="eventos.html" class="counter-action-link">Ver calendario <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
       </div>
-    </section>
+    </section>    <!-- 4. Fila de Cobertura y Estado Operacional -->
+    <section class="container py-3" id="cobertura">
+      <div class="row g-4">
+        <!-- Mapa Nacional (8 cols) -->
+        <div class="col-lg-8">
+          <div class="dashboard-main-card h-100 p-4 d-flex flex-column">
+            <div class="text-center mb-4">
+              <h4 class="mb-2 text-dark fw-bold">Cobertura Nacional de la Red WiFi</h4>
+              <p class="text-muted small">Mapa interactivo con la cobertura actual de la red PC Puma en las entidades universitarias de todo el país.</p>
+            </div>
+            
+            <div class="text-center mb-3">
+              <div class="btn-group flex-wrap pcp-map-filters" role="group" aria-label="Filtros de entidades">
+                <button class="btn btn-filtro" onclick="marcarBotonActivo('Facultades'); filtrarCapas('Facultades')" type="button">Facultades</button>
+                <button class="btn btn-filtro" onclick="marcarBotonActivo('FES'); filtrarCapas('FES')" type="button">FES</button>
+                <button class="btn btn-filtro" onclick="marcarBotonActivo('ENES'); filtrarCapas('ENES')" type="button">ENES</button>
+                <button class="btn btn-filtro" onclick="marcarBotonActivo('ENP'); filtrarCapas('ENP')" type="button">ENP</button>
+                <button class="btn btn-filtro" onclick="marcarBotonActivo('CCH'); filtrarCapas('CCH')" type="button">CCH</button>
+                <button class="btn btn-filtro" onclick="marcarBotonActivo('Institutos'); filtrarCapas('Institutos')" type="button">Institutos</button>
+                <button class="btn btn-filtro" onclick="marcarBotonActivo('Otros'); filtrarCapas('Otros')" type="button">Otros</button>
+                <button class="btn btn-filtro activo-filtro" onclick="marcarBotonActivo('Todos'); filtrarCapas('Todos')" type="button">Mostrar Todos</button>
+              </div>
+            </div>
 
-    <section id="implementation-guides" class="py-5 bg-light">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="mb-3">Guías de implementación y mejores prácticas</h2>
-          <p class="lead text-muted col-lg-8 mx-auto">La base de conocimiento para operar el programa PC Puma en tu
-            entidad, respetando su autonomía y diversidad tecnológica.</p>
+            <div id="map" style="height: 480px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); border: 1px solid var(--border-color); flex-grow: 1;"></div>
+
+            <div class="alert alert-info mt-3 mb-0 small text-center" role="alert">
+              <i class="bi bi-info-circle-fill me-2"></i>
+              Para más detalles, haz clic en los íconos del mapa para ver el medio de contacto de cada entidad.
+            </div>
+          </div>
         </div>
 
-        <ul class="nav nav-tabs nav-fill nav-justified implementation-tabs" id="guidesTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="connectivity-tab" data-bs-toggle="tab"
-              data-bs-target="#connectivity-pane" type="button" role="tab" aria-controls="connectivity-pane"
-              aria-selected="true">
-              <i class="bi bi-wifi me-2"></i>Conectividad
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="devices-tab" data-bs-toggle="tab" data-bs-target="#devices-pane" type="button"
-              role="tab" aria-controls="devices-pane" aria-selected="false">
-              <i class="bi bi-laptop me-2"></i>Gestión de dispositivos
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="support-tab" data-bs-toggle="tab" data-bs-target="#support-pane" type="button"
-              role="tab" aria-controls="support-pane" aria-selected="false">
-              <i class="bi bi-people-fill me-2"></i>Soporte a usuarios
-            </button>
-          </li>
-        </ul>
-
-        <div class="tab-content bg-white p-4 p-md-5 border border-top-0" id="guidesTabContent">
-          <div class="tab-pane fade show active" id="connectivity-pane" role="tabpanel"
-            aria-labelledby="connectivity-tab" tabindex="0">
-            <div class="row g-4">
-              <div class="col-md-6 col-lg-4">
-                <div class="card resource-card h-100">
-                  <div class="card-body">
-                    <div class="resource-icon"><i class="bi bi-shield-check"></i></div>
-                    <h5 class="card-title">Lineamientos de Seguridad</h5>
-                    <p class="card-text small text-muted">Estándares de seguridad de red (ACLs, VLANs, políticas de
-                      firewall) recomendados para ser compatibles con PC Puma.</p>
-                    <a href="#" class="btn btn-sm btn-outline-primary stretched-link mt-auto">Consultar Lineamientos</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card resource-card h-100">
-                  <div class="card-body">
-                    <div class="resource-icon"><i class="bi bi-diagram-3"></i></div>
-                    <h5 class="card-title">Guías por tecnología</h5>
-                    <p class="card-text small text-muted">Ejemplos de configuración y mejores prácticas para distintas
-                      tecnologías de red (Cisco, Aruba, etc.).</p>
-                    <a href="#" class="btn btn-sm btn-outline-primary stretched-link mt-auto">Ver Guías</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card resource-card h-100">
-                  <div class="card-body">
-                    <div class="resource-icon"><i class="bi bi-list-check"></i></div>
-                    <h5 class="card-title">Checklist de diagnóstico</h5>
-                    <p class="card-text small text-muted">Pasos para identificar y resolver problemas comunes de
-                      conectividad en tu red local.</p>
-                    <a href="../archivos/Conectividad/Checklist_Conectividad_PCPUMA.pdf"
-                      class="btn btn-sm btn-outline-primary stretched-link mt-auto">Descargar Checklist</a>
-                  </div>
-                </div>
-              </div>
+        <!-- Estado Operacional de Servicios (4 cols) -->
+        <div class="col-lg-4">
+          <div class="dashboard-main-card">
+            <div class="dashboard-card-header">
+              <h4 class="dashboard-card-title"><i class="bi bi-pc-display-horizontal me-1"></i> Estado Operacional de Servicios</h4>
             </div>
-          </div>
-          <div class="tab-pane fade" id="devices-pane" role="tabpanel" aria-labelledby="devices-tab" tabindex="0">
-            <div class="row g-4">
-              <div class="col-md-6 col-lg-4">
-                <div class="card resource-card h-100">
-                  <div class="card-body">
-                    <div class="resource-icon"><i class="bi bi-box-seam-fill"></i></div>
-                    <h5 class="card-title">Sistema Institucional PC Puma Cental</h5>
-                    <p class="card-text small text-muted">Manual de operación completo para entidades que utilizan la
-                      plataforma central de préstamos.</p>
-                    <a href="../archivos/Prestamo/sistema/Manual_Operador_PCPUMA.pdf"
-                      class="btn btn-sm btn-primary stretched-link mt-auto">Ver Manual del Sistema</a>
+            <div class="services-card-wrapper">
+              <!-- Servicio 1: Red Nacional -->
+              <div class="operational-service-item">
+                <div class="service-meta-left">
+                  <div class="service-icon-box"><i class="bi bi-hdd-network-fill"></i></div>
+                  <div class="service-label-group">
+                    <h5>Red Nacional</h5>
+                    <span class="service-status-pill"><span class="status-pulse-dot"></span> Operacional</span>
+                  </div>
+                </div>
+                <div class="service-meta-right">
+                  <div class="hacker-status-pill">
+                    <span class="hacker-status-dot"></span>
+                    <span class="hacker-status-text">OPERACIONAL</span>
+                    <span class="hacker-status-cursor">_</span>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card resource-card h-100">
-                  <div class="card-body">
-                    <div class="resource-icon"><i class="bi bi-braces"></i></div>
-                    <h5 class="card-title">Sistemas de préstamo propios</h5>
-                    <p class="card-text small text-muted">Guía de integración y estándares para reportar métricas desde
-                      tu propio sistema de gestión.</p>
-                    <a href="../archivos/Prestamo/implementacion/Guia_Integracion_prétamos_PCPUMA.pdf"
-                      class="btn btn-sm btn-outline-primary stretched-link mt-auto">Consultar Guía de integración</a>
+              <!-- Servicio 2: Préstamos PC Puma -->
+              <div class="operational-service-item">
+                <div class="service-meta-left">
+                  <div class="service-icon-box"><i class="bi bi-laptop-fill"></i></div>
+                  <div class="service-label-group">
+                    <h5>Préstamos PC Puma</h5>
+                    <span class="service-status-pill"><span class="status-pulse-dot"></span> Operacional</span>
+                  </div>
+                </div>
+                <div class="service-meta-right">
+                  <div class="hacker-status-pill">
+                    <span class="hacker-status-dot"></span>
+                    <span class="hacker-status-text">OPERACIONAL</span>
+                    <span class="hacker-status-cursor">_</span>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card resource-card h-100">
-                  <div class="card-body">
-                    <div class="resource-icon"><i class="bi bi-wrench-adjustable-circle"></i></div>
-                    <h5 class="card-title">Manuales de gestión de dispositivos</h5>
-                    <p class="card-text small text-muted">Guías y manuales para configuración y administración de
-                      dispositivos PC Puma</p>
-                    <a href="../archivos/manuales/Manual de gestión de dispositivos.zip"
-                      class="btn btn-sm btn-outline-primary stretched-link mt-auto">Ver Manuales</a>
+              <!-- Servicio 3: Tickets de Acompañamiento -->
+              <div class="operational-service-item">
+                <div class="service-meta-left">
+                  <div class="service-icon-box"><i class="bi bi-chat-left-heart-fill"></i></div>
+                  <div class="service-label-group">
+                    <h5>Tickets de Acompañamiento</h5>
+                    <span class="service-status-pill"><span class="status-pulse-dot"></span> Operacional</span>
+                  </div>
+                </div>
+                <div class="service-meta-right">
+                  <div class="hacker-status-pill">
+                    <span class="hacker-status-dot"></span>
+                    <span class="hacker-status-text">OPERACIONAL</span>
+                    <span class="hacker-status-cursor">_</span>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="support-pane" role="tabpanel" aria-labelledby="support-tab" tabindex="0">
-            <div class="row g-4">
-              <div class="col-md-6 col-lg-4">
-                <div class="card resource-card h-100">
-                  <div class="card-body">
-                    <div class="resource-icon"><i class="bi bi-envelope-paper"></i></div>
-                    <h5 class="card-title">Plantillas de comunicación</h5>
-                    <p class="card-text small text-muted">Correos y comunicados listos para adaptar y enviar a tu
-                      comunidad universitaria.</p>
-                    <a href="../archivos/Prestamo/sistema/infografía/infografia-pcpuma.ai"
-                      class="btn btn-sm btn-outline-primary stretched-link mt-auto">Descargar Plantillas</a>
+              <!-- Servicio 4: Administración MDM -->
+              <div class="operational-service-item">
+                <div class="service-meta-left">
+                  <div class="service-icon-box"><i class="bi bi-shield-lock-fill"></i></div>
+                  <div class="service-label-group">
+                    <h5>Administración MDM</h5>
+                    <span class="service-status-pill"><span class="status-pulse-dot"></span> Operacional</span>
                   </div>
                 </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card resource-card h-100">
-                  <div class="card-body">
-                    <div class="resource-icon"><i class="bi bi-file-person"></i></div>
-                    <h5 class="card-title">Guías para usuarios finales</h5>
-                    <p class="card-text small text-muted">FAQs y guías rápidas sobre cómo conectarse a la red, reglas de
-                      préstamo, etc.</p>
-                    <a href="#" class="btn btn-sm btn-outline-primary stretched-link mt-auto">Ver Guías</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="card resource-card h-100">
-                  <div class="card-body">
-                    <div class="resource-icon"><i class="bi bi-easel"></i></div>
-                    <h5 class="card-title">Material para talleres</h5>
-                    <p class="card-text small text-muted">Presentaciones y recursos para impartir talleres de inducción
-                      a estudiantes y docentes.</p>
-                    <a href="#" class="btn btn-sm btn-outline-primary stretched-link mt-auto">Descargar Material</a>
+                <div class="service-meta-right">
+                  <div class="hacker-status-pill">
+                    <span class="hacker-status-dot"></span>
+                    <span class="hacker-status-text">OPERACIONAL</span>
+                    <span class="hacker-status-cursor">_</span>
                   </div>
                 </div>
               </div>
@@ -348,133 +305,139 @@
       </div>
     </section>
 
-    <section id="tools-resources" class="py-5">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="mb-3">Herramientas y recursos centralizados</h2>
-          <p class="lead text-muted col-lg-8 mx-auto">Accesos directos a plataformas de gestión, software esencial y
-            otros recursos descargables.</p>
+    <!-- 5. Fila de Accesos Rápidos -->
+    <section class="container py-3">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <a href="#" class="quick-access-card shadow-sm">
+            <div class="quick-access-left">
+              <div class="quick-access-icon"><i class="bi bi-box-arrow-in-right"></i></div>
+              <div class="quick-access-info">
+                <h5>Sistema de Préstamos</h5>
+                <p>Administrar equipos en préstamo centralizado.</p>
+              </div>
+            </div>
+            <i class="bi bi-chevron-right quick-access-chevron"></i>
+          </a>
         </div>
-
-        <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-          <div class="col d-flex">
-            <div class="card action-card h-100 w-100">
-              <div class="card-body d-flex flex-column align-items-center text-center">
-                <div class="action-icon text-primary mb-3"><i class="bi bi-box-arrow-in-right fs-2"></i></div>
-                <h5 class="card-title">Sistema de Préstamos</h5>
-                <p class="card-text small text-muted">Accede a la plataforma central para gestionar el inventario y los
-                  préstamos de equipos.</p>
-                <a href="#" class="stretched-link" aria-label="Acceder al Sistema de Préstamos"></a>
+        <div class="col-md-6">
+          <a href="docentes.html" class="quick-access-card shadow-sm purple">
+            <div class="quick-access-left">
+              <div class="quick-access-icon"><i class="bi bi-tools"></i></div>
+              <div class="quick-access-info">
+                <h5>Biblioteca de Software</h5>
+                <p>Descargar aplicaciones y utilidades certificadas.</p>
               </div>
             </div>
-          </div>
-
-          <div class="col d-flex">
-            <div class="card action-card h-100 w-100">
-              <div class="card-body d-flex flex-column align-items-center text-center">
-                <div class="action-icon text-success mb-3"><i class="bi bi-headset fs-2"></i></div>
-                <h5 class="card-title">Portal de Soporte</h5>
-                <p class="card-text small text-muted">Levanta y da seguimiento a tickets de acompañamiento PC Puma.
-                  Contáctanos para resolver alguna duda técnica.</p>
-                <a href="login.html" class="stretched-link" aria-label="Abrir un Ticket de Soporte Central"></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col d-flex">
-            <div class="card action-card h-100 w-100">
-              <div class="card-body d-flex flex-column align-items-center text-center">
-                <div class="action-icon text-info mb-3"><i class="bi bi-tools fs-2"></i></div>
-                <h5 class="card-title">Biblioteca de Software</h5>
-                <p class="card-text small text-muted">Consulta el catálogo completo de software recomendado para
-                  docentes y estudiantes.</p>
-                <a href="docentes.html" class="stretched-link" aria-label="Consultar Biblioteca de Software"></a>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-    </section>
-    <section id="program-overview" class="py-5 bg-light">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="mb-3">Panorama general del Programa</h2>
-          <p class="lead text-muted col-lg-8 mx-auto">Visualiza el estado de todas las entidades y la cobertura nacional
-            para un contexto completo de la operación.</p>
-        </div>
-
-        <div class="mb-5">
-          <h4 class="section-subtitle">Administración de entidades</h4>
-          <div class="pcp-toolbar card shadow-sm border-0 p-3 mb-4">
-            <div class="d-flex flex-wrap align-items-center gap-3">
-              <div class="btn-group" role="group" aria-label="Vista">
-                <button id="btnGrid" class="btn btn-primary" aria-pressed="true" title="Vista cuadrícula"><i
-                    class="bi bi-grid-fill"></i></button>
-                <button id="btnList" class="btn btn-outline-primary" aria-pressed="false" title="Vista lista"><i
-                    class="bi bi-list-ul"></i></button>
-              </div>
-              <div class="dropdown">
-                <button class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown"
-                  aria-expanded="false"><i class="bi bi-sort-down me-1"></i> Ordenar</button>
-                <ul class="dropdown-menu">
-                  <li><button class="dropdown-item" data-sort="name-asc">Nombre (A–Z)</button></li>
-                  <li><button class="dropdown-item" data-sort="name-desc">Nombre (Z–A)</button></li>
-                  <li><button class="dropdown-item" data-sort="antenas-desc">Antenas (↓)</button></li>
-                  <li><button class="dropdown-item" data-sort="antenas-asc">Antenas (↑)</button></li>
-                </ul>
-              </div>
-              <div class="flex-grow-1">
-                <label for="buscadorEntidades" class="visually-hidden">Buscar entidad</label>
-                <input id="buscadorEntidades" class="form-control" type="search"
-                  placeholder="Buscar entidad por nombre…">
-              </div>
-            </div>
-          </div>
-          <div id="listaEntidades" class="row g-4" aria-live="polite">
-            <div class="col-12">
-              <div class="skeleton p-4 rounded-4 text-center">Cargando entidades…</div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="section-subtitle">Mapa de cobertura nacional WiFi</h4>
-          <div class="text-center mb-4">
-            <div class="btn-group flex-wrap pcp-map-filters" role="group" aria-label="Filtros de entidades">
-              <button class="btn btn-filtro" onclick="marcarBotonActivo('Facultades'); filtrarCapas('Facultades')"
-                type="button">Facultades</button>
-              <button class="btn btn-filtro" onclick="marcarBotonActivo('FES'); filtrarCapas('FES')"
-                type="button">FES</button>
-              <button class="btn btn-filtro" onclick="marcarBotonActivo('ENES'); filtrarCapas('ENES')"
-                type="button">ENES</button>
-              <button class="btn btn-filtro" onclick="marcarBotonActivo('ENP'); filtrarCapas('ENP')"
-                type="button">ENP</button>
-              <button class="btn btn-filtro" onclick="marcarBotonActivo('CCH'); filtrarCapas('CCH')"
-                type="button">CCH</button>
-              <button class="btn btn-filtro" onclick="marcarBotonActivo('Institutos'); filtrarCapas('Institutos')"
-                type="button">Institutos</button>
-              <button class="btn btn-filtro" onclick="marcarBotonActivo('Otros'); filtrarCapas('Otros')"
-                type="button">Otros</button>
-              <button class="btn btn-filtro activo-filtro" onclick="marcarBotonActivo('Todos'); filtrarCapas('Todos')"
-                type="button">Mostrar todos</button>
-            </div>
-          </div>
-          <div class="alert alert-info mt-4 col-lg-8 mx-auto small" role="alert">
-            <i class="bi bi-info-circle-fill me-2"></i>
-            Para más detalles, haz clic en los íconos del mapa para ver el medio de contacto de cada entidad.
-          </div>
-          <div id="map"></div>
+            <i class="bi bi-chevron-right quick-access-chevron"></i>
+          </a>
         </div>
       </div>
     </section>
 
+    <!-- 6. Fila Inferior (Entidades y Guías) -->
+    <section class="container py-4" id="entidades-section">
+      <div class="row g-4">
+        <!-- Rejilla de Entidades (8 cols) -->
+        <div class="col-lg-8">
+          <div class="entities-toolbar">
+            <h3 class="mb-0 text-dark">Entidades</h3>
+            <div class="d-flex align-items-center gap-2 flex-grow-1 justify-content-end">
+              <!-- Buscador -->
+              <div class="search-input-wrapper">
+                <i class="bi bi-search"></i>
+                <input type="search" class="form-control form-control-sm" id="buscadorEntidades" placeholder="Buscar entidad...">
+              </div>
+              <!-- Controles de Vista -->
+              <div class="entities-view-controls">
+                <button class="view-btn active" id="btnGrid" title="Vista Cuadrícula"><i class="bi bi-grid-fill"></i></button>
+                <button class="view-btn" id="btnList" title="Vista Lista"><i class="bi bi-list-ul"></i></button>
+                <a href="#cobertura-section" class="view-link-all">Ver todas</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contenedor dinámico de entidades -->
+          <div id="listaEntidades" class="row g-3">
+            <div class="col-12 text-center py-5">
+              <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Cargando entidades...</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guías y Recursos Sidebar (4 cols) -->
+        <div class="col-lg-4" id="guias-section">
+          <div class="dashboard-main-card">
+            <div class="dashboard-card-header">
+              <h4 class="dashboard-card-title"><i class="bi bi-journal-bookmark-fill me-1"></i> Guías y Recursos</h4>
+            </div>
+            <div class="guides-list-card-wrapper">
+              <!-- Guía 1 -->
+              <a href="../archivos/Lineamientos_Generales_PCPUMA.pdf" target="_blank" class="guide-list-item-link">
+                <div class="guide-meta-left">
+                  <div class="guide-icon-box"><i class="bi bi-wifi"></i></div>
+                  <div class="guide-text-group">
+                    <h5>Conectividad y Redes</h5>
+                    <p>Manuales y guías técnicas de red</p>
+                  </div>
+                </div>
+                <i class="bi bi-chevron-right guide-chevron"></i>
+              </a>
+              <!-- Guía 2 -->
+              <a href="../archivos/manuales/Manual de gestión de dispositivos.zip" target="_blank" class="guide-list-item-link">
+                <div class="guide-meta-left">
+                  <div class="guide-icon-box"><i class="bi bi-phone-fill"></i></div>
+                  <div class="guide-text-group">
+                    <h5>Gestión de Dispositivos (MDM)</h5>
+                    <p>Guías para administración central</p>
+                  </div>
+                </div>
+                <i class="bi bi-chevron-right guide-chevron"></i>
+              </a>
+              <!-- Guía 3 -->
+              <a href="../archivos/AvisoPrivacidad_Simplificado_ProyectoPCPUMA.pdf" target="_blank" class="guide-list-item-link">
+                <div class="guide-meta-left">
+                  <div class="guide-icon-box"><i class="bi bi-shield-fill-check"></i></div>
+                  <div class="guide-text-group">
+                    <h5>Seguridad y Accesos</h5>
+                    <p>Políticas y mejores prácticas de TI</p>
+                  </div>
+                </div>
+                <i class="bi bi-chevron-right guide-chevron"></i>
+              </a>
+              <!-- Guía 4 -->
+              <a href="../archivos/Prestamo/sistema/Manual_Operador_PCPUMA.pdf" target="_blank" class="guide-list-item-link">
+                <div class="guide-meta-left">
+                  <div class="guide-icon-box"><i class="bi bi-file-earmark-bar-graph-fill"></i></div>
+                  <div class="guide-text-group">
+                    <h5>Inventario y Reportes</h5>
+                    <p>Plantillas y procedimientos de préstamo</p>
+                  </div>
+                </div>
+                <i class="bi bi-chevron-right guide-chevron"></i>
+              </a>
+              <!-- Guía 5 -->
+              <a href="faq.html" class="guide-list-item-link">
+                <div class="guide-meta-left">
+                  <div class="guide-icon-box"><i class="bi bi-question-diamond-fill"></i></div>
+                  <div class="guide-text-group">
+                    <h5>Preguntas Frecuentes</h5>
+                    <p>Solución a dudas tecnológicas comunes</p>
+                  </div>
+                </div>
+                <i class="bi bi-chevron-right guide-chevron"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contenedor dinámico de modales -->
     <div id="modalesEntidades"></div>
-
   </main>
 
-  <!-- PIE DE PÁGINA -->
+  <!-- 7. Pie de Página Oficial -->
   <footer class="footer bg-pcpuma text-white" role="contentinfo">
     <div class="container pt-4 pb-3">
       <div class="row align-items-center">
@@ -544,6 +507,7 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
@@ -551,202 +515,368 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // --- LÓGICA DEL CORE ---
+      const stateEnt = { view: 'grid', filter: 'Todos', q: '', region: null };
+      
+      // Helper para extraer la ubicación de cada entidad
+      function getEntityLocation(name) {
+        const n = name.toLowerCase();
+        if (n.includes('mérida')) return 'Yucatán';
+        if (n.includes('león')) return 'Guanajuato';
+        if (n.includes('morelia')) return 'Michoacán';
+        if (n.includes('oaxaca')) return 'Oaxaca';
+        if (n.includes('juriquilla')) return 'Querétaro';
+        if (n.includes('nanociencias') || n.includes('ensenada')) return 'Baja California';
+        if (n.includes('aragón') || n.includes('iztacala') || n.includes('cuautitlán') || n.includes('acatlán') || n.includes('naucalpan')) return 'Edo. Méx.';
+        return 'CDMX';
+      }
 
-      // --- LÓGICA PARA CARGAR ENTIDADES ---
-      (function initEntidades() {
-        const stateEnt = { view: 'grid', sort: 'name-asc', q: '' };
-        async function loadEntidades() {
-          try {
-            const res = await fetch('../data/entidades.json', { cache: 'no-store' });
-            const data = await res.json();
-            return (data.entities || []).slice().sort((a, b) => (a.order || 0) - (b.order || 0));
-          } catch (e) { console.error('Error cargando ../data/entidades.json', e); return []; }
+      // Helper para determinar la región geográfica para el mapa
+      function getEntityRegion(name) {
+        const n = name.toLowerCase();
+        if (n.includes('nanociencias') || n.includes('ensenada')) return 'NW'; // Noroeste
+        if (n.includes('mérida')) return 'SE'; // Sureste
+        if (n.includes('oaxaca')) return 'S'; // Sur
+        if (n.includes('león') || n.includes('morelia') || n.includes('juriquilla')) return 'N'; // Norte / Bajío
+        return 'C'; // Centro (CDMX/EdoMex)
+      }
+
+      // Normalizador de búsqueda
+      function normalize(str) { 
+        return (str || '').toString().toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, ''); 
+      }
+
+      // Clasificador de tipos de entidad
+      function getEntityType(ent) {
+        if (!ent) return 'Otros';
+        const name = (ent.name || '').toLowerCase();
+        const id = (ent.id || '').toLowerCase();
+        const logoClass = (ent.clase || '').toLowerCase();
+        if (name.includes('facultad') || id.includes('facultad') || logoClass.includes('facultad')) return 'Facultades';
+        if (name.includes('fes') || id.includes('fes') || logoClass.includes('fes')) return 'FES';
+        if (name.includes('enes') || id.includes('enes') || logoClass.includes('enes')) return 'ENES';
+        if (name.includes('enp') || name.includes('preparatoria') || id.includes('enp') || logoClass.includes('enp')) return 'ENP';
+        if (name.includes('cch') || name.includes('colegio de ciencias') || id.includes('cch') || logoClass.includes('cch')) return 'CCH';
+        if (name.includes('instituto') || id.includes('instituto') || logoClass.includes('instituto')) return 'Institutos';
+        return 'Otros';
+      }
+
+      async function loadEntidades() {
+        try {
+          const res = await fetch('../data/entidades.json');
+          const data = await res.json();
+          const list = data.entities || [];
+          return list.sort((a, b) => (a.order || 0) - (b.order || 0));
+        } catch (e) {
+          console.error('Error cargando entidades.json:', e);
+          return [];
         }
-        function normalize(str) { return (str || '').toString().toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, ''); }
-        function filtrarEntidad(ent) {
-          if (!stateEnt.q) return true;
-          const txt = normalize(ent.name);
-          return txt.includes(normalize(stateEnt.q));
-        }
-        function sortFn(a, b) {
-          switch (stateEnt.sort) {
-            case 'name-asc': return a.name.localeCompare(b.name, 'es', { sensitivity: 'base' });
-            case 'name-desc': return b.name.localeCompare(a.name, 'es', { sensitivity: 'base' });
-            case 'antenas-desc': return (b.metrics?.antenas || 0) - (a.metrics?.antenas || 0);
-            case 'antenas-asc': return (a.metrics?.antenas || 0) - (b.metrics?.antenas || 0);
-            default: return 0;
-          }
-        }
-        function renderEntidades(list) {
-          const wrap = document.getElementById('listaEntidades');
-          const modWrap = document.getElementById('modalesEntidades');
-          if (!wrap || !modWrap) return;
-          wrap.innerHTML = ''; modWrap.innerHTML = '';
-          document.body.classList.toggle('list-view', stateEnt.view === 'list');
-          if (list.length === 0) {
-            wrap.innerHTML = '<div class="col-12"><div class="alert alert-info">No hay entidades que coincidan con la búsqueda.</div></div>';
-            return;
-          }
-          list.forEach(ent => {
-            const logoPath = ent.logo ? (ent.logo.startsWith('http') ? ent.logo : '../' + ent.logo) : '../img/fotos/default.webp';
-            const col = document.createElement('div'); col.className = 'col-entity col-12 col-md-6 col-lg-3 entidad-item';
-            const card = document.createElement('div'); card.className = 'card h-100 glass-card';
-            const header = document.createElement('div'); header.className = 'card-header';
-            const body = document.createElement('div'); body.className = 'card-body text-center';
-            const img = document.createElement('img'); img.alt = ent.logo_alt || ent.name; img.src = logoPath; img.loading = 'lazy';
-            const contentWrapper = document.createElement('div'); contentWrapper.className = 'h-100 d-flex flex-column';
-            const h6 = document.createElement('h6'); h6.className = 'fw-bold mt-3 mb-2 flex-grow-1'; h6.textContent = ent.name;
-            const btn = document.createElement('button'); btn.className = 'btn btn-outline-primary btn-sm mt-auto';
-            btn.textContent = 'Ver detalle'; btn.setAttribute('data-bs-toggle', 'modal'); btn.setAttribute('data-bs-target', `#${ent.modal_id || ('modal_' + ent.id)}`);
+      }
 
-            contentWrapper.append(h6, btn);
-            body.append(img, contentWrapper);
-            card.append(header, body);
-            col.appendChild(card); wrap.appendChild(col);
-
-            const modal = document.createElement('div'); modal.className = 'modal fade'; modal.id = ent.modal_id || ('modal_' + ent.id); modal.tabIndex = -1; modal.setAttribute('aria-hidden', 'true');
-            modal.innerHTML = `
-                <div class="modal-dialog modal-dialog-centered"><div class="modal-content glass-card border-0">
-                  <div class="modal-header border-0"><h5 class="modal-title fw-bold">${ent.name}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
-                  <div class="modal-body border-0">
-                    <div class="d-flex justify-content-center mb-3"><img src="${logoPath}" alt="${ent.logo_alt || ent.name}" class="logo-entidad"></div>
-                    <div class="row g-3 text-center">
-                      <div class="col-6 col-md-3"><div class="card bg-light border-0"><div class="card-body p-2"><div class="small text-muted">Antenas</div><div class="fs-5 fw-bold text-primary">${(ent.metrics?.antenas ?? 0).toLocaleString('es-MX')}</div></div></div></div>
-                      <div class="col-6 col-md-3"><div class="card bg-light border-0"><div class="card-body p-2"><div class="small text-muted">Chromebooks</div><div class="fs-5 fw-bold text-primary">${(ent.metrics?.chromebooks ?? 0).toLocaleString('es-MX')}</div></div></div></div>
-                      <div class="col-6 col-md-3"><div class="card bg-light border-0"><div class="card-body p-2"><div class="small text-muted">iPad</div><div class="fs-5 fw-bold text-primary">${(ent.metrics?.ipads ?? 0).toLocaleString('es-MX')}</div></div></div></div>
-                      <div class="col-6 col-md-3"><div class="card bg-light border-0"><div class="card-body p-2"><div class="small text-muted">Laptops</div><div class="fs-5 fw-bold text-primary">${(ent.metrics?.laptops ?? 0).toLocaleString('es-MX')}</div></div></div></div>
-                    </div>
-                  </div>
-                </div></div>`;
-            modWrap.appendChild(modal);
-          });
-        }
-        (async function () {
-          const entidades = await loadEntidades();
-          const input = document.getElementById('buscadorEntidades');
-          if (!input) return;
-          input.addEventListener('input', e => { stateEnt.q = e.target.value; const list = entidades.filter(filtrarEntidad).sort(sortFn); renderEntidades(list); });
-          document.getElementById('btnGrid').addEventListener('click', () => {
-            stateEnt.view = 'grid';
-            document.getElementById('btnGrid').classList.replace('btn-outline-primary', 'btn-primary'); document.getElementById('btnGrid').setAttribute('aria-pressed', 'true');
-            document.getElementById('btnList').classList.replace('btn-primary', 'btn-outline-primary'); document.getElementById('btnList').setAttribute('aria-pressed', 'false');
-            renderEntidades(entidades.filter(filtrarEntidad).sort(sortFn));
-          });
-          document.getElementById('btnList').addEventListener('click', () => {
-            stateEnt.view = 'list';
-            document.getElementById('btnList').classList.replace('btn-outline-primary', 'btn-primary'); document.getElementById('btnList').setAttribute('aria-pressed', 'true');
-            document.getElementById('btnGrid').classList.replace('btn-primary', 'btn-outline-primary'); document.getElementById('btnGrid').setAttribute('aria-pressed', 'false');
-            renderEntidades(entidades.filter(filtrarEntidad).sort(sortFn));
-          });
-          document.querySelectorAll('.dropdown-item[data-sort]').forEach(el => {
-            el.addEventListener('click', () => { stateEnt.sort = el.getAttribute('data-sort'); renderEntidades(entidades.filter(filtrarEntidad).sort(sortFn)); });
-          });
-          renderEntidades(entidades.filter(filtrarEntidad).sort(sortFn));
-        })();
-      })();
-
-      // --- LÓGICA PARA EL MAPA DE COBERTURA (CORREGIDA) ---
-      (function initMap() {
-        const mapElement = document.getElementById('map');
-        if (!mapElement) return;
-
-        const map = L.map('map').setView([23.6345, -102.5528], 5);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map);
-        setTimeout(() => map.invalidateSize(), 400);
-
-        const entidadesMapa = [
-          { 'nombre': 'Instituto de Física', 'coords': [19.325474610603433, -99.17579572194856], 'logo': '../img/logos/IFISICA.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Instituto de Física', 'correo': 'institutodefisica@pcpuma.unam.mx', 'web': 'https://w2.fisica.unam.mx/bif/info/show_pcpuma' },
-          { 'nombre': 'Instituto de Biología', 'coords': [19.320983296784707, -99.19356584697681], 'logo': '../img/logos/IBIOLOGIA.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Instituto de Biología', 'correo': 'institutodebiologia@pcpuma.unam.mx', 'web': 'https://www.ib.unam.mx/' },
-          { 'nombre': 'Instituto de Geofísica', 'coords': [19.326925198678282, -99.17573781685239], 'logo': '../img/fotos/default.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Instituto de Geofísica', 'correo': 'institutodegeofisica@pcpuma.unam.mx', 'web': 'https://www.geofisica.unam.mx/' },
-          { 'nombre': 'Instituto de Investigaciones Jurídicas', 'coords': [19.31637350580925, -99.17960214141897], 'logo': '../img/fotos/default.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Instituto de Investigaciones Jurídicas', 'correo': 'institutodeinvestigacionesjuridicas@pcpuma.unam.mx', 'web': 'https://www.juridicas.unam.mx/' },
-          { 'nombre': 'FES Zaragoza', 'coords': [19.38499406249111, -99.03683219671362], 'logo': '../img/logos/FESZARAGOZA.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Zaragoza', 'correo': 'feszaragoza@pcpuma.unam.mx' },
-          { 'nombre': 'FES Iztacala', 'coords': [19.525524395165338, -99.1875494382314], 'logo': '../img/logos/FESIZTACALA.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Iztacala', 'correo': 'fesiztacala@pcpuma.unam.mx' },
-          { 'nombre': 'FES Cuautitlán', 'coords': [19.637238884322016, -99.20675098531684], 'logo': '../img/logos/FESCUAUTITLAN.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Cuautitlán', 'correo': 'fescuautitlan@pcpuma.unam.mx' },
-          { 'nombre': 'FES Aragón', 'coords': [19.474905277041735, -99.04261623162851], 'logo': '../img/logos/FESARAGON.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Aragón', 'correo': 'fesaragon@pcpuma.unam.mx' },
-          { 'nombre': 'FES Acatlán', 'coords': [19.483980490981725, -99.24608134459692], 'logo': '../img/logos/FESACATLAN.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Acatlán', 'correo': 'fesacatlan@pcpuma.unam.mx', 'web': 'https://www.acatlan.unam.mx/pcpuma/' },
-          { 'nombre': 'Facultad de Psicología', 'coords': [19.335371630096684, -99.18820538616221], 'logo': '../img/logos/FPSICOLOGIA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Psicología', 'correo': 'facultaddepsicologia@pcpuma.unam.mx' },
-          { 'nombre': 'Facultad de Odontología', 'coords': [19.33469445030701, -99.1813586418355], 'logo': '../img/logos/FODONTOLOGIA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Odontología', 'correo': 'facultaddeodontologia@pcpuma.unam.mx' },
-          { 'nombre': 'Facultad de Música', 'coords': [19.354114563479538, -99.15338310520872], 'logo': '../img/logos/FMUSICA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Música', 'correo': 'facultaddemusica@pcpuma.unam.mx' },
-          { 'nombre': 'Facultad de Medicina Veterinaria y Zootecnia', 'coords': [19.32966649083588, -99.17697108137068], 'logo': '../img/logos/FMVZ.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Medicina Veterinaria y Zootecnia', 'correo': 'facultaddemedicinaveterinariayzootecnia@pcpuma.unam.mx' },
-          { 'nombre': 'Facultad de Medicina', 'coords': [19.33319681263341, -99.18012782835417], 'logo': '../img/logos/FMEDICINA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Medicina', 'correo': 'facultaddemedicina@pcpuma.unam.mx' },
-          { 'nombre': 'Facultad de Ingeniería', 'coords': [19.331120077304863, -99.18451144740555], 'logo': '../img/logos/FINGENIERIA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Ingeniería', 'correo': 'facultaddeingenieria@pcpuma.unam.mx' },
-          { 'nombre': 'Facultad de Filosofía y Letras', 'coords': [19.33487018621355, -99.18656088986764], 'logo': '../img/logos/FFYL.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Filosofía y Letras', 'correo': 'facultaddefilosofiayletras@pcpuma.unam.mx' },
-          { 'nombre': 'Facultad de Economía', 'coords': [19.33585187733933, -99.1810034149215], 'logo': '../img/logos/FECONOMIA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Economía', 'correo': 'facultaddeeconomia@pcpuma.unam.mx' },
-          { 'nombre': 'Facultad de Derecho', 'coords': [19.334711486400952, -99.18454048801497], 'logo': '../img/logos/DERECHO.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Derecho', 'correo': 'facultaddederecho@pcpuma.unam.mx' },
-          { 'nombre': 'Facultad de Ciencias Políticas y Sociales', 'coords': [19.31893075050844, -99.17760991999347], 'logo': '../img/logos/FCPYS.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Ciencias Políticas y Sociales', 'correo': 'facultaddecienciaspoliticasysociales@pcpuma.unam.mx' },
-          { 'nombre': 'Facultad de Ciencias', 'coords': [19.32412945504399, -99.17915652714242], 'logo': '../img/logos/FCIENCIAS.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Ciencias', 'correo': 'facultaddeciencias@pcpuma.unam.mx' },
-          { 'nombre': 'Facultad de Artes y Diseño', 'coords': [19.252282599214126, -99.1178333371921], 'logo': '../img/logos/FAD.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Artes y Diseño', 'correo': 'facultaddeartesydiseno@pcpuma.unam.mx' },
-          { 'nombre': 'Facultad de Arquitectura', 'coords': [19.330848044161417, -99.188348396485], 'logo': '../img/logos/FARQUITECTURA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Arquitectura', 'correo': 'facultaddearquitectura@pcpuma.unam.mx' },
-          { 'nombre': 'Facultad de Contaduría y Administración', 'coords': [19.324312125504214, -99.18538474649544], 'logo': '../img/fotos/default.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Contaduría y Administración', 'correo': 'facultaddecontaduriayadministracion@pcpuma.unam.mx' },
-          { 'nombre': 'Facultad de Enfermería y Obstetricia', 'coords': [19.292168756720198, -99.15072043533844], 'logo': '../img/fotos/default.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Enfermería y Obstetricia', 'correo': 'facultaddeenfermeriayobstetricia@pcpuma.unam.mx' },
-          { 'nombre': 'ENES Oaxaca', 'coords': [17.070907, -96.695651], 'logo': '../img/logos/ENESO.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES Oaxaca', 'correo': 'enesoaxaca@pcpuma.unam.mx' },
-          { 'nombre': 'ENES Morelia', 'coords': [19.649573312650706, -101.22145383976972], 'logo': '../img/logos/ENESMORELIA.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES Morelia', 'correo': 'enesmorelia@pcpuma.unam.mx' },
-          { 'nombre': 'ENES Mérida', 'coords': [20.988215670250913, -89.73412033729292], 'logo': '../img/logos/ENESMERIDA.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES Mérida', 'correo': 'enesmerida@pcpuma.unam.mx' },
-          { 'nombre': 'ENES León', 'coords': [21.042821809228883, -101.67264500849731], 'logo': '../img/logos/ENESLEON.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES León', 'correo': 'enesleon@pcpuma.unam.mx' },
-          { 'nombre': 'ENES Juriquilla', 'coords': [20.705332796348923, -100.44884252957387], 'logo': '../img/logos/ENESJURIQUILLA.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES Juriquilla', 'correo': 'enesjuriquilla@pcpuma.unam.mx' },
-          { 'nombre': 'Escuela Nacional de Artes Cinematográficas', 'coords': [19.318869045009976, -99.17444091453791], 'logo': '../img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Escuela Nacional de Artes Cinematográficas', 'correo': 'escuelanacionaldeartescinematograficas@pcpuma.unam.mx' },
-          { 'nombre': 'Escuela Nacional de Lenguas, Lingüística y Traducción', 'coords': [19.3318179732864, -99.18220098012718], 'logo': '../img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Escuela Nacional de Lenguas, Lingüística y Traducción', 'correo': 'escuelanacionaldelenguaslinguisticaytraduccion@pcpuma.unam.mx' },
-          { 'nombre': 'Escuela Nacional de Trabajo Social', 'coords': [19.324056617197513, -99.18566802988228], 'logo': '../img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Escuela Nacional de Trabajo Social', 'correo': 'escuelanacionaldetrabajosocial@pcpuma.unam.mx' },
-          { 'nombre': 'Coordinación Mixta de Posgrado', 'coords': [19.309894953882555, -99.18442937962074], 'logo': '../img/logos/POSGRADO.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Coordinación Mixta de Posgrado', 'correo': 'coordinacionmixtadeposgrado@pcpuma.unam.mx' },
-          { 'nombre': 'Unidad de Extensión Universitaria Oaxaca', 'coords': [17.06138413676055, -96.72083523358762], 'logo': '../img/logos/UEUO.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Unidad de Extensión Universitaria Oaxaca', 'correo': 'unidaddeextensionuniversitariaoaxaca@pcpuma.unam.mx' },
-          { 'nombre': 'Centro de Nanociencias y Nanotecnología', 'coords': [31.86791106321224, -116.66507268199652], 'logo': '../img/logos/CNYN.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Centro de Nanociencias y Nanotecnología', 'correo': 'cnyn@pcpuma.unam.mx' },
-          { 'nombre': 'Pabellón Nacional de la Biodiversidad', 'coords': [19.311832212847605, -99.18375996533628], 'logo': '../img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Pabellón Nacional de la Biodiversidad', 'correo': 'pabellonnacionaldelabiodiversidad@pcpuma.unam.mx' },
-          { 'nombre': 'Antiguo Colegio de San Ildefonso', 'coords': [19.436002385912087, -99.12964992423919], 'logo': '../img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Antiguo Colegio de San Ildefonso', 'correo': 'antiguocolegiodesanildefonso@pcpuma.unam.mx' },
-          { 'nombre': 'ENP 1 Gabino Barreda', 'coords': [19.272270009505142, -99.12090875207542], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 1 Gabino Barreda', 'correo': 'enp1gabinobarreda@pcpuma.unam.mx' },
-          { 'nombre': 'ENP 2 Erasmo Castellanos Quinto', 'coords': [19.384414013128122, -99.09930753544026], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 2 Erasmo Castellanos Quinto', 'correo': 'enp2erasmocastellanosquinto@pcpuma.unam.mx' },
-          { 'nombre': 'ENP 3 Justo Sierra', 'coords': [19.482832698395395, -99.09370977282835], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 3 Justo Sierra', 'correo': 'enp3justosierra@pcpuma.unam.mx' },
-          { 'nombre': 'ENP 4 Vidal Castañeda y Nájera', 'coords': [19.40420411365316, -99.19386587406278], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 4 Vidal Castañeda y Nájera', 'correo': 'enp4vidalcastanedaynajera@pcpuma.unam.mx' },
-          { 'nombre': 'ENP 5 José Vasconcelos', 'coords': [19.307831704853378, -99.13328444337402], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 5 José Vasconcelos', 'correo': 'enp5josevasconcelos@pcpuma.unam.mx' },
-          { 'nombre': 'ENP 6 Antonio Caso', 'coords': [19.352377330266204, -99.15516094707934], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 6 Antonio Caso', 'correo': 'enp6antoniocaso@pcpuma.unam.mx' },
-          { 'nombre': 'ENP 7 Ezequiel A. Chávez', 'coords': [19.418816914298294, -99.1255695249077], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 7 Ezequiel A. Chávez', 'correo': 'enp7ezequielachavez@pcpuma.unam.mx' },
-          { 'nombre': 'ENP 8 Miguel E. Schulz', 'coords': [19.36721387098644, -99.19380290573983], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 8 Miguel E. Schulz', 'correo': 'enp8migueleschulz@pcpuma.unam.mx' },
-          { 'nombre': 'ENP 9 Pedro de Alba', 'coords': [19.483918948897248, -99.1267973696952], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 9 Pedro de Alba', 'correo': 'enp9pedrodealba@pcpuma.unam.mx' },
-          { 'nombre': 'CCH Vallejo', 'coords': [19.484208569636674, -99.14184532418193], 'logo': '../img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Vallejo', 'correo': 'cchvallejo@pcpuma.unam.mx' },
-          { 'nombre': 'CCH Sur', 'coords': [19.310911875632716, -99.1991763396687], 'logo': '../img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Sur', 'correo': 'cchsur@pcpuma.unam.mx' },
-          { 'nombre': 'CCH Oriente', 'coords': [19.38550253237042, -99.05944636427637], 'logo': '../img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Oriente', 'correo': 'cchoriente@pcpuma.unam.mx' },
-          { 'nombre': 'CCH Naucalpan', 'coords': [19.474576990214963, -99.24291189919353], 'logo': '../img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Naucalpan', 'correo': 'cchnaucalpan@pcpuma.unam.mx' },
-          { 'nombre': 'CCH Azcapotzalco', 'coords': [19.500225173254734, -99.20277836486008], 'logo': '../img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Azcapotzalco', 'correo': 'cchazcapotzalco@pcpuma.unam.mx' }
-        ];
-
-        const clusters = { "Facultades": L.markerClusterGroup(), "FES": L.markerClusterGroup(), "ENES": L.markerClusterGroup(), "ENP": L.markerClusterGroup(), "CCH": L.markerClusterGroup(), "Institutos": L.markerClusterGroup(), "Otros": L.markerClusterGroup() };
-
-        entidadesMapa.forEach(function (entidad) {
-          const icono = L.divIcon({ html: `<img src="${entidad.logo}" class="logo-entidad" alt="${entidad.nombre}">`, iconSize: [40, 40], iconAnchor: [20, 40], popupAnchor: [0, -40], className: '' });
-          const popupContent = `<strong>${entidad.nombre}</strong><br>Responsable: <strong>${entidad.responsable}</strong><br>Correo: <a href='mailto:${entidad.correo}'>${entidad.correo}</a>`;
-          const marcador = L.marker(entidad.coords, { icon: icono }).bindPopup(popupContent);
-
-          // Lógica de traducción corregida
-          let tipo = "Otros";
-          const claseLowerCase = entidad.clase.toLowerCase();
-          if (claseLowerCase.includes('facultad')) tipo = "Facultades";
-          else if (claseLowerCase.includes('fes')) tipo = "FES";
-          else if (claseLowerCase.includes('enes')) tipo = "ENES";
-          else if (claseLowerCase.includes('enp')) tipo = "ENP";
-          else if (claseLowerCase.includes('cch')) tipo = "CCH";
-          else if (claseLowerCase.includes('instituto')) tipo = "Institutos";
-
-          if (clusters[tipo]) {
-            clusters[tipo].addLayer(marcador);
-          }
+      function filterAndRender(entidades) {
+        const queryNormalized = normalize(stateEnt.q);
+        const filtered = entidades.filter(ent => {
+          // Filtro por buscador de texto
+          const matchQuery = !stateEnt.q || normalize(ent.name).includes(queryNormalized);
+          
+          // Filtro por categoría/tipo
+          const type = getEntityType(ent);
+          const matchType = stateEnt.filter === 'Todos' || type === stateEnt.filter;
+          
+          // Filtro por región del mapa
+          const region = getEntityRegion(ent.name);
+          const matchRegion = !stateEnt.region || region === stateEnt.region;
+          
+          return matchQuery && matchType && matchRegion;
         });
 
-        for (let key in clusters) { map.addLayer(clusters[key]); }
+        renderEntidades(filtered);
+      }
 
-        // Hacemos las funciones accesibles globalmente para los `onclick`
-        window.filtrarCapas = function (tipo) {
-          for (let key in clusters) { map.removeLayer(clusters[key]); }
-          if (tipo === "Todos") { for (let key in clusters) { map.addLayer(clusters[key]); } }
-          else { if (clusters[tipo]) map.addLayer(clusters[tipo]); }
+      function renderEntidades(list) {
+        const wrap = document.getElementById('listaEntidades');
+        const modWrap = document.getElementById('modalesEntidades');
+        if (!wrap || !modWrap) return;
+        
+        wrap.innerHTML = '';
+        modWrap.innerHTML = '';
+        
+        // Alternar vista de cuadrícula o lista
+        const isList = stateEnt.view === 'list';
+        document.getElementById('listaEntidades').className = isList ? 'row g-3 list-view' : 'row g-3';
+
+        if (list.length === 0) {
+          wrap.innerHTML = '<div class="col-12"><div class="alert alert-info text-center py-4">No se encontraron entidades coincidentes.</div></div>';
+          return;
         }
 
-        window.marcarBotonActivo = function (nombreFiltro) {
-          document.querySelectorAll('.btn-filtro').forEach(boton => {
-            boton.classList.remove('activo-filtro');
-            if (boton.textContent.trim() === nombreFiltro || (nombreFiltro === 'Todos' && boton.textContent.trim() === 'Mostrar Todos')) {
-              boton.classList.add('activo-filtro');
-            }
+        list.forEach(ent => {
+          const logoPath = ent.logo ? (ent.logo.startsWith('http') ? ent.logo : '../' + ent.logo) : '../img/fotos/default.webp';
+          const location = getEntityLocation(ent.name);
+          const modalId = ent.modal_id || ('modal_' + ent.id);
+          
+          const antenas = ent.metrics?.antenas ?? 0;
+          const laptops = ent.metrics?.laptops ?? 0;
+          const ipads = ent.metrics?.ipads ?? 0;
+
+          // Creamos la columna
+          const col = document.createElement('div');
+          col.className = isList ? 'col-12 col-entity' : 'col-12 col-md-6 col-lg-6 col-entity';
+
+          col.innerHTML = `
+            <div class="entity-card-premium">
+              <div class="entity-card-header">
+                <div class="entity-card-logo-box">
+                  <img src="${logoPath}" alt="Logo de ${ent.name}" loading="lazy">
+                </div>
+                <div class="entity-card-title-group">
+                  <h6 title="${ent.name}">${ent.name}</h6>
+                  <div class="entity-card-subtitle">${location}</div>
+                </div>
+                <span class="entity-state-pill-green">Operativa</span>
+              </div>
+              
+              <div class="entity-metrics-grid-3col">
+                <div class="entity-metric-col-item">
+                  <span class="entity-metric-num-label">${antenas.toLocaleString('es-MX')}</span>
+                  <span class="entity-metric-text-label">Antenas</span>
+                </div>
+                <div class="entity-metric-col-item">
+                  <span class="entity-metric-num-label">${laptops.toLocaleString('es-MX')}</span>
+                  <span class="entity-metric-text-label">Laptops</span>
+                </div>
+                <div class="entity-metric-col-item">
+                  <span class="entity-metric-num-label">${ipads.toLocaleString('es-MX')}</span>
+                  <span class="entity-metric-text-label">iPads</span>
+                </div>
+              </div>
+
+              <button class="entity-btn-details-outline" data-bs-toggle="modal" data-bs-target="#${modalId}">
+                Ver detalle
+              </button>
+            </div>
+          `;
+
+          wrap.appendChild(col);
+
+          // Crear Modal Detallado
+          const modal = document.createElement('div');
+          modal.className = 'modal fade';
+          modal.id = modalId;
+          modal.tabIndex = -1;
+          modal.setAttribute('aria-hidden', 'true');
+          modal.innerHTML = `
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content border-0" style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15);">
+                <div class="modal-header border-0 bg-light p-4">
+                  <h5 class="modal-title fw-bold text-dark" style="font-family: 'Outfit', sans-serif;">${ent.name}</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                  <div class="d-flex justify-content-center mb-4">
+                    <div style="width: 110px; height: 110px; border-radius: 50%; border: 3px solid var(--pcp-blue); padding: 5px; background: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(0,0,0,0.06);">
+                      <img src="${logoPath}" alt="${ent.logo_alt || ent.name}" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
+                    </div>
+                  </div>
+                  <p class="text-muted small mb-4"><i class="bi bi-geo-alt-fill text-danger me-1"></i> Ubicación: <strong>${location}</strong> | Estado: <span class="badge bg-success-subtle text-success border border-success-subtle">Operativa</span></p>
+                  
+                  <div class="row g-3 text-center mb-2">
+                    <div class="col-6 col-md-3">
+                      <div class="card bg-light border-0 py-2 h-100">
+                        <div class="card-body p-2 d-flex flex-column justify-content-center">
+                          <div class="small text-muted mb-1">Antenas</div>
+                          <div class="fs-5 fw-bold text-primary">${antenas.toLocaleString('es-MX')}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="card bg-light border-0 py-2 h-100">
+                        <div class="card-body p-2 d-flex flex-column justify-content-center">
+                          <div class="small text-muted mb-1">Laptops</div>
+                          <div class="fs-5 fw-bold text-primary">${laptops.toLocaleString('es-MX')}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="card bg-light border-0 py-2 h-100">
+                        <div class="card-body p-2 d-flex flex-column justify-content-center">
+                          <div class="small text-muted mb-1">iPads</div>
+                          <div class="fs-5 fw-bold text-primary">${ipads.toLocaleString('es-MX')}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="card bg-light border-0 py-2 h-100">
+                        <div class="card-body p-2 d-flex flex-column justify-content-center">
+                          <div class="small text-muted mb-1">C-books</div>
+                          <div class="fs-5 fw-bold text-primary">${(ent.metrics?.chromebooks ?? 0).toLocaleString('es-MX')}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>`;
+            
+          modWrap.appendChild(modal);
+        });
+      }
+
+      // Inicialización y eventos
+      (async function init() {
+        const entidades = await loadEntidades();
+        
+        // Actualizar el número total de conectadas en el Hero
+        const totalConectadas = entidades.length;
+        if (document.getElementById('heroConectadas')) {
+          document.getElementById('heroConectadas').textContent = totalConectadas;
+        }
+
+        // 1. Buscador de Texto
+        const buscador = document.getElementById('buscadorEntidades');
+        if (buscador) {
+          buscador.addEventListener('input', e => {
+            stateEnt.q = e.target.value;
+            filterAndRender(entidades);
           });
         }
+
+        // 2. Controles de Vista (Cuadrícula / Lista)
+        const btnGrid = document.getElementById('btnGrid');
+        const btnList = document.getElementById('btnList');
+        if (btnGrid && btnList) {
+          btnGrid.addEventListener('click', () => {
+            stateEnt.view = 'grid';
+            btnGrid.classList.add('active');
+            btnList.classList.remove('active');
+            filterAndRender(entidades);
+          });
+          btnList.addEventListener('click', () => {
+            stateEnt.view = 'list';
+            btnList.classList.add('active');
+            btnGrid.classList.remove('active');
+            filterAndRender(entidades);
+          });
+        }
+
+        // --- INICIALIZACIÓN DEL MAPA LEAFLET ---
+        const mapElement = document.getElementById('map');
+        if (mapElement) {
+          const map = L.map('map').setView([23.6345, -102.5528], 5);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map);
+          setTimeout(() => map.invalidateSize(), 400);
+
+          const entidadesMapa = [
+            { 'nombre': 'Instituto de Física', 'coords': [19.325474610603433, -99.17579572194856], 'logo': '../img/logos/IFISICA.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Instituto de Física', 'correo': 'institutodefisica@pcpuma.unam.mx', 'web': 'https://w2.fisica.unam.mx/bif/info/show_pcpuma' },
+            { 'nombre': 'Instituto de Biología', 'coords': [19.320983296784707, -99.19356584697681], 'logo': '../img/logos/IBIOLOGIA.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Instituto de Biología', 'correo': 'institutodebiologia@pcpuma.unam.mx', 'web': 'https://www.ib.unam.mx/' },
+            { 'nombre': 'Instituto de Geofísica', 'coords': [19.326925198678282, -99.17573781685239], 'logo': '../img/fotos/default.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Instituto de Geofísica', 'correo': 'institutodegeofisica@pcpuma.unam.mx', 'web': 'https://www.geofisica.unam.mx/' },
+            { 'nombre': 'Instituto de Investigaciones Jurídicas', 'coords': [19.31637350580925, -99.17960214141897], 'logo': '../img/fotos/default.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Instituto de Investigaciones Jurídicas', 'correo': 'institutodeinvestigacionesjuridicas@pcpuma.unam.mx', 'web': 'https://www.juridicas.unam.mx/' },
+            { 'nombre': 'FES Zaragoza', 'coords': [19.38499406249111, -99.03683219671362], 'logo': '../img/logos/FESZARAGOZA.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Zaragoza', 'correo': 'feszaragoza@pcpuma.unam.mx' },
+            { 'nombre': 'FES Iztacala', 'coords': [19.525524395165338, -99.1875494382314], 'logo': '../img/logos/FESIZTACALA.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Iztacala', 'correo': 'fesiztacala@pcpuma.unam.mx' },
+            { 'nombre': 'FES Cuautitlán', 'coords': [19.637238884322016, -99.20675098531684], 'logo': '../img/logos/FESCUAUTITLAN.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Cuautitlán', 'correo': 'fescuautitlan@pcpuma.unam.mx' },
+            { 'nombre': 'FES Aragón', 'coords': [19.474905277041735, -99.04261623162851], 'logo': '../img/logos/FESARAGON.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Aragón', 'correo': 'fesaragon@pcpuma.unam.mx' },
+            { 'nombre': 'FES Acatlán', 'coords': [19.483980490981725, -99.24608134459692], 'logo': '../img/logos/FESACATLAN.webp', 'clase': 'fes-icon', 'responsable': 'Responsable de TI de FES Acatlán', 'correo': 'fesacatlan@pcpuma.unam.mx', 'web': 'https://www.acatlan.unam.mx/pcpuma/' },
+            { 'nombre': 'Facultad de Psicología', 'coords': [19.335371630096684, -99.18820538616221], 'logo': '../img/logos/FPSICOLOGIA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Psicología', 'correo': 'facultaddepsicologia@pcpuma.unam.mx' },
+            { 'nombre': 'Facultad de Odontología', 'coords': [19.33469445030701, -99.1813586418355], 'logo': '../img/logos/FODONTOLOGIA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Odontología', 'correo': 'facultaddeodontologia@pcpuma.unam.mx' },
+            { 'nombre': 'Facultad de Música', 'coords': [19.354114563479538, -99.15338310520872], 'logo': '../img/logos/FMUSICA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Música', 'correo': 'facultaddemusica@pcpuma.unam.mx' },
+            { 'nombre': 'Facultad de Medicina Veterinaria y Zootecnia', 'coords': [19.32966649083588, -99.17697108137068], 'logo': '../img/logos/FMVZ.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Medicina Veterinaria y Zootecnia', 'correo': 'facultaddemedicinaveterinariayzootecnia@pcpuma.unam.mx' },
+            { 'nombre': 'Facultad de Medicina', 'coords': [19.33319681263341, -99.18012782835417], 'logo': '../img/logos/FMEDICINA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Medicina', 'correo': 'facultaddemedicina@pcpuma.unam.mx' },
+            { 'nombre': 'Facultad de Ingeniería', 'coords': [19.331120077304863, -99.18451144740555], 'logo': '../img/logos/FINGENIERIA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Ingeniería', 'correo': 'facultaddeingenieria@pcpuma.unam.mx' },
+            { 'nombre': 'Facultad de Filosofía y Letras', 'coords': [19.33487018621355, -99.18656088986764], 'logo': '../img/logos/FFYL.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Filosofía y Letras', 'correo': 'facultaddefilosofiayletras@pcpuma.unam.mx' },
+            { 'nombre': 'Facultad de Economía', 'coords': [19.33585187733933, -99.1810034149215], 'logo': '../img/logos/FECONOMIA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Economía', 'correo': 'facultaddeeconomia@pcpuma.unam.mx' },
+            { 'nombre': 'Facultad de Derecho', 'coords': [19.334711486400952, -99.18454048801497], 'logo': '../img/logos/DERECHO.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Derecho', 'correo': 'facultaddederecho@pcpuma.unam.mx' },
+            { 'nombre': 'Facultad de Ciencias Políticas y Sociales', 'coords': [19.31893075050844, -99.17760991999347], 'logo': '../img/logos/FCPYS.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Ciencias Políticas y Sociales', 'correo': 'facultaddecienciaspoliticasysociales@pcpuma.unam.mx' },
+            { 'nombre': 'Facultad de Ciencias', 'coords': [19.32412945504399, -99.17915652714242], 'logo': '../img/logos/FCIENCIAS.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Ciencias', 'correo': 'facultaddeciencias@pcpuma.unam.mx' },
+            { 'nombre': 'Facultad de Artes y Diseño', 'coords': [19.252282599214126, -99.1178333371921], 'logo': '../img/logos/FAD.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Artes y Diseño', 'correo': 'facultaddeartesydiseno@pcpuma.unam.mx' },
+            { 'nombre': 'Facultad de Arquitectura', 'coords': [19.330848044161417, -99.188348396485], 'logo': '../img/logos/FARQUITECTURA.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Arquitectura', 'correo': 'facultaddearquitectura@pcpuma.unam.mx' },
+            { 'nombre': 'Facultad de Contaduría y Administración', 'coords': [19.324312125504214, -99.18538474649544], 'logo': '../img/fotos/default.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Contaduría y Administración', 'correo': 'facultaddecontaduriayadministracion@pcpuma.unam.mx' },
+            { 'nombre': 'Facultad de Enfermería y Obstetricia', 'coords': [19.292168756720198, -99.15072043533844], 'logo': '../img/fotos/default.webp', 'clase': 'facultad-icon', 'responsable': 'Responsable de TI de Facultad de Enfermería y Obstetricia', 'correo': 'facultaddeenfermeriayobstetricia@pcpuma.unam.mx' },
+            { 'nombre': 'ENES Oaxaca', 'coords': [17.070907, -96.695651], 'logo': '../img/logos/ENESO.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES Oaxaca', 'correo': 'enesoaxaca@pcpuma.unam.mx' },
+            { 'nombre': 'ENES Morelia', 'coords': [19.649573312650706, -101.22145383976972], 'logo': '../img/logos/ENESMORELIA.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES Morelia', 'correo': 'enesmorelia@pcpuma.unam.mx' },
+            { 'nombre': 'ENES Mérida', 'coords': [20.988215670250913, -89.73412033729292], 'logo': '../img/logos/ENESMERIDA.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES Mérida', 'correo': 'enesmerida@pcpuma.unam.mx' },
+            { 'nombre': 'ENES León', 'coords': [21.042821809228883, -101.67264500849731], 'logo': '../img/logos/ENESLEON.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES León', 'correo': 'enesleon@pcpuma.unam.mx' },
+            { 'nombre': 'ENES Juriquilla', 'coords': [20.705332796348923, -100.44884252957387], 'logo': '../img/logos/ENESJURIQUILLA.webp', 'clase': 'enes-icon', 'responsable': 'Responsable de TI de ENES Juriquilla', 'correo': 'enesjuriquilla@pcpuma.unam.mx' },
+            { 'nombre': 'Escuela Nacional de Artes Cinematográficas', 'coords': [19.318869045009976, -99.17444091453791], 'logo': '../img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Escuela Nacional de Artes Cinematográficas', 'correo': 'escuelanacionaldeartescinematograficas@pcpuma.unam.mx' },
+            { 'nombre': 'Escuela Nacional de Lenguas, Lingüística y Traducción', 'coords': [19.3318179732864, -99.18220098012718], 'logo': '../img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Escuela Nacional de Lenguas, Lingüística y Traducción', 'correo': 'escuelanacionaldelenguaslinguisticaytraduccion@pcpuma.unam.mx' },
+            { 'nombre': 'Escuela Nacional de Trabajo Social', 'coords': [19.324056617197513, -99.18566802988228], 'logo': '../img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Escuela Nacional de Trabajo Social', 'correo': 'escuelanacionaldetrabajosocial@pcpuma.unam.mx' },
+            { 'nombre': 'Coordinación Mixta de Posgrado', 'coords': [19.309894953882555, -99.18442937962074], 'logo': '../img/logos/POSGRADO.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Coordinación Mixta de Posgrado', 'correo': 'coordinacionmixtadeposgrado@pcpuma.unam.mx' },
+            { 'nombre': 'Unidad de Extensión Universitaria Oaxaca', 'coords': [17.06138413676055, -96.72083523358762], 'logo': '../img/logos/UEUO.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Unidad de Extensión Universitaria Oaxaca', 'correo': 'unidaddeextensionuniversitariaoaxaca@pcpuma.unam.mx' },
+            { 'nombre': 'Centro de Nanociencias y Nanotecnología', 'coords': [31.86791106321224, -116.66507268199652], 'logo': '../img/logos/CNYN.webp', 'clase': 'instituto-icon', 'responsable': 'Responsable de TI de Centro de Nanociencias y Nanotecnología', 'correo': 'cnyn@pcpuma.unam.mx' },
+            { 'nombre': 'Pabellón Nacional de la Biodiversidad', 'coords': [19.311832212847605, -99.18375996533628], 'logo': '../img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Pabellón Nacional de la Biodiversidad', 'correo': 'pabellonnacionaldelabiodiversidad@pcpuma.unam.mx' },
+            { 'nombre': 'Antiguo Colegio de San Ildefonso', 'coords': [19.436002385912087, -99.12964992423919], 'logo': '../img/fotos/default.webp', 'clase': 'otro-icon', 'responsable': 'Responsable de TI de Antiguo Colegio de San Ildefonso', 'correo': 'antiguocolegiodesanildefonso@pcpuma.unam.mx' },
+            { 'nombre': 'ENP 1 Gabino Barreda', 'coords': [19.272270009505142, -99.12090875207542], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 1 Gabino Barreda', 'correo': 'enp1gabinobarreda@pcpuma.unam.mx' },
+            { 'nombre': 'ENP 2 Erasmo Castellanos Quinto', 'coords': [19.384414013128122, -99.09930753544026], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 2 Erasmo Castellanos Quinto', 'correo': 'enp2erasmocastellanosquinto@pcpuma.unam.mx' },
+            { 'nombre': 'ENP 3 Justo Sierra', 'coords': [19.482832698395395, -99.09370977282835], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 3 Justo Sierra', 'correo': 'enp3justosierra@pcpuma.unam.mx' },
+            { 'nombre': 'ENP 4 Vidal Castañeda y Nájera', 'coords': [19.40420411365316, -99.19386587406278], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 4 Vidal Castañeda y Nájera', 'correo': 'enp4vidalcastanedaynajera@pcpuma.unam.mx' },
+            { 'nombre': 'ENP 5 José Vasconcelos', 'coords': [19.307831704853378, -99.13328444337402], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 5 José Vasconcelos', 'correo': 'enp5josevasconcelos@pcpuma.unam.mx' },
+            { 'nombre': 'ENP 6 Antonio Caso', 'coords': [19.352377330266204, -99.15516094707934], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 6 Antonio Caso', 'correo': 'enp6antoniocaso@pcpuma.unam.mx' },
+            { 'nombre': 'ENP 7 Ezequiel A. Chávez', 'coords': [19.418816914298294, -99.1255695249077], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 7 Ezequiel A. Chávez', 'correo': 'enp7ezequielachavez@pcpuma.unam.mx' },
+            { 'nombre': 'ENP 8 Miguel E. Schulz', 'coords': [19.36721387098644, -99.19380290573983], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 8 Miguel E. Schulz', 'correo': 'enp8migueleschulz@pcpuma.unam.mx' },
+            { 'nombre': 'ENP 9 Pedro de Alba', 'coords': [19.483918948897248, -99.1267973696952], 'logo': '../img/logos/ENP.webp', 'clase': 'enp-icon', 'responsable': 'Responsable de TI de ENP 9 Pedro de Alba', 'correo': 'enp9pedrodealba@pcpuma.unam.mx' },
+            { 'nombre': 'CCH Vallejo', 'coords': [19.484208569636674, -99.14184532418193], 'logo': '../img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Vallejo', 'correo': 'cchvallejo@pcpuma.unam.mx' },
+            { 'nombre': 'CCH Sur', 'coords': [19.310911875632716, -99.1991763396687], 'logo': '../img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Sur', 'correo': 'cchsur@pcpuma.unam.mx' },
+            { 'nombre': 'CCH Oriente', 'coords': [19.38550253237042, -99.05944636427637], 'logo': '../img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Oriente', 'correo': 'cchoriente@pcpuma.unam.mx' },
+            { 'nombre': 'CCH Naucalpan', 'coords': [19.474576990214963, -99.24291189919353], 'logo': '../img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Naucalpan', 'correo': 'cchnaucalpan@pcpuma.unam.mx' },
+            { 'nombre': 'CCH Azcapotzalco', 'coords': [19.500225173254734, -99.20277836486008], 'logo': '../img/logos/CCH.webp', 'clase': 'cch-icon', 'responsable': 'Responsable de TI de CCH Azcapotzalco', 'correo': 'cchazcapotzalco@pcpuma.unam.mx' }
+          ];
+
+          const clusters = { 
+            "Facultades": L.markerClusterGroup(), 
+            "FES": L.markerClusterGroup(), 
+            "ENES": L.markerClusterGroup(), 
+            "ENP": L.markerClusterGroup(), 
+            "CCH": L.markerClusterGroup(), 
+            "Institutos": L.markerClusterGroup(), 
+            "Otros": L.markerClusterGroup() 
+          };
+
+          entidadesMapa.forEach(function (entidad) {
+            const icono = L.divIcon({ html: `<img src="${entidad.logo}" class="logo-entidad" alt="${entidad.nombre}">`, iconSize: [40, 40], iconAnchor: [20, 40], popupAnchor: [0, -40], className: '' });
+            const popupContent = `<strong>${entidad.nombre}</strong><br>Responsable: <strong>${entidad.responsable}</strong><br>Correo: <a href='mailto:${entidad.correo}'>${entidad.correo}</a>`;
+            const marcador = L.marker(entidad.coords, { icon: icono }).bindPopup(popupContent);
+
+            let tipo = "Otros";
+            const claseLowerCase = entidad.clase.toLowerCase();
+            if (claseLowerCase.includes('facultad')) tipo = "Facultades";
+            else if (claseLowerCase.includes('fes')) tipo = "FES";
+            else if (claseLowerCase.includes('enes')) tipo = "ENES";
+            else if (claseLowerCase.includes('enp')) tipo = "ENP";
+            else if (claseLowerCase.includes('cch')) tipo = "CCH";
+            else if (claseLowerCase.includes('instituto')) tipo = "Institutos";
+
+            if (clusters[tipo]) {
+              clusters[tipo].addLayer(marcador);
+            }
+          });
+
+          for (let key in clusters) { map.addLayer(clusters[key]); }
+
+          // Funciones globales para los filtros del mapa y sincronización con el listado
+          window.filtrarCapas = function (tipo) {
+            for (let key in clusters) { map.removeLayer(clusters[key]); }
+            if (tipo === "Todos") { 
+              for (let key in clusters) { map.addLayer(clusters[key]); } 
+            } else { 
+              if (clusters[tipo]) map.addLayer(clusters[tipo]); 
+            }
+            
+            // Sincronizar el listado inferior
+            stateEnt.filter = tipo;
+            filterAndRender(entidades);
+          }
+
+          window.marcarBotonActivo = function (nombreFiltro) {
+            document.querySelectorAll('.pcp-map-filters .btn-filtro').forEach(boton => {
+              boton.classList.remove('activo-filtro');
+              if (boton.textContent.trim() === nombreFiltro || (nombreFiltro === 'Todos' && boton.textContent.trim() === 'Mostrar Todos')) {
+                boton.classList.add('activo-filtro');
+              }
+            });
+          }
+        }
+
+        // Primer render
+        filterAndRender(entidades);
       })();
     });
   </script>
